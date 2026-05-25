@@ -3,25 +3,47 @@
 // @ts-nocheck
 import { useState, useRef, useEffect } from 'react';
 import { useChat } from '@ai-sdk/react';
-import { MessageSquare, X, Send, Paperclip, Loader2, Sparkles, User, Image as ImageIcon } from 'lucide-react';
+import { DefaultChatTransport, type UIMessage } from 'ai';
+import { MessageSquare, X, Send, Paperclip, Loader2, Sparkles, User } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const { messages, input, handleInputChange, handleSubmit, isLoading, setInput } = useChat({
-    api: '/api/chat',
-    initialMessages: [
+  const [inputValue, setInputValue] = useState('');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const chatTransport = new DefaultChatTransport({
+    body: () => ({
+      data: selectedImage ? { imageUrl: selectedImage } : undefined,
+    }),
+  });
+
+  const { messages, sendMessage, status } = useChat<UIMessage>({
+    transport: chatTransport,
+    messages: [
       {
         id: 'welcome',
         role: 'assistant',
-        content: 'Hallo! Ich bin dein Parkett-Assistent. Wie kann ich dir helfen? Wenn du einen Schaden hast, kannst du mir gerne ein Foto davon hochladen.'
+        parts: [
+          {
+            type: 'text',
+            text: 'Hallo! Ich bin dein Parkett-Assistent. Wie kann ich dir helfen? Wenn du einen Schaden hast, kannst du mir gerne ein Foto davon hochladen.'
+          }
+        ]
       }
     ]
   });
 
+  const isLoading = status === 'submitted' || status === 'streaming';
+
+  const getMessageText = (message: UIMessage) =>
+    message.parts
+      .filter((part): part is { type: 'text'; text: string } => part.type === 'text')
+      .map((part) => part.text)
+      .join('');
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -49,25 +71,15 @@ export default function ChatWidget() {
     }
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!input?.trim() && !selectedImage) return;
+    const trimmedInput = inputValue.trim();
+    if (!trimmedInput && !selectedImage) return;
 
-    // Send chat with or without image
-    // Note: To send data URLs using useChat, we append it to the body or use attachments if supported.
-    // For simplicity, if we have an image, we append it to a custom data object.
-    const submitEvent = e as any;
-    
-    if (selectedImage) {
-      handleSubmit(submitEvent, {
-        data: {
-          imageUrl: selectedImage
-        }
-      });
-      setSelectedImage(null);
-    } else {
-      handleSubmit(submitEvent);
-    }
+    const text = trimmedInput || 'Hier ist ein Foto meines Parketts.';
+    await sendMessage({ text });
+    setInputValue('');
+    setSelectedImage(null);
   };
 
   return (
@@ -117,29 +129,9 @@ export default function ChatWidget() {
               
               <div className={`max-w-[80%] rounded-2xl p-4 shadow-sm ${m.role === 'user' ? 'bg-primary text-white rounded-tr-none' : 'bg-surface border border-outline-variant/30 text-on-surface rounded-tl-none'}`}>
                 
-                {/* Tool Invocations styling (Internal AI thoughts/tools) */}
-                {m.toolInvocations?.map((toolInvocation) => {
-                  const toolCallId = toolInvocation.toolCallId;
-                  if ('result' in toolInvocation) {
-                    return (
-                      <div key={toolCallId} className="mb-2 bg-surface-variant/30 border border-outline-variant/50 p-2 rounded-lg text-xs flex flex-col gap-1">
-                         <span className="font-bold flex items-center gap-1 text-secondary"><Sparkles className="w-3 h-3"/> {toolInvocation.toolName} ausgeführt</span>
-                         <span className="text-on-surface-variant italic">Aktion erfolgreich abgeschlossen.</span>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div key={toolCallId} className="mb-2 bg-secondary/10 border border-secondary/20 p-2 rounded-lg text-xs flex items-center gap-2 text-secondary font-medium">
-                        <Loader2 className="w-3 h-3 animate-spin" /> {toolInvocation.toolName} wird ausgeführt...
-                      </div>
-                    );
-                  }
-                })}
-
-                {/* Main Content */}
                 <div className={`prose prose-sm max-w-none ${m.role === 'user' ? 'prose-invert prose-p:text-white' : 'prose-p:text-on-surface-variant'}`}>
                   <ReactMarkdown>
-                    {m.content}
+                    {getMessageText(m)}
                   </ReactMarkdown>
                 </div>
               </div>
@@ -195,15 +187,15 @@ export default function ChatWidget() {
             
             <input
               type="text"
-              value={input || ''}
-              onChange={handleInputChange}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
               placeholder={selectedImage ? "Bild beschreiben..." : "Frage stellen..."}
               className="flex-1 bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-2 font-body-md text-sm focus:ring-2 focus:ring-secondary/50 outline-none"
               disabled={isLoading}
             />
             <button 
               type="submit" 
-              disabled={isLoading || (!input?.trim() && !selectedImage)}
+              disabled={isLoading || (!inputValue.trim() && !selectedImage)}
               className="p-3 bg-secondary text-white rounded-xl hover:bg-secondary/90 transition-colors shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="w-5 h-5" />
