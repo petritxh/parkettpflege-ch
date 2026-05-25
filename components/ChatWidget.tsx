@@ -50,15 +50,13 @@ export default function ChatWidget() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Proactive opening
+  // Auto-open chat after 10 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!isOpen && messages.length === 1) {
-        setIsOpen(true);
-      }
-    }, 10000); // Open automatically after 10 seconds
+      setIsOpen(true);
+    }, 10000);
     return () => clearTimeout(timer);
-  }, [isOpen, messages.length]);
+  }, []);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -76,10 +74,27 @@ export default function ChatWidget() {
     const trimmedInput = inputValue.trim();
     if (!trimmedInput && !selectedImage) return;
 
-    const text = trimmedInput || 'Hier ist ein Foto meines Parketts.';
-    await sendMessage({ text });
-    setInputValue('');
-    setSelectedImage(null);
+    try {
+      const messageData: any = {
+        text: trimmedInput || (selectedImage ? 'Hier ist ein Foto meines Parketts.' : ''),
+      };
+
+      // Convert base64 image to File if present
+      if (selectedImage) {
+        const blob = await fetch(selectedImage).then(res => res.blob());
+        const file = new File([blob], 'parkett-foto.jpg', { type: 'image/jpeg' });
+        // Create a FileList-like object
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        messageData.files = dataTransfer.files;
+      }
+
+      await sendMessage(messageData);
+      setInputValue('');
+      setSelectedImage(null);
+    } catch (error) {
+      console.error('Error sending message:', error);
+    }
   };
 
   return (
