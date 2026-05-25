@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Wasserschaden & Verfärbung",
+    "woodType": "Eiche",
+    "service": "Schleifen & Ölen",
+    "problem": "Tiefe Wassereinlagerungen und graue Flecken",
+    "description": "Durch einen undichten Blumentopf entstand ein tiefer Wasserschaden. Der Boden wurde partiell abgeschliffen, die betroffenen Stellen neutralisiert und neu geölt für ein nahtloses Ergebnis.",
+    "category": "Reparatur",
+    "imgBefore": "https://lh3.googleusercontent.com/aida-public/AB6AXuADmDYLUFPdXz5Q4GDKThgWBBNR0gAwhs-BIDAz_OpiQonRVmzE-yxVa9WHEppwUsdg6IiImsD-W1X1jTwxGun3m9dvr5cZrpx0S2VxpZNHak_LnNaOXJmo2fzIjBkb2ms6eoDc1wabrcQ3Vi_3CpuoqKKlQDPWNUGwoLqOVW3ghIc__AECOsJEpNK8HGtGvEAztpD494bkpLEFnI0RKQhBMoajcvpVnRa_aHnUR_pe9L1mCoNOKnbDcixLaDbUhBPN9yX4IN1sbuA",
+    "imgAfter": "https://lh3.googleusercontent.com/aida-public/AB6AXuADmDYLUFPdXz5Q4GDKThgWBBNR0gAwhs-BIDAz_OpiQonRVmzE-yxVa9WHEppwUsdg6IiImsD-W1X1jTwxGun3m9dvr5cZrpx0S2VxpZNHak_LnNaOXJmo2fzIjBkb2ms6eoDc1wabrcQ3Vi_3CpuoqKKlQDPWNUGwoLqOVW3ghIc__AECOsJEpNK8HGtGvEAztpD494bkpLEFnI0RKQhBMoajcvpVnRa_aHnUR_pe9L1mCoNOKnbDcixLaDbUhBPN9yX4IN1sbuA"
+  },
+  {
+    "id": 2,
+    "title": "Starke Abnutzung im Flur",
+    "woodType": "Ahorn",
+    "service": "Versiegeln",
+    "problem": "Stumpfe, zerkratzte Laufstrassen",
+    "description": "Im hochfrequentierten Eingangsbereich war der Lack abgenutzt. Wir haben die oberste Schicht abgetragen und eine neue, strapazierfähige 2K-Versiegelung aufgetragen.",
+    "category": "Werterhalt",
+    "imgBefore": "https://lh3.googleusercontent.com/aida-public/AB6AXuDpu93OtXlPyxw3Fh8XWXP1eiKLfPGJzH5teHgLuKEiZXmrZSGLW-Zf--BKj2c1SGG0cTw1bVAUoEuxJq99uOwlEMNCxltT8xpWJ3b545ACcGEHH94IcFZiT_MlZE4yrHr-Shf7kC-aFN5H2JKU-OfZq1NYdtr7HtpmOpyewHaiUZVYrZD-YC9dEBzkkxnO__jrSZEuAi8Jf2BmuhyoQ6Fdue3u5I6TKtLbok4LWAcb66F-omZgTyn5UzsFFufhqcIuIMw0wcuG9H8",
+    "imgAfter": "https://lh3.googleusercontent.com/aida-public/AB6AXuDpu93OtXlPyxw3Fh8XWXP1eiKLfPGJzH5teHgLuKEiZXmrZSGLW-Zf--BKj2c1SGG0cTw1bVAUoEuxJq99uOwlEMNCxltT8xpWJ3b545ACcGEHH94IcFZiT_MlZE4yrHr-Shf7kC-aFN5H2JKU-OfZq1NYdtr7HtpmOpyewHaiUZVYrZD-YC9dEBzkkxnO__jrSZEuAi8Jf2BmuhyoQ6Fdue3u5I6TKtLbok4LWAcb66F-omZgTyn5UzsFFufhqcIuIMw0wcuG9H8"
+  },
+  {
+    "id": 3,
+    "title": "Falsche Pflege über Jahre",
+    "woodType": "Nussbaum",
+    "service": "Tiefenreinigung",
+    "problem": "Schichtenbildung durch falsche Polish-Produkte",
+    "description": "Über Jahre aufgetragene Pflegemittel hatten einen matten Film hinterlassen. Eine professionelle maschinelle Intensivreinigung stellte den natürlichen Glanz wieder her.",
+    "category": "Reinigung",
+    "imgBefore": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_8z7OdosizGELh8t3yvY3GH6nGpoTcAlL2KaA7KVyG7SmN2Do0yo8JaIipQBoCRu78DJYL-Ooxq_Gn_CmemHHA_1_7u4ERu8ECtq2uIfqCCPbI4Jq4LPgzSCXjNIqH88RY2xlOx992nDLYrc1rcP6UwTuaqu8nQowGrpl1L3DHuu5kZmelZ6CqVqDtH5Ychz4MBSv3ljbeKfVAj7Ks8x54gmSAJD7SmnY3Ig29GG3S4VwwUnjyu99HMdkO7KgNbmWW7wz9Rvq2tg",
+    "imgAfter": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_8z7OdosizGELh8t3yvY3GH6nGpoTcAlL2KaA7KVyG7SmN2Do0yo8JaIipQBoCRu78DJYL-Ooxq_Gn_CmemHHA_1_7u4ERu8ECtq2uIfqCCPbI4Jq4LPgzSCXjNIqH88RY2xlOx992nDLYrc1rcP6UwTuaqu8nQowGrpl1L3DHuu5kZmelZ6CqVqDtH5Ychz4MBSv3ljbeKfVAj7Ks8x54gmSAJD7SmnY3Ig29GG3S4VwwUnjyu99HMdkO7KgNbmWW7wz9Rvq2tg"
+  },
+  {
+    "id": 4,
+    "title": "Tiefer Kratzer (Hund)",
+    "woodType": "Eiche",
+    "service": "Lokale Reparatur",
+    "problem": "Deutliche, tiefe Kratzer, die durch das Öl dringen",
+    "description": "Partielles Ausschleifen der Kratzer und Neuaufbau der Ölschicht. Die Farbe wurde speziell angemischt, um den gealterten Ton des restlichen Bodens zu treffen.",
+    "category": "Reparatur",
+    "imgBefore": "https://lh3.googleusercontent.com/aida-public/AB6AXuDIrJs8BLeEeepjntbFA420wiHaTe7Xd14SEOSZnejBedGBQa_8eVy1QsvP-wIbE7WDE5_9lrOpa0Cf6qiFV98LZDBOyxB_F0zXU6-pqMpoaksVcsfiJULNi1vnFqd5ceW-DxijaxfuVbtOAchai80dsH5ANulOMqcr1LCJXtshJMRuAplCAo7Xo6FM_XF2zSpgxIQZEyOevY37e49jijR43rjhbpLU1KpAeZr2WMySKPuuJ2Gku6DUegb1yzgzZjMZ874yTxnOySg",
+    "imgAfter": "https://lh3.googleusercontent.com/aida-public/AB6AXuDIrJs8BLeEeepjntbFA420wiHaTe7Xd14SEOSZnejBedGBQa_8eVy1QsvP-wIbE7WDE5_9lrOpa0Cf6qiFV98LZDBOyxB_F0zXU6-pqMpoaksVcsfiJULNi1vnFqd5ceW-DxijaxfuVbtOAchai80dsH5ANulOMqcr1LCJXtshJMRuAplCAo7Xo6FM_XF2zSpgxIQZEyOevY37e49jijR43rjhbpLU1KpAeZr2WMySKPuuJ2Gku6DUegb1yzgzZjMZ874yTxnOySg"
+  }
+]

@@ -1,0 +1,166 @@
+[
+  {
+    "id": "lead-ai-demo-3",
+    "timestamp": "2026-05-22T22:38:41.904Z",
+    "status": "Offerte gesendet",
+    "funnelSource": "Google My Business",
+    "customer": {
+      "firstName": "Sarah",
+      "lastName": "Keller",
+      "email": "sarah.k@example.ch",
+      "phone": "078 456 12 89"
+    },
+    "objectDetails": {
+      "address": "Basel",
+      "areaSqM": 30
+    },
+    "serviceInfo": {
+      "service": "Grundreinigung & Pflege",
+      "preferredDate": "Flexibel",
+      "preferredTime": "Vormittags",
+      "message": "Mein geöltes Parkett ist stumpf geworden."
+    },
+    "leadScore": 60,
+    "priority": "Mittel",
+    "aiDiagnosis": {
+      "suspectedDamage": "Normale Abnutzung, Pflegemangel",
+      "suspectedWoodType": "Nussbaum",
+      "suspectedSurface": "Geölt",
+      "severity": "Gering",
+      "urgency": "Niedrig",
+      "diyPossible": true,
+      "recommendedService": "Intensivreinigung & Nachölen",
+      "priceRange": {
+        "min": 400,
+        "max": 700
+      },
+      "leadScore": 60,
+      "customerExplanation": "Boden ist ca. 5 Jahre alt und wurde nie professionell gepflegt. Keine tiefen Kratzer, nur matt.",
+      "internalSummary": "Einfacher Service-Job. Kunde könnte es selbst tun (DIY-Pflegeset anbieten als Fallback), aber Full-Service ist gewünscht. Gut als Füller für freie Termine.",
+      "imageUrl": "https://images.unsplash.com/photo-1581850518616-bcb8077a2336?q=80&w=600&auto=format&fit=crop"
+    }
+  },
+  {
+    "id": "lead-ai-demo-2",
+    "timestamp": "2026-05-23T22:38:41.904Z",
+    "status": "Offerte gesendet",
+    "funnelSource": "Landingpage (SEO)",
+    "customer": {
+      "firstName": "Michael",
+      "lastName": "Weber",
+      "email": "m.weber@example.ch",
+      "phone": "076 987 65 43"
+    },
+    "objectDetails": {
+      "address": "Bern",
+      "areaSqM": 120
+    },
+    "serviceInfo": {
+      "service": "Komplette Renovation",
+      "preferredDate": "In 2 Wochen",
+      "preferredTime": "Nachmittags",
+      "message": "Wir ziehen um und der Boden in der neuen Wohnung sieht furchtbar aus (Wasserflecken und ausgeblichen)."
+    },
+    "leadScore": 95,
+    "priority": "Hoch",
+    "aiDiagnosis": {
+      "suspectedDamage": "Wasserschaden, UV-Verfärbung, starke Abnutzung",
+      "suspectedWoodType": "Buchenholz",
+      "suspectedSurface": "Versiegelt",
+      "severity": "Hoch",
+      "urgency": "Hoch (Umzug naht)",
+      "diyPossible": false,
+      "recommendedService": "Intensiv Renovation & Versiegelung",
+      "priceRange": {
+        "min": 4500,
+        "max": 6000
+      },
+      "leadScore": 95,
+      "customerExplanation": "Alte Wohnung gekauft. Vorbesitzer hat Pflanzen direkt auf dem Parkett gegossen. Grosse schwarze Ränder.",
+      "internalSummary": "Grosser Auftrag (120m2). Zeitkritisch wegen Umzug. Wasserschäden erfordern eventuell partiellen Austausch der Dielen vor dem Schleifen. Hoher Projektwert.",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop"
+    }
+  },
+  {
+    "id": "lead-ai-demo-1",
+    "timestamp": "2026-05-24T22:38:41.903Z",
+    "status": "Offerte gesendet",
+    "funnelSource": "KI-Parkettcheck (Google Ads)",
+    "customer": {
+      "firstName": "Julia",
+      "lastName": "Müller",
+      "email": "julia.mueller@example.ch",
+      "phone": "079 123 45 67"
+    },
+    "objectDetails": {
+      "address": "Zürich",
+      "areaSqM": 45
+    },
+    "serviceInfo": {
+      "service": "Parkett Reparatur",
+      "preferredDate": "So schnell wie möglich",
+      "preferredTime": "Ganztags",
+      "message": "Mein Hund hat tiefe Kratzer im Wohnzimmer hinterlassen."
+    },
+    "leadScore": 85,
+    "priority": "Hoch",
+    "aiDiagnosis": {
+      "suspectedDamage": "Tiefe Kratzer, Oberflächenbeschädigung",
+      "suspectedWoodType": "Eiche (vermutlich geölt)",
+      "suspectedSurface": "Geölt",
+      "severity": "Mittel bis Hoch",
+      "urgency": "Mittel",
+      "diyPossible": false,
+      "recommendedService": "Parkett Schleifen & Ölen",
+      "priceRange": {
+        "min": 1800,
+        "max": 2500
+      },
+      "leadScore": 85,
+      "customerExplanation": "Kratzer durch Hundekrallen entstanden, besonders tief beim Sofa.",
+      "internalSummary": "Klassischer Fall von Haustierschäden. Kunde wünscht schnelle Behebung. Eiche geölt lässt sich gut schleifen. Sehr hohe Abschlusswahrscheinlichkeit aufgrund Leidensdruck.",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop"
+    }
+  },
+  {
+    "id": "b1a36239-654b-40d5-b045-c1206c58e1e7",
+    "timestamp": "2026-05-24T18:08:17.178Z",
+    "status": "Offerte",
+    "source": "BookingModal",
+    "customer": {
+      "firstName": "petrit",
+      "lastName": "xhaferi",
+      "email": "petrit.xh@gmail.com",
+      "phone": "0762266161"
+    },
+    "serviceInfo": {
+      "service": "Kostenlose Besichtigung",
+      "preferredDate": "In 2 Tagen",
+      "preferredTime": "08:00 - 10:00",
+      "message": "NUR EIN TEST"
+    },
+    "leadScore": 10,
+    "priority": "Niedrig"
+  },
+  {
+    "id": "1b408f4e-6f30-43e8-904b-ebd373138c6c",
+    "timestamp": "2026-05-25T14:09:08.415Z",
+    "status": "Neu",
+    "funnelSource": "BookingModal",
+    "customer": {
+      "firstName": "wergwerg",
+      "lastName": "gsfdg",
+      "email": "adsfsdfa@dfasfsf.ch",
+      "phone": "888347538475"
+    },
+    "objectDetails": {},
+    "serviceInfo": {
+      "service": "Kostenlose Besichtigung",
+      "preferredDate": "Nächste Woche",
+      "preferredTime": "10:00 - 12:00",
+      "message": "nur ein test"
+    },
+    "leadScore": 10,
+    "priority": "Niedrig"
+  }
+]

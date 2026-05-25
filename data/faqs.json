@@ -1,0 +1,394 @@
+[
+  {
+    "id": "faq-1",
+    "category": "service",
+    "targetSlug": "parkettpflege",
+    "question": "Wie oft sollte Parkett professionell gepflegt werden?",
+    "answer": "Geöltes Parkett sollte je nach Beanspruchung (z.B. Haustiere, Strassenschuhe) alle 1 bis 3 Jahre professionell gereinigt und nachgeölt werden. Versiegelte Böden profitieren von einem Polish alle 2 bis 4 Jahre, um feine Kratzer zu schliessen."
+  },
+  {
+    "id": "faq-2",
+    "category": "service",
+    "targetSlug": "parkettpflege",
+    "question": "Kann ich mein Parkett selbst pflegen?",
+    "answer": "Die wöchentliche Unterhaltsreinigung (Staubsaugen, nebelfeuchtes Wischen mit Holzseife) können Sie problemlos selbst machen. Für die periodische Tiefenpflege und Sättigung der Poren empfehlen wir jedoch einen Profi, um Flecken, Überfettung und Laufstrassen zu vermeiden."
+  },
+  {
+    "id": "faq-3",
+    "category": "service",
+    "targetSlug": "parkettpflege",
+    "question": "Darf ich einen Dampfreiniger für mein Parkett benutzen?",
+    "answer": "Nein, auf keinen Fall! Dampfreiniger pressen heissen Wasserdampf mit Hochdruck in die Poren und Fugen des Holzes. Das Holz quillt unweigerlich auf, der Lack platzt ab und die Verleimung kann sich lösen. Nutzen Sie ausschliesslich einen nebelfeuchten Mopp."
+  },
+  {
+    "id": "faq-4",
+    "category": "service",
+    "targetSlug": "parkettpflege",
+    "question": "Welches Reinigungsmittel ist das beste für Holzböden?",
+    "answer": "Verzichten Sie auf aggressive Allzweckreiniger oder Spülmittel. Für geöltes Parkett ist eine rückfettende Holzbodenseife ideal. Für versiegeltes Parkett nutzen Sie einen neutralen Parkettreiniger ohne Schmierseife."
+  },
+  {
+    "id": "faq-5",
+    "category": "service",
+    "targetSlug": "parkettreinigung",
+    "question": "Muss der Raum für eine Intensivreinigung leer sein?",
+    "answer": "Ideal ist es, wenn grosse Möbelstücke beiseitegeräumt werden. Wir können jedoch auch etappenweise arbeiten oder extrem schwere Möbel (wie Schränke) stehen lassen und präzise darum herum reinigen."
+  },
+  {
+    "id": "faq-6",
+    "category": "service",
+    "targetSlug": "parkettreinigung",
+    "question": "Wie lange dauert die maschinelle Parkettreinigung?",
+    "answer": "Für ein durchschnittliches Wohnzimmer von ca. 40m² benötigen wir rund 2 bis 3 Stunden für die Tiefenreinigung. Anschliessend muss der Boden trocknen, bevor das Pflegeöl aufgetragen wird."
+  },
+  {
+    "id": "faq-7",
+    "category": "service",
+    "targetSlug": "parkettreinigung",
+    "question": "Verschwinden beim Reinigen auch Kratzer?",
+    "answer": "Nein. Eine Intensivreinigung löst festsitzenden Schmutz und Grauschleier aus den Poren. Feine Mikrokratzer können durch das anschliessende Ölen kaschiert werden, aber echte (tiefe) Kratzer lassen sich nur durch ein Abschleifen des Holzes entfernen."
+  },
+  {
+    "id": "faq-8",
+    "category": "service",
+    "targetSlug": "parkett-schleifen",
+    "question": "Wie oft kann man Parkett abschleifen?",
+    "answer": "Massivholzparkett kann problemlos 5 bis 10 Mal geschliffen werden. Mehrschichtparkett (Fertigparkett) hat meist eine Echtholz-Nutzschicht von 3-4 mm. Da wir pro Schliff ca. 0.5 bis 1 mm abtragen, kann dieses 2 bis 3 Mal renoviert werden."
+  },
+  {
+    "id": "faq-9",
+    "category": "service",
+    "targetSlug": "parkett-schleifen",
+    "question": "Bleibt wirklich gar kein Staub zurück?",
+    "answer": "Ja! Unsere modernen Schleifmaschinen verfügen über integrierte Hochleistungssauger und HEPA-Filter. Sie saugen 99% des feinen Holzstaubs direkt an der Walze ab. Sie müssen nach unserer Arbeit keine Fenster putzen oder Wände abstauben."
+  },
+  {
+    "id": "faq-10",
+    "category": "service",
+    "targetSlug": "parkett-schleifen",
+    "question": "Müssen die Sockelleisten vor dem Schleifen weg?",
+    "answer": "Wir empfehlen es stark. Nur ohne Leisten können wir mit der Randschleifmaschine bis auf den letzten Millimeter an die Wand fahren, ohne das Holz der Leisten zu beschädigen. Wir übernehmen die Demontage und Montage gerne für Sie."
+  },
+  {
+    "id": "faq-11",
+    "category": "service",
+    "targetSlug": "parkett-oelen",
+    "question": "Wie lange dauert das Trocknen nach dem Ölen?",
+    "answer": "Dank unserer modernen High-Solid 2K-Öle (Zweikomponenten-Öle mit Härter) ist der Boden oft schon nach 12 bis 24 Stunden wieder vorsichtig in Socken begehbar. Grosse Teppiche sollten jedoch erst nach ca. 7 Tagen wieder ausgelegt werden."
+  },
+  {
+    "id": "faq-12",
+    "category": "service",
+    "targetSlug": "parkett-oelen",
+    "question": "Riecht das Parkett nach dem Ölen?",
+    "answer": "Wir verwenden lösungsmittelfreie (VOC-freie) High-Solid-Öle auf Basis natürlicher Pflanzenöle. Es riecht einige Tage lang angenehm nach Leinöl und Naturholz, verursacht aber keine stechenden, chemischen Gerüche oder Kopfschmerzen."
+  },
+  {
+    "id": "faq-13",
+    "category": "service",
+    "targetSlug": "parkett-oelen",
+    "question": "Kann man dunkles Eichenparkett heller ölen?",
+    "answer": "Ja, absolut! Wenn das Holz komplett roh geschliffen ist, können wir ein weisspigmentiertes Öl auftragen. Die weissen Pigmente setzen sich in den Poren ab und geben dem Holz einen frischen, hellen, skandinavischen Look."
+  },
+  {
+    "id": "faq-14",
+    "category": "service",
+    "targetSlug": "parkett-versiegeln",
+    "question": "Was ist der Unterschied zwischen Ölen und Versiegeln?",
+    "answer": "Eine Versiegelung (Lack) bildet einen geschlossenen, wasserabweisenden Film AUF dem Holz. Öl hingegen dringt IN das Holz ein und füllt die Poren von innen, sodass die Oberfläche atmungsaktiv und extrem natürlich haptisch bleibt."
+  },
+  {
+    "id": "faq-15",
+    "category": "service",
+    "targetSlug": "parkett-versiegeln",
+    "question": "Kann der Lack mit der Zeit abblättern?",
+    "answer": "Moderne, elastische Polyurethan-Wasserlacke blättern bei normaler Beanspruchung nicht ab. Sie sind so flexibel, dass sie die natürlichen Bewegungen (Quellen und Schwinden) des Holzes problemlos mitmachen."
+  },
+  {
+    "id": "faq-16",
+    "category": "service",
+    "targetSlug": "parkett-versiegeln",
+    "question": "Glänzt ein lackierter Boden immer?",
+    "answer": "Nein, ganz im Gegenteil. Die meisten unserer Kunden wählen heute sogenannte 'Rohholzeffekt'-Lacke. Diese sind extra-matt und lassen das Holz so aussehen, als wäre es komplett unbehandelt, bieten aber maximalen Schutz."
+  },
+  {
+    "id": "faq-17",
+    "category": "service",
+    "targetSlug": "parkett-reparatur",
+    "question": "Sieht man die reparierte Stelle danach noch?",
+    "answer": "Holz ist ein Naturprodukt und reift durch UV-Licht (es dunkelt nach). Eine frisch eingesetzte Lamelle wird farblich zunächst minimal abweichen. Nach einigen Monaten gleicht sich die Stelle jedoch optisch hervorragend an den restlichen Boden an."
+  },
+  {
+    "id": "faq-18",
+    "category": "service",
+    "targetSlug": "parkett-reparatur",
+    "question": "Zahlt die Haftpflichtversicherung den Parkettschaden?",
+    "answer": "Wenn Sie in einer Mietwohnung unbeabsichtigt einen plötzlichen Schaden verursachen (z.B. Sie lassen einen schweren Topf fallen), übernimmt oft die private Haftpflichtversicherung die Kosten der Reparatur. Allmähliche Schäden (z.B. Kratzer durch Stühle ohne Filzgleiter) werden meist abgelehnt."
+  },
+  {
+    "id": "faq-19",
+    "category": "service",
+    "targetSlug": "parkett-reparatur",
+    "question": "Können Brandlöcher im Parkett repariert werden?",
+    "answer": "Ja. Handelt es sich um ein oberflächliches Brandloch, schleifen und retuschieren wir die Stelle. Ist das Holz tiefgehend verbrannt, fräsen wir den betroffenen Parkettstab punktgenau heraus und verkleben eine neue Ersatzlamelle."
+  },
+  {
+    "id": "faq-20",
+    "category": "problem",
+    "targetSlug": "kratzer-im-parkett",
+    "question": "Helfen Hausmittel wie Walnüsse wirklich gegen Kratzer?",
+    "answer": "Walnüsse sind ein beliebtes Hausmittel, da das Nussöl den Kratzer leicht abdunkelt und optisch kaschiert. Dies funktioniert jedoch nur bei sehr feinen Mikrokratzern. Bei tiefen Rissen bietet es keinen Schutz gegen eindringendes Wischwasser."
+  },
+  {
+    "id": "faq-21",
+    "category": "problem",
+    "targetSlug": "kratzer-im-parkett",
+    "question": "Muss bei einem tiefen Kratzer immer alles geschliffen werden?",
+    "answer": "Nein. Oft können wir einzelne, tiefe Kratzer lokal mit Heiss-Hartwachs auffüllen und die Holzmaserung mit feinen Pinseln nachzeichnen (sog. Retusche). Das ist deutlich günstiger als ein Komplettschliff."
+  },
+  {
+    "id": "faq-22",
+    "category": "problem",
+    "targetSlug": "kratzer-im-parkett",
+    "question": "Was kostet es, Kratzer vom Profi entfernen zu lassen?",
+    "answer": "Eine punktuelle Hartwachs-Retusche startet bei ca. CHF 150.- bis 250.-. Muss der ganze Raum (z.B. 30m2) wegen grossflächiger Kratzer komplett geschliffen werden, rechnen Sie mit ca. CHF 1.200.- bis 1.500.-."
+  },
+  {
+    "id": "faq-23",
+    "category": "problem",
+    "targetSlug": "wasserflecken-parkett",
+    "question": "Warum sind manche Wasserflecken weiss und andere schwarz?",
+    "answer": "Weisse Flecken entstehen, wenn Feuchtigkeit nur unter den Lack kriecht (der Lack löst sich leicht ab). Schwarze Flecken entstehen fast immer auf Eichenholz: Das Wasser reagiert mit der holzeigenen Gerbsäure (Tannine), wodurch das Holz stark oxidiert."
+  },
+  {
+    "id": "faq-24",
+    "category": "problem",
+    "targetSlug": "wasserflecken-parkett",
+    "question": "Kann ich schwarze Wasserflecken selbst herausschleifen?",
+    "answer": "Wir raten dringend davon ab! Ohne professionelles Werkzeug schleifen Sie schnell sichtbare Kuhlen (Dellen) in den Boden. Zudem muss die geschliffene Stelle farblich wieder exakt an den umgebenden Altboden angeglichen werden, was Fachwissen erfordert."
+  },
+  {
+    "id": "faq-25",
+    "category": "problem",
+    "targetSlug": "wasserflecken-parkett",
+    "question": "Wie entferne ich Urinflecken von meinem Haustier?",
+    "answer": "Urin (Ammoniak) reagiert extrem aggressiv mit Parkett und hinterlässt oft pechschwarze Flecken. Manchmal können wir diese mit starker Oxalsäure neutralisieren. Sind die Flecken jedoch alt, muss das Holz oft bis tief in den Kern geschliffen oder gar ausgetauscht werden."
+  },
+  {
+    "id": "faq-26",
+    "category": "problem",
+    "targetSlug": "stumpfes-parkett",
+    "question": "Ist Allzweckreiniger schlecht für das Parkett?",
+    "answer": "Ja, extrem schlecht! Allzweckreiniger und Spülmittel sind stark fettlösend. Bei geöltem Parkett waschen sie das wertvolle, schützende Öl sofort aus den Poren. Das Holz trocknet aus, wird stumpf und extrem anfällig für Rotwein- oder Wasserflecken."
+  },
+  {
+    "id": "faq-27",
+    "category": "problem",
+    "targetSlug": "stumpfes-parkett",
+    "question": "Hilft Möbelpolitur bei stumpfem Parkett?",
+    "answer": "Möbelpolitur enthält oft Silikone, die den Boden zwar kurzfristig glänzen lassen, ihn aber spiegelglatt und gefährlich rutschig machen. Zudem verhindern Silikone, dass wir den Boden später fachgerecht neu lackieren können. Nutzen Sie stattdessen einen professionellen Parkett-Refresher."
+  },
+  {
+    "id": "faq-28",
+    "category": "problem",
+    "targetSlug": "stumpfes-parkett",
+    "question": "Wie bekomme ich wieder Glanz auf meinen geölten Boden?",
+    "answer": "Durch eine maschinelle Intensivreinigung und das anschliessende Einmassieren von High-Solid Pflegeöl werden die Poren gesättigt. Die natürliche Farbe feuert an und der Boden erhält einen wunderschönen, samtigen Glanz zurück."
+  },
+  {
+    "id": "faq-29",
+    "category": "problem",
+    "targetSlug": "aufgequollenes-parkett",
+    "question": "Zahlt die Gebäudeversicherung bei Wasserschäden am Parkett?",
+    "answer": "Das hängt von der Ursache ab. Schäden durch fest installierte Leitungen (Rohrbruch) übernimmt oft die Gebäudeversicherung. Schäden durch eine ausgelaufene Waschmaschine oder Regenwasser fallen oft in den Bereich der Hausrat- oder Haftpflichtversicherung."
+  },
+  {
+    "id": "faq-30",
+    "category": "problem",
+    "targetSlug": "aufgequollenes-parkett",
+    "question": "Muss ein aufgequollener Boden immer sofort raus?",
+    "answer": "Nicht immer. Wenn der Schaden früh entdeckt wird, können professionelle Bautrockner die Restfeuchte aus dem Unterlagsboden ziehen. Danach wird geprüft, ob sich das Parkett wieder gelegt hat. Oft reicht dann ein Planschliff der Ränder."
+  },
+  {
+    "id": "faq-31",
+    "category": "problem",
+    "targetSlug": "parkett-auffrischen",
+    "question": "Wann reicht Auffrischen nicht mehr aus?",
+    "answer": "Ein Refresh (Reinigung & Ölen) hilft bei oberflächlichem Schmutz und Glanzverlust. Sobald das Parkett jedoch tiefe Kratzer, Dellen, schwarze Wasserschäden aufweist oder der Lack grossflächig abgeblättert ist, muss zwingend geschliffen werden."
+  },
+  {
+    "id": "faq-32",
+    "category": "problem",
+    "targetSlug": "parkett-auffrischen",
+    "question": "Wie lange darf ich den Raum nach dem Auffrischen nicht betreten?",
+    "answer": "Je nach verwendetem Pflegeöl oder Polish ist der Boden in der Regel nach ca. 4 bis 12 Stunden wieder vorsichtig in Socken begehbar. Vermeiden Sie es jedoch, in den ersten 48 Stunden Möbel zu rücken oder Teppiche auszulegen."
+  },
+  {
+    "id": "faq-33",
+    "category": "problem",
+    "targetSlug": "parkettpflege-kosten",
+    "question": "Gibt es Mindestmengen oder Anfahrtspauschalen?",
+    "answer": "Ja, wir arbeiten mit schweren, teuren Maschinen. Für sehr kleine Flächen (unter 20m²) berechnen wir in der Regel eine Kleinmengenpauschale, um die fixen Rüst- und Anfahrtskosten decken zu können."
+  },
+  {
+    "id": "faq-34",
+    "category": "problem",
+    "targetSlug": "parkettpflege-kosten",
+    "question": "Ist Parkett ölen teurer als Parkett lackieren?",
+    "answer": "Die reinen Materialkosten sind vergleichbar. Das Lackieren ist jedoch oft arbeitsintensiver (aufgrund von Grundierung, Zwischenschliff und mehreren Lackschichten mit Trocknungszeiten), weshalb es leicht teurer sein kann als das Ölen."
+  },
+  {
+    "id": "faq-35",
+    "category": "problem",
+    "targetSlug": "parkettpflege-kosten",
+    "question": "Was ist günstiger: Neues Laminat oder Parkett schleifen?",
+    "answer": "Auf den ersten Blick mag billiges Laminat günstiger wirken. Bedenken Sie jedoch die Kosten für das Rausreissen, Entsorgen und Neuverlegen. Ein abgeschliffenes Echtparkett wertet die Immobilie enorm auf und ist langfristig oft die wirtschaftlichere Entscheidung."
+  },
+  {
+    "id": "faq-36",
+    "category": "problem",
+    "targetSlug": "parkettpflege-wohnungsabgabe",
+    "question": "Was gilt als normale Abnutzung beim Parkett (Mietrecht Schweiz)?",
+    "answer": "Normale Abnutzung umfasst leichte, oberflächliche Mikrokratzer oder Farbveränderungen durch das Sonnenlicht. Tiefe Kratzer (z.B. vom Sofa), Brandlöcher oder schwarze Wasserflecken durch Blumentöpfe gelten jedoch fast immer als übermässige Abnutzung (Mieterschaden)."
+  },
+  {
+    "id": "faq-37",
+    "category": "problem",
+    "targetSlug": "parkettpflege-wohnungsabgabe",
+    "question": "Werden Reparaturkosten von der Haftpflicht übernommen?",
+    "answer": "Plötzliche und unvorhersehbare Schäden (ein Bügeleisen fällt herunter und verursacht ein Brandloch) werden oft von der Privathaftpflicht getragen. Allmähliche Schäden (Kratzer durch mangelnde Filzgleiter über Jahre hinweg) werden jedoch meist nicht gedeckt."
+  },
+  {
+    "id": "faq-38",
+    "category": "problem",
+    "targetSlug": "parkettpflege-wohnungsabgabe",
+    "question": "Soll ich der Verwaltung den Schaden sofort melden?",
+    "answer": "Ja, Transparenz ist wichtig. Zuvor raten wir jedoch dazu, Bilder des Schadens an uns zu senden. Wir erstellen Ihnen einen Kostenvoranschlag für eine lokale Reparatur, den Sie der Verwaltung oder Ihrer Versicherung als Lösungsvorschlag vorlegen können."
+  },
+  {
+    "id": "faq-39",
+    "category": "location",
+    "targetSlug": "zuerich",
+    "question": "Fallen für die Anfahrt nach Zürich Stadt Kosten an?",
+    "answer": "Nein, im Grossraum Zürich, inklusive Stadtgebiet und Seegemeinden, ist die Anfahrt für Besichtigungen und Ausführungen komplett kostenlos."
+  },
+  {
+    "id": "faq-40",
+    "category": "location",
+    "targetSlug": "zuerich",
+    "question": "Bieten Sie Express-Termine für Wohnungsabgaben in Zürich an?",
+    "answer": "Ja! Da wir regelmässig in Zürich arbeiten, können wir bei Mieterschäden (Kratzer, Wasserflecken) vor der Übergabe an die Verwaltung sehr flexible Express-Reparaturen durchführen."
+  },
+  {
+    "id": "faq-41",
+    "category": "location",
+    "targetSlug": "zuerich",
+    "question": "Kennen Sie sich mit historischen Parkettböden in Altbauten aus?",
+    "answer": "Absolut. Das Schleifen und Ausfugen von historischen Fischgrät- oder Tafelparkettböden in Zürcher Altbauten (z.B. Kreis 4 oder 6) gehört zu unseren absoluten Kernkompetenzen."
+  },
+  {
+    "id": "faq-42",
+    "category": "location",
+    "targetSlug": "zug",
+    "question": "Können wir den Boden auch weisspigmentiert ölen lassen?",
+    "answer": "Selbstverständlich. Viele unserer Kunden in Zug bevorzugen den modernen, hellen, skandinavischen Look. Nach dem staubfreien Schleifen ölen wir das Eichenparkett mit weisspigmentierten High-Solid-Ölen."
+  },
+  {
+    "id": "faq-43",
+    "category": "location",
+    "targetSlug": "zug",
+    "question": "Schützen Sie meine Wände und Möbel beim Schleifen?",
+    "answer": "Wir arbeiten mit modernster Absaugtechnologie, die nahezu 100% staubfrei ist. Dennoch kleben wir auf Wunsch empfindliche Küchenfronten oder eingebaute Schränke in Ihrer Zuger Immobilie vorsorglich ab."
+  },
+  {
+    "id": "faq-44",
+    "category": "location",
+    "targetSlug": "zug",
+    "question": "Demontieren Sie auch die Sockelleisten?",
+    "answer": "Ja, für ein perfektes Ergebnis bis an den Rand demontieren wir bestehende Leisten schonend und montieren sie nach der Parkettpflege wieder. Alternativ können wir in Zug auch komplett neue, weisse Holzleisten montieren."
+  },
+  {
+    "id": "faq-45",
+    "category": "location",
+    "targetSlug": "luzern",
+    "question": "Kommen Sie auch für kleine Reparaturen in die Zentralschweiz?",
+    "answer": "Ja, wir bedienen die gesamte Region Luzern und Zentralschweiz. Auch für lokale Retuschen (Kratzer, Wasserschäden) kommen wir gerne zu Ihnen."
+  },
+  {
+    "id": "faq-46",
+    "category": "location",
+    "targetSlug": "luzern",
+    "question": "Wie hoch sind die Kosten für Parkett schleifen in Luzern?",
+    "answer": "Die Kosten variieren je nach Holzart und Finish, beginnen aber meist bei ca. CHF 38.- bis 48.- pro m². Gerne erstellen wir Ihnen nach einer kurzen Besichtigung in Luzern eine verbindliche Fixpreis-Offerte."
+  },
+  {
+    "id": "faq-47",
+    "category": "location",
+    "targetSlug": "aargau",
+    "question": "In welchen Gemeinden im Aargau sind Sie tätig?",
+    "answer": "Wir betreuen Kunden im gesamten Kanton Aargau. Zu unseren regelmässigen Einsatzorten gehören Aarau, Baden, Brugg, Lenzburg, Wohlen, Zofingen und Rheinfelden."
+  },
+  {
+    "id": "faq-48",
+    "category": "location",
+    "targetSlug": "aargau",
+    "question": "Müssen wir unsere Möbel für die Parkettpflege komplett ausräumen?",
+    "answer": "Wenn der Boden komplett geschliffen werden soll, muss der Raum zwingend leer sein. Für eine Intensivreinigung (Refresh) können sehr schwere Möbel im Aargau auf Absprache auch im Raum verbleiben."
+  },
+  {
+    "id": "faq-49",
+    "category": "location",
+    "targetSlug": "winterthur",
+    "question": "Bieten Sie auch Parkettreinigung für Büros in Winterthur an?",
+    "answer": "Ja, wir betreuen viele Gewerbe- und Büroflächen in Winterthur. Wir bieten massgeschneiderte, periodische Grundreinigungen (am Wochenende), um den laufenden Betrieb nicht zu stören."
+  },
+  {
+    "id": "faq-50",
+    "category": "location",
+    "targetSlug": "winterthur",
+    "question": "Ist ein geölter Boden für Familien in Winterthur geeignet?",
+    "answer": "Absolut! Geöltes Holz ist extrem wohnlich und warm. Mit der richtigen Pflege (wöchentlich Holzseife) und einem 2K-Pflegeöl-Finish von uns, ist es auch gegen tobende Kinder und Haustiere hervorragend gewappnet."
+  },
+  {
+    "id": "faq-51",
+    "category": "location",
+    "targetSlug": "basel",
+    "question": "Gilt Ihr Service auch für das Baselland?",
+    "answer": "Selbstverständlich. Neben Basel-Stadt sind wir täglich im gesamten Kanton Baselland (z.B. Muttenz, Binningen, Liestal, Reinach) für die professionelle Parkettpflege im Einsatz."
+  },
+  {
+    "id": "faq-52",
+    "category": "location",
+    "targetSlug": "basel",
+    "question": "Ersetzen Sie in Basler Altbauten auch fehlende Parkettstäbe?",
+    "answer": "Ja, fehlende, lose oder stark beschädigte Parkettstäbe im Altbau tauschen wir aus oder verkleben sie neu, bevor wir mit dem Flächenschliff beginnen. Wir besorgen dafür passendes Ersatzholz."
+  },
+  {
+    "id": "faq-53",
+    "category": "location",
+    "targetSlug": "bern",
+    "question": "Sind Ihre Parkettöle umweltfreundlich?",
+    "answer": "Ja! Besonders in Bern legen unsere Kunden grossen Wert auf Nachhaltigkeit. Wir verwenden ausschliesslich VOC-freie, lösungsmittelfreie High-Solid-Öle und extrem emissionsarme (EC1 zertifizierte) Wasserlacke."
+  },
+  {
+    "id": "faq-54",
+    "category": "location",
+    "targetSlug": "bern",
+    "question": "Können Sie auch Treppen abschleifen?",
+    "answer": "Das Abschleifen von alten Holztreppen bieten wir in der Region Bern ebenfalls an. Da dies reine Handarbeit mit kleinen Randmaschinen und Ziehklingen ist, wird der Aufwand meist pro Stufe berechnet."
+  },
+  {
+    "id": "faq-55",
+    "category": "location",
+    "targetSlug": "st-gallen",
+    "question": "Arbeiten Sie in der gesamten Ostschweiz?",
+    "answer": "Ja, von St. Gallen Stadt über das Rheintal bis hin zum Bodensee und dem Toggenburg betreuen wir Kunden rund um die Parkettrenovation."
+  },
+  {
+    "id": "faq-56",
+    "category": "location",
+    "targetSlug": "st-gallen",
+    "question": "Kann man alte, lackierte Riemenböden weiss ölen?",
+    "answer": "Ja. Sobald wir in St. Gallen den alten, gelben Lack komplett abgeschliffen haben, ist das Holz wieder roh und offen. Anschliessend können wir es problemlos weisspigmentiert ölen, was den Raum modern und hell macht."
+  }
+]

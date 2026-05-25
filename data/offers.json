@@ -1,0 +1,278 @@
+[
+  {
+    "id": "7216fb13-5cc3-4160-821b-6dc34dd5a448",
+    "leadId": "b1a36239-654b-40d5-b045-c1206c58e1e7",
+    "status": "Entwurf",
+    "createdAt": "2026-05-24T18:08:44.006Z",
+    "updatedAt": "2026-05-24T18:09:01.425Z",
+    "customer": {
+      "firstName": "petrit",
+      "lastName": "xhaferi",
+      "email": "petrit.xh@gmail.com",
+      "phone": "0762266161"
+    },
+    "title": "Offerte für eine kostenlose Parkett-Zustandsanalyse vor Ort",
+    "introText": "Sehr geehrter Herr Xhaferi, vielen Dank für Ihre Anfrage bezüglich einer Begutachtung Ihres Parkettbodens. Gerne bieten wir Ihnen unsere professionelle Zustandsanalyse und Beratung direkt bei Ihnen vor Ort an. Unsere Experten prüfen die Holzsubstanz und besprechen mit Ihnen die optimalen Pflege- oder Renovierungsschritte.",
+    "lineItems": [
+      {
+        "description": "Professionelle Parkett-Zustandsanalyse vor Ort durch unseren Experten",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 0,
+        "totalPrice": 0,
+        "id": "af5014e4-1095-4d20-94a9-bdf1a4aa9d04"
+      },
+      {
+        "description": "Individuelle Beratung vor Ort inklusive Ausarbeitung eines massgeschneiderten Sanierungskonzepts",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 0,
+        "totalPrice": 0,
+        "id": "4e22f4b6-8589-4f7d-ac5d-d3bf6b17d36f"
+      }
+    ],
+    "assumptions": [
+      "Der zu begutachtende Parkettbereich ist frei zugänglich und ausreichend beleuchtet",
+      "Eine parkplatznahe Zufahrt zum Objekt ist für unser Servicefahrzeug gewährleistet",
+      "Der Eigentümer oder eine bevollmächtigte Person ist zum vereinbarten Termin vor Ort anwesend"
+    ],
+    "exclusions": [
+      "Ausführung von effektiven Schleif- oder Pflegearbeiten während des Besichtigungstermins",
+      "Erstellung von detaillierten schriftlichen Gutachten für Versicherungen"
+    ],
+    "totalAmount": 0,
+    "isFixedPrice": true,
+    "validUntil": "2026-06-23T18:08:44.006Z"
+  },
+  {
+    "id": "e143e17b-4b1f-44f1-a1e5-e58ac00ba441",
+    "leadId": "lead-ai-demo-1",
+    "status": "Entwurf",
+    "createdAt": "2026-05-24T22:40:06.352Z",
+    "updatedAt": "2026-05-24T22:41:02.432Z",
+    "customer": {
+      "firstName": "Julia",
+      "lastName": "Müller",
+      "email": "julia.mueller@example.ch",
+      "phone": "079 123 45 67"
+    },
+    "title": "Offerte Parkettsanierung – Fachgerechte Behebung von Kratzspuren",
+    "introText": "Sehr geehrte Frau Müller, vielen Dank für Ihre Anfrage. Gerne unterbreiten wir Ihnen dieses Angebot für die fachgerechte Instandstellung Ihres geölten Eichenparketts. Um die tiefen Kratzer Ihres Vierbeiners vollständig zu beseitigen und den Boden langfristig zu schützen, empfehlen wir ein professionelles Abschleifen mit anschliessendem Neuaufbau der Öloberfläche. Ihr Parkett wird danach wieder in neuem Glanz erstrahlen und optimal geschützt sein.",
+    "lineItems": [
+      {
+        "description": "Fachgerechtes Schleifen des Parkettbodens in mehreren Schleifgängen zur restlosen Entfernung der tiefen Kratzer",
+        "quantity": 35,
+        "unit": "m2",
+        "unitPrice": 45,
+        "totalPrice": 1575,
+        "id": "8e7e71e1-9755-46f0-ad7e-87f8ba88f46b"
+      },
+      {
+        "description": "Grundreinigung, Staubabsaugung und Vorbereitung der Oberfläche",
+        "quantity": 35,
+        "unit": "m2",
+        "unitPrice": 8,
+        "totalPrice": 280,
+        "id": "22a0caed-eb25-47f3-b31b-87f143d596ac"
+      },
+      {
+        "description": "Oberflächenbehandlung mit hochwertigem, strapazierfähigem Naturöl (Eiche geölt)",
+        "quantity": 35,
+        "unit": "m2",
+        "unitPrice": 22,
+        "totalPrice": 770,
+        "id": "60a60f74-5062-4a29-b926-958289c03c76"
+      },
+      {
+        "description": "Baustelleneinrichtung, Maschinenbereitstellung sowie fachgerechte Entsorgung des Schleifstaubs",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 180,
+        "totalPrice": 180,
+        "id": "d13e81cc-a256-4851-84f2-619676a6509d"
+      }
+    ],
+    "assumptions": [
+      "Die zu bearbeitenden Räume sind zum vereinbarten Termin vollständig geräumt und besenrein.",
+      "Ein Stromanschluss (230V) steht vor Ort kostenfrei zur Verfügung.",
+      "Das Parkett verfügt über eine ausreichende Nutzschicht (mindestens 2,5 mm) für einen vollständigen Abschliff."
+    ],
+    "exclusions": [
+      "Möbeltransport sowie De- und Montage von Sockelleisten sind nicht im Preis enthalten.",
+      "Allfälliger Ersatz komplett zerstörter Parkettriemen wird nach Aufwand separat verrechnet.",
+      "Eventuelle Maler- oder Ausbesserungsarbeiten an Wänden nach Abschluss der Schleifarbeiten."
+    ],
+    "totalAmount": 2805,
+    "isFixedPrice": false,
+    "validUntil": "2026-06-23T22:40:06.352Z"
+  },
+  {
+    "id": "e8b08955-97d7-41f4-bcd4-b2858a194535",
+    "leadId": "lead-ai-demo-2",
+    "status": "Entwurf",
+    "createdAt": "2026-05-25T14:05:44.774Z",
+    "updatedAt": "2026-05-25T14:05:44.779Z",
+    "customer": {
+      "firstName": "Michael",
+      "lastName": "Weber",
+      "email": "m.weber@example.ch",
+      "phone": "076 987 65 43"
+    },
+    "title": "Richtofferte für die komplette Renovation Ihres Parkettbodens – 120 m²",
+    "introText": "Sehr geehrter Herr Weber, vielen Dank für Ihre Anfrage und das Vertrauen in Parkettpflege.ch. Gerne unterstützen wir Sie bei Ihrem bevorstehenden Umzug, um den Parkettboden in Ihrer neuen Wohnung wieder in einen makellosen Zustand zu versetzen. Basierend auf Ihren Angaben zu den Wasserflecken und UV-Verfärbungen haben wir ein massgeschneidertes Renovationskonzept für Sie ausgearbeitet. Da das Projekt zeitkritisch ist, sichern wir Ihnen eine speditive und fachgerechte Ausführung zu. Nachfolgend erhalten Sie unsere detaillierte Kostenschätzung für die Komplettrenovation.",
+    "lineItems": [
+      {
+        "description": "Fachmännisches Schleifen der Parkettfläche (Mehrfachschliff von Grob- bis Feinschliff zur vollständigen Entfernung von UV-Verfärbungen und Kratzern)",
+        "quantity": 120,
+        "unit": "m2",
+        "unitPrice": 45,
+        "totalPrice": 5400,
+        "id": "6f3f09f9-0938-4131-95e7-b0aeacf76cbe"
+      },
+      {
+        "description": "Kitten der Fugen und Ausbessern von kleineren Rissen im gesamten Parkettbereich",
+        "quantity": 120,
+        "unit": "m2",
+        "unitPrice": 8,
+        "totalPrice": 960,
+        "id": "c80b590a-d556-4887-8d02-b356eaf01d9a"
+      },
+      {
+        "description": "Applikation einer hochwertigen, widerstandsfähigen Premium-Versiegelung (3-facher Lackauftrag, seidenmatt)",
+        "quantity": 120,
+        "unit": "m2",
+        "unitPrice": 22,
+        "totalPrice": 2640,
+        "id": "1ebaf8d4-f0c5-486d-8b3b-2b059b61e0e6"
+      },
+      {
+        "description": "Partieller Austausch von stark durch Feuchtigkeit beschädigten Parkettdielen (Provisorischer Ansatz, genaue Abrechnung erfolgt nach effektivem Aufwand vor Ort)",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 1500,
+        "totalPrice": 1500,
+        "id": "80a8ccf5-80bf-4f21-983d-25ee632bb0a0"
+      },
+      {
+        "description": "Baustelleneinrichtung, Maschinenbereitstellung sowie fachgerechte Entsorgung des Schleifstaubs",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 360,
+        "totalPrice": 360,
+        "id": "865a21af-df18-4aed-ab1f-7dd95845be7d"
+      }
+    ],
+    "assumptions": [
+      "Die zu bearbeitenden Räumlichkeiten sind zum vereinbarten Arbeitsbeginn komplett geräumt.",
+      "Bauseits stehen Strom (230V und vorzugsweise Starkstrom) sowie Wasser kostenlos zur Verfügung.",
+      "Eine Zufahrts- und Parkmöglichkeit für unsere Montagefahrzeuge ist in unmittelbarer Nähe gewährleistet."
+    ],
+    "exclusions": [
+      "Das Ausräumen, Verschieben oder Einlagern von Möbeln und schweren Gegenständen.",
+      "Umfangreiche Reparaturen am Unterlagsboden (Estrich), falls nach dem Schleifen tiefere Schäden sichtbar werden.",
+      "Die Demontage, Lieferung oder Montage von neuen Sockelleisten."
+    ],
+    "totalAmount": 10860,
+    "isFixedPrice": false,
+    "validUntil": "2026-06-24T14:05:44.774Z"
+  },
+  {
+    "id": "95f847a0-1456-43e0-96cb-8515812a7c9f",
+    "leadId": "1b408f4e-6f30-43e8-904b-ebd373138c6c",
+    "status": "Entwurf",
+    "createdAt": "2026-05-25T14:09:14.419Z",
+    "updatedAt": "2026-05-25T14:09:14.421Z",
+    "customer": {
+      "firstName": "wergwerg",
+      "lastName": "gsfdg",
+      "email": "adsfsdfa@dfasfsf.ch",
+      "phone": "888347538475"
+    },
+    "title": "Offerte: Kostenlose Besichtigung und Beratung vor Ort",
+    "introText": "Grüezi, besten Dank für Ihre Anfrage. Da uns noch keine genauen Details zu Ihrem Parkettboden und der Fläche vorliegen, bieten wir Ihnen sehr gerne eine kostenlose und unverbindliche Besichtigung vor Ort an. So können wir den Zustand Ihres Bodens optimal beurteilen und Ihnen anschliessend eine massgeschneiderte Offerte erstellen.",
+    "lineItems": [
+      {
+        "id": "pos-1",
+        "description": "Professionelle Besichtigung und Beratung vor Ort durch unseren Parkett-Experten",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 0,
+        "totalPrice": 0
+      }
+    ],
+    "assumptions": [
+      "Das Objekt befindet sich in der Schweiz.",
+      "Der Zugang zu den Räumlichkeiten ist zum vereinbarten Besichtigungstermin gewährleistet."
+    ],
+    "exclusions": [
+      "Jegliche handwerkliche Ausführungen oder Reparaturen während des Besichtigungstermins.",
+      "Erstellung von detaillierten Schadensexpertisen für Versicherungen (sofern nicht separat vereinbart)."
+    ],
+    "totalAmount": 0,
+    "isFixedPrice": true,
+    "validUntil": "2026-06-24T14:09:14.419Z"
+  },
+  {
+    "id": "a457edb7-a1ab-4b59-93f2-243ca1300d24",
+    "leadId": "lead-ai-demo-2",
+    "status": "Entwurf",
+    "createdAt": "2026-05-25T14:10:53.235Z",
+    "updatedAt": "2026-05-25T14:11:00.182Z",
+    "customer": {
+      "firstName": "Michael",
+      "lastName": "Weber",
+      "email": "m.weber@example.ch",
+      "phone": "076 987 65 43"
+    },
+    "title": "Offerte für die intensive Parkettrenovation - Objekt Michael Weber",
+    "introText": "Sehr geehrter Herr Weber, herzlichen Dank für Ihre Anfrage. Wir freuen uns darauf, Ihr neues Zuhause pünktlich zum Einzug in bestem Licht erstrahlen zu lassen. Basierend auf Ihren Angaben und unserer Diagnose für die 120 m2 grosse Wohnfläche haben wir ein massgeschneidertes Renovationskonzept erstellt. Da der Boden unter starken Wasserschäden, UV-Verfärbungen und Abnutzung leidet, empfehlen wir einen professionellen Tiefenschliff, den partiellen Austausch der beschädigten Dielen sowie eine hochwertige Premium-Versiegelung.",
+    "lineItems": [
+      {
+        "description": "Baustelleneinrichtung, Abdeckarbeiten und Vorbereitung der Räumlichkeiten",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 480,
+        "totalPrice": 480,
+        "id": "b723e595-d5c8-4565-b917-549c6007d874"
+      },
+      {
+        "description": "Professioneller Tiefenschliff in mehreren Schleifgängen zur Entfernung von UV-Verfärbungen, Kratzern und Flecken",
+        "quantity": 120,
+        "unit": "m2",
+        "unitPrice": 68,
+        "totalPrice": 8160,
+        "id": "8bb1d5cb-08cd-4895-8899-1934ca367c4d"
+      },
+      {
+        "description": "Partieller Austausch der durch Wassereinfluss irreparabel beschädigten Parkettdielen inklusive Anpassung und Montage",
+        "quantity": 1,
+        "unit": "pauschal",
+        "unitPrice": 1650,
+        "totalPrice": 1650,
+        "id": "922ece2d-1847-4433-b1ea-6f3d15e5f9b0"
+      },
+      {
+        "description": "Grundierung und dreifache Premium-Versiegelung (extrem strapazierfähiger Parkettlack in Mattoptik)",
+        "quantity": 120,
+        "unit": "m2",
+        "unitPrice": 24,
+        "totalPrice": 2880,
+        "id": "b8924dc8-ccbb-4855-836a-a178e50baeec"
+      }
+    ],
+    "assumptions": [
+      "Alle zu bearbeitenden Räume sind zum vereinbarten Arbeitsbeginn komplett geräumt und besenrein.",
+      "Strom- und Wasseranschlüsse werden uns vor Ort vom Kunden kostenlos zur Verfügung gestellt.",
+      "Die Untergrundfeuchtigkeit im Bereich des Wasserschadens liegt im zulässigen Normbereich für Verlegearbeiten.",
+      "Die Arbeiten können ohne zeitliche Unterbrechungen an aufeinanderfolgenden Tagen ausgeführt werden."
+    ],
+    "exclusions": [
+      "Das Ausräumen, Verschieben oder Einlagern von Möbeln und schweren Gegenständen.",
+      "Die Demontage, Montage oder Erneuerung von Sockelleisten (gerne auf separate Anfrage).",
+      "Umfangreiche Untergrundsanierungen oder Estrichtrocknungsmassnahmen, falls Feuchtigkeit unter dem Parkett festgestellt wird."
+    ],
+    "totalAmount": 13170,
+    "isFixedPrice": false,
+    "validUntil": "2026-06-24T14:10:53.236Z"
+  }
+]
