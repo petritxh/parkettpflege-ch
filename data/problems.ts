@@ -14,6 +14,7 @@ export interface ProblemContent {
   contentMarkdown?: string;
   benefits?: { title: string; description: string }[];
   processSteps?: { step: number | string; title: string; description: string }[];
+  relatedServices?: string[];
   faqs?: { question: string; answer: string }[]; // legacy
 }
 

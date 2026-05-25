@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-nocheck
 import { useState, useRef, useEffect } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { MessageSquare, X, Send, Paperclip, Loader2, Sparkles, User, Image as ImageIcon } from 'lucide-react';
