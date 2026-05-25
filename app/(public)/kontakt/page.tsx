@@ -31,7 +31,7 @@ export default function KontaktPage() {
              </div>
              <h3 className="font-headline-sm mb-2">E-Mail</h3>
              <p className="text-on-surface-variant mb-4">Wir antworten innert 24h</p>
-             <a href="mailto:info@parkettpflege.ch" className="text-secondary font-bold hover:underline">info@parkettpflege.ch</a>
+             <a href="mailto:info@parkett-pflege.ch" className="text-secondary font-bold hover:underline">info@parkett-pflege.ch</a>
           </div>
 
           <div className="bg-surface-container-low p-8 rounded-2xl text-center flex flex-col items-center">

@@ -66,7 +66,7 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
       </button>
 
       {/* Hidden Container for PDF Rendering */}
-      <div className="absolute left-[-9999px] top-[-9999px]">
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-9999] opacity-0 overflow-hidden">
         <div 
           ref={pdfRef} 
           className="w-[800px] bg-white text-black p-12 relative"
@@ -81,7 +81,7 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
              <div className="text-right text-sm text-gray-600">
                <p>Zürichstrasse 12</p>
                <p>8001 Zürich</p>
-               <p>info@parkettpflege.ch</p>
+               <p>info@parkett-pflege.ch</p>
                <p>+41 44 000 00 00</p>
              </div>
           </div>

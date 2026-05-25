@@ -10,7 +10,12 @@ async function ensureDataDir() {
   try {
     await fs.access(dataDir);
   } catch {
-    await fs.mkdir(dataDir, { recursive: true });
+    try {
+      await fs.mkdir(dataDir, { recursive: true });
+    } catch (e) {
+      // Ignore in serverless/vercel
+      console.warn('Could not create data dir, likely serverless environment');
+    }
   }
 }
 
@@ -35,16 +40,20 @@ export async function getLeadById(id: string): Promise<Lead | null> {
 }
 
 export async function saveLead(lead: Lead): Promise<void> {
-  const leads = await getLeads();
-  const index = leads.findIndex(l => l.id === lead.id);
-  
-  if (index >= 0) {
-    leads[index] = lead;
-  } else {
-    leads.push(lead);
+  try {
+    const leads = await getLeads();
+    const index = leads.findIndex(l => l.id === lead.id);
+    
+    if (index >= 0) {
+      leads[index] = lead;
+    } else {
+      leads.push(lead);
+    }
+    
+    await fs.writeFile(leadsFile, JSON.stringify(leads, null, 2), 'utf-8');
+  } catch (e) {
+    console.warn('Could not save lead in serverless environment:', e);
   }
-  
-  await fs.writeFile(leadsFile, JSON.stringify(leads, null, 2), 'utf-8');
 }
 
 export async function deleteLead(id: string): Promise<void> {
@@ -142,9 +151,14 @@ export async function deleteFAQ(id: string): Promise<void> {
 // --- CMS DATA (SERVICES, PROBLEMS, LOCATIONS) ---
 
 export async function getCMSData(type: 'services' | 'problems' | 'locations'): Promise<any[]> {
-  const file = path.join(dataDir, `${type}.json`);
-  const data = await fs.readFile(file, 'utf-8');
-  return JSON.parse(data);
+  try {
+    const file = path.join(dataDir, `${type}.json`);
+    const data = await fs.readFile(file, 'utf-8');
+    return JSON.parse(data);
+  } catch (e) {
+    console.warn(`Could not read CMS data for ${type}, returning empty array`);
+    return [];
+  }
 }
 
 export async function saveCMSData(type: 'services' | 'problems' | 'locations', data: any[]): Promise<void> {

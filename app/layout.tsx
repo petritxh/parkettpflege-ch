@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Parkettpflege.ch | Die führende Plattform für Parkett',
     description: 'Professionelle Parkettpflege, Reinigung, Schleifen, Ölen & Reparaturen in Zürich, Zug, Luzern. AI-gestützte Beratung für makellose Holzböden.',
-    url: 'https://parkettpflege.ch',
+    url: 'https://parkett-pflege.ch',
     siteName: 'Parkettpflege.ch',
     images: [
       {
