@@ -20,35 +20,25 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
     try {
       const element = pdfRef.current;
       
-      // Dynamische Imports um Next.js SSR Fehler zu vermeiden
-      const html2canvas = (await import('html2canvas')).default;
-      const { jsPDF } = await import('jspdf');
+      // Dynamischer Import von html2pdf.js
+      const html2pdf = (await import('html2pdf.js')).default;
 
       // Kurze Verzögerung für Font-Rendering
       await new Promise(resolve => setTimeout(resolve, 300));
       
-      const canvas = await html2canvas(element, {
-        scale: 2, // Hohe Auflösung
-        useCORS: true,
-        logging: false,
-        backgroundColor: '#ffffff'
-      });
+      const opt = {
+        margin:       15,
+        filename:     `Offerte_Parkettpflege_${offer.id.substring(0, 8)}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, logging: false },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
 
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4'
-      });
-
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save(`Offerte_Parkettpflege_${offer.id.substring(0, 8)}.pdf`);
-    } catch (error) {
+      await html2pdf().set(opt).from(element).save();
+      
+    } catch (error: any) {
       console.error('PDF Generation failed:', error);
-      alert('Fehler beim Generieren des PDFs.');
+      alert('Fehler beim Generieren des PDFs: ' + (error.message || error));
     } finally {
       setIsGenerating(false);
     }
