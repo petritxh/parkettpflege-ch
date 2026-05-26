@@ -2,6 +2,7 @@ import { generateObject } from 'ai';
 import { google } from '@ai-sdk/google';
 import { z } from 'zod';
 import { logger } from '@/lib/logger';
+import { NextResponse } from 'next/server';
 
 const diagnosisSchema = z.object({
   suspectedDamage: z.string(),
