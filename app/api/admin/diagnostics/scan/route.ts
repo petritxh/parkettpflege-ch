@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
 import { generateObject } from 'ai';
 import { google } from '@ai-sdk/google';
 import { z } from 'zod';
+import { logger } from '@/lib/logger';
 
 const diagnosisSchema = z.object({
   suspectedDamage: z.string(),
@@ -27,6 +27,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Kein Bild bereitgestellt' }, { status: 400 });
     }
 
+    logger.log('DiagnosticsAgent', 'Führe Systemdiagnose und Content-Scan durch', 'running');
+
     try {
       // Standard AI SDK Google request
       const { object } = await generateObject({
@@ -49,6 +51,8 @@ export async function POST(req: Request) {
         ]
       });
 
+      logger.log('DiagnosticsAgent', 'Systemdiagnose abgeschlossen', 'success');
+
       return NextResponse.json({ diagnosis: object });
       
     } catch (aiError: any) {
@@ -58,23 +62,26 @@ export async function POST(req: Request) {
       // This ensures the CRM demo still works for the user
       await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate AI delay
       
-      return NextResponse.json({ 
-        diagnosis: {
-          suspectedDamage: "Oberflächenkratzer & Feuchtigkeitsränder",
-          suspectedWoodType: "Eiche",
-          suspectedSurface: "Geölt",
-          severity: "Mittel",
-          urgency: "Mittel",
-          diyPossible: false,
-          recommendedService: "Parkett Schleifen & Versiegeln",
-          priceRange: { min: 800, max: 1500 },
-          leadScore: 75,
-          internalSummary: "(Demo-Ergebnis, da KI-Quota aktuell blockiert ist): Eindeutiger Verschleiss. Gute Chancen für einen Abschluss, da der optische Leidensdruck hoch ist."
-        }
-      });
+      const mockResult = {
+        suspectedDamage: "Oberflächenkratzer & Feuchtigkeitsränder",
+        suspectedWoodType: "Eiche",
+        suspectedSurface: "Geölt",
+        severity: "Mittel",
+        urgency: "Mittel",
+        diyPossible: false,
+        recommendedService: "Parkett Schleifen & Versiegeln",
+        priceRange: { min: 800, max: 1500 },
+        leadScore: 75,
+        internalSummary: "(Demo-Ergebnis, da KI-Quota aktuell blockiert ist): Eindeutiger Verschleiss. Gute Chancen für einen Abschluss, da der optische Leidensdruck hoch ist."
+      };
+
+      logger.log('DiagnosticsAgent', 'Systemdiagnose abgeschlossen (Fallback)', 'success');
+
+      return NextResponse.json({ diagnosis: mockResult });
     }
 
   } catch (error) {
+    logger.log('DiagnosticsAgent', 'Fehler bei Systemdiagnose', 'error', error instanceof Error ? error.message : 'Unknown error');
     console.error('Scan Error:', error);
     return NextResponse.json({ error: 'Interner Server Fehler bei der Analyse.' }, { status: 500 });
   }

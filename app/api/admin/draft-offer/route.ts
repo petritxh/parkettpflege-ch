@@ -1,6 +1,7 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 import { getLeadById, saveOffer } from "@/lib/data-service";
+import { logger } from "@/lib/logger";
 import crypto from "crypto";
 
 const responseSchema: Schema = {
@@ -54,6 +55,8 @@ export async function POST(req: NextRequest) {
     if (!lead) {
       return NextResponse.json({ error: "Lead not found" }, { status: 404 });
     }
+
+    logger.log('OfferDraftAgent', `Starte Offertengenerierung für ${lead.customer.firstName} ${lead.customer.lastName}`, 'running');
 
     const ai = new GoogleGenAI({ apiKey });
 
@@ -111,8 +114,11 @@ Die Ausgabe muss strikt dem JSON Schema entsprechen.`;
 
     await saveOffer(offer);
 
+    logger.log('OfferDraftAgent', `Offerte für ${lead.customer.firstName} ${lead.customer.lastName} erfolgreich generiert`, 'success', `Total: CHF ${offer.totalAmount.toFixed(2)}`);
+
     return NextResponse.json({ success: true, offerId: offer.id, offer });
   } catch (error: any) {
+    logger.log('OfferDraftAgent', `Fehler bei Offertengenerierung`, 'error', error instanceof Error ? error.message : 'Unknown error');
     console.error("Gemini API Error:", error);
     return NextResponse.json({ error: error.message || "Fehler bei der Offerten-Erstellung" }, { status: 500 });
   }

@@ -20,10 +20,7 @@ export default function HeroSection({
   label = "Schweizer Handwerk & KI",
   title = "Ihr Parkett in Meisterhänden.",
   description = "Professionelle Parkettpflege mit modernster KI-Technik für eine sofortige Kostenschätzung. Präzision, die man sieht.",
-  benefits = [
-    { title: "KI-Analyse", description: "Sofortige Schadens- und Holzarten-Erkennung." },
-    { title: "Staubfrei-Garantie", description: "Modernste Absaugtechnik für Ihr Zuhause." }
-  ],
+  benefits = [],
   primaryButtonText = "Unsere Leistungen",
   primaryButtonHref = "/parkettpflege",
   backgroundImageUrl = "https://lh3.googleusercontent.com/aida-public/AB6AXuCRCeQlyl_ZrejbSyV0FunoFKwjkjKCeGvMY0CVKnU_4UOB-wMPEUFxPaEpuoEiEPlWTqsHRBHt7RBIBjGD_V9XVd4aaNOhqW5kra7KEBuMWuKXU0Z93pk65SyPuGBA6koofeZTFytJWKy-XVBRKOQhaNR1AaiRM03RDkyrXRExayAqviHQUWUtMh6bKKjZ_v37zZ8R9kqqSpWXjLJjqVOHcVYyASFJLbqlMprHcV1j-0N1QFmNPc9znpBaYlzZEESAebodotlZOmU",
@@ -58,19 +55,7 @@ export default function HeroSection({
             <p className="font-body-lg text-body-lg mb-8 text-white/90 max-w-xl">
                 {description}
             </p>
-            {benefits && benefits.length > 0 && (
-              <div className="space-y-6 mb-10 hidden md:block">
-                {benefits.map((benefit, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <CheckCircle2 className="text-secondary-fixed w-6 h-6 shrink-0" />
-                    <div>
-                        <h4 className="font-label-md text-label-md mb-1">{benefit.title}</h4>
-                        <p className="font-caption text-caption text-white/70">{benefit.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+            {/* Benefits removed as requested */}
             <div className="flex flex-col sm:flex-row gap-4">
                 <a className="border border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-label-md text-label-md text-center hover:bg-white/10 transition-all inline-block" href={primaryButtonHref}>
                     {primaryButtonText}

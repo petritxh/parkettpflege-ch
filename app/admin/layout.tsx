@@ -11,6 +11,7 @@ import {
   TerminalSquare,
   LogOut 
 } from "lucide-react";
+import MobileNav from "@/components/admin/MobileNav";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -71,13 +72,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col h-screen overflow-hidden">
-        {/* Mobile Header */}
-        <div className="md:hidden h-16 flex items-center justify-between px-4 bg-surface-container border-b border-outline-variant/30">
-          <span className="font-headline-sm text-headline-sm text-primary font-bold">Admin CRM</span>
-          <Link href="/" className="p-2 text-on-surface-variant">
-             <LogOut className="w-5 h-5" />
-          </Link>
-        </div>
+        <MobileNav />
         
         <div className="flex-1 overflow-y-auto p-4 md:p-8 custom-scrollbar">
           {children}

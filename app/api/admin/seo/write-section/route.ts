@@ -1,7 +1,8 @@
-import { NextResponse } from 'next/server';
 import { generateObject } from 'ai';
 import { google } from '@ai-sdk/google';
 import { z } from 'zod';
+import { NextResponse } from 'next/server';
+import { logger } from '@/lib/logger';
 
 export async function POST(req: Request) {
   try {
@@ -10,6 +11,8 @@ export async function POST(req: Request) {
     if (!title || !sectionPrompt) {
       return NextResponse.json({ error: 'Titel und Abschnitts-Prompt werden benötigt' }, { status: 400 });
     }
+
+    logger.log('SEOContentAgent', `Generiere SEO Text-Abschnitt: ${title}`, 'running');
 
     const { object } = await generateObject({
       model: google('gemini-2.5-flash'),
@@ -33,8 +36,11 @@ export async function POST(req: Request) {
       `
     });
 
+    logger.log('SEOContentAgent', `SEO Text-Abschnitt generiert: ${title}`, 'success');
+
     return NextResponse.json({ sectionContent: object.sectionMarkdown });
   } catch (error: any) {
+    logger.log('SEOContentAgent', `Fehler bei SEO Text-Generierung`, 'error', error instanceof Error ? error.message : 'Unknown error');
     console.error('AI Write Section Error:', error);
     return NextResponse.json({ error: error.message || 'Fehler beim Schreiben des Abschnitts' }, { status: 500 });
   }
