@@ -1,38 +1,76 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { kv } from '@vercel/kv';
 import { Lead, Offer } from './types/crm';
 
+// --- HYBRID STORAGE SYSTEM ---
+// If Vercel KV is linked (production), it uses Redis to bypass read-only filesystem errors.
+// If Vercel KV is missing (local dev), it falls back to local JSON files in /data.
+const useKV = !!process.env.KV_REST_API_URL;
 const dataDir = path.join(process.cwd(), 'data');
-const leadsFile = path.join(dataDir, 'leads.json');
-const offersFile = path.join(dataDir, 'offers.json');
-const eventsFile = path.join(dataDir, 'events.json');
 
 async function ensureDataDir() {
+  if (useKV) return;
   try {
     await fs.access(dataDir);
   } catch {
     try {
       await fs.mkdir(dataDir, { recursive: true });
     } catch (e) {
-      // Ignore in serverless/vercel
       console.warn('Could not create data dir, likely serverless environment');
     }
   }
 }
 
+async function getLocalData<T>(filename: string, fallback: T): Promise<T> {
+  try {
+    const data = await fs.readFile(path.join(dataDir, filename), 'utf-8');
+    return JSON.parse(data) as T;
+  } catch (error: any) {
+    return fallback;
+  }
+}
+
+async function saveLocalData(filename: string, data: any): Promise<void> {
+  await ensureDataDir();
+  try {
+    await fs.writeFile(path.join(dataDir, filename), JSON.stringify(data, null, 2), 'utf-8');
+  } catch (e) {
+    console.error('Could not save data locally:', e);
+    throw e; // We want to throw to let the caller know it failed
+  }
+}
+
+async function getData<T>(key: string, filename: string, fallback: T): Promise<T> {
+  if (useKV) {
+    try {
+      const data = await kv.get<T>(key);
+      return data !== null ? data : fallback;
+    } catch (e) {
+      console.error(`KV Error getting ${key}:`, e);
+      return fallback;
+    }
+  }
+  return getLocalData<T>(filename, fallback);
+}
+
+async function saveData(key: string, filename: string, data: any): Promise<void> {
+  if (useKV) {
+    try {
+      await kv.set(key, data);
+      return;
+    } catch (e) {
+      console.error(`KV Error setting ${key}:`, e);
+      throw e;
+    }
+  }
+  return saveLocalData(filename, data);
+}
+
 // --- LEADS ---
 
 export async function getLeads(): Promise<Lead[]> {
-  await ensureDataDir();
-  try {
-    const data = await fs.readFile(leadsFile, 'utf-8');
-    return JSON.parse(data) as Lead[];
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      return [];
-    }
-    throw error;
-  }
+  return getData<Lead[]>('crm:leads', 'leads.json', []);
 }
 
 export async function getLeadById(id: string): Promise<Lead | null> {
@@ -41,41 +79,23 @@ export async function getLeadById(id: string): Promise<Lead | null> {
 }
 
 export async function saveLead(lead: Lead): Promise<void> {
-  try {
-    const leads = await getLeads();
-    const index = leads.findIndex(l => l.id === lead.id);
-    
-    if (index >= 0) {
-      leads[index] = lead;
-    } else {
-      leads.push(lead);
-    }
-    
-    await fs.writeFile(leadsFile, JSON.stringify(leads, null, 2), 'utf-8');
-  } catch (e) {
-    console.warn('Could not save lead in serverless environment:', e);
-  }
+  const leads = await getLeads();
+  const index = leads.findIndex(l => l.id === lead.id);
+  if (index >= 0) leads[index] = lead;
+  else leads.push(lead);
+  await saveData('crm:leads', 'leads.json', leads);
 }
 
 export async function deleteLead(id: string): Promise<void> {
   let leads = await getLeads();
   leads = leads.filter(l => l.id !== id);
-  await fs.writeFile(leadsFile, JSON.stringify(leads, null, 2), 'utf-8');
+  await saveData('crm:leads', 'leads.json', leads);
 }
 
 // --- OFFERS ---
 
 export async function getOffers(): Promise<Offer[]> {
-  await ensureDataDir();
-  try {
-    const data = await fs.readFile(offersFile, 'utf-8');
-    return JSON.parse(data) as Offer[];
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      return [];
-    }
-    throw error;
-  }
+  return getData<Offer[]>('crm:offers', 'offers.json', []);
 }
 
 export async function getOfferById(id: string): Promise<Offer | null> {
@@ -93,75 +113,46 @@ export async function saveOffer(offer: Offer): Promise<void> {
   const index = offers.findIndex(o => o.id === offer.id);
   
   offer.updatedAt = new Date().toISOString();
-  
-  // PIN automatisch generieren für neue Offerten
   if (!offer.accessPin) {
     offer.accessPin = Math.floor(1000 + Math.random() * 9000).toString();
   }
   
-  if (index >= 0) {
-    offers[index] = offer;
-  } else {
-    offers.push(offer);
-  }
+  if (index >= 0) offers[index] = offer;
+  else offers.push(offer);
   
-  await fs.writeFile(offersFile, JSON.stringify(offers, null, 2), 'utf-8');
+  await saveData('crm:offers', 'offers.json', offers);
 }
 
 export async function deleteOffer(id: string): Promise<void> {
   let offers = await getOffers();
   offers = offers.filter(o => o.id !== id);
-  await fs.writeFile(offersFile, JSON.stringify(offers, null, 2), 'utf-8');
+  await saveData('crm:offers', 'offers.json', offers);
 }
 
 // --- EVENTS ---
 
 export async function getEvents(): Promise<any[]> {
-  await ensureDataDir();
-  try {
-    const data = await fs.readFile(eventsFile, 'utf-8');
-    return JSON.parse(data);
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      return [];
-    }
-    throw error;
-  }
+  return getData<any[]>('crm:events', 'events.json', []);
 }
 
 export async function saveEvent(event: any): Promise<void> {
   const events = await getEvents();
   const index = events.findIndex(e => e.id === event.id);
-  
-  if (index >= 0) {
-    events[index] = event;
-  } else {
-    events.push(event);
-  }
-  
-  await fs.writeFile(eventsFile, JSON.stringify(events, null, 2), 'utf-8');
+  if (index >= 0) events[index] = event;
+  else events.push(event);
+  await saveData('crm:events', 'events.json', events);
 }
 
 export async function deleteEvent(id: string): Promise<void> {
   let events = await getEvents();
   events = events.filter(e => e.id !== id);
-  await fs.writeFile(eventsFile, JSON.stringify(events, null, 2), 'utf-8');
+  await saveData('crm:events', 'events.json', events);
 }
 
 // --- FAQS ---
-const faqsFile = path.join(dataDir, 'faqs.json');
 
 export async function getFAQs(): Promise<any[]> {
-  await ensureDataDir();
-  try {
-    const data = await fs.readFile(faqsFile, 'utf-8');
-    return JSON.parse(data);
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      return [];
-    }
-    throw error;
-  }
+  return getData<any[]>('crm:faqs', 'faqs.json', []);
 }
 
 export async function getFAQsByTarget(category: string, targetSlug: string): Promise<any[]> {
@@ -172,78 +163,51 @@ export async function getFAQsByTarget(category: string, targetSlug: string): Pro
 export async function saveFAQ(faq: any): Promise<void> {
   const faqs = await getFAQs();
   const index = faqs.findIndex(f => f.id === faq.id);
-  
-  if (index >= 0) {
-    faqs[index] = faq;
-  } else {
-    faqs.push(faq);
-  }
-  
-  await fs.writeFile(faqsFile, JSON.stringify(faqs, null, 2), 'utf-8');
+  if (index >= 0) faqs[index] = faq;
+  else faqs.push(faq);
+  await saveData('crm:faqs', 'faqs.json', faqs);
 }
 
 export async function deleteFAQ(id: string): Promise<void> {
   let faqs = await getFAQs();
   faqs = faqs.filter(f => f.id !== id);
-  await fs.writeFile(faqsFile, JSON.stringify(faqs, null, 2), 'utf-8');
+  await saveData('crm:faqs', 'faqs.json', faqs);
 }
 
 // --- CMS DATA (SERVICES, PROBLEMS, LOCATIONS) ---
 
 export async function getCMSData(type: 'services' | 'problems' | 'locations'): Promise<any[]> {
-  try {
-    const file = path.join(dataDir, `${type}.json`);
-    const data = await fs.readFile(file, 'utf-8');
-    return JSON.parse(data);
-  } catch (e) {
-    console.warn(`Could not read CMS data for ${type}, returning empty array`);
-    return [];
-  }
+  return getData<any[]>(`cms:${type}`, `${type}.json`, []);
 }
 
 export async function saveCMSData(type: 'services' | 'problems' | 'locations', data: any[]): Promise<void> {
-  const file = path.join(dataDir, `${type}.json`);
-  await fs.writeFile(file, JSON.stringify(data, null, 2), 'utf-8');
+  await saveData(`cms:${type}`, `${type}.json`, data);
 }
 
 // --- CASE STUDIES ---
 
-const casesFile = path.join(dataDir, 'cases.json');
-
 export async function getCases(): Promise<any[]> {
-  await ensureDataDir();
-  try {
-    const data = await fs.readFile(casesFile, 'utf-8');
-    return JSON.parse(data);
-  } catch (error: any) {
-    if (error.code === 'ENOENT') return [];
-    throw error;
-  }
+  return getData<any[]>('cms:cases', 'cases.json', []);
 }
 
 export async function saveCase(caseItem: any): Promise<void> {
   const cases = await getCases();
   const index = cases.findIndex(c => c.id === caseItem.id);
-  
-  if (index >= 0) {
-    cases[index] = caseItem;
-  } else {
+  if (index >= 0) cases[index] = caseItem;
+  else {
     if (!caseItem.id) caseItem.id = Date.now();
     cases.push(caseItem);
   }
-  
-  await fs.writeFile(casesFile, JSON.stringify(cases, null, 2), 'utf-8');
+  await saveData('cms:cases', 'cases.json', cases);
 }
 
 export async function deleteCase(id: number): Promise<void> {
   let cases = await getCases();
   cases = cases.filter(c => c.id !== id);
-  await fs.writeFile(casesFile, JSON.stringify(cases, null, 2), 'utf-8');
+  await saveData('cms:cases', 'cases.json', cases);
 }
 
 // --- ADMIN SETTINGS ---
-
-const settingsFile = path.join(dataDir, 'settings.json');
 
 const defaultSettings = {
   offerIntroTemplate: 'Sehr geehrte(r) {KUNDE_NAME},\n\nvielen Dank für Ihre Anfrage. Gerne unterbreiten wir Ihnen folgendes Angebot für Ihr Parkett.',
@@ -254,19 +218,10 @@ const defaultSettings = {
 };
 
 export async function getSettings(): Promise<any> {
-  await ensureDataDir();
-  try {
-    const data = await fs.readFile(settingsFile, 'utf-8');
-    return { ...defaultSettings, ...JSON.parse(data) };
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      return defaultSettings;
-    }
-    throw error;
-  }
+  const settings = await getData<any>('crm:settings', 'settings.json', {});
+  return { ...defaultSettings, ...settings };
 }
 
 export async function saveSettings(settings: any): Promise<void> {
-  await ensureDataDir();
-  await fs.writeFile(settingsFile, JSON.stringify(settings, null, 2), 'utf-8');
+  await saveData('crm:settings', 'settings.json', settings);
 }
