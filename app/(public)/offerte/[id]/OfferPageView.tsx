@@ -55,14 +55,23 @@ export default function OfferPageView({
   const handleAction = async (action: 'accepted' | 'rejected' | 'rethinking') => {
     setIsResponding(true);
     try {
-      await fetch(`/api/offer/${offer.id}/respond`, {
+      const res = await fetch(`/api/offer/${offer.id}/respond`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, feedback, pin: offer.accessPin })
       });
-      router.refresh();
+      
+      const data = await res.json();
+      
+      if (!res.ok) {
+        alert(`Es gab einen Fehler: ${data.error || 'Server Fehler'}`);
+      } else {
+        // Erfolgreich! Lade die Seite neu, um die Dankesseite/Konfetti zu sehen
+        window.location.reload(); 
+        // window.location.reload() ist robuster als router.refresh() bei hartnäckigem Next.js Cache
+      }
     } catch (err) {
-      alert('Es gab einen Fehler. Bitte probieren Sie es nochmal.');
+      alert('Netzwerkfehler. Bitte probieren Sie es nochmal.');
     } finally {
       setIsResponding(false);
     }
