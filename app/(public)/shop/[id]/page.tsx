@@ -1,6 +1,8 @@
-import { getProductsSync } from '@/data/products';
+import { getProductsSync } from '@/lib/products';
 import ProductDetailClient from './ProductDetailClient';
 import { notFound } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;

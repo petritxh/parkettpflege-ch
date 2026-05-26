@@ -78,7 +78,7 @@ Geben Sie keine absoluten rechtlichen Garantien, es ist ein Entwurf.
 Die Ausgabe muss strikt dem JSON Schema entsprechen.`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",

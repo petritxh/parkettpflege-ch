@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, ArrowLeft, CheckCircle2, RotateCcw, AlertTriangle, Package, ExternalLink } from 'lucide-react';
-import { getRecommendedProducts, Product } from '@/data/products';
+import { Product } from '@/data/products';
 import { servicePackages } from '@/data/packages';
 import { useBooking } from '@/components/providers/BookingProvider';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 const QUESTIONS = [
   {
@@ -56,6 +57,14 @@ export default function InteractiveGuide() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
   const { openBooking } = useBooking();
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch('/api/admin/products')
+      .then(res => res.json())
+      .then(data => setAllProducts(data))
+      .catch(err => console.error(err));
+  }, []);
 
   const handleSelect = (questionId: string, value: string) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }));
@@ -122,7 +131,11 @@ export default function InteractiveGuide() {
     return recommendation;
   };
 
-  const recommendedProducts = showResult ? getRecommendedProducts(answers.woodType, answers.damage) : [];
+  const recommendedProducts = showResult ? allProducts.filter(product => {
+    const matchesWood = product.suitableFor.woodTypes.includes('alle') || product.suitableFor.woodTypes.includes(answers.woodType);
+    const matchesDamage = product.suitableFor.damageTypes.includes('alle') || product.suitableFor.damageTypes.includes(answers.damage);
+    return matchesWood && matchesDamage;
+  }) : [];
 
   return (
     <div className="bg-surface-container-lowest rounded-[2rem] border border-outline-variant/30 overflow-hidden shadow-sm">

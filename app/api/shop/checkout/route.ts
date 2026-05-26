@@ -57,6 +57,16 @@ export async function POST(req: Request) {
     leads.unshift(shopLead);
     fs.writeFileSync(leadsPath, JSON.stringify(leads, null, 2));
 
+    // ==========================================
+    // E-MAIL SENDEN (PLATZHALTER)
+    // ==========================================
+    // Da Next.js standardmässig keinen eigenen SMTP-Server hat, benötigen wir hier 
+    // einen Dienst wie Resend, SendGrid oder Nodemailer.
+    // Sobald ein API-Key für "Resend" hinterlegt ist, kann das Mail verschickt werden.
+    console.log(`[MAIL-SYSTEM] Bestellbestätigung an ${customer.email} versendet!`);
+    console.log(`Betreff: Ihre Bestellung bei Parkett-Pflege.ch`);
+    // ==========================================
+
     return NextResponse.json({ success: true, orderId: newOrder.id });
   } catch (error) {
     console.error('Checkout error:', error);

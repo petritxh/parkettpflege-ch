@@ -103,7 +103,7 @@ export default function CartDrawer() {
                   </button>
                 </div>
               ) : checkoutMode ? (
-                <form onSubmit={handleCheckout} className="space-y-4">
+                <form id="checkout-form" onSubmit={handleCheckout} className="space-y-4">
                   <h3 className="font-label-md uppercase tracking-widest text-xs text-on-surface-variant mb-4 border-b border-outline-variant/30 pb-2">Liefer- & Rechnungsadresse</h3>
                   
                   <div className="grid grid-cols-2 gap-4">
@@ -199,7 +199,8 @@ export default function CartDrawer() {
                       Zurück
                     </button>
                     <button 
-                      onClick={handleCheckout}
+                      type="submit"
+                      form="checkout-form"
                       disabled={isSubmitting}
                       className="flex-1 bg-primary text-white py-3 rounded-xl font-label-md text-sm uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary/90 transition-all disabled:opacity-50"
                     >

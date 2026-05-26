@@ -1,5 +1,3 @@
-import productsData from './products.json';
-
 export type ProductCategory = 'Reinigung' | 'Pflege' | 'Reparatur' | 'Zubehör' | 'Maschinen';
 
 export interface Product {
@@ -12,24 +10,9 @@ export interface Product {
   price: number; // in CHF
   isAffiliate: boolean;
   affiliateLink?: string;
-  tags: string[]; // e.g., 'ph-neutral', 'lösemittelfrei'
+  tags: string[];
   suitableFor: {
-    woodTypes: string[]; // 'eiche', 'buche_ahorn', 'nussbaum', 'alle'
-    damageTypes: string[]; // 'keine', 'fein', 'wasser', 'laufstrassen', 'alle'
+    woodTypes: string[];
+    damageTypes: string[];
   };
-}
-
-// Hilfsfunktion, um Produkte zu laden
-export function getProductsSync(): Product[] {
-  return productsData as Product[];
-}
-
-export function getRecommendedProducts(woodType: string, damageType: string): Product[] {
-  const products = getProductsSync();
-  return products.filter(product => {
-    const matchesWood = product.suitableFor.woodTypes.includes('alle') || product.suitableFor.woodTypes.includes(woodType);
-    const matchesDamage = product.suitableFor.damageTypes.includes('alle') || product.suitableFor.damageTypes.includes(damageType);
-    
-    return matchesWood && matchesDamage;
-  });
 }

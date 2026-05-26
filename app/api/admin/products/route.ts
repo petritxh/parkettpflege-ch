@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { revalidatePath } from 'next/cache';
 
 const getFilePath = () => path.join(process.cwd(), 'data', 'products.json');
 
@@ -17,6 +18,8 @@ export async function POST(req: Request) {
   try {
     const products = await req.json();
     fs.writeFileSync(getFilePath(), JSON.stringify(products, null, 2));
+    revalidatePath('/shop');
+    revalidatePath('/shop/[id]', 'page');
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: 'Fehler beim Speichern' }, { status: 500 });

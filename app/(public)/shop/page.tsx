@@ -1,5 +1,7 @@
-import { getProductsSync } from '@/data/products';
+import { getProductsSync } from '@/lib/products';
 import ShopClient from './ShopClient';
+
+export const dynamic = 'force-dynamic'; // Ensure it always reads live data
 
 export const metadata = {
   title: 'Shop | WOCA Pflegeprodukte | Parkett-Pflege.ch',

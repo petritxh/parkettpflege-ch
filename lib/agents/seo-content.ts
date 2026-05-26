@@ -10,7 +10,7 @@ Erstelle dafür die passenden strukturierten SEO-Inhalte auf Schweizerdeutsch (k
 `;
 
   const { object } = await generateObject({
-    model: google('gemini-3.5-flash'),
+    model: google('gemini-2.5-flash'),
     schema: z.object({
       slug: z.string().describe('URL-friendly slug (z.B. "uster" oder "st-gallen")'),
       name: z.string().describe('Der Name der Stadt / Region'),

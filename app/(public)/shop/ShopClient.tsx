@@ -34,12 +34,12 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
   return (
     <div className="bg-surface-container-lowest min-h-screen pb-24">
       {/* Premium Hero Section */}
-      <div className="relative bg-[#061b0e] pt-32 pb-20 overflow-hidden">
+      <div className="relative bg-[#362112] pt-32 pb-20 overflow-hidden">
         {/* Background elements */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/10 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full -translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#4a2f1d]/30 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2E1A0F]/80 blur-[120px] rounded-full -translate-x-1/3 translate-y-1/3"></div>
         
-        <div className="container-custom max-w-5xl relative z-10">
+        <div className="container-custom max-w-5xl mx-auto relative z-10">
           <div className="flex justify-between items-start">
             <div className="max-w-2xl">
               <span className="inline-block py-1 px-3 rounded-full bg-secondary/20 border border-secondary/30 text-secondary font-label-md text-xs uppercase tracking-widest mb-6 backdrop-blur-sm">
@@ -74,7 +74,7 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
         </div>
       </div>
 
-      <div className="container-custom max-w-5xl mt-12">
+      <div className="container-custom max-w-5xl mx-auto mt-12 px-4 md:px-0">
         {/* Filters and Search */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
           {/* Category Pills */}

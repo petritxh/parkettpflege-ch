@@ -1,5 +1,27 @@
 [
   {
+    "id": "7942a2c7-5bc9-4c19-802b-4df7f8e73a6f",
+    "createdAt": "2026-05-26T20:25:31.549Z",
+    "status": "NEU",
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "phone": ""
+    },
+    "objectDetails": {
+      "address": ",  ",
+      "areaSqM": 0,
+      "woodType": "Shop Bestellung",
+      "problem": "1x WOCA Holzbodenseife Weiss"
+    },
+    "serviceInfo": {
+      "service": "Shop Bestellung",
+      "preferredDate": "Schnellstmöglich"
+    },
+    "source": "Shop"
+  },
+  {
     "id": "lead-ai-demo-3",
     "timestamp": "2026-05-22T22:38:41.904Z",
     "status": "Offerte gesendet",
