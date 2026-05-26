@@ -5,11 +5,13 @@ import { Save, Loader2, Mail, FileText, Settings2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function SettingsPage() {
-  const [offerIntroTemplate, setOfferIntroTemplate] = useState('');
-  const [offerFooterTemplate, setOfferFooterTemplate] = useState('');
-  const [emailOfferLinkTemplate, setEmailOfferLinkTemplate] = useState('');
-  const [emailConfirmationTemplate, setEmailConfirmationTemplate] = useState('');
-  const [emailOrderConfirmationTemplate, setEmailOrderConfirmationTemplate] = useState('');
+  const [settings, setSettings] = useState({
+    offerIntroTemplate: '',
+    offerFooterTemplate: '',
+    emailOfferLinkTemplate: '',
+    emailConfirmationTemplate: '',
+    emailOrderConfirmationTemplate: ''
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -19,11 +21,13 @@ export default function SettingsPage() {
         const res = await fetch('/api/admin/settings');
         if (res.ok) {
           const data = await res.json();
-          setOfferIntroTemplate(data.offerIntroTemplate || '');
-          setOfferFooterTemplate(data.offerFooterTemplate || '');
-          setEmailOfferLinkTemplate(data.emailOfferLinkTemplate || '');
-          setEmailConfirmationTemplate(data.emailConfirmationTemplate || '');
-          setEmailOrderConfirmationTemplate(data.emailOrderConfirmationTemplate || '');
+          setSettings({
+            offerIntroTemplate: data.offerIntroTemplate || '',
+            offerFooterTemplate: data.offerFooterTemplate || '',
+            emailOfferLinkTemplate: data.emailOfferLinkTemplate || '',
+            emailConfirmationTemplate: data.emailConfirmationTemplate || '',
+            emailOrderConfirmationTemplate: data.emailOrderConfirmationTemplate || ''
+          });
         }
       } catch (error) {
         console.error('Failed to load settings');
