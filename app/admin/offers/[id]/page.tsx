@@ -2,9 +2,8 @@
 
 import { useState, useEffect, use } from 'react';
 import { Offer, OfferLineItem } from '@/lib/types/crm';
-import { Loader2, ArrowLeft, Save, FileText, Send, User, Calendar, Edit2, Plus, Trash2 } from 'lucide-react';
+import { Loader2, ArrowLeft, Save, Send, User, Calendar, Edit2, Plus, Trash2, Link as LinkIcon, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
-import PdfOfferGenerator from '@/components/admin/PdfOfferGenerator';
 
 export default function OfferDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -48,23 +47,27 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
     }
   };
 
-  const handleSendEmail = () => {
+  const handleSendEmail = async () => {
     if (!offer) return;
-    const subject = encodeURIComponent(`Ihre Offerte von Parkett-Pflege.ch: ${offer.title}`);
-    const body = encodeURIComponent(
-      `Sehr geehrte(r) ${offer.customer.firstName} ${offer.customer.lastName},\n\n` +
-      `Vielen Dank für Ihre Anfrage bei Parkett-Pflege.ch.\n\n` +
-      `Wir haben Ihre Richtofferte mit der Nummer ${offer.id.substring(0, 8).toUpperCase()} erstellt.\n` +
-      `Das detaillierte Angebot finden Sie im angehängten PDF.\n\n` +
-      `Zusammenfassung der Leistungen:\n` +
-      `${offer.lineItems.map(item => `- ${item.description}: CHF ${item.totalPrice.toFixed(2)}`).join('\n')}\n\n` +
-      `Gesamtsumme: CHF ${offer.totalAmount.toFixed(2)} (inkl. MwSt)\n` +
-      `Gültig bis: ${new Date(offer.validUntil).toLocaleDateString('de-CH')}\n\n` +
-      `Haben Sie Fragen oder möchten Sie einen Termin buchen? Antworten Sie einfach auf diese E-Mail oder rufen Sie uns an.\n\n` +
-      `Freundliche Grüsse,\n` +
-      `Ihr Team von Parkett-Pflege.ch`
-    );
-    window.open(`mailto:${offer.customer.email}?subject=${subject}&body=${body}`, '_self');
+    try {
+      const res = await fetch(`/api/offer/${offer.id}/send-email`, {
+        method: 'POST'
+      });
+      if (res.ok) {
+        alert('E-Mail mit Link und PIN wurde erfolgreich versendet!');
+        setOffer({ ...offer, status: 'Gesendet' });
+      } else {
+        alert('Fehler beim E-Mail Versand.');
+      }
+    } catch (e) {
+      alert('Fehler beim E-Mail Versand.');
+    }
+  };
+
+  const copyLink = () => {
+    const link = `${window.location.origin}/offerte/${offer?.id}`;
+    navigator.clipboard.writeText(link);
+    alert('Kunden-Link in die Zwischenablage kopiert!');
   };
 
   const handleStatusChange = async (newStatus: Offer['status']) => {
@@ -137,14 +140,17 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
           </div>
         </div>
         <div className="flex items-center gap-3">
-           <div className="w-48">
-             <PdfOfferGenerator offer={offer} />
-           </div>
+           <button 
+             onClick={copyLink}
+             className="px-4 py-2 bg-surface border border-outline-variant/50 rounded-xl hover:bg-surface-variant transition-colors flex items-center gap-2 text-sm font-medium"
+           >
+             <LinkIcon className="w-4 h-4" /> Link kopieren
+           </button>
            <button 
              onClick={handleSendEmail}
              className="px-4 py-2 bg-surface border border-outline-variant/50 rounded-xl hover:bg-surface-variant transition-colors flex items-center gap-2 text-sm font-medium"
            >
-             <Send className="w-4 h-4" /> E-Mail
+             <Send className="w-4 h-4" /> E-Mail senden
            </button>
            <button 
              onClick={handleSave}
@@ -321,7 +327,12 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
                  </select>
                </div>
                
+               
                <div className="border-t border-outline-variant/30 pt-4 space-y-3">
+                  <div className="flex items-center gap-3 text-sm">
+                    <Lock className="w-4 h-4 text-on-surface-variant" />
+                    <span>Zugangs-PIN: <strong className="font-mono text-primary">{offer.accessPin || 'Wird generiert'}</strong></span>
+                  </div>
                   <div className="flex items-center gap-3 text-sm">
                     <User className="w-4 h-4 text-on-surface-variant" />
                     <span>{offer.customer.firstName} {offer.customer.lastName}</span>
@@ -335,6 +346,15 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
                     <span>Gültig bis: {new Date(offer.validUntil).toLocaleDateString('de-CH')}</span>
                   </div>
                </div>
+               
+               {offer.customerFeedback && (
+                 <div className="border-t border-outline-variant/30 pt-4">
+                    <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl">
+                      <p className="text-xs font-bold text-amber-800 uppercase tracking-wider mb-2 flex items-center gap-2"><MessageSquare className="w-4 h-4"/> Kunden-Feedback / Frage</p>
+                      <p className="text-sm text-amber-900">{offer.customerFeedback}</p>
+                    </div>
+                 </div>
+               )}
                
                <div className="border-t border-outline-variant/30 pt-4">
                  <Link href={`/admin/leads/${offer.leadId}`} className="text-secondary hover:underline text-sm font-medium">

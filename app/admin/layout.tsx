@@ -9,6 +9,7 @@ import {
   MessageCircleQuestion, 
   Package, 
   TerminalSquare,
+  Settings,
   LogOut 
 } from "lucide-react";
 import MobileNav from "@/components/admin/MobileNav";
@@ -60,6 +61,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
           <Link href="/admin/agent-logs" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
             <TerminalSquare className="w-5 h-5" /> Agenten-Logs
+          </Link>
+          <Link href="/admin/settings" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
+            <Settings className="w-5 h-5" /> Einstellungen
           </Link>
         </nav>
         

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
   Menu, X, LogOut, LayoutDashboard, Users, BrainCircuit, 
-  FileText, Camera, Search, MessageCircleQuestion, Package, TerminalSquare
+  FileText, Camera, Search, MessageCircleQuestion, Package, TerminalSquare, Settings
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -65,6 +65,7 @@ export default function MobileNav() {
                 <div className="pt-4 pb-2 px-4"><p className="text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">System</p></div>
                 <Link onClick={closeMenu} href="/admin/products" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><Package className="w-5 h-5" /> Produkte</Link>
                 <Link onClick={closeMenu} href="/admin/agent-logs" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><TerminalSquare className="w-5 h-5" /> Agenten-Logs</Link>
+                <Link onClick={closeMenu} href="/admin/settings" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><Settings className="w-5 h-5" /> Einstellungen</Link>
               </div>
             </motion.div>
           </>

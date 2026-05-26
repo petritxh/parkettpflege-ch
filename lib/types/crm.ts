@@ -66,6 +66,14 @@ export interface Lead {
 }
 
 export type OfferStatus = 'Entwurf' | 'Gesendet' | 'Angenommen' | 'Abgelehnt';
+export type OfferCustomerStatus = 'pending' | 'accepted' | 'rejected' | 'rethinking';
+
+export interface AdminSettings {
+  offerIntroTemplate: string;
+  offerFooterTemplate: string;
+  emailOfferLinkTemplate: string;
+  emailConfirmationTemplate: string;
+}
 
 export interface OfferLineItem {
   id: string;
@@ -91,6 +99,9 @@ export interface Offer {
   totalAmount: number;
   isFixedPrice: boolean;
   validUntil: string;
+  accessPin?: string;
+  customerStatus?: OfferCustomerStatus;
+  customerFeedback?: string;
 }
 
 export interface FAQ {

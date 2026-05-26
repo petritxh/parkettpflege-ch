@@ -93,6 +93,11 @@ export async function saveOffer(offer: Offer): Promise<void> {
   
   offer.updatedAt = new Date().toISOString();
   
+  // PIN automatisch generieren für neue Offerten
+  if (!offer.accessPin) {
+    offer.accessPin = Math.floor(1000 + Math.random() * 9000).toString();
+  }
+  
   if (index >= 0) {
     offers[index] = offer;
   } else {
@@ -199,4 +204,33 @@ export async function deleteCase(id: number): Promise<void> {
   let cases = await getCases();
   cases = cases.filter(c => c.id !== id);
   await fs.writeFile(casesFile, JSON.stringify(cases, null, 2), 'utf-8');
+}
+
+// --- ADMIN SETTINGS ---
+
+const settingsFile = path.join(dataDir, 'settings.json');
+
+const defaultSettings = {
+  offerIntroTemplate: 'Sehr geehrte(r) {KUNDE_NAME},\n\nvielen Dank für Ihre Anfrage. Gerne unterbreiten wir Ihnen folgendes Angebot für Ihr Parkett.',
+  offerFooterTemplate: 'Vielen Dank für Ihr Vertrauen in Parkett-Pflege.ch. Bei Fragen stehen wir jederzeit zur Verfügung.',
+  emailOfferLinkTemplate: 'Guten Tag {KUNDE_NAME},\n\nIhre Offerte ist nun bereit.\nSie können diese unter folgendem Link aufrufen: {LINK}\n\nIhr persönlicher Zugangs-PIN lautet: {PIN}\n\nFreundliche Grüsse,\nIhr Parkett-Pflege.ch Team',
+  emailConfirmationTemplate: 'Guten Tag {KUNDE_NAME},\n\nvielen Dank! Wir haben Ihre Bestätigung zur Offerte {OFFER_ID} erhalten und werden uns in Kürze zwecks Terminvereinbarung bei Ihnen melden.\n\nFreundliche Grüsse,\nIhr Parkett-Pflege.ch Team'
+};
+
+export async function getSettings(): Promise<any> {
+  await ensureDataDir();
+  try {
+    const data = await fs.readFile(settingsFile, 'utf-8');
+    return { ...defaultSettings, ...JSON.parse(data) };
+  } catch (error: any) {
+    if (error.code === 'ENOENT') {
+      return defaultSettings;
+    }
+    throw error;
+  }
+}
+
+export async function saveSettings(settings: any): Promise<void> {
+  await ensureDataDir();
+  await fs.writeFile(settingsFile, JSON.stringify(settings, null, 2), 'utf-8');
 }
