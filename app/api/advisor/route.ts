@@ -35,7 +35,10 @@ export async function POST(req: NextRequest) {
   try {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      throw new Error("GEMINI_API_KEY environment variable is required");
+      return NextResponse.json(
+        { error: "Konfigurationsfehler: Der GEMINI_API_KEY fehlt in den Vercel-Umgebungsvariablen. Bitte füge ihn in den Vercel-Projekteinstellungen hinzu." },
+        { status: 500 }
+      );
     }
 
     const ai = new GoogleGenAI({ apiKey });

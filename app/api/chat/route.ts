@@ -138,6 +138,13 @@ Wenn der Kunde ein Bild mitschickt, nutze 'analyzePhoto' um es professionell aus
       }
     });
 
+    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+      return new Response(
+        'Konfigurationsfehler: Der GOOGLE_GENERATIVE_AI_API_KEY fehlt in den Vercel-Umgebungsvariablen. Bitte füge diesen im Vercel-Dashboard unter Settings -> Environment Variables hinzu, um den Chatbot zu aktivieren.',
+        { status: 200 }
+      );
+    }
+
     return result.toDataStreamResponse();
 
   } catch (error: any) {
@@ -151,6 +158,13 @@ Wenn der Kunde ein Bild mitschickt, nutze 'analyzePhoto' um es professionell aus
        );
     }
 
-    return new Response('Interner Server Fehler', { status: 500 });
+    if (error.message?.includes('API key') || error.message?.includes('credentials')) {
+       return new Response(
+         'Konfigurationsfehler: Der GOOGLE_GENERATIVE_AI_API_KEY ist ungültig oder nicht konfiguriert. Bitte überprüfe deine Umgebungsvariablen in Vercel.',
+         { status: 200 }
+       );
+    }
+
+    return new Response('Interner Server Fehler: ' + error.message, { status: 500 });
   }
 }
