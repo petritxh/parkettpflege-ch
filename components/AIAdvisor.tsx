@@ -239,7 +239,7 @@ export default function AIAdvisor({ onOpenBooking }: { onOpenBooking?: (diagnosi
 
                  <div className="bg-white/5 border border-white/10 rounded-xl p-3">
                    <h4 className="flex items-center gap-2 text-sm font-semibold mb-2"><Search className="w-4 h-4 text-secondary" /> Ersteinschätzung</h4>
-                   <p className="text-xs text-white/80 leading-relaxed mb-3">{analysis?.customerExplanation}</p>
+                   <p className="text-xs text-white/80 leading-relaxed mb-3 whitespace-pre-wrap">{analysis?.customerExplanation}</p>
                    
                    <p className="text-[10px] text-white/40 italic flex items-start gap-1.5 leading-tight">
                      <AlertTriangle className="w-3 h-3 shrink-0" />

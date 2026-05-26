@@ -64,7 +64,7 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
       `Freundliche Grüsse,\n` +
       `Ihr Team von Parkett-Pflege.ch`
     );
-    window.location.href = `mailto:${offer.customer.email}?subject=${subject}&body=${body}`;
+    window.open(`mailto:${offer.customer.email}?subject=${subject}&body=${body}`, '_self');
   };
 
   const handleStatusChange = async (newStatus: Offer['status']) => {

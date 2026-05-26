@@ -107,7 +107,7 @@ async function main() {
     while (attempts > 0 && !success) {
       try {
         const result = await generateObject({
-          model: google('gemini-3.5-flash'), // Use modern available model
+          model: google('gemini-2.5-flash'), // Use modern available model
           schema: seoArticleSchema,
           maxRetries: 0,
           prompt: `Du bist ein absoluter SEO-Spezialist und Meister im Schweizer Parkettleger-Handwerk mit über 20 Jahren Erfahrung.
@@ -163,6 +163,26 @@ Vorgaben:
     }
 
     if (success && object) {
+      // Generate AI Image via Pollinations
+      const cleanPrompt = keyword.toLowerCase().replace(/[^a-z0-9]/g, '_').substring(0, 30);
+      const filename = `seo_${Date.now()}_${cleanPrompt}.jpg`;
+      const uploadDir = path.join(process.cwd(), 'public', 'uploads');
+      if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+      
+      const aiPrompt = `beautiful clean elegant modern hardwood parquet floor, ${keyword}, ultra realistic, professional interior design architecture photography, high resolution, 8k, warm lighting, cozy elegant atmosphere`;
+      const imgUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(aiPrompt)}?width=1200&height=800&nologo=true&seed=${Math.floor(Math.random() * 100000)}`;
+      
+      let finalImageUrl = "https://images.unsplash.com/photo-1581850518616-bcb8077a2336?q=80&w=1200&auto=format&fit=crop";
+      try {
+        const imgRes = await fetch(imgUrl);
+        const buffer = await imgRes.arrayBuffer();
+        fs.writeFileSync(path.join(uploadDir, filename), Buffer.from(buffer));
+        finalImageUrl = `/uploads/${filename}`;
+        console.log(`📸 Bild erfolgreich generiert: ${filename}`);
+      } catch (e) {
+        console.error("⚠️ Bildgenerierung fehlgeschlagen, nutze Fallback.", e);
+      }
+
       const newProblem = {
         id: slug,
         slug: slug,
@@ -171,7 +191,7 @@ Vorgaben:
         metaDescription: object.metaDescription,
         focusKeyword: keyword,
         intro: object.intro,
-        imageUrl: "https://images.unsplash.com/photo-1581850518616-bcb8077a2336?q=80&w=1200&auto=format&fit=crop", // Professional parquet image
+        imageUrl: finalImageUrl,
         solutionText: object.solutionText,
         relatedServices: ["parkett-schleifen", "parkett-oelen", "parkett-reparatur"]
       };
@@ -193,8 +213,8 @@ Vorgaben:
 
       console.log(`✅ Erfolgreich generiert und gespeichert: ${slug}`);
       
-      // Sleep for 15 seconds to prevent hitting RPM/quota limit
-      await new Promise(r => setTimeout(r, 15000));
+      // Sleep for 30 seconds to prevent hitting RPM/quota limit
+      await new Promise(r => setTimeout(r, 30000));
     }
   }
 

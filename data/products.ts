@@ -1,4 +1,4 @@
-export type ProductCategory = 'Reinigung' | 'Pflege' | 'Reparatur' | 'Zubehör';
+export type ProductCategory = 'Reinigung' | 'Pflege' | 'Reparatur' | 'Zubehör' | 'Maschinen';
 
 export interface Product {
   id: string;
@@ -7,6 +7,8 @@ export interface Product {
   description: string;
   shortDescription: string;
   imageUrl: string;
+  price: number; // in CHF
+  isAffiliate: boolean;
   affiliateLink?: string;
   tags: string[]; // e.g., 'ph-neutral', 'lösemittelfrei'
   suitableFor: {
@@ -18,11 +20,13 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 'holzbodenseife-neutral',
-    name: 'pH-Neutrale Holzbodenseife',
+    name: 'WOCA Holzbodenseife Natur',
     category: 'Reinigung',
-    shortDescription: 'Sanfte Reinigung für alle geölten Holzoberflächen.',
-    description: 'Eine milde, speziell entwickelte Seife, die den Boden reinigt, ohne die schützende Ölschicht anzugreifen. Hinterlässt einen feinen, pflegenden Film.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIrJs8BLeEeepjntbFA420wiHaTe7Xd14SEOSZnejBedGBQa_8eVy1QsvP-wIbE7WDE5_9lrOpa0Cf6qiFV98LZDBOyxB_F0zXU6-pqMpoaksVcsfiJULNi1vnFqd5ceW-DxijaxfuVbtOAchai80dsH5ANulOMqcr1LCJXtshJMRuAplCAo7Xo6FM_XF2zSpgxIQZEyOevY37e49jijR43rjhbpLU1KpAeZr2WMySKPuuJ2Gku6DUegb1yzgzZjMZ874yTxnOySg', // Placeholder, we can replace it later
+    shortDescription: 'Sanfte Reinigung und Pflege für geölte Holzböden.',
+    description: 'Die WOCA Holzbodenseife reinigt den Boden schonend und schützt ihn gleichzeitig vor dem Austrocknen. Durch die rückfettenden Eigenschaften erhält das Holz bei jeder Reinigung einen schützenden Film. Ideal für die regelmässige Unterhaltsreinigung in der Schweiz.',
+    imageUrl: 'https://images.unsplash.com/photo-1581850518616-bcb8077a2336?w=600&h=600&fit=crop', 
+    price: 24.90,
+    isAffiliate: false,
     tags: ['pH-neutral', 'Alltagspflege', 'Rückfettend'],
     suitableFor: {
       woodTypes: ['alle', 'eiche', 'buche_ahorn', 'nussbaum'],
@@ -31,11 +35,13 @@ export const products: Product[] = [
   },
   {
     id: 'intensivreiniger',
-    name: 'Holz-Intensivreiniger',
+    name: 'Intensivreiniger Tiefenwirkung',
     category: 'Reinigung',
     shortDescription: 'Tiefenreinigung zur Vorbereitung für Pflegeöle.',
     description: 'Löst hartnäckigen Schmutz und alte Seifenreste. Ideal vor dem Neu-Ölen oder bei leichten bis mittleren Laufstrassen. Wichtig: Trocknet das Holz aus, anschliessende Ölung zwingend erforderlich!',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADmDYLUFPdXz5Q4GDKThgWBBNR0gAwhs-BIDAz_OpiQonRVmzE-yxVa9WHEppwUsdg6IiImsD-W1X1jTwxGun3m9dvr5cZrpx0S2VxpZNHak_LnNaOXJmo2fzIjBkb2ms6eoDc1wabrcQ3Vi_3CpuoqKKlQDPWNUGwoLqOVW3ghIc__AECOsJEpNK8HGtGvEAztpD494bkpLEFnI0RKQhBMoajcvpVnRa_aHnUR_pe9L1mCoNOKnbDcixLaDbUhBPN9yX4IN1sbuA',
+    imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=600&fit=crop',
+    price: 28.50,
+    isAffiliate: false,
     tags: ['Tiefenreinigung', 'Vorbehandlung'],
     suitableFor: {
       woodTypes: ['alle'],
@@ -44,28 +50,33 @@ export const products: Product[] = [
   },
   {
     id: 'pflegeoel-natur',
-    name: 'Pflegeöl Natur / Farblos',
+    name: 'Pflegeöl Natur / Farblos Premium',
     category: 'Pflege',
     shortDescription: 'Frischt matte und leicht verkratzte Böden auf.',
     description: 'Unterstützt die natürliche Holzfarbe und schliesst feine Kratzer. Der Boden wirkt nach der Anwendung wieder frisch und ist besser vor Schmutz und Feuchtigkeit geschützt.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpu93OtXlPyxw3Fh8XWXP1eiKLfPGJzH5teHgLuKEiZXmrZSGLW-Zf--BKj2c1SGG0cTw1bVAUoEuxJq99uOwlEMNCxltT8xpWJ3b545ACcGEHH94IcFZiT_MlZE4yrHr-Shf7kC-aFN5H2JKU-OfZq1NYdtr7HtpmOpyewHaiUZVYrZD-YC9dEBzkkxnO__jrSZEuAi8Jf2BmuhyoQ6Fdue3u5I6TKtLbok4LWAcb66F-omZgTyn5UzsFFufhqcIuIMw0wcuG9H8',
+    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=600&fit=crop',
+    price: 45.00,
+    isAffiliate: false,
     tags: ['Werterhalt', 'Auffrischung'],
     suitableFor: {
-      woodTypes: ['eiche', 'nussbaum', 'andere'], // Buche/Ahorn oft weiss geölt
+      woodTypes: ['eiche', 'nussbaum', 'andere'],
       damageTypes: ['fein', 'laufstrassen'],
     }
   },
   {
-    id: 'pflegeoel-weiss',
-    name: 'Pflegeöl Weiss',
-    category: 'Pflege',
-    shortDescription: 'Speziell für helles Holz wie Ahorn, Buche oder weiss geölte Eiche.',
-    description: 'Bewahrt den hellen Charakter des Holzes und schützt vor Vergilbung. Frischt die matte Oberfläche auf und sättigt die Holzporen.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA_8z7OdosizGELh8t3yvY3GH6nGpoTcAlL2KaA7KVyG7SmN2Do0yo8JaIipQBoCRu78DJYL-Ooxq_Gn_CmemHHA_1_7u4ERu8ECtq2uIfqCCPbI4Jq4LPgzSCXjNIqH88RY2xlOx992nDLYrc1rcP6UwTuaqu8nQowGrpl1L3DHuu5kZmelZ6CqVqDtH5Ychz4MBSv3ljbeKfVAj7Ks8x54gmSAJD7SmnY3Ig29GG3S4VwwUnjyu99HMdkO7KgNbmWW7wz9Rvq2tg',
-    tags: ['UV-Schutz', 'Helles Holz'],
+    id: 'karcher-fc7',
+    name: 'Kärcher FC 7 Cordless Premium',
+    category: 'Maschinen',
+    shortDescription: 'Der perfekte Hartbodenreiniger für grosse Parkettflächen.',
+    description: 'Beseitigt alle Arten von trockenem und feuchtem Alltagsschmutz in nur einem Schritt. Ideal für empfindliche Parkettböden dank der geringen Restfeuchte. (Verkauf via Partner)',
+    imageUrl: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=600&fit=crop',
+    price: 449.00,
+    isAffiliate: true,
+    affiliateLink: 'https://www.kaercher.com/ch/home-garden/hartbodenreiniger/fc-7-cordless-premium-10557600.html',
+    tags: ['Maschine', 'Effizienz', 'Bestseller'],
     suitableFor: {
-      woodTypes: ['buche_ahorn'],
-      damageTypes: ['fein', 'laufstrassen'],
+      woodTypes: ['alle'],
+      damageTypes: ['keine', 'fein'],
     }
   },
   {
@@ -74,20 +85,24 @@ export const products: Product[] = [
     category: 'Reparatur',
     shortDescription: 'Hilft bei der Entfernung von dunklen Wasserflecken.',
     description: 'Ein spezielles Spray zur Neutralisierung von dunklen Reaktionsflecken (oft durch Wasser oder Metall auf Eiche verursacht). Unterstützt die Entfernung ohne aggressives Schleifen.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIrJs8BLeEeepjntbFA420wiHaTe7Xd14SEOSZnejBedGBQa_8eVy1QsvP-wIbE7WDE5_9lrOpa0Cf6qiFV98LZDBOyxB_F0zXU6-pqMpoaksVcsfiJULNi1vnFqd5ceW-DxijaxfuVbtOAchai80dsH5ANulOMqcr1LCJXtshJMRuAplCAo7Xo6FM_XF2zSpgxIQZEyOevY37e49jijR43rjhbpLU1KpAeZr2WMySKPuuJ2Gku6DUegb1yzgzZjMZ874yTxnOySg',
+    imageUrl: 'https://images.unsplash.com/photo-1581850518616-bcb8077a2336?w=600&h=600&fit=crop',
+    price: 19.90,
+    isAffiliate: false,
     tags: ['Fleckenentfernung', 'Problemlöser'],
     suitableFor: {
-      woodTypes: ['eiche'], // Funktioniert primär bei gerbsäurehaltigen Hölzern
+      woodTypes: ['eiche'],
       damageTypes: ['wasser'],
     }
   },
   {
     id: 'reparatur-wachs',
-    name: 'Hartwachs-Reparaturset',
+    name: 'Hartwachs-Reparaturset Profi',
     category: 'Reparatur',
     shortDescription: 'Zum Auffüllen von kleinen bis mittleren Kratzern.',
     description: 'Set aus verschiedenen Farbtönen, die erhitzt und in Kratzer oder kleine Dellen getropft werden können. Härtet aus und schützt vor eindringendem Wasser.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADmDYLUFPdXz5Q4GDKThgWBBNR0gAwhs-BIDAz_OpiQonRVmzE-yxVa9WHEppwUsdg6IiImsD-W1X1jTwxGun3m9dvr5cZrpx0S2VxpZNHak_LnNaOXJmo2fzIjBkb2ms6eoDc1wabrcQ3Vi_3CpuoqKKlQDPWNUGwoLqOVW3ghIc__AECOsJEpNK8HGtGvEAztpD494bkpLEFnI0RKQhBMoajcvpVnRa_aHnUR_pe9L1mCoNOKnbDcixLaDbUhBPN9yX4IN1sbuA',
+    imageUrl: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&h=600&fit=crop',
+    price: 39.90,
+    isAffiliate: false,
     tags: ['DIY', 'Kratzer kaschieren'],
     suitableFor: {
       woodTypes: ['alle'],
@@ -96,9 +111,6 @@ export const products: Product[] = [
   }
 ];
 
-/**
- * Filtert die Produkte basierend auf den Antworten aus dem Ratgeber.
- */
 export function getRecommendedProducts(woodType: string, damageType: string): Product[] {
   return products.filter(product => {
     const matchesWood = product.suitableFor.woodTypes.includes('alle') || product.suitableFor.woodTypes.includes(woodType);

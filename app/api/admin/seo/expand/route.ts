@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const { title, currentContent } = await req.json();
 
     const { object } = await generateObject({
-      model: google('gemini-3.5-flash'),
+      model: google('gemini-2.5-flash'),
       maxRetries: 0,
       schema: z.object({
         expandedMarkdown: z.string().describe("The expanded markdown content including the old content and new highly optimized SEO sections. Do NOT wrap in ```markdown.")

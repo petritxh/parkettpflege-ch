@@ -25,7 +25,7 @@ Rechne realistische Schweizer Preise (z.B. Parkett schleifen ca. 45-55 CHF / m2,
 `;
 
   const { object } = await generateObject({
-    model: google('gemini-3.5-flash'),
+    model: google('gemini-2.5-flash'),
     schema: z.object({
       title: z.string().describe('Titel der Offerte, z.B. "Offerte: Parkett Renovation"'),
       introText: z.string().describe('Kurzer, freundlicher Einleitungstext für den Kunden (Schweizer Deutsch)'),

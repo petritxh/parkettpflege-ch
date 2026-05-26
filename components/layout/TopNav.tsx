@@ -59,6 +59,7 @@ export default function TopNav() {
             </div>
           </div>
 
+          <Link className="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:underline decoration-secondary underline-offset-4 py-4" href="/shop">Shop</Link>
           <Link className="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:underline decoration-secondary underline-offset-4 py-4" href="/vorher-nachher">Galerie</Link>
           <Link className="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-md text-label-md hover:underline decoration-secondary underline-offset-4 py-4" href="/kosten">Kostenrechner</Link>
         </div>
@@ -89,6 +90,7 @@ export default function TopNav() {
           <Link href="/dienstleistungen" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Dienstleistungen</Link>
           <Link href="/ratgeber" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Ratgeber</Link>
           <Link href="/standorte" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Standorte</Link>
+          <Link href="/shop" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Shop</Link>
           <Link href="/vorher-nachher" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Galerie</Link>
           <Link href="/kosten" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Kostenrechner</Link>
           <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium uppercase tracking-widest text-on-surface-variant hover:bg-surface-variant rounded-md">Kontakt</Link>

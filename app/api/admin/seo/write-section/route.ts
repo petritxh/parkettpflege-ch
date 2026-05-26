@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     }
 
     const { object } = await generateObject({
-      model: google('gemini-3.5-flash'),
+      model: google('gemini-2.5-flash'),
       maxRetries: 0,
       schema: z.object({
         sectionMarkdown: z.string().describe("Der generierte Markdown-Abschnitt. Muss mit einer H2-Überschrift (##) oder H3-Überschrift (###) beginnen. Reichhaltige Details, professionelles Schweizer Parkettleger-Wissen. Do NOT wrap in ```markdown.")

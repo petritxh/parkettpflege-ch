@@ -72,7 +72,7 @@ Antworten Sie in der 'customerExplanation' extrem kurz und auf den Punkt. Schrei
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
       contents: contents,
       config: {
         responseMimeType: "application/json",
