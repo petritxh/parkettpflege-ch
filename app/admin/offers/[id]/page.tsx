@@ -2,7 +2,7 @@
 
 import { useState, useEffect, use } from 'react';
 import { Offer, OfferLineItem } from '@/lib/types/crm';
-import { Loader2, ArrowLeft, Save, Send, User, Calendar, Edit2, Plus, Trash2, Link as LinkIcon, MessageSquare } from 'lucide-react';
+import { Loader2, ArrowLeft, Save, Send, User, Calendar, Edit2, Plus, Trash2, Link as LinkIcon, MessageSquare, FileText, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 export default function OfferDetailPage({ params }: { params: Promise<{ id: string }> }) {
