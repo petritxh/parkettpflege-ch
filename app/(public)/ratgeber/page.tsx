@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Ratgeber & Hilfe | Parkettpflege.ch',
+  title: 'Ratgeber & Hilfe | Parkett-Pflege.ch',
   description: 'Ratgeber für Parkett: Kratzer, Wasserflecken, stumpfe Böden. Wir erklären die Ursachen und wie Sie Ihren Holzboden richtig pflegen und reparieren.',
 };
 

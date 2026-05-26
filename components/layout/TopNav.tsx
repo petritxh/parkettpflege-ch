@@ -17,7 +17,7 @@ export default function TopNav() {
     <nav className="bg-surface/80 backdrop-blur-lg docked full-width top-0 sticky z-50 border-b border-outline-variant/30 transition-all duration-300">
       <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
         <Link href="/" className="font-headline-md text-headline-md font-medium text-primary">
-          Parkettpflege.ch
+          Parkett-Pflege.ch
         </Link>
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">

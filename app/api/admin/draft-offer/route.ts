@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
 
     const ai = new GoogleGenAI({ apiKey });
 
-    const prompt = `Sie sind ein professioneller Kalkulator für Parkettpflege.ch. 
+    const prompt = `Sie sind ein professioneller Kalkulator für Parkett-Pflege.ch. 
 Bitte erstellen Sie einen professionellen Offerten-Entwurf auf Basis der folgenden Lead-Daten und AI-Diagnose (falls vorhanden).
 Sprache: Schweizer Hochdeutsch.
 Tonalität: Premium, kompetent, höflich.

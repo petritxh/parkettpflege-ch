@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Alle Dienstleistungen | Parkettpflege.ch',
+  title: 'Alle Dienstleistungen | Parkett-Pflege.ch',
   description: 'Übersicht unserer Parkett-Dienstleistungen: Schleifen, Ölen, Versiegeln, Reinigen und Reparieren. Wir sind Ihr Fachbetrieb.',
 };
 

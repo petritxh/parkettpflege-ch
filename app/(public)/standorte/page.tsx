@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Standorte & Einsatzgebiete | Parkettpflege.ch',
+  title: 'Standorte & Einsatzgebiete | Parkett-Pflege.ch',
   description: 'Wir schleifen und ölen Parkett in der ganzen Deutschschweiz. Zürich, Zug, Luzern, Aargau, Winterthur, Basel, Bern und St. Gallen.',
 };
 

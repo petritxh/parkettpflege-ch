@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="w-full py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
               <div className="md:col-span-2">
-                  <div className="font-headline-sm text-headline-sm text-primary mb-6">Parketpflege.ch</div>
+                  <div className="font-headline-sm text-headline-sm text-primary mb-6">Parkett-Pflege.ch</div>
                   <p className="font-body-md text-body-md text-on-surface-variant max-w-sm">
                       Ihr Partner für erstklassige Parkettrestaurierung in der gesamten Schweiz. Wir verbinden traditionelles Handwerk mit digitaler Präzision.
                   </p>
@@ -35,7 +35,7 @@ export default function Footer() {
           
           <div className="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="font-caption text-caption text-on-surface-variant">
-                  © {new Date().getFullYear()} Parketpflege.ch — Artisanal Precision in Wood Care. All rights reserved.
+                  © {new Date().getFullYear()} Parkett-Pflege.ch — Artisanal Precision in Wood Care. All rights reserved.
               </p>
               <div className="flex gap-6">
                   <Link className="text-on-surface-variant hover:text-primary transition-opacity" href="/kontakt">Kontakt</Link>

@@ -18,19 +18,33 @@ export async function POST(req: Request) {
     // Inject image into the last user message if provided in data
     if (data && data.imageUrl) {
       const lastMessage = initialMessages[initialMessages.length - 1];
-      if (lastMessage.role === 'user') {
+      if (lastMessage && lastMessage.role === 'user') {
         // Convert to multimodal format expected by Vercel AI SDK
-        // Since we are overriding, we need to restructure it for gemini
-        lastMessage.content = [
-          { type: 'text', text: lastMessage.content || 'Hier ist ein Foto meines Parketts.' },
-          { type: 'image', image: new URL(data.imageUrl) }
-        ];
+        // If it's a base64 Data URL, we extract the MIME type and the raw base64 data to create a Buffer
+        if (typeof data.imageUrl === 'string' && data.imageUrl.startsWith('data:')) {
+          const match = data.imageUrl.match(/^data:(image\/[a-zA-Z+.-]+);base64,(.+)$/);
+          if (match) {
+            const mimeType = match[1];
+            const base64Data = match[2];
+            const buffer = Buffer.from(base64Data, 'base64');
+            
+            lastMessage.content = [
+              { type: 'text', text: lastMessage.content || 'Hier ist ein Foto meines Parketts.' },
+              { type: 'image', image: buffer, mimeType: mimeType }
+            ];
+          }
+        } else {
+          lastMessage.content = [
+            { type: 'text', text: lastMessage.content || 'Hier ist ein Foto meines Parketts.' },
+            { type: 'image', image: new URL(data.imageUrl) }
+          ];
+        }
       }
     }
 
     const result = await streamText({
       model: google('gemini-1.5-flash'),
-      system: `Du bist der "Parkett-Meister", der offizielle KI-Assistent von Parkettpflege.ch. 
+      system: `Du bist der "Parkett-Meister", der offizielle KI-Assistent von Parkett-Pflege.ch. 
 Du hilfst Schweizer Kunden bei Problemen mit ihrem Parkettboden.
 Du bist höflich, hochprofessionell und verkaufsorientiert.
 Dein Ziel ist es, Kunden zu beraten, Fotos ihrer Schäden zu analysieren und sie dazu zu bringen, eine Offerte anzufordern.

@@ -5,7 +5,7 @@ import CTABanner from '@/components/sections/CTABanner';
 import { cases, CATEGORIES, WOOD_TYPES } from '@/data/cases';
 
 export const metadata: Metadata = {
-  title: 'Parkett Vorher/Nachher Bilder | Referenzen Parkettpflege.ch',
+  title: 'Parkett Vorher/Nachher Bilder | Referenzen Parkett-Pflege.ch',
   description: 'Sehen Sie echte Ergebnisse unserer Parkettrenovierungen. Von stark beschädigten Böden zu neuwertigen Holzoberflächen.',
 };
 

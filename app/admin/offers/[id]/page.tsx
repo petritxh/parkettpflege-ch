@@ -50,10 +50,10 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
 
   const handleSendEmail = () => {
     if (!offer) return;
-    const subject = encodeURIComponent(`Ihre Offerte von Parkettpflege.ch: ${offer.title}`);
+    const subject = encodeURIComponent(`Ihre Offerte von Parkett-Pflege.ch: ${offer.title}`);
     const body = encodeURIComponent(
       `Sehr geehrte(r) ${offer.customer.firstName} ${offer.customer.lastName},\n\n` +
-      `Vielen Dank für Ihre Anfrage bei Parkettpflege.ch.\n\n` +
+      `Vielen Dank für Ihre Anfrage bei Parkett-Pflege.ch.\n\n` +
       `Wir haben Ihre Richtofferte mit der Nummer ${offer.id.substring(0, 8).toUpperCase()} erstellt.\n` +
       `Das detaillierte Angebot finden Sie im angehängten PDF.\n\n` +
       `Zusammenfassung der Leistungen:\n` +
@@ -62,7 +62,7 @@ export default function OfferDetailPage({ params }: { params: Promise<{ id: stri
       `Gültig bis: ${new Date(offer.validUntil).toLocaleDateString('de-CH')}\n\n` +
       `Haben Sie Fragen oder möchten Sie einen Termin buchen? Antworten Sie einfach auf diese E-Mail oder rufen Sie uns an.\n\n` +
       `Freundliche Grüsse,\n` +
-      `Ihr Team von Parkettpflege.ch`
+      `Ihr Team von Parkett-Pflege.ch`
     );
     window.location.href = `mailto:${offer.customer.email}?subject=${subject}&body=${body}`;
   };

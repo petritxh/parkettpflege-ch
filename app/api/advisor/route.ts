@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     const ai = new GoogleGenAI({ apiKey });
     const { concerns, imageBase64 } = await req.json();
 
-    let prompt = `Sie sind ein hochqualifizierter KI-Berater auf der Website parkettpflege.ch. 
+    let prompt = `Sie sind ein hochqualifizierter KI-Berater auf der Website parkett-pflege.ch. 
 Ihre Aufgabe ist es, Kunden eine professionelle Erst-Einschätzung (Lead-Qualifizierung) zum Zustand ihres Parkettbodens zu geben.
 
 Der Kunde hat ein Foto hochgeladen. Analysieren Sie das Bild sehr sorgfältig, um den möglichen Zustand, Kratzer, Wasserschäden, die Holzart und das Problem zu erkennen.

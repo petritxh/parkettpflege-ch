@@ -13,13 +13,13 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Parkettpflege.ch | Die führende Plattform für Parkett in der Schweiz',
+  title: 'Parkett-Pflege.ch | Die führende Plattform für Parkett in der Schweiz',
   description: 'Professionelle Parkettpflege, Reinigung, Schleifen, Ölen & Reparaturen in Zürich, Zug, Luzern. AI-gestützte Beratung für makellose Holzböden.',
   openGraph: {
-    title: 'Parkettpflege.ch | Die führende Plattform für Parkett',
+    title: 'Parkett-Pflege.ch | Die führende Plattform für Parkett',
     description: 'Professionelle Parkettpflege, Reinigung, Schleifen, Ölen & Reparaturen in Zürich, Zug, Luzern. AI-gestützte Beratung für makellose Holzböden.',
     url: 'https://parkett-pflege.ch',
-    siteName: 'Parkettpflege.ch',
+    siteName: 'Parkett-Pflege.ch',
     images: [
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCRCeQlyl_ZrejbSyV0FunoFKwjkjKCeGvMY0CVKnU_4UOB-wMPEUFxPaEpuoEiEPlWTqsHRBHt7RBIBjGD_V9XVd4aaNOhqW5kra7KEBuMWuKXU0Z93pk65SyPuGBA6koofeZTFytJWKy-XVBRKOQhaNR1AaiRM03RDkyrXRExayAqviHQUWUtMh6bKKjZ_v37zZ8R9kqqSpWXjLJjqVOHcVYyASFJLbqlMprHcV1j-0N1QFmNPc9znpBaYlzZEESAebodotlZOmU',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Parkettpflege.ch | Die Plattform für Parkett',
+    title: 'Parkett-Pflege.ch | Die Plattform für Parkett',
     description: 'Professionelle Parkettpflege, Reinigung, Schleifen, Ölen in der Schweiz.',
     images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuCRCeQlyl_ZrejbSyV0FunoFKwjkjKCeGvMY0CVKnU_4UOB-wMPEUFxPaEpuoEiEPlWTqsHRBHt7RBIBjGD_V9XVd4aaNOhqW5kra7KEBuMWuKXU0Z93pk65SyPuGBA6koofeZTFytJWKy-XVBRKOQhaNR1AaiRM03RDkyrXRExayAqviHQUWUtMh6bKKjZ_v37zZ8R9kqqSpWXjLJjqVOHcVYyASFJLbqlMprHcV1j-0N1QFmNPc9znpBaYlzZEESAebodotlZOmU'],
   },

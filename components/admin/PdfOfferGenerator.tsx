@@ -75,7 +75,7 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
           {/* Header */}
           <div className="flex justify-between items-start mb-12 border-b-2 border-black/10 pb-8">
              <div>
-               <h1 className="text-4xl font-bold text-[#061b0e] tracking-tight">Parkettpflege.ch</h1>
+               <h1 className="text-4xl font-bold text-[#061b0e] tracking-tight">Parkett-Pflege.ch</h1>
                <p className="text-gray-500 mt-2 text-sm">Offizielle Richtofferte / Angebot</p>
              </div>
              <div className="text-right text-sm text-gray-600">
@@ -165,7 +165,7 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
 
           {/* Footer */}
           <div className="border-t border-gray-200 pt-8 mt-8 text-center text-xs text-gray-500">
-             <p>Vielen Dank für Ihr Vertrauen in Parkettpflege.ch. Bei Rückfragen stehen wir Ihnen gerne zur Verfügung.</p>
+             <p>Vielen Dank für Ihr Vertrauen in Parkett-Pflege.ch. Bei Rückfragen stehen wir Ihnen gerne zur Verfügung.</p>
              <p className="mt-2">Bitte bestätigen Sie diese Offerte per E-Mail oder telefonisch, um den Termin final zu buchen.</p>
           </div>
         </div>
