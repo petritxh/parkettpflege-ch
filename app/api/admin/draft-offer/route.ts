@@ -1,43 +1,26 @@
-import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 import { getLeadById, saveOffer } from "@/lib/data-service";
 import { logger } from "@/lib/logger";
 import crypto from "crypto";
+import { generateObject } from "ai";
+import { google } from "@ai-sdk/google";
+import { z } from "zod";
 
-const responseSchema: Schema = {
-  type: Type.OBJECT,
-  properties: {
-    title: { type: Type.STRING, description: "Professioneller Offertentitel" },
-    introText: { type: Type.STRING, description: "Freundlicher, professioneller Einleitungstext auf Schweizer Hochdeutsch" },
-    lineItems: {
-      type: Type.ARRAY,
-      items: {
-        type: Type.OBJECT,
-        properties: {
-          description: { type: Type.STRING, description: "Beschreibung der Leistung (z.B. Parkett schleifen und ölen)" },
-          quantity: { type: Type.NUMBER, description: "Menge" },
-          unit: { type: Type.STRING, description: "Einheit (z.B. m2, pauschal, Std.)" },
-          unitPrice: { type: Type.NUMBER, description: "Einzelpreis in CHF" },
-          totalPrice: { type: Type.NUMBER, description: "Gesamtpreis für diese Position in CHF" }
-        },
-        required: ["description", "quantity", "unit", "unitPrice", "totalPrice"]
-      }
-    },
-    assumptions: {
-      type: Type.ARRAY,
-      items: { type: Type.STRING },
-      description: "Liste von Annahmen (z.B. Zimmer müssen leergeräumt sein)"
-    },
-    exclusions: {
-      type: Type.ARRAY,
-      items: { type: Type.STRING },
-      description: "Liste von Ausschlüssen (z.B. Leistenmontage nicht inbegriffen)"
-    },
-    totalAmount: { type: Type.NUMBER, description: "Gesamtsumme in CHF" },
-    isFixedPrice: { type: Type.BOOLEAN, description: "Ist es ein Festpreis oder eine Schätzung?" }
-  },
-  required: ["title", "introText", "lineItems", "assumptions", "exclusions", "totalAmount", "isFixedPrice"]
-};
+const responseSchema = z.object({
+  title: z.string().describe("Professioneller Offertentitel"),
+  introText: z.string().describe("Freundlicher, professioneller Einleitungstext auf Schweizer Hochdeutsch"),
+  lineItems: z.array(z.object({
+    description: z.string().describe("Beschreibung der Leistung (z.B. Parkett schleifen und ölen)"),
+    quantity: z.number().describe("Menge"),
+    unit: z.string().describe("Einheit (z.B. m2, pauschal, Std.)"),
+    unitPrice: z.number().describe("Einzelpreis in CHF"),
+    totalPrice: z.number().describe("Gesamtpreis für diese Position in CHF")
+  })),
+  assumptions: z.array(z.string()).describe("Liste von Annahmen (z.B. Zimmer müssen leergeräumt sein)"),
+  exclusions: z.array(z.string()).describe("Liste von Ausschlüssen (z.B. Leistenmontage nicht inbegriffen)"),
+  totalAmount: z.number().describe("Gesamtsumme in CHF"),
+  isFixedPrice: z.boolean().describe("Ist es ein Festpreis oder eine Schätzung?")
+});
 
 export async function POST(req: NextRequest) {
   try {
@@ -58,8 +41,6 @@ export async function POST(req: NextRequest) {
 
     logger.log('OfferDraftAgent', `Starte Offertengenerierung für ${lead.customer.firstName} ${lead.customer.lastName}`, 'running');
 
-    const ai = new GoogleGenAI({ apiKey });
-
     const prompt = `Sie sind ein professioneller Kalkulator für Parkett-Pflege.ch. 
 Bitte erstellen Sie einen professionellen Offerten-Entwurf auf Basis der folgenden Lead-Daten und AI-Diagnose (falls vorhanden).
 Sprache: Schweizer Hochdeutsch.
@@ -77,19 +58,13 @@ Preisrahmen: ${lead.aiDiagnosis?.priceRange || '-'}
 Interne Info: ${lead.aiDiagnosis?.internalSummary || '-'}
 
 Erstellen Sie sinnvolle Annahmen (assumptions) wie "Räume sind leergeräumt", und Ausschlüsse (exclusions). 
-Geben Sie keine absoluten rechtlichen Garantien, es ist ein Entwurf. 
-Die Ausgabe muss strikt dem JSON Schema entsprechen.`;
+Geben Sie keine absoluten rechtlichen Garantien, es ist ein Entwurf.`;
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: responseSchema,
-      }
+    const { object: resultData } = await generateObject({
+      model: google("gemini-2.5-flash"),
+      schema: responseSchema,
+      prompt: prompt
     });
-
-    const resultData = JSON.parse(response.text || "{}");
 
     // Offerte zusammensetzen und speichern
     const offer = {
