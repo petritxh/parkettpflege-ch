@@ -1,7 +1,6 @@
 import { BookingProvider } from '@/components/providers/BookingProvider';
 import TopNav from '@/components/layout/TopNav';
 import Footer from '@/components/layout/Footer';
-import ChatWidget from '@/components/ChatWidget';
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +11,6 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
           {children}
         </main>
         <Footer />
-        <ChatWidget />
       </div>
     </BookingProvider>
   );
