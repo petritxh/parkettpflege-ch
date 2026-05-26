@@ -4,6 +4,30 @@ import { z } from 'zod';
 import * as fs from 'fs';
 import * as path from 'path';
 
+// Native env loader
+const envLocalPath = path.join(process.cwd(), '.env.local');
+const envPath = path.join(process.cwd(), '.env');
+const loadEnv = (filePath: string) => {
+  if (fs.existsSync(filePath)) {
+    const envContent = fs.readFileSync(filePath, 'utf-8');
+    envContent.split('\n').forEach(line => {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) return;
+      const [key, ...valueParts] = trimmed.split('=');
+      if (key && valueParts.length > 0) {
+        process.env[key.trim()] = valueParts.join('=').trim();
+      }
+    });
+  }
+};
+loadEnv(envLocalPath);
+loadEnv(envPath);
+
+// Make sure GOOGLE_GENERATIVE_AI_API_KEY is mapped from GEMINI_API_KEY if needed
+if (process.env.GEMINI_API_KEY && !process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY = process.env.GEMINI_API_KEY;
+}
+
 // SEO Long-Tail & Problem Keywords for the Swiss Market
 const keywords = [
   "Parkettboden knarrt beheben",
@@ -76,11 +100,17 @@ async function main() {
 
     console.log(`\n⏳ Generiere Artikel für: "${keyword}"...`);
     
-    try {
-      const { object } = await generateObject({
-        model: google('gemini-pro'), // Use available model
-        schema: seoArticleSchema,
-        prompt: `Du bist ein absoluter SEO-Spezialist und Meister im Schweizer Parkettleger-Handwerk mit über 20 Jahren Erfahrung.
+    let success = false;
+    let attempts = 5;
+    let object: any = null;
+
+    while (attempts > 0 && !success) {
+      try {
+        const result = await generateObject({
+          model: google('gemini-3.5-flash'), // Use modern available model
+          schema: seoArticleSchema,
+          maxRetries: 0,
+          prompt: `Du bist ein absoluter SEO-Spezialist und Meister im Schweizer Parkettleger-Handwerk mit über 20 Jahren Erfahrung.
 Dein Ziel ist es, den ultimativen, hilfreichsten und tiefgreifendsten Ratgeber-Artikel zum Thema "${keyword}" zu schreiben.
 
 Vorgaben:
@@ -97,8 +127,42 @@ Vorgaben:
    - WICHTIG: Erwähne im Text natürlich die Begriffe "Parkett ölen", "Parkett schleifen", "Parkett versiegeln" und "Parkett Reparatur", damit diese von unserem SEO-Linker später erkannt und verlinkt werden können.
 6. faqs: Erstelle exakt 3 häufige, sehr spezifische Fragen und ausführliche Antworten zu diesem Thema.
 `,
-      });
+        });
 
+        object = result.object;
+        success = true;
+      } catch (error: any) {
+        attempts--;
+        const isQuotaOrDemand = error.message?.includes('quota') || 
+                               error.message?.includes('429') || 
+                               error.message?.includes('demand') || 
+                               error.message?.includes('503') ||
+                               error.message?.includes('UNAVAILABLE') ||
+                               error.message?.includes('RESOURCE_EXHAUSTED');
+        
+        console.error(`⚠️ Fehler bei "${keyword}" (Versuche übrig: ${attempts}):`, error.message || error);
+        
+        if (attempts > 0 && isQuotaOrDemand) {
+          // Parse retry delay from error message if possible
+          let waitTimeMs = 65000; // Default to 65 seconds to clear standard 1-minute quota windows
+          const match = error.message?.match(/Please retry in ([\d\.]+)s/);
+          if (match && match[1]) {
+            const seconds = parseFloat(match[1]);
+            waitTimeMs = Math.ceil(seconds + 5) * 1000;
+          }
+          console.log(`⏳ Rate-Limit oder Überlastung erkannt. Warte ${Math.round(waitTimeMs / 1000)} Sekunden vor dem nächsten Versuch...`);
+          await new Promise(r => setTimeout(r, waitTimeMs));
+        } else if (attempts === 0) {
+          console.error(`❌ Artikel für "${keyword}" konnte nach 5 Versuchen nicht generiert werden.`);
+        } else {
+          // Other error, sleep 5 seconds and retry
+          console.log(`⏳ Unerwarteter Fehler. Warte 5 Sekunden vor dem nächsten Versuch...`);
+          await new Promise(r => setTimeout(r, 5000));
+        }
+      }
+    }
+
+    if (success && object) {
       const newProblem = {
         id: slug,
         slug: slug,
@@ -114,7 +178,7 @@ Vorgaben:
 
       problemsData.push(newProblem);
 
-      object.faqs.forEach(faq => {
+      object.faqs.forEach((faq: any) => {
         faqsData.push({
           id: `faq-${slug}-${Math.random().toString(36).substr(2, 9)}`,
           question: faq.question,
@@ -129,11 +193,8 @@ Vorgaben:
 
       console.log(`✅ Erfolgreich generiert und gespeichert: ${slug}`);
       
-      // Sleep for 3 seconds to avoid rate limiting
-      await new Promise(r => setTimeout(r, 3000));
-
-    } catch (error) {
-      console.error(`❌ Fehler bei "${keyword}":`, error);
+      // Sleep for 15 seconds to prevent hitting RPM/quota limit
+      await new Promise(r => setTimeout(r, 15000));
     }
   }
 

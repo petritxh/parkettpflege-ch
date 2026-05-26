@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     }
 
     const result = await streamText({
-      model: google('gemini-1.5-flash'),
+      model: google('gemini-2.5-flash'),
       system: `Du bist der "Parkett-Meister", der offizielle KI-Assistent von Parkett-Pflege.ch. 
 Du hilfst Schweizer Kunden bei Problemen mit ihrem Parkettboden.
 Du bist höflich, hochprofessionell und verkaufsorientiert.
