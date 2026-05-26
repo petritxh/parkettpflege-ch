@@ -5,26 +5,40 @@ import { Save, Loader2, Mail, FileText, Settings2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function SettingsPage() {
-  const [settings, setSettings] = useState({
-    offerIntroTemplate: '',
-    offerFooterTemplate: '',
-    emailOfferLinkTemplate: '',
-    emailConfirmationTemplate: ''
-  });
+  const [offerIntroTemplate, setOfferIntroTemplate] = useState('');
+  const [offerFooterTemplate, setOfferFooterTemplate] = useState('');
+  const [emailOfferLinkTemplate, setEmailOfferLinkTemplate] = useState('');
+  const [emailConfirmationTemplate, setEmailConfirmationTemplate] = useState('');
+  const [emailOrderConfirmationTemplate, setEmailOrderConfirmationTemplate] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
-    fetch('/api/admin/settings')
-      .then(res => res.json())
-      .then(data => {
-        setSettings(data);
+    async function loadSettings() {
+      try {
+        const res = await fetch('/api/admin/settings');
+        if (res.ok) {
+          const data = await res.json();
+          setOfferIntroTemplate(data.offerIntroTemplate || '');
+          setOfferFooterTemplate(data.offerFooterTemplate || '');
+          setEmailOfferLinkTemplate(data.emailOfferLinkTemplate || '');
+          setEmailConfirmationTemplate(data.emailConfirmationTemplate || '');
+          setEmailOrderConfirmationTemplate(data.emailOrderConfirmationTemplate || '');
+        }
+      } catch (error) {
+        console.error('Failed to load settings');
+      } finally {
         setIsLoading(false);
-      });
+      }
+    }
+    loadSettings();
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setSettings({ ...settings, [e.target.name]: e.target.value });
+    setSettings(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   const handleSave = async () => {
@@ -138,6 +152,18 @@ export default function SettingsPage() {
               <textarea 
                 name="emailConfirmationTemplate"
                 value={settings.emailConfirmationTemplate}
+                onChange={handleChange}
+                rows={5}
+                className="w-full bg-gray-50 border-0 rounded-2xl p-4 text-sm focus:ring-2 focus:ring-primary focus:bg-white transition"
+              />
+              <p className="text-xs text-gray-400 mt-2">Variablen: {'{KUNDE_NAME}'}, {'{OFFER_ID}'}</p>
+            </div>
+            
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">Auftragsbestätigung (Nach Annahme)</label>
+              <textarea 
+                name="emailOrderConfirmationTemplate"
+                value={settings.emailOrderConfirmationTemplate}
                 onChange={handleChange}
                 rows={5}
                 className="w-full bg-gray-50 border-0 rounded-2xl p-4 text-sm focus:ring-2 focus:ring-primary focus:bg-white transition"

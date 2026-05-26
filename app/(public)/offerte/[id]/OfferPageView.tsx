@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Loader2, Lock, CheckCircle2, XCircle, HelpCircle, FileText, Send } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { Loader2, Lock, CheckCircle2, XCircle, HelpCircle, Send } from 'lucide-react';
+import { motion } from 'motion/react';
+import confetti from 'canvas-confetti';
 import { Offer, AdminSettings } from '@/lib/types/crm';
 
 export default function OfferPageView({ 
@@ -106,13 +107,40 @@ export default function OfferPageView({
 
   // Bereits beantwortet?
   if (offer.customerStatus === 'accepted') {
+    // Konfetti auslösen, wenn die Seite das erste Mal mit 'accepted' geladen wird
+    useEffect(() => {
+      const duration = 3 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+      const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+      const interval: any = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+      }, 250);
+    }, []);
+
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="bg-white p-12 rounded-3xl shadow-xl max-w-lg w-full text-center">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-white p-12 rounded-3xl shadow-xl max-w-lg w-full text-center relative overflow-hidden"
+        >
           <CheckCircle2 className="w-20 h-20 text-green-500 mx-auto mb-6" />
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Angebot angenommen!</h1>
-          <p className="text-gray-600">Vielen Dank für Ihr Vertrauen. Wir haben Ihre Bestätigung erhalten und werden uns in Kürze bezüglich der Terminvereinbarung bei Ihnen melden.</p>
-        </div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">Vielen Dank für Ihre Buchung!</h1>
+          <p className="text-gray-600 mb-6">Wir haben Ihre Annahme erfolgreich registriert und freuen uns sehr auf die Zusammenarbeit mit Ihnen.</p>
+          <p className="text-gray-600 font-medium">Sie erhalten von uns noch eine formelle Auftragsbestätigung per E-Mail. Wir werden uns in Kürze telefonisch bei Ihnen melden, um die genauen Termindetails zu besprechen.</p>
+          <p className="text-gray-400 text-sm mt-8">Bei Fragen stehen wir jederzeit gerne zur Verfügung.</p>
+        </motion.div>
       </div>
     );
   }

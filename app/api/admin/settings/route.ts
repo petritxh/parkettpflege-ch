@@ -13,7 +13,14 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const newSettings = await req.json();
+    const body = await req.json();
+    const newSettings = {
+      offerIntroTemplate: body.offerIntroTemplate,
+      offerFooterTemplate: body.offerFooterTemplate,
+      emailOfferLinkTemplate: body.emailOfferLinkTemplate,
+      emailConfirmationTemplate: body.emailConfirmationTemplate,
+      emailOrderConfirmationTemplate: body.emailOrderConfirmationTemplate
+    };
     await saveSettings(newSettings);
     return NextResponse.json({ success: true });
   } catch (error) {

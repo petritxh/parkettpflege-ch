@@ -4,6 +4,7 @@ import {
   Users, 
   FileText, 
   BrainCircuit, 
+  Calendar,
   Camera, 
   Search, 
   MessageCircleQuestion, 
@@ -38,6 +39,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
           <Link href="/admin/offers" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
             <FileText className="w-5 h-5" /> Offerten
+          </Link>
+          <Link href="/admin/calendar" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
+            <Calendar className="w-5 h-5" /> Kalender
           </Link>
 
           <div className="pt-4 pb-2 px-4">

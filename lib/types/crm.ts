@@ -73,6 +73,21 @@ export interface AdminSettings {
   offerFooterTemplate: string;
   emailOfferLinkTemplate: string;
   emailConfirmationTemplate: string;
+  emailOrderConfirmationTemplate: string;
+}
+
+export type EventStatus = 'Geplant' | 'Abgeschlossen' | 'Storniert';
+
+export interface CalendarEvent {
+  id: string;
+  title: string;
+  date: string; // ISO Date (YYYY-MM-DD)
+  startTime?: string; // HH:mm
+  endTime?: string; // HH:mm
+  offerId?: string;
+  leadId?: string;
+  status: EventStatus;
+  notes?: string;
 }
 
 export interface OfferLineItem {

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
   Menu, X, LogOut, LayoutDashboard, Users, BrainCircuit, 
-  FileText, Camera, Search, MessageCircleQuestion, Package, TerminalSquare, Settings
+  FileText, Camera, Search, MessageCircleQuestion, Package, TerminalSquare, Settings, Calendar
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -56,6 +56,7 @@ export default function MobileNav() {
                 <Link onClick={closeMenu} href="/admin/leads" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><Users className="w-5 h-5" /> Leads</Link>
                 <Link onClick={closeMenu} href="/admin/diagnostics" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><BrainCircuit className="w-5 h-5" /> AI-Diagnosen</Link>
                 <Link onClick={closeMenu} href="/admin/offers" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><FileText className="w-5 h-5" /> Offerten</Link>
+                <Link onClick={closeMenu} href="/admin/calendar" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><Calendar className="w-5 h-5" /> Kalender</Link>
                 
                 <div className="pt-4 pb-2 px-4"><p className="text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">Content & SEO</p></div>
                 <Link onClick={closeMenu} href="/admin/case-studies" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant font-label-md"><Camera className="w-5 h-5" /> Fallstudien</Link>

@@ -5,6 +5,7 @@ import { Lead, Offer } from './types/crm';
 const dataDir = path.join(process.cwd(), 'data');
 const leadsFile = path.join(dataDir, 'leads.json');
 const offersFile = path.join(dataDir, 'offers.json');
+const eventsFile = path.join(dataDir, 'events.json');
 
 async function ensureDataDir() {
   try {
@@ -113,6 +114,40 @@ export async function deleteOffer(id: string): Promise<void> {
   await fs.writeFile(offersFile, JSON.stringify(offers, null, 2), 'utf-8');
 }
 
+// --- EVENTS ---
+
+export async function getEvents(): Promise<any[]> {
+  await ensureDataDir();
+  try {
+    const data = await fs.readFile(eventsFile, 'utf-8');
+    return JSON.parse(data);
+  } catch (error: any) {
+    if (error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
+  }
+}
+
+export async function saveEvent(event: any): Promise<void> {
+  const events = await getEvents();
+  const index = events.findIndex(e => e.id === event.id);
+  
+  if (index >= 0) {
+    events[index] = event;
+  } else {
+    events.push(event);
+  }
+  
+  await fs.writeFile(eventsFile, JSON.stringify(events, null, 2), 'utf-8');
+}
+
+export async function deleteEvent(id: string): Promise<void> {
+  let events = await getEvents();
+  events = events.filter(e => e.id !== id);
+  await fs.writeFile(eventsFile, JSON.stringify(events, null, 2), 'utf-8');
+}
+
 // --- FAQS ---
 const faqsFile = path.join(dataDir, 'faqs.json');
 
@@ -214,7 +249,8 @@ const defaultSettings = {
   offerIntroTemplate: 'Sehr geehrte(r) {KUNDE_NAME},\n\nvielen Dank für Ihre Anfrage. Gerne unterbreiten wir Ihnen folgendes Angebot für Ihr Parkett.',
   offerFooterTemplate: 'Vielen Dank für Ihr Vertrauen in Parkett-Pflege.ch. Bei Fragen stehen wir jederzeit zur Verfügung.',
   emailOfferLinkTemplate: 'Guten Tag {KUNDE_NAME},\n\nIhre Offerte ist nun bereit.\nSie können diese unter folgendem Link aufrufen: {LINK}\n\nIhr persönlicher Zugangs-PIN lautet: {PIN}\n\nFreundliche Grüsse,\nIhr Parkett-Pflege.ch Team',
-  emailConfirmationTemplate: 'Guten Tag {KUNDE_NAME},\n\nvielen Dank! Wir haben Ihre Bestätigung zur Offerte {OFFER_ID} erhalten und werden uns in Kürze zwecks Terminvereinbarung bei Ihnen melden.\n\nFreundliche Grüsse,\nIhr Parkett-Pflege.ch Team'
+  emailConfirmationTemplate: 'Guten Tag {KUNDE_NAME},\n\nvielen Dank! Wir haben Ihre Bestätigung zur Offerte {OFFER_ID} erhalten und werden uns in Kürze zwecks Terminvereinbarung bei Ihnen melden.\n\nFreundliche Grüsse,\nIhr Parkett-Pflege.ch Team',
+  emailOrderConfirmationTemplate: 'Guten Tag {KUNDE_NAME},\n\nvielen Dank für Ihre Auftragserteilung zur Offerte {OFFER_ID}. Wir freuen uns auf die Ausführung! Wir werden uns in Kürze bei Ihnen melden.\n\nFreundliche Grüsse,\nIhr Parkett-Pflege.ch Team'
 };
 
 export async function getSettings(): Promise<any> {
