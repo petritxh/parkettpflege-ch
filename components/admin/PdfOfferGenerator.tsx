@@ -3,8 +3,6 @@
 import { useState, useRef } from 'react';
 import { Offer, Lead } from '@/lib/types/crm';
 import { Download, Loader2 } from 'lucide-react';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 
 interface PdfOfferGeneratorProps {
   offer: Offer;
@@ -21,6 +19,11 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
 
     try {
       const element = pdfRef.current;
+      
+      // Dynamische Imports um Next.js SSR Fehler zu vermeiden
+      const html2canvas = (await import('html2canvas')).default;
+      const { jsPDF } = await import('jspdf');
+
       // Kurze Verzögerung für Font-Rendering
       await new Promise(resolve => setTimeout(resolve, 300));
       
@@ -65,8 +68,8 @@ export default function PdfOfferGenerator({ offer, lead }: PdfOfferGeneratorProp
         )}
       </button>
 
-      {/* Hidden Container for PDF Rendering */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-9999] opacity-0 overflow-hidden">
+      {/* Hidden Container for PDF Rendering - darf nicht opacity-0 sein für html2canvas */}
+      <div className="absolute top-[-9999px] left-[-9999px] w-[800px]">
         <div 
           ref={pdfRef} 
           className="w-[800px] bg-white text-black p-12 relative"
