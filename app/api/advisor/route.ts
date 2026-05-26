@@ -13,7 +13,7 @@ const responseSchema: Schema = {
     recommendedService: { type: Type.STRING, description: "Empfohlene Dienstleistung (z.B. Grundreinigung, Abschleifen & Ölen)" },
     priceRange: { type: Type.STRING, description: "Grobe Preisspanne in CHF (z.B. 200 - 400 CHF oder 35 - 55 CHF / m2)" },
     leadScore: { type: Type.INTEGER, description: "Lead Score von 0 bis 100, basierend auf Auftragsvolumen und Dringlichkeit" },
-    customerExplanation: { type: Type.STRING, description: "Kundenfreundliche, professionelle Erklärung für den Nutzer (Schweizer Deutsch / Höflich)" },
+    customerExplanation: { type: Type.STRING, description: "Kundenfreundliche Erklärung. Wichtig: Schreibe in sehr kurzen, prägnanten Sätzen und verwende ausschließlich Spiegelstriche ('-') für Stichpunkte, KEINEN langen Textblock! Maximal 3 kurze Stichpunkte." },
     internalSummary: { type: Type.STRING, description: "Interne Kurz-Zusammenfassung für den Handwerker/Verkauf" }
   },
   required: [
@@ -51,7 +51,8 @@ Der Kunde hat ein Foto hochgeladen. Analysieren Sie das Bild sehr sorgfältig, u
 Nutzeranliegen (falls vorhanden): ${concerns || 'Kein spezielles Anliegen angegeben'}
 
 Geben Sie eine strukturierte JSON-Antwort zurück. 
-Beachten Sie: Geben Sie dem Kunden niemals rechtlich bindende Garantien. Sagen Sie klar in der kundenfreundlichen Erklärung, dass dies eine KI-gestützte Voranalyse ist und keine Vor-Ort-Begutachtung ersetzt!`;
+Beachten Sie: Geben Sie dem Kunden niemals rechtlich bindende Garantien. Sagen Sie klar in der kundenfreundlichen Erklärung, dass dies eine KI-gestützte Voranalyse ist und keine Vor-Ort-Begutachtung ersetzt!
+Antworten Sie in der 'customerExplanation' extrem kurz und auf den Punkt. Schreiben Sie ausschließlich kurze, punktuelle Sätze als Aufzählungspunkte (Spiegelstriche '-'). Jede Zeile darf nur einen einzigen kurzen Satz enthalten. Vermeiden Sie jeglichen Fließtext!`;
 
     const contents: any[] = [prompt];
 

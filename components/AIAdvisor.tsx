@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { Sparkles, ChevronRight, Upload, X, Loader2, AlertTriangle, CheckCircle2, Search, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useBooking } from '@/components/providers/BookingProvider';
 
 interface AnalysisResult {
   suspectedDamage?: string;
@@ -19,6 +20,7 @@ interface AnalysisResult {
 }
 
 export default function AIAdvisor({ onOpenBooking }: { onOpenBooking?: (diagnosis: any) => void }) {
+  const { openBooking } = useBooking();
   const [step, setStep] = useState<'intro' | 'form' | 'loading' | 'result'>('intro');
   const [formData, setFormData] = useState({
     concerns: '',
@@ -251,14 +253,12 @@ export default function AIAdvisor({ onOpenBooking }: { onOpenBooking?: (diagnosi
                    <p className="text-xs text-white/60">Kostenschätzung: {analysis?.priceRange}</p>
                  </div>
 
-                 {needsHelp && onOpenBooking && (
-                   <button 
-                     onClick={() => onOpenBooking(analysis)}
-                     className="w-full bg-primary text-white py-3 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold shadow-lg shadow-black/20 hover:bg-primary/90 flex justify-center items-center gap-2 transition-all"
-                   >
-                     Kostenlose Begutachtung anfragen <ArrowRight className="w-4 h-4" />
-                   </button>
-                 )}
+                  <button 
+                    onClick={() => openBooking(analysis)}
+                    className="w-full bg-primary text-white py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold shadow-lg shadow-black/20 hover:bg-primary/90 flex justify-center items-center gap-2 transition-all mt-4"
+                  >
+                    Kostenlose Richtofferte / Angebot einholen <ArrowRight className="w-4 h-4" />
+                  </button>
                </div>
             )}
           </div>
