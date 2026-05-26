@@ -1,0 +1,92 @@
+[
+  {
+    "id": "woca-holzbodenseife-natur",
+    "name": "WOCA Holzbodenseife Natur",
+    "category": "Reinigung",
+    "shortDescription": "Sanfte Reinigung und Pflege für geölte Holzböden.",
+    "description": "Die WOCA Holzbodenseife reinigt den Boden schonend und schützt ihn gleichzeitig vor dem Austrocknen. Durch die rückfettenden Eigenschaften erhält das Holz bei jeder Reinigung einen schützenden Film.",
+    "imageUrl": "https://images.unsplash.com/photo-1581850518616-bcb8077a2336?w=600&h=600&fit=crop",
+    "price": 24.90,
+    "isAffiliate": false,
+    "tags": ["pH-neutral", "Alltagspflege", "Rückfettend"],
+    "suitableFor": {
+      "woodTypes": ["alle", "eiche", "buche_ahorn", "nussbaum"],
+      "damageTypes": ["alle", "keine", "fein", "laufstrassen"]
+    }
+  },
+  {
+    "id": "woca-holzbodenseife-weiss",
+    "name": "WOCA Holzbodenseife Weiss",
+    "category": "Reinigung",
+    "shortDescription": "Für weiss geölte und helle Holzböden.",
+    "description": "Die weisse Variante der WOCA Holzbodenseife. Ideal für helles Holz wie Ahorn, Esche oder weiss geölte Eiche. Bewahrt den hellen Charakter und reinigt schonend.",
+    "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=600&fit=crop",
+    "price": 24.90,
+    "isAffiliate": false,
+    "tags": ["Helles Holz", "Alltagspflege"],
+    "suitableFor": {
+      "woodTypes": ["buche_ahorn", "eiche"],
+      "damageTypes": ["alle", "keine", "fein"]
+    }
+  },
+  {
+    "id": "woca-intensivreiniger",
+    "name": "WOCA Intensivreiniger",
+    "category": "Reinigung",
+    "shortDescription": "Tiefenreinigung zur Vorbereitung für Pflegeöle.",
+    "description": "Löst hartnäckigen Schmutz und alte Seifenreste. Ideal vor dem Neu-Ölen oder bei mittleren Laufstrassen. Wichtig: Trocknet das Holz aus, anschliessende Ölung zwingend erforderlich!",
+    "imageUrl": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=600&fit=crop",
+    "price": 28.50,
+    "isAffiliate": false,
+    "tags": ["Tiefenreinigung", "Vorbehandlung"],
+    "suitableFor": {
+      "woodTypes": ["alle"],
+      "damageTypes": ["fein", "laufstrassen", "wasser"]
+    }
+  },
+  {
+    "id": "woca-pflegeoel-natur",
+    "name": "WOCA Pflegeöl Natur",
+    "category": "Pflege",
+    "shortDescription": "Frischt matte und leicht verkratzte Böden auf.",
+    "description": "Unterstützt die natürliche Holzfarbe und schliesst feine Kratzer. Der Boden wirkt nach der Anwendung wieder frisch und ist besser vor Schmutz und Feuchtigkeit geschützt.",
+    "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=600&fit=crop",
+    "price": 45.00,
+    "isAffiliate": false,
+    "tags": ["Werterhalt", "Auffrischung"],
+    "suitableFor": {
+      "woodTypes": ["eiche", "nussbaum", "andere"],
+      "damageTypes": ["fein", "laufstrassen"]
+    }
+  },
+  {
+    "id": "woca-pflegeoel-weiss",
+    "name": "WOCA Pflegeöl Weiss",
+    "category": "Pflege",
+    "shortDescription": "Speziell für helle und weiss geölte Böden.",
+    "description": "Bewahrt den hellen Charakter des Holzes und schützt vor Vergilbung. Frischt die matte Oberfläche auf und sättigt die Holzporen.",
+    "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&h=600&fit=crop",
+    "price": 45.00,
+    "isAffiliate": false,
+    "tags": ["UV-Schutz", "Helles Holz"],
+    "suitableFor": {
+      "woodTypes": ["buche_ahorn"],
+      "damageTypes": ["fein", "laufstrassen"]
+    }
+  },
+  {
+    "id": "woca-fleckenspray",
+    "name": "WOCA Gerbsäure-Fleckenspray",
+    "category": "Reparatur",
+    "shortDescription": "Hilft bei der Entfernung von dunklen Wasserflecken auf Eiche.",
+    "description": "Ein spezielles Spray zur Neutralisierung von dunklen Reaktionsflecken (oft durch Wasser oder Metall auf Eiche verursacht).",
+    "imageUrl": "https://images.unsplash.com/photo-1581850518616-bcb8077a2336?w=600&h=600&fit=crop",
+    "price": 19.90,
+    "isAffiliate": false,
+    "tags": ["Fleckenentfernung", "Problemlöser"],
+    "suitableFor": {
+      "woodTypes": ["eiche"],
+      "damageTypes": ["wasser"]
+    }
+  }
+]
