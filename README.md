@@ -84,9 +84,11 @@ Unter `/admin/settings` kann der Betreiber flexibel eingreifen:
 
 ---
 
-## ⚠️ Wichtiger Entwickler-Hinweis (Vercel & Datenbank)
-Die aktuelle Implementierung nutzt Node.js `fs.writeFile`, um Daten im Ordner `/data/*.json` zu speichern.
-Dies funktioniert perfekt in einer lokalen Entwicklungsumgebung oder auf einem VPS/Root-Server.
-**Auf Serverless-Plattformen wie Vercel ist das Dateisystem (`process.cwd()`) in der Produktion schreibgeschützt (Read-Only).**
-Wenn das System auf Vercel läuft, wird ein Fehler geworfen, sobald versucht wird, eine Offerte zu speichern, den Status zu ändern (z.B. beim Akzeptieren durch den Kunden) oder ein Kalender-Event zu erstellen. 
-**Lösungsweg für den produktiven Live-Einsatz:** Die Data-Service-Schicht (`lib/data-service.ts`) muss auf eine externe Datenbank wie Firestore (Firebase), Supabase (PostgreSQL) oder MongoDB umgeschrieben werden.
+## ⚠️ Architektur-Hinweis (Hybrid Storage System)
+Die Plattform nutzt ein intelligentes, hybrides Daten-Speichersystem, das in `lib/data-service.ts` implementiert ist:
+
+1. **Lokale Entwicklung (Fallback):** 
+   Wenn keine Firebase-Daten hinterlegt sind (z.B. beim ersten Auschecken des Codes), nutzt das System automatisch Node.js `fs.writeFile`, um alle Daten in lokalen JSON-Dateien im Ordner `/data/*.json` zu speichern. Dies ermöglicht eine blitzschnelle, unkomplizierte lokale Entwicklung ohne Setup.
+   
+2. **Produktion (Vercel + Google Firebase):** 
+   Auf Serverless-Plattformen wie Vercel ist das Dateisystem schreibgeschützt (Read-Only). Sobald die Umgebungsvariable `FIREBASE_SERVICE_ACCOUNT_KEY` hinterlegt ist, switcht das System komplett auf **Google Firebase (Firestore)**. Die gesamte Datenbank (Leads, Offerten, Events) wird dann live in der Cloud gespeichert und synchronisiert. Dadurch funktioniert das CRM problemlos im produktiven Einsatz.
