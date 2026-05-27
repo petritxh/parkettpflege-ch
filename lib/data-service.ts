@@ -1,16 +1,30 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { kv } from '@vercel/kv';
+import * as admin from 'firebase-admin';
 import { Lead, Offer } from './types/crm';
 
 // --- HYBRID STORAGE SYSTEM ---
-// If Vercel KV is linked (production), it uses Redis to bypass read-only filesystem errors.
-// If Vercel KV is missing (local dev), it falls back to local JSON files in /data.
-const useKV = !!process.env.KV_REST_API_URL;
+// If Firebase is configured (production), it uses Firestore to bypass Vercel read-only filesystem errors.
+// If Firebase is missing (local dev), it falls back to local JSON files in /data.
+
+const serviceAccountKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
+const useFirebase = !!serviceAccountKey;
+
+if (useFirebase && !admin.apps.length) {
+  try {
+    admin.initializeApp({
+      credential: admin.credential.cert(JSON.parse(serviceAccountKey as string))
+    });
+  } catch (e) {
+    console.error('Failed to initialize Firebase Admin', e);
+  }
+}
+
+const db = useFirebase ? admin.firestore() : null;
 const dataDir = path.join(process.cwd(), 'data');
 
 async function ensureDataDir() {
-  if (useKV) return;
+  if (useFirebase) return;
   try {
     await fs.access(dataDir);
   } catch {
@@ -37,30 +51,33 @@ async function saveLocalData(filename: string, data: any): Promise<void> {
     await fs.writeFile(path.join(dataDir, filename), JSON.stringify(data, null, 2), 'utf-8');
   } catch (e) {
     console.error('Could not save data locally:', e);
-    throw e; // We want to throw to let the caller know it failed
+    throw e;
   }
 }
 
-async function getData<T>(key: string, filename: string, fallback: T): Promise<T> {
-  if (useKV) {
+async function getData<T>(collectionName: string, docId: string, filename: string, fallback: T): Promise<T> {
+  if (useFirebase && db) {
     try {
-      const data = await kv.get<T>(key);
-      return data !== null ? data : fallback;
+      const doc = await db.collection(collectionName).doc(docId).get();
+      if (doc.exists) {
+        return doc.data()?.data as T;
+      }
+      return fallback;
     } catch (e) {
-      console.error(`KV Error getting ${key}:`, e);
+      console.error(`Firestore Error getting ${collectionName}/${docId}:`, e);
       return fallback;
     }
   }
   return getLocalData<T>(filename, fallback);
 }
 
-async function saveData(key: string, filename: string, data: any): Promise<void> {
-  if (useKV) {
+async function saveData(collectionName: string, docId: string, filename: string, data: any): Promise<void> {
+  if (useFirebase && db) {
     try {
-      await kv.set(key, data);
+      await db.collection(collectionName).doc(docId).set({ data });
       return;
     } catch (e) {
-      console.error(`KV Error setting ${key}:`, e);
+      console.error(`Firestore Error setting ${collectionName}/${docId}:`, e);
       throw e;
     }
   }
@@ -70,7 +87,7 @@ async function saveData(key: string, filename: string, data: any): Promise<void>
 // --- LEADS ---
 
 export async function getLeads(): Promise<Lead[]> {
-  return getData<Lead[]>('crm:leads', 'leads.json', []);
+  return getData<Lead[]>('crm', 'leads', 'leads.json', []);
 }
 
 export async function getLeadById(id: string): Promise<Lead | null> {
@@ -83,19 +100,19 @@ export async function saveLead(lead: Lead): Promise<void> {
   const index = leads.findIndex(l => l.id === lead.id);
   if (index >= 0) leads[index] = lead;
   else leads.push(lead);
-  await saveData('crm:leads', 'leads.json', leads);
+  await saveData('crm', 'leads', 'leads.json', leads);
 }
 
 export async function deleteLead(id: string): Promise<void> {
   let leads = await getLeads();
   leads = leads.filter(l => l.id !== id);
-  await saveData('crm:leads', 'leads.json', leads);
+  await saveData('crm', 'leads', 'leads.json', leads);
 }
 
 // --- OFFERS ---
 
 export async function getOffers(): Promise<Offer[]> {
-  return getData<Offer[]>('crm:offers', 'offers.json', []);
+  return getData<Offer[]>('crm', 'offers', 'offers.json', []);
 }
 
 export async function getOfferById(id: string): Promise<Offer | null> {
@@ -120,19 +137,19 @@ export async function saveOffer(offer: Offer): Promise<void> {
   if (index >= 0) offers[index] = offer;
   else offers.push(offer);
   
-  await saveData('crm:offers', 'offers.json', offers);
+  await saveData('crm', 'offers', 'offers.json', offers);
 }
 
 export async function deleteOffer(id: string): Promise<void> {
   let offers = await getOffers();
   offers = offers.filter(o => o.id !== id);
-  await saveData('crm:offers', 'offers.json', offers);
+  await saveData('crm', 'offers', 'offers.json', offers);
 }
 
 // --- EVENTS ---
 
 export async function getEvents(): Promise<any[]> {
-  return getData<any[]>('crm:events', 'events.json', []);
+  return getData<any[]>('crm', 'events', 'events.json', []);
 }
 
 export async function saveEvent(event: any): Promise<void> {
@@ -140,19 +157,19 @@ export async function saveEvent(event: any): Promise<void> {
   const index = events.findIndex(e => e.id === event.id);
   if (index >= 0) events[index] = event;
   else events.push(event);
-  await saveData('crm:events', 'events.json', events);
+  await saveData('crm', 'events', 'events.json', events);
 }
 
 export async function deleteEvent(id: string): Promise<void> {
   let events = await getEvents();
   events = events.filter(e => e.id !== id);
-  await saveData('crm:events', 'events.json', events);
+  await saveData('crm', 'events', 'events.json', events);
 }
 
 // --- FAQS ---
 
 export async function getFAQs(): Promise<any[]> {
-  return getData<any[]>('crm:faqs', 'faqs.json', []);
+  return getData<any[]>('crm', 'faqs', 'faqs.json', []);
 }
 
 export async function getFAQsByTarget(category: string, targetSlug: string): Promise<any[]> {
@@ -165,29 +182,29 @@ export async function saveFAQ(faq: any): Promise<void> {
   const index = faqs.findIndex(f => f.id === faq.id);
   if (index >= 0) faqs[index] = faq;
   else faqs.push(faq);
-  await saveData('crm:faqs', 'faqs.json', faqs);
+  await saveData('crm', 'faqs', 'faqs.json', faqs);
 }
 
 export async function deleteFAQ(id: string): Promise<void> {
   let faqs = await getFAQs();
   faqs = faqs.filter(f => f.id !== id);
-  await saveData('crm:faqs', 'faqs.json', faqs);
+  await saveData('crm', 'faqs', 'faqs.json', faqs);
 }
 
 // --- CMS DATA (SERVICES, PROBLEMS, LOCATIONS) ---
 
 export async function getCMSData(type: 'services' | 'problems' | 'locations'): Promise<any[]> {
-  return getData<any[]>(`cms:${type}`, `${type}.json`, []);
+  return getData<any[]>('cms', type, `${type}.json`, []);
 }
 
 export async function saveCMSData(type: 'services' | 'problems' | 'locations', data: any[]): Promise<void> {
-  await saveData(`cms:${type}`, `${type}.json`, data);
+  await saveData('cms', type, `${type}.json`, data);
 }
 
 // --- CASE STUDIES ---
 
 export async function getCases(): Promise<any[]> {
-  return getData<any[]>('cms:cases', 'cases.json', []);
+  return getData<any[]>('cms', 'cases', 'cases.json', []);
 }
 
 export async function saveCase(caseItem: any): Promise<void> {
@@ -198,13 +215,13 @@ export async function saveCase(caseItem: any): Promise<void> {
     if (!caseItem.id) caseItem.id = Date.now();
     cases.push(caseItem);
   }
-  await saveData('cms:cases', 'cases.json', cases);
+  await saveData('cms', 'cases', 'cases.json', cases);
 }
 
 export async function deleteCase(id: number): Promise<void> {
   let cases = await getCases();
   cases = cases.filter(c => c.id !== id);
-  await saveData('cms:cases', 'cases.json', cases);
+  await saveData('cms', 'cases', 'cases.json', cases);
 }
 
 // --- ADMIN SETTINGS ---
@@ -218,10 +235,10 @@ const defaultSettings = {
 };
 
 export async function getSettings(): Promise<any> {
-  const settings = await getData<any>('crm:settings', 'settings.json', {});
+  const settings = await getData<any>('crm', 'settings', 'settings.json', {});
   return { ...defaultSettings, ...settings };
 }
 
 export async function saveSettings(settings: any): Promise<void> {
-  await saveData('crm:settings', 'settings.json', settings);
+  await saveData('crm', 'settings', 'settings.json', settings);
 }
