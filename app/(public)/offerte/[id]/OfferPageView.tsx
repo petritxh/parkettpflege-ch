@@ -135,7 +135,16 @@ export default function OfferPageView({
         confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
         confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
       }, 250);
-    }, []);
+
+      const redirectTimer = setTimeout(() => {
+        router.push('/ratgeber');
+      }, 5000);
+
+      return () => {
+        clearInterval(interval);
+        clearTimeout(redirectTimer);
+      };
+    }, [router]);
 
     return (
       <div className="min-h-screen flex items-center justify-center p-4">

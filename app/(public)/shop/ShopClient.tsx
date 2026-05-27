@@ -42,22 +42,22 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
         <div className="container-custom max-w-5xl mx-auto relative z-10">
           <div className="flex justify-between items-start">
             <div className="max-w-2xl">
-              <span className="inline-block py-1 px-3 rounded-full bg-secondary/20 border border-secondary/30 text-secondary font-label-md text-xs uppercase tracking-widest mb-6 backdrop-blur-sm">
+              <span className="text-secondary-fixed font-label-md text-label-md tracking-widest uppercase mb-4 block">
                 Offizieller WOCA Partner Shop
               </span>
-              <h1 className="font-display-lg text-4xl md:text-5xl text-white mb-6">
+              <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 leading-tight">
                 Professionelle Pflege für Ihren Holzboden.
               </h1>
-              <p className="text-white/80 font-body-lg text-lg leading-relaxed mb-10">
+              <p className="font-body-lg text-body-lg mb-8 text-white/90 max-w-xl">
                 Bestellen Sie exakt dieselben hochwertigen WOCA-Produkte, die wir bei unseren täglichen Einsätzen verwenden. Garantiert schonend, effektiv und werterhaltend.
               </p>
               
               <div className="flex flex-wrap items-center gap-6">
-                <div className="flex items-center gap-2 text-white/90 font-label-md text-sm">
+                <div className="flex items-center gap-2 text-white/90 font-label-md text-label-md">
                   <Truck className="w-5 h-5 text-secondary" />
                   <span>Kostenloser Versand in CH ab CHF 100.-</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/90 font-label-md text-sm">
+                <div className="flex items-center gap-2 text-white/90 font-label-md text-label-md">
                   <ShieldCheck className="w-5 h-5 text-secondary" />
                   <span>Geprüfte Handwerker-Qualität</span>
                 </div>
