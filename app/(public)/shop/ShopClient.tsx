@@ -39,7 +39,7 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#4a2f1d]/30 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2E1A0F]/80 blur-[120px] rounded-full -translate-x-1/3 translate-y-1/3"></div>
         
-        <div className="container-custom max-w-5xl mx-auto relative z-10">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
           <div className="flex justify-between items-start">
             <div className="max-w-2xl">
               <span className="text-secondary-fixed font-label-md text-label-md tracking-widest uppercase mb-4 block">
@@ -74,7 +74,7 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
         </div>
       </div>
 
-      <div className="container-custom max-w-5xl mx-auto mt-12 px-4 md:px-0">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-12">
         {/* Filters and Search */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
           {/* Category Pills */}
