@@ -74,7 +74,7 @@ export default async function ProblemPage({ params }: Props) {
           )}
 
           {/* Main Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className={`flex-1 max-w-3xl w-full mx-auto ${problem.solutionText ? 'lg:mx-0' : 'lg:mx-auto'}`}>
             
             {/* Quick Benefits (if available) */}
             {problem.benefits && (

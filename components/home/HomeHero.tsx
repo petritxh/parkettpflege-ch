@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Camera, Calculator, ChevronRight, ShieldCheck } from 'lucide-react';
 import { homepageContent } from '@/data/homepage-content';
 
@@ -8,13 +9,22 @@ export default function HomeHero() {
   const hero = homepageContent.hero;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-surface-bright via-surface to-surface-container-lowest py-20 md:py-28 px-margin-mobile md:px-margin-desktop border-b border-outline-variant/10">
+    <section className="relative overflow-hidden py-20 md:py-28 px-margin-mobile md:px-margin-desktop border-b border-outline-variant/10 min-h-[600px] flex items-center">
       
-      {/* Dynamic ambient blur circles in background */}
-      <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Premium Alpine Wood Floor Background Image */}
+      <Image 
+        src="/images/swiss_parkett_hero.png" 
+        alt="Premium Parkettboden im Schweizer Alpen-Stil" 
+        fill 
+        priority
+        className="object-cover object-center z-0"
+      />
 
-      <div className="max-w-container-max-width mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      {/* Elegant Gradient Mask to ensure high readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-surface-bright via-surface-bright/95 md:via-surface-bright/85 to-surface-bright/10 z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-surface-bright via-transparent to-transparent z-[1] pointer-events-none" />
+
+      <div className="max-w-container-max-width mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         
         {/* Left column: Text Content */}
         <div className="lg:col-span-7 space-y-6 text-left">

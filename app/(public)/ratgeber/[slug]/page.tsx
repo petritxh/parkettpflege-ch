@@ -94,7 +94,7 @@ export default async function RatgeberPage({ params }: Props) {
           )}
 
           {/* Main Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className={`flex-1 max-w-3xl w-full mx-auto ${guide.contentMarkdown ? 'lg:mx-0' : 'lg:mx-auto'}`}>
             
             {/* Guide Content Intro Banner */}
             <div className="mb-12 bg-surface-container-low p-8 rounded-3xl border border-outline-variant/30 flex gap-4 text-left">

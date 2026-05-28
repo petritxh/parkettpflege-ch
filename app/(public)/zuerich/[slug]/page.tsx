@@ -149,7 +149,7 @@ export default async function RegionalPage({ params }: Props) {
           )}
 
           {/* Main Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className={`flex-1 max-w-3xl w-full mx-auto ${linkedMarkdown ? 'lg:mx-0' : 'lg:mx-auto'}`}>
             
             {/* Municipal highlight box */}
             <div className="mb-12 bg-secondary/5 border-l-4 border-secondary p-6 rounded-r-3xl text-left flex gap-4">

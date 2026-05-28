@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: Props) {
           )}
 
           {/* Main Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className={`flex-1 max-w-3xl w-full mx-auto ${service.contentMarkdown ? 'lg:mx-0' : 'lg:mx-auto'}`}>
             
             {/* Quick Benefits */}
             {service.benefits && (

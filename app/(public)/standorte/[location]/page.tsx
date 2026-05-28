@@ -92,7 +92,7 @@ export default async function LocationPage({ params }: Props) {
           )}
 
           {/* Main Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className={`flex-1 max-w-3xl w-full mx-auto ${location.contentMarkdown ? 'lg:mx-0' : 'lg:mx-auto'}`}>
             {/* Markdown Content */}
             {location.contentMarkdown && (
               <div className="prose prose-lg prose-slate max-w-none 
