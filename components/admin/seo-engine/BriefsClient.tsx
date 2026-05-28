@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import SeoSectionCard from '@/components/admin/seo-engine/SeoSectionCard';
 import SeoStatCard from '@/components/admin/seo-engine/SeoStatCard';
-import { FileText, Target, AlertCircle, Compass, ShieldAlert } from 'lucide-react';
+import { FileText, Target, AlertCircle, Compass, ShieldAlert, Plus, Loader2 } from 'lucide-react';
 
 interface BriefsClientProps {
   pageIdeas: any[];
@@ -19,6 +19,43 @@ function BriefsClientContent({ pageIdeas, briefs, categories, contentTypes }: Br
   const slugParam = searchParams.get('slug');
   
   const [selectedSlug, setSelectedSlug] = useState<string>('');
+  
+  // Creation state
+  const [creating, setCreating] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<string | null>(null);
+
+  const handleCreatePage = async () => {
+    if (!activeBrief) return;
+    setCreating(true);
+    setSyncStatus(null);
+    try {
+      const category = activeBrief.category;
+      
+      const res = await fetch('/api/admin/seo/create-from-brief', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          category,
+          slug: activeBrief.slug,
+          primaryKeyword: activeBrief.primaryKeyword,
+          h1: activeBrief.h1 || `Parkett-Pflege: ${activeBrief.primaryKeyword}`,
+          intent: activeBrief.intent,
+          contentType: activeBrief.contentType
+        })
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        // Redirect to the editor page immediately!
+        router.push(data.editUrl);
+      } else {
+        setSyncStatus(`Fehler: ${data.error || 'Fehler beim Erstellen'}`);
+      }
+    } catch (e) {
+      setSyncStatus('Verbindungsfehler zur API.');
+    } finally {
+      setCreating(false);
+    }
+  };
 
   useEffect(() => {
     if (slugParam) {
@@ -81,7 +118,7 @@ function BriefsClientContent({ pageIdeas, briefs, categories, contentTypes }: Br
           </select>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0 self-stretch md:self-end pt-4 md:pt-0">
+        <div className="flex items-center gap-3 shrink-0 self-stretch md:self-end pt-4 md:pt-0">
           <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
             isRealBrief 
               ? 'bg-green-50 text-green-700 border-green-200' 
@@ -89,8 +126,28 @@ function BriefsClientContent({ pageIdeas, briefs, categories, contentTypes }: Br
           }`}>
             {isRealBrief ? 'Briefing Generiert' : 'Auto-Idee aus Engine'}
           </span>
+
+          {['leistungen', 'problemfaelle', 'zuerich', 'service', 'problem', 'location'].includes(activeBrief.category) && (
+            <button
+              onClick={handleCreatePage}
+              disabled={creating}
+              className="inline-flex items-center gap-1.5 bg-primary text-on-primary hover:bg-primary/95 text-xs font-bold px-4 py-2 rounded-lg transition-all shadow active:scale-95 disabled:opacity-50"
+            >
+              {creating ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Plus className="w-3.5 h-3.5" />
+              )}
+              Seite im CMS anlegen & bearbeiten
+            </button>
+          )}
         </div>
       </div>
+      {syncStatus && (
+        <div className="p-3 bg-red-50 text-red-750 border border-red-200 rounded-lg text-xs font-medium">
+          {syncStatus}
+        </div>
+      )}
 
       {/* Briefing Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
