@@ -47,11 +47,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="pt-4 pb-2 px-4">
              <p className="text-xs font-bold text-on-surface-variant/70 uppercase tracking-wider">Content & SEO</p>
           </div>
+          <Link href="/admin/seo-engine" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
+            <Search className="w-5 h-5" /> SEO Engine
+          </Link>
           <Link href="/admin/case-studies" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
             <Camera className="w-5 h-5" /> Fallstudien
-          </Link>
-          <Link href="/admin/seo" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
-            <Search className="w-5 h-5" /> SEO-Seiten
           </Link>
           <Link href="/admin/faqs" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
             <MessageCircleQuestion className="w-5 h-5" /> FAQs

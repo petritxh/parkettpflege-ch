@@ -1,220 +1,293 @@
-Bitte erweitere jetzt den SEO-Engine-Admin um einen echten Content-Brief-Workflow.
+Du arbeitest im bestehenden Next.js-Projekt für `parkett-pflege.ch`.
 
-Ausgangslage:
-Die SEO-Engine V5 ist bereits eingebunden. Die Daten kommen aus:
+Wichtigste Projektregel:
+Die Marke und Domain heissen immer exakt `parkett-pflege.ch`. Verwende niemals `parkettpflege.ch`, ausser wenn du bewusst eine alte falsche Schreibweise korrigierst.
+
+## Projektziel
+
+`parkett-pflege.ch` soll zur stärksten Website und SEO-Plattform für Parkettpflege, Parkettreparatur und Parkettrenovation im Raum Zürich werden.
+
+Die Website soll nicht nur eine schöne Landingpage sein, sondern ein skalierbares System für:
+
+* lokale SEO-Seiten
+* Leistungsseiten
+* Problemfall-Seiten
+* Kosten-Seiten
+* Ratgeber
+* Blogartikel
+* Vorher-Nachher-Fälle
+* Quiz
+* Spiele
+* Infografiken
+* Fotoanalyse
+* Kostenrechner
+* interne Linkcluster
+* JSON-LD Schema
+* Quality Score
+* Admin-Verwaltung
+
+## Vorhandene zentrale Dateien
+
+Diese Dateien sind die verbindliche Grundlage:
 
 ```txt
 docs/SEO_CONTENT_ENGINE.md
 config/seo-content-engine.json
 ```
 
-Der Admin-Bereich existiert unter:
+Beide Dateien laufen parallel:
 
 ```txt
-/admin/seo-engine
+docs/SEO_CONTENT_ENGINE.md
+= menschlich lesbare Strategie, Regeln, SEO-Handbuch und operative Dokumentation
+
+config/seo-content-engine.json
+= maschinenlesbare Konfiguration für Admin, Agenten, Content-Briefs und spätere Automatisierung
 ```
 
-Jetzt möchte ich aus Seitenideen konkrete Content-Briefs erzeugen, prüfen, bearbeiten und später freigeben können.
+Keine dieser Dateien darf gekürzt oder inhaltlich vereinfacht werden, ausser ich fordere es ausdrücklich.
 
-Bitte baue folgendes:
+## Grundsatz für alle Arbeiten
 
-## 1. Content-Brief-Datenmodell
+Arbeite nicht oberflächlich und nicht minimalistisch. Wenn ein Bereich geplant, modelliert oder implementiert wird, soll er stabil, erweiterbar, nachvollziehbar und produktionsnah sein.
 
-Erstelle oder erweitere:
+Keine Kurzlösungen, keine Platzhalter ohne klare Markierung, keine stillen Annahmen.
+
+Wenn du eine Struktur anlegst, dann so, dass sie später wachsen kann.
+
+## SEOContentAgent-Prinzip
+
+Der SEOContentAgent ist kein reiner Textgenerator. Er ist ein Seitenarchitekt.
+
+Er soll niemals nur diese Felder erzeugen:
 
 ```txt
-types/seo-engine.ts
-lib/seo-content-briefs.ts
-data/seo-content-briefs/
+Slug
+Title
+Meta Description
+H1
+Text
+FAQ
 ```
 
-Ein Content Brief soll enthalten:
-
-```ts
-type SeoContentBrief = {
-  id: string
-  slug: string
-  title?: string
-  metaDescription?: string
-  h1?: string
-  contentType: string
-  category: string
-  subCategory?: string
-  tags: string[]
-  primaryKeyword?: string
-  secondaryKeywords?: string[]
-  searchIntent?: string
-  targetAudience?: string[]
-  funnelStage?: string
-  priority?: string
-  status:
-    | "draft"
-    | "planned"
-    | "in_progress"
-    | "review"
-    | "approved"
-    | "published"
-    | "needs_update"
-    | "archived"
-  outline: {
-    level: "h2" | "h3" | "h4"
-    title: string
-    purpose?: string
-    children?: any[]
-  }[]
-  contentModules: string[]
-  interactiveElement?: {
-    type: string
-    placement?: string
-    purpose?: string
-  }
-  faq: {
-    question: string
-    answer?: string
-  }[]
-  internalLinks: {
-    anchorText: string
-    targetSlug: string
-    reason?: string
-  }[]
-  imageRequirements: {
-    type: string
-    description: string
-    altText?: string
-  }[]
-  jsonLdSchemas: string[]
-  ctaBlocks: {
-    type: string
-    headline?: string
-    text?: string
-    buttonText?: string
-  }[]
-  qualityScore?: {
-    total?: number
-    criteria?: Record<string, number>
-    notes?: string[]
-  }
-  notes?: string
-  createdAt: string
-  updatedAt: string
-}
-```
-
-## 2. Brief aus Page Idea erzeugen
-
-Auf `/admin/seo-engine/page-ideas` soll bei jeder Seitenidee ein Button erscheinen:
+Er muss vollständige Seitenkonzepte erzeugen:
 
 ```txt
-Brief erstellen
+contentType
+category
+subCategory
+tags
+primaryKeyword
+secondaryKeywords
+searchIntent
+targetAudience
+funnelStage
+slug
+canonicalUrl
+title
+metaDescription
+h1
+h2H3Outline
+contentModules
+interactiveElement
+faq
+internalLinks
+imageRequirements
+infographicRequirements
+jsonLdSchemas
+ctaBlocks
+localSeoSignals
+trustSignals
+qualityScore
+reviewChecklist
+publishingPriority
+updateFrequency
+status
+notes
 ```
 
-Dieser Button soll aus dem Slug und den Regeln der SEO-Engine einen ersten Brief erzeugen.
+## Qualitätsschwelle
 
-Ableitungen:
+Keine SEO-Seite soll veröffentlicht werden, wenn sie nicht mindestens diese Anforderungen erfüllt:
 
-* `/problemfaelle/*` → problem_case_page
-* `/leistungen/*` → service_page
-* `/kosten/*` → cost_page
-* `/ratgeber/*` → guide_page
-* `/zuerich/*` → location_page
-* `/quiz/*` → quiz_page
-* `/tools/*` → tool_page
-* `/faelle/*` → case_study
-* `/blog/*` → blog_article
-
-## 3. Brief-Detailseite
-
-Erstelle:
-
-```txt
-/admin/seo-engine/briefs/[id]
-```
-
-Dort anzeigen:
-
-* Slug
-* Status
-* Kategorie
-* Content Type
-* Hauptkeyword
-* Title
-* Meta Description
-* H1
-* Outline
-* Module
-* FAQ
+* klare Suchintention
+* korrekter Seitentyp
+* passende Kategorie
+* kontrollierte Tags
+* eine H1
+* sinnvolle H2/H3-Struktur
+* konkrete Problemlösung
 * interne Links
-* Bilder
-* JSON-LD
-* CTAs
+* passender CTA
+* Bildanforderungen
+* JSON-LD-Strategie
 * Quality Score
+* fachliche Prüfung
+* keine generischen Texte
+* keine Doorway-Seiten
+* keine duplizierten Ortsseiten ohne echten lokalen Mehrwert
+
+## Admin-Ziel
+
+Ich möchte die SEO-Engine im Admin sehen, verfolgen und später bearbeiten können.
+
+Der Admin soll nicht nur eine JSON-Datei anzeigen. Er soll eine echte Steuerzentrale werden für:
+
+* Überblick
+* Kategorien
+* Content Types
+* Tags
+* Problemfälle
+* Leistungsseiten
+* Kosten-Seiten
+* Zürich-Seiten
+* Blog
+* Quiz
+* Spiele
+* Infografiken
+* Vorher-Nachher-Fälle
+* interne Links
+* JSON-LD
+* Quality Score
+* Roadmap
+* Seitenideen
+* Content-Briefs
+* Status
 * Notizen
+* Review
+* Veröffentlichung
 
-Wenn einfache Bearbeitung möglich ist, Felder editierbar machen. Sonst zunächst read-only mit klarer Struktur.
+## Wichtige Architekturregel
 
-## 4. Quality Score berechnen
+Nicht sofort automatisch alle SEO-Seiten öffentlich generieren.
 
-Erstelle:
+Zuerst bauen:
 
 ```txt
-lib/seo-quality-score.ts
+Planung → Admin → Status → Briefs → Review → Freigabe → Veröffentlichung
 ```
 
-Funktion:
+Öffentliche SEO-Seiten dürfen erst später aus freigegebenen Content-Briefs entstehen.
 
-```ts
-calculateSeoQualityScore(brief, config)
+## Umsetzung in Next.js
+
+Arbeite sauber mit:
+
+* TypeScript
+* App Router
+* Server Components, wo sinnvoll
+* Client Components nur für interaktive Admin-Funktionen
+* klarer Ordnerstruktur
+* wiederverwendbaren Komponenten
+* robusten Loadern
+* Fallbacks, wenn JSON-Felder fehlen
+* lesbaren Typen
+* möglichst wenig doppelter Logik
+
+## Erwartete Ordnerstruktur
+
+Falls noch nicht vorhanden, bereite diese Struktur vor:
+
+```txt
+docs/
+  SEO_CONTENT_ENGINE.md
+  AGENT_INSTRUCTIONS.md
+
+config/
+  seo-content-engine.json
+
+types/
+  seo-engine.ts
+
+lib/
+  seo-engine.ts
+  seo-content-status.ts
+  seo-content-briefs.ts
+  seo-quality-score.ts
+  seo-jsonld-rules.ts
+  seo-internal-linking.ts
+
+data/
+  seo-content-status.json
+  seo-content-briefs/
+
+app/
+  admin/
+    seo-engine/
+      page.tsx
+      overview/
+      categories/
+      content-types/
+      tags/
+      problemfaelle/
+      leistungen/
+      kosten/
+      ratgeber/
+      zuerich/
+      blog/
+      interactive/
+      internal-links/
+      json-ld/
+      quality-score/
+      roadmap/
+      page-ideas/
+      briefs/
+      docs/
+
+components/
+  admin/
+    seo-engine/
+      SeoEngineShell.tsx
+      SeoEngineNav.tsx
+      SeoEngineOverviewCards.tsx
+      SeoCategoryTable.tsx
+      SeoContentTypeTable.tsx
+      SeoTagExplorer.tsx
+      SeoProblemCaseExplorer.tsx
+      SeoInteractiveModuleExplorer.tsx
+      SeoInternalLinkExplorer.tsx
+      SeoJsonLdExplorer.tsx
+      SeoQualityScoreDashboard.tsx
+      SeoRoadmapTable.tsx
+      SeoPageIdeasTable.tsx
+      SeoDocsViewer.tsx
+      SeoBriefPreview.tsx
+      SeoStatusBadge.tsx
+      SeoFilterBar.tsx
 ```
 
-Bewerte:
+## Build-Regel
 
-* Suchintention
-* Struktur
-* Content-Tiefe
-* lokale Relevanz
-* interne Links
-* visuelle Anforderungen
-* CTA
-* JSON-LD
-* Einzigartigkeit
-* Trust
+Nach grösseren Änderungen immer prüfen:
 
-Gib zurück:
-
-```ts
-{
-  total: number
-  criteria: Record<string, number>
-  warnings: string[]
-  recommendations: string[]
-}
+```bash
+npm run build
 ```
 
-## 5. Brief-Liste
+Falls das Projekt noch keinen stabilen Build hat:
 
-Auf `/admin/seo-engine/briefs` anzeigen:
+```bash
+npm run lint
+npm run typecheck
+```
 
-* alle Briefs
-* Status
-* Quality Score
-* Kategorie
-* Content Type
-* Suche
-* Filter
-* Sortierung
-* Link zur Detailseite
+oder vorhandene Scripts aus `package.json` verwenden.
 
-## 6. Nächste Stufe vorbereiten
+## Arbeitsweise
 
-Bitte noch keine echten SEO-Texte automatisch veröffentlichen.
+Arbeite schrittweise:
 
-Nur Briefs erzeugen, bewerten, prüfen und verwalten.
+1. vorhandene Projektstruktur prüfen
+2. Dateien lesen
+3. Datentypen definieren
+4. Loader bauen
+5. Admin-Grundstruktur bauen
+6. Übersichtsseite bauen
+7. Detailseiten bauen
+8. Status-System vorbereiten
+9. Build prüfen
+10. Ergebnis mit geänderten Dateien zusammenfassen
 
-Akzeptanzkriterien:
+Vor jeder grösseren strukturellen Änderung kurz prüfen, ob bestehende Komponenten, Styles oder Admin-Strukturen bereits existieren und wiederverwendet werden können.
 
-* Briefs können aus Page Ideas erzeugt werden
-* Briefs sind im Admin sichtbar
-* Quality Score wird berechnet
-* Brief-Detailseite funktioniert
-* keine öffentlichen Seiten werden automatisch veröffentlicht
-* Build läuft sauber
+Nichts löschen, was nicht eindeutig veraltet oder falsch ist. Bei Unsicherheit erst kommentieren oder separat neue Struktur anlegen.
