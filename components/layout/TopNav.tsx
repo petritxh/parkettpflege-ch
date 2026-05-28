@@ -3,30 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown, Camera, Calculator } from 'lucide-react';
-import { homepageContent } from '@/data/homepage-content';
+import { Menu, X, ChevronRight, Camera, Calculator, Wrench, AlertTriangle, BookOpen, DollarSign, Mail } from 'lucide-react';
 
 export default function TopNav() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  const toggleDropdown = (name: string) => {
-    if (activeDropdown === name) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(name);
-    }
-  };
-
-  const navContent = homepageContent.footer; // Re-use structured links from content file
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
-    setIsMobileMenuOpen(false);
-    setActiveDropdown(null);
+    setIsMenuOpen(false);
   };
 
-  // Dropdown list mappings
-  const servicesDropdown = [
+  // Service pages (Zürich & Vorher/Nachher removed per request)
+  const servicesList = [
     { label: "Parkett reinigen", href: "/leistungen/parkett-reinigen-zuerich" },
     { label: "Parkett ölen", href: "/leistungen/parkett-oelen-zuerich" },
     { label: "Parkett schleifen", href: "/leistungen/parkett-schleifen-zuerich" },
@@ -35,7 +22,8 @@ export default function TopNav() {
     { label: "Parkett auffrischen", href: "/leistungen/parkett-auffrischen-zuerich" }
   ];
 
-  const problemsDropdown = [
+  // Problem pages (Zürich & Vorher/Nachher removed per request)
+  const problemsList = [
     { label: "Wasserflecken", href: "/problemfaelle/wasserflecken-parkett" },
     { label: "Hundekratzer", href: "/problemfaelle/hundekratzer-parkett" },
     { label: "Schwarze Flecken", href: "/problemfaelle/schwarze-flecken-parkett" },
@@ -47,216 +35,226 @@ export default function TopNav() {
   ];
 
   return (
-    <nav className="bg-surface/90 backdrop-blur-xl sticky docked top-0 z-50 border-b border-outline-variant/30 transition-all duration-300">
-      <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
-        
-        {/* Brand Logo */}
-        <Link href="/" className="flex flex-col justify-center select-none" onClick={handleLinkClick}>
-          <span className="font-headline-md text-xl md:text-2xl font-bold tracking-tight text-primary leading-tight">
-            parkett-pflege.ch
-          </span>
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden xl:flex items-center gap-5">
+    <>
+      <nav className="bg-surface/85 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 transition-all duration-300">
+        <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
           
-          {/* Dropdown: Leistungen */}
-          <div className="relative group">
-            <button className="flex items-center gap-1 text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4">
-              Leistungen <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
-            </button>
-            <div className="absolute top-full left-0 w-64 bg-white border border-outline-variant/40 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col p-2 pointer-events-none group-hover:pointer-events-auto">
-              {servicesDropdown.map((item, idx) => (
-                <Link 
-                  key={idx} 
-                  href={item.href} 
-                  className="px-4 py-2.5 hover:bg-surface-variant rounded-xl text-on-surface text-sm font-medium transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
+          {/* Brand Logo */}
+          <Link href="/" className="flex flex-col justify-center select-none" onClick={handleLinkClick}>
+            <span className="font-headline-md text-xl md:text-2xl font-bold tracking-tight text-primary leading-tight hover:opacity-90 transition-opacity">
+              parkett-pflege.ch
+            </span>
+          </Link>
+
+          {/* Right Action Items & modern Desktop Burger Button */}
+          <div className="flex items-center gap-4">
+            
+            {/* Quick Header CTA (Hidden on small mobile, visible on tablet & desktop) */}
+            <div className="hidden sm:flex items-center gap-3">
+              <Link 
+                href="/tools/parkett-kostenrechner"
+                className="flex items-center gap-1.5 border border-outline hover:bg-surface-variant px-4 py-2.5 rounded-xl font-semibold text-xs transition-all text-on-surface"
+              >
+                <Calculator className="w-3.5 h-3.5 text-secondary" />
+                <span>Kosten berechnen</span>
+              </Link>
+              <Link 
+                href="/tools/fotoanalyse-parkett"
+                className="flex items-center gap-1.5 bg-primary text-on-primary hover:bg-primary/95 px-4 py-2.5 rounded-xl font-semibold text-xs shadow-md shadow-primary/10 hover:shadow-lg transition-all"
+              >
+                <Camera className="w-3.5 h-3.5 text-on-primary" />
+                <span>Fotoanalyse</span>
+              </Link>
             </div>
+
+            {/* Quick Mobile Camera CTA (Only shown on small mobile) */}
+            <Link 
+              href="/tools/fotoanalyse-parkett" 
+              className="sm:hidden bg-primary text-on-primary p-2.5 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center"
+              title="Fotoanalyse"
+            >
+              <Camera className="w-4 h-4" />
+            </Link>
+
+            {/* Modern Burger Menu Button */}
+            <button 
+              onClick={() => setIsMenuOpen(true)}
+              className="flex items-center gap-2 text-on-surface hover:text-primary focus:outline-none p-2.5 rounded-xl hover:bg-surface-variant border border-outline-variant/30 transition-all font-semibold text-sm group"
+              aria-label="Menü öffnen"
+            >
+              <span className="hidden md:inline font-label-md text-xs tracking-wider uppercase text-on-surface-variant group-hover:text-primary transition-colors">Menü</span>
+              <Menu className="h-5 w-5 text-on-surface group-hover:text-primary transition-colors" />
+            </button>
           </div>
 
-          {/* Dropdown: Problemfälle */}
-          <div className="relative group">
-            <button className="flex items-center gap-1 text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4">
-              Problemfälle <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
-            </button>
-            <div className="absolute top-full left-0 w-72 bg-white border border-outline-variant/40 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col p-2 pointer-events-none group-hover:pointer-events-auto">
-              <div className="grid grid-cols-1 gap-1">
-                {problemsDropdown.map((item, idx) => (
-                  <Link 
-                    key={idx} 
-                    href={item.href} 
-                    className="px-4 py-2 hover:bg-surface-variant rounded-xl text-on-surface text-sm font-medium transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Static Navigation Items */}
-          <Link className="text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4" href="/kosten">
-            Kosten
-          </Link>
-          <Link className="text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4" href="/faelle">
-            Vorher-Nachher
-          </Link>
-          <Link className="text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4" href="/ratgeber">
-            Ratgeber
-          </Link>
-          <Link className="text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4" href="/zuerich/parkettpflege-zuerich">
-            Zürich
-          </Link>
-          <Link className="text-on-surface-variant font-semibold hover:text-primary transition-colors font-label-md text-sm py-4" href="/kontakt">
-            Kontakt
-          </Link>
         </div>
+      </nav>
 
-        {/* Action Buttons CTAs */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link 
-            href="/tools/parkett-kostenrechner"
-            className="flex items-center gap-1.5 border border-outline text-on-surface hover:bg-surface-variant px-4 py-2.5 rounded-xl font-semibold text-xs transition-all"
-          >
-            <Calculator className="w-3.5 h-3.5 text-secondary" />
-            Kosten berechnen
-          </Link>
-          <Link 
-            href="/tools/fotoanalyse-parkett"
-            className="flex items-center gap-1.5 bg-primary text-on-primary hover:bg-primary/95 px-4 py-2.5 rounded-xl font-semibold text-xs shadow-md shadow-primary/10 hover:shadow-lg transition-all"
-          >
-            <Camera className="w-3.5 h-3.5 text-on-primary" />
-            Fotoanalyse starten
-          </Link>
-        </div>
-
-        {/* Mobile Menu & Dynamic Hamburger Button */}
-        <div className="xl:hidden flex items-center gap-3">
-          <Link 
-            href="/tools/fotoanalyse-parkett" 
-            className="bg-primary text-on-primary p-2.5 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center lg:hidden"
-            title="Fotoanalyse"
-          >
-            <Camera className="w-4 h-4" />
-          </Link>
-          
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-on-surface hover:text-primary focus:outline-none p-2 rounded-xl hover:bg-surface-variant transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-
-      </div>
-
-      {/* Mobile Drawer Menu */}
+      {/* Modern Overlay Slide-Over Menu (Universal Burger Menu for Desktop and Mobile) */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="xl:hidden bg-surface border-t border-outline-variant/30 overflow-hidden"
-          >
-            <div className="px-margin-mobile py-6 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
-              
-              {/* Category Dropdown: Leistungen */}
-              <div className="border-b border-outline-variant/20 pb-2">
-                <button 
-                  onClick={() => toggleDropdown('services')}
-                  className="flex justify-between items-center w-full py-2 text-sm font-bold text-on-surface"
-                >
-                  <span>Leistungen</span>
-                  <ChevronDown className={`w-4 h-4 transform transition-transform duration-200 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
-                </button>
-                {activeDropdown === 'services' && (
-                  <div className="pl-4 mt-2 space-y-2.5 py-1">
-                    {servicesDropdown.map((item, idx) => (
-                      <Link 
-                        key={idx} 
-                        href={item.href} 
-                        onClick={handleLinkClick} 
-                        className="block text-sm text-on-surface-variant hover:text-primary py-1"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+        {isMenuOpen && (
+          <>
+            {/* Dark Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleLinkClick}
+              className="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm cursor-pointer"
+            />
 
-              {/* Category Dropdown: Problemfälle */}
-              <div className="border-b border-outline-variant/20 pb-2">
-                <button 
-                  onClick={() => toggleDropdown('problems')}
-                  className="flex justify-between items-center w-full py-2 text-sm font-bold text-on-surface"
-                >
-                  <span>Problemfälle</span>
-                  <ChevronDown className={`w-4 h-4 transform transition-transform duration-200 ${activeDropdown === 'problems' ? 'rotate-180' : ''}`} />
-                </button>
-                {activeDropdown === 'problems' && (
-                  <div className="pl-4 mt-2 space-y-2.5 py-1">
-                    {problemsDropdown.map((item, idx) => (
-                      <Link 
-                        key={idx} 
-                        href={item.href} 
-                        onClick={handleLinkClick} 
-                        className="block text-sm text-on-surface-variant hover:text-primary py-1"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Static Mobile Links */}
-              <Link href="/kosten" onClick={handleLinkClick} className="block py-2 text-sm font-bold text-on-surface border-b border-outline-variant/20">
-                Kosten
-              </Link>
-              <Link href="/faelle" onClick={handleLinkClick} className="block py-2 text-sm font-bold text-on-surface border-b border-outline-variant/20">
-                Vorher-Nachher
-              </Link>
-              <Link href="/ratgeber" onClick={handleLinkClick} className="block py-2 text-sm font-bold text-on-surface border-b border-outline-variant/20">
-                Ratgeber
-              </Link>
-              <Link href="/zuerich/parkettpflege-zuerich" onClick={handleLinkClick} className="block py-2 text-sm font-bold text-on-surface border-b border-outline-variant/20">
-                Zürich
-              </Link>
-              <Link href="/kontakt" onClick={handleLinkClick} className="block py-2 text-sm font-bold text-on-surface border-b border-outline-variant/20">
-                Kontakt
-              </Link>
-
-              {/* CTAs at the bottom of Drawer */}
-              <div className="pt-4 flex flex-col gap-3">
-                <Link 
-                  href="/tools/parkett-kostenrechner" 
-                  onClick={handleLinkClick}
-                  className="w-full flex items-center justify-center gap-2 border border-outline text-on-surface py-3 rounded-xl font-bold text-sm hover:bg-surface-variant transition-colors"
-                >
-                  <Calculator className="w-4 h-4 text-secondary" />
-                  Kosten berechnen
+            {/* Premium Slide-Over Menu Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: "spring", damping: 28, stiffness: 220 }}
+              className="fixed top-0 right-0 w-full sm:w-[500px] md:w-[600px] lg:w-[850px] xl:w-[950px] h-full bg-surface-container-lowest z-[101] shadow-2xl flex flex-col overflow-hidden"
+            >
+              {/* Drawer Header */}
+              <div className="h-20 flex items-center justify-between px-6 md:px-10 border-b border-outline-variant/30 shrink-0">
+                <Link href="/" className="flex flex-col justify-center select-none" onClick={handleLinkClick}>
+                  <span className="font-headline-md text-lg md:text-xl font-bold tracking-tight text-primary leading-tight">
+                    parkett-pflege.ch
+                  </span>
                 </Link>
-                <Link 
-                  href="/tools/fotoanalyse-parkett" 
-                  onClick={handleLinkClick}
-                  className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 rounded-xl font-bold text-sm hover:bg-primary/95 transition-colors shadow-md shadow-primary/10"
+                
+                <button 
+                  onClick={handleLinkClick} 
+                  className="p-2.5 bg-surface-variant hover:bg-surface-variant/80 rounded-full text-on-surface transition-all duration-300 hover:rotate-90 hover:scale-105"
+                  aria-label="Menü schliessen"
                 >
-                  <Camera className="w-4 h-4" />
-                  Fotoanalyse starten
-                </Link>
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
-            </div>
-          </motion.div>
+              {/* Drawer Content Body */}
+              <div className="flex-1 overflow-y-auto p-6 md:p-10 custom-scrollbar space-y-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
+                  
+                  {/* Category 1: Leistungen */}
+                  <div className="lg:col-span-4 space-y-4">
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-primary border-b border-outline-variant/35 pb-2 flex items-center gap-2">
+                      <Wrench className="w-4 h-4" />
+                      Unsere Leistungen
+                    </h3>
+                    <nav className="flex flex-col space-y-1">
+                      {servicesList.map((item, idx) => (
+                        <Link 
+                          key={idx} 
+                          href={item.href} 
+                          onClick={handleLinkClick}
+                          className="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-surface-variant text-on-surface hover:text-primary font-medium text-sm transition-all group"
+                        >
+                          <span>{item.label}</span>
+                          <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary" />
+                        </Link>
+                      ))}
+                    </nav>
+                  </div>
+
+                  {/* Category 2: Problemfälle */}
+                  <div className="lg:col-span-4 space-y-4">
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-primary border-b border-outline-variant/35 pb-2 flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4" />
+                      Typische Probleme
+                    </h3>
+                    <nav className="flex flex-col space-y-1">
+                      {problemsList.map((item, idx) => (
+                        <Link 
+                          key={idx} 
+                          href={item.href} 
+                          onClick={handleLinkClick}
+                          className="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-surface-variant text-on-surface hover:text-primary font-medium text-sm transition-all group"
+                        >
+                          <span>{item.label}</span>
+                          <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary" />
+                        </Link>
+                      ))}
+                    </nav>
+                  </div>
+
+                  {/* Category 3: Prominent Visual CTAs ("Kosten berechnen" & "Fotoanalyse") */}
+                  <div className="lg:col-span-4 space-y-4">
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-primary border-b border-outline-variant/35 pb-2">
+                      Direkt-Services
+                    </h3>
+                    
+                    <div className="flex flex-col gap-4">
+                      {/* Cost Calculator Callout Card */}
+                      <Link 
+                        href="/tools/parkett-kostenrechner"
+                        onClick={handleLinkClick}
+                        className="group flex flex-col p-5 bg-gradient-to-br from-secondary/5 to-secondary/15 hover:from-secondary/10 hover:to-secondary/20 border border-secondary/20 hover:border-secondary/35 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="p-2 bg-secondary/10 text-secondary rounded-xl group-hover:scale-105 transition-transform">
+                            <Calculator className="w-5 h-5" />
+                          </div>
+                          <span className="font-bold text-sm text-on-surface">Kosten berechnen</span>
+                        </div>
+                        <p className="text-xs text-on-surface-variant leading-relaxed mb-3">
+                          Erste Budget-Orientierung für Ihr Parkett in nur 2 Minuten – unverbindlich und transparent.
+                        </p>
+                        <span className="text-[11px] font-bold text-secondary inline-flex items-center gap-1 group-hover:underline">
+                          Rechner starten <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </span>
+                      </Link>
+
+                      {/* Photo Analysis Callout Card */}
+                      <Link 
+                        href="/tools/fotoanalyse-parkett"
+                        onClick={handleLinkClick}
+                        className="group flex flex-col p-5 bg-gradient-to-br from-primary/5 to-primary/15 hover:from-primary/10 hover:to-primary/20 border border-primary/20 hover:border-primary/35 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
+                      >
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="p-2 bg-primary/10 text-primary rounded-xl group-hover:scale-105 transition-transform">
+                            <Camera className="w-5 h-5" />
+                          </div>
+                          <span className="font-bold text-sm text-on-surface">Fotoanalyse starten</span>
+                        </div>
+                        <p className="text-xs text-on-surface-variant leading-relaxed mb-3">
+                          Senden Sie uns einfach Bilder Ihres Bodens für eine kostenlose, fachliche Experten-Einschätzung.
+                        </p>
+                        <span className="text-[11px] font-bold text-primary inline-flex items-center gap-1 group-hover:underline">
+                          Fotos hochladen <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* General/Static Link Section */}
+                <div className="pt-8 border-t border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                  
+                  {/* Left Link Row */}
+                  <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    <Link href="/kosten" onClick={handleLinkClick} className="text-sm font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+                      <DollarSign className="w-4 h-4 text-primary" /> Kosten & Preise
+                    </Link>
+                    <Link href="/ratgeber" onClick={handleLinkClick} className="text-sm font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+                      <BookOpen className="w-4 h-4 text-primary" /> Ratgeber & Wissen
+                    </Link>
+                    <Link href="/kontakt" onClick={handleLinkClick} className="text-sm font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-1">
+                      <Mail className="w-4 h-4 text-primary" /> Kontakt & Anfrage
+                    </Link>
+                  </div>
+
+                  {/* Right Region Info Tag */}
+                  <div className="md:text-right">
+                    <span className="inline-flex items-center px-3 py-1 bg-surface-variant text-on-surface-variant text-[11px] font-semibold rounded-full border border-outline-variant/30">
+                      🇨🇭 Raum Zürich & Umgebung
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }

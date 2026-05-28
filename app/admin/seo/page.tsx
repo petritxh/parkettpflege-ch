@@ -197,6 +197,7 @@ export default function SEOPage() {
           </div>
         </div>
       </div>
-    </SeoEngineShell>
-  );
+    </div>
+  </SeoEngineShell>
+);
 }
