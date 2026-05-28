@@ -3,7 +3,6 @@ import SeoEngineShell from '@/components/admin/seo-engine/SeoEngineShell';
 import fs from 'fs';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // if installed, else just standard
 
 function getDocsContent() {
   try {
