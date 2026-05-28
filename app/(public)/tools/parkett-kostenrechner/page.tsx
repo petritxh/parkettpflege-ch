@@ -85,10 +85,10 @@ export default function KostenrechnerPage() {
       <section className="py-16 px-margin-mobile md:px-margin-desktop bg-surface text-on-surface">
         <div className="max-w-container-max-width mx-auto space-y-16">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* Tool Instruction (5 cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            {/* Tool Instruction (4 cols) */}
+            <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
               <h2 className="font-headline-md text-2xl md:text-3xl font-bold">Wie berechnen sich die Parkettkosten?</h2>
               <p className="font-body-md text-on-surface-variant leading-relaxed">
                 Der Preis für eine professionelle Parkettbehandlung setzt sich aus mehreren Faktoren zusammen. Neben der reinen Grundfläche spielen der Holz-Härtegrad (z.B. Eiche vs. weichere Nadelhölzer) und die Art der bisherigen Beschichtung eine entscheidende Rolle.
@@ -116,11 +116,9 @@ export default function KostenrechnerPage() {
               </div>
             </div>
 
-            {/* PriceEstimator Box (7 cols) */}
-            <div className="lg:col-span-7 flex justify-center">
-              <div className="w-full max-w-[600px] bg-surface-container-lowest p-8 border border-outline-variant/30 rounded-3xl shadow-xl">
-                <PriceEstimator />
-              </div>
+            {/* PriceEstimator Box (8 cols) */}
+            <div className="lg:col-span-8">
+              <PriceEstimator />
             </div>
 
           </div>

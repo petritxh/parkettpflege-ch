@@ -50,13 +50,10 @@ export default function TopNav() {
     <nav className="bg-surface/90 backdrop-blur-xl sticky docked top-0 z-50 border-b border-outline-variant/30 transition-all duration-300">
       <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto h-20">
         
-        {/* Brand Logo & Claim */}
+        {/* Brand Logo */}
         <Link href="/" className="flex flex-col justify-center select-none" onClick={handleLinkClick}>
           <span className="font-headline-md text-xl md:text-2xl font-bold tracking-tight text-primary leading-tight">
             parkett-pflege.ch
-          </span>
-          <span className="text-[10px] md:text-[11px] text-on-surface-variant font-medium tracking-wide">
-            Parkett erhalten. Werte bewahren.
           </span>
         </Link>
 
