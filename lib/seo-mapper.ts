@@ -230,9 +230,32 @@ const municipalityCapitalization: { [key: string]: string } = {
 };
 
 export async function getRegionalPageData(slug: string) {
-  // Slug is e.g. "parkettpflege-duebendorf" or "parkettpflege-zuerich"
-  const mKey = slug.replace('parkettpflege-', '');
-  const name = municipalityCapitalization[mKey] || mKey.charAt(0).toUpperCase() + mKey.slice(1);
+  // Determine municipality name
+  let mKey = 'zuerich';
+  let isSpecialService = false;
+  let serviceName = '';
+  
+  if (slug.includes('winterthur')) mKey = 'winterthur';
+  else if (slug.includes('uster')) mKey = 'uster';
+  else if (slug.includes('duebendorf')) mKey = 'duebendorf';
+  else if (slug.includes('schlieren')) mKey = 'schlieren';
+  else if (slug.includes('dietikon')) mKey = 'dietikon';
+  else if (slug.includes('horgen')) mKey = 'horgen';
+  else if (slug.includes('meilen')) mKey = 'meilen';
+  else if (slug.includes('kuesnacht')) mKey = 'kuesnacht';
+  else if (slug.includes('zollikon')) mKey = 'zollikon';
+  else if (slug.includes('adliswil')) mKey = 'adliswil';
+  else if (slug.includes('thalwil')) mKey = 'thalwil';
+  
+  const name = municipalityCapitalization[mKey] || 'Zürich';
+
+  if (slug.includes('schleifen')) {
+    isSpecialService = true;
+    serviceName = 'schleifen';
+  } else if (slug.includes('reparieren')) {
+    isSpecialService = true;
+    serviceName = 'reparieren';
+  }
 
   const locations = await getCMSData('locations');
   const rawLocation = locations.find(l => l.slug === 'zuerich');
@@ -241,7 +264,6 @@ export async function getRegionalPageData(slug: string) {
   // Dynamically replace "Zürich" with municipality name, while avoiding breaking URLs
   const localize = (text: string) => {
     if (!text) return text;
-    // Replace "Kanton Zürich" or "Zürich" but NOT "parkett-pflege.ch"
     return enforceBrandSpelling(
       text
         .replace(/grossraum Zürich/gi, `Grossraum ${name}`)
@@ -252,20 +274,77 @@ export async function getRegionalPageData(slug: string) {
     );
   };
 
+  let h1 = localize(rawLocation.h1);
+  let metaTitle = localize(rawLocation.metaTitle);
+  let metaDescription = localize(rawLocation.metaDescription);
+  let intro = localize(rawLocation.intro);
+  let contentMarkdown = localize(rawLocation.contentMarkdown);
+
+  if (isSpecialService && mKey === 'zuerich') {
+    if (serviceName === 'schleifen') {
+      h1 = 'Parkett schleifen in Zürich';
+      metaTitle = 'Parkett schleifen Zürich | Staubfrei & Fachmännisch';
+      metaDescription = 'Parkett schleifen in Zürich: Staubfreier Abschliff, fachgerechte Versiegelung oder Ölung. Erhalten Sie eine kostenlose Ersteinschätzung per Foto!';
+      intro = 'Ein abgenutzter, zerkratzter oder stumpfer Parkettboden im Raum Zürich benötigt oft keinen teuren Austausch. Mit unserem staubfreien Schleifverfahren bringen wir Ihr Parkett wieder zum Strahlen.';
+      contentMarkdown = `## Professioneller Abschliff für Ihr Parkett in Zürich
+
+Ist die Nutzschicht Ihres Bodens abgenutzt, sind Kratzer zu tief oder Flecken unansehnlich geworden? Ein fachmännischer Abschliff erweckt Ihr Parkett zu neuem Leben. Als erfahrener Fachbetrieb im Raum Zürich bieten wir Ihnen ein absolut **staubfreies Schleifverfahren**, das Schmutzbelastung auf ein Minimum reduziert.
+
+### Wann ist ein kompletter Abschliff sinnvoll?
+
+Ein Abschliff ist die gründlichste Form der Parkettrenovierung. Sie wird notwendig bei:
+- Tiefen, fühlbaren Kratzern und Dellen im Holz
+- Starken Laufstrassen und sichtbarer Abnutzung der Lack- oder Ölschicht
+- Tief ins Holz eingedrungenen Wasser- oder Haustierflecken
+- Dem Wunsch nach einem Farbwechsel oder einer völlig neuen Oberflächenbehandlung
+
+### Staubfreies Schleifen für maximalen Komfort in Zürich
+
+Dank modernster Schleifmaschinen mit Hochleistungsabsaugung bleibt Ihr Wohnraum nahezu staubfrei. Wir führen den Schliff in mehreren feinen Durchgängen durch, tragen nur so viel Holz ab wie unbedingt nötig, und bauen die Schutzschicht anschliessend wahlweise mit hochwertigen Naturölen oder robusten Wasserlacken neu auf.
+
+### Was kostet Parkett schleifen in Zürich?
+
+Die Kosten für das Schleifen inklusive neuer Oberflächenbehandlung liegen in der Regel zwischen **CHF 35.– und CHF 55.– pro Quadratmeter**. Der genaue Aufwand richtet sich nach dem Zustand des Holzes, der Holzart und der gewünschten Versiegelungs- oder Ölungsmethode. Senden Sie uns einfach Fotos Ihres Bodens über unsere [Fotoanalyse](/tools/fotoanalyse-parkett) – wir geben Ihnen direkt eine erste unverbindliche Einschätzung.`;
+    } else if (serviceName === 'reparieren') {
+      h1 = 'Parkett reparieren in Zürich';
+      metaTitle = 'Parkett reparieren Zürich | Lokales Spot-Repair';
+      metaDescription = 'Parkett reparieren in Zürich: Lokale Ausbesserung von Kratzern, Flecken oder Druckstellen (Spot-Repair). Schnell, sauber und kostengünstig.';
+      intro = 'Kratzer, Dellen oder kleine Flecken im Parkett lassen sich im Raum Zürich oft ohne grossen Aufwand lokal beheben. Wir reparieren gezielt betroffene Stellen, statt den ganzen Boden zu schleifen.';
+      contentMarkdown = `## Gezielte Parkettreparatur in Zürich
+
+Ein Missgeschick ist schnell passiert: Ein heruntergefallenes Bügeleisen hinterlässt eine tiefe Delle, ein umgekippter Blumentopf sorgt für dunkle Ränder oder Hundekrallen zeichnen Spuren im Eingangsbereich. In den allermeisten Fällen muss das Parkett deswegen nicht komplett geschliffen oder gar ausgetauscht werden. Mit unserer **lokalen Parkettreparatur (Spot-Repair)** beheben wir den Makel gezielt und schonend.
+
+### Unsere Reparatur-Leistungen im Raum Zürich
+
+- **Auskitten von tiefen Dellen und Rissen:** Mit farblich exakt abgestimmten Hartwachsen und Retuschierfarben machen wir Beschädigungen nahezu unsichtbar.
+- **Behandlung von Flecken:** Lokales Bleichen von Wasser- oder Gerbsäureflecken und anschliessendes Nachölen der Stelle.
+- **Dielentausch:** Ist eine einzelne Parkettdiele irreparabel beschädigt, schneiden wir diese präzise heraus und ersetzen sie durch ein neues Originalteil.
+- **Oberflächenangleichung:** Anschleifen und Versiegeln bzw. Ölen von Teilflächen zur optischen Wiederherstellung.
+
+### Wann ist Spot-Repair möglich?
+
+Eine lokale Reparatur ist besonders erfolgreich bei natürlich geölten Böden, da sich diese nahtlos nachbehandeln lassen. Aber auch bei lackierten Oberflächen können wir feine Kratzer oder kleine Fehlstellen mit speziellen UV-härtenden Materialien versiegeln, um das Holz vor Feuchtigkeitseintritt zu schützen.
+
+### Kosten der Parkettreparatur
+
+Eine professionelle lokale Ausbesserung liegt meist zwischen **CHF 150.– und CHF 450.– pro Schadensstelle**, je nach Aufwand und Materialbedarf. Das ist nur ein Bruchteil eines kompletten Abschliffs. Gerne prüfen wir Ihr Schadensbild vorab: Nutzen Sie einfach unsere kostenfreie [Fotoanalyse](/tools/fotoanalyse-parkett) und laden Sie 1–2 Bilder des Schadens hoch.`;
+    }
+  }
+
   return {
     slug,
     name,
     focusKeyword: localize(rawLocation.focusKeyword),
-    h1: localize(rawLocation.h1),
-    metaTitle: localize(rawLocation.metaTitle),
-    metaDescription: localize(rawLocation.metaDescription),
-    intro: localize(rawLocation.intro),
+    h1,
+    metaTitle,
+    metaDescription,
+    intro,
     imageUrl: rawLocation.imageUrl,
     stats: rawLocation.stats.map((s: any) => ({
       label: s.label,
       value: localize(s.value)
     })),
-    contentMarkdown: localize(rawLocation.contentMarkdown)
+    contentMarkdown
   };
 }
 
