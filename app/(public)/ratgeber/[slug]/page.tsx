@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+
+export const dynamic = 'force-dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeroSection from '@/components/sections/HeroSection';

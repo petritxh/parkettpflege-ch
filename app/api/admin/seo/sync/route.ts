@@ -1,53 +1,45 @@
 import { NextResponse } from 'next/server';
-import { saveCMSData, getFAQs, saveFAQ, getCases, saveCase } from '@/lib/data-service';
-import fs from 'fs/promises';
-import path from 'path';
+import { saveCMSData, saveFAQ, saveCase } from '@/lib/data-service';
+
+// Static imports to bypass Vercel Serverless File NFT bundling issues
+import servicesData from '@/data/services.json';
+import problemsData from '@/data/problems.json';
+import locationsData from '@/data/locations.json';
+import faqsData from '@/data/faqs.json';
+import casesData from '@/data/cases.json';
 
 export async function POST(req: Request) {
   try {
-    const dataDir = path.join(process.cwd(), 'data');
-
-    // 1. Services
-    const servicesPath = path.join(dataDir, 'services.json');
-    const servicesData = JSON.parse(await fs.readFile(servicesPath, 'utf-8'));
+    // 1. Sync Services
     await saveCMSData('services', servicesData);
-    console.log('Synced services to Firestore');
+    console.log('Synced services statically to Firestore');
 
-    // 2. Problems
-    const problemsPath = path.join(dataDir, 'problems.json');
-    const problemsData = JSON.parse(await fs.readFile(problemsPath, 'utf-8'));
+    // 2. Sync Problems
     await saveCMSData('problems', problemsData);
-    console.log('Synced problems to Firestore');
+    console.log('Synced problems statically to Firestore');
 
-    // 3. Locations
-    const locationsPath = path.join(dataDir, 'locations.json');
-    const locationsData = JSON.parse(await fs.readFile(locationsPath, 'utf-8'));
+    // 3. Sync Locations
     await saveCMSData('locations', locationsData);
-    console.log('Synced locations to Firestore');
+    console.log('Synced locations statically to Firestore');
 
-    // 4. FAQs
-    const faqsPath = path.join(dataDir, 'faqs.json');
-    const faqsData = JSON.parse(await fs.readFile(faqsPath, 'utf-8'));
-    // Overwrite the whole FAQs collection in Firestore
+    // 4. Sync FAQs
     for (const faq of faqsData) {
       await saveFAQ(faq);
     }
-    console.log('Synced FAQs to Firestore');
+    console.log('Synced FAQs statically to Firestore');
 
-    // 5. Cases
-    const casesPath = path.join(dataDir, 'cases.json');
-    const casesData = JSON.parse(await fs.readFile(casesPath, 'utf-8'));
+    // 5. Sync Cases
     for (const caseItem of casesData) {
       await saveCase(caseItem);
     }
-    console.log('Synced cases to Firestore');
+    console.log('Synced cases statically to Firestore');
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Erfolgreich alle lokalen JSON-Daten in die Firestore-Datenbank importiert!' 
+      message: 'Erfolgreich alle lokalen JSON-Daten statically in die Firestore-Datenbank geladen!' 
     });
   } catch (error: any) {
-    console.error('Firestore Sync Error:', error);
+    console.error('Firestore Statically Sync Error:', error);
     return NextResponse.json({ error: error.message || 'Synchronisationsfehler' }, { status: 500 });
   }
 }
