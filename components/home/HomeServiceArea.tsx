@@ -8,8 +8,8 @@ export default function HomeServiceArea() {
   const data = homepageContent.serviceArea;
 
   return (
-    <section className="py-20 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="service-gebiet">
-      <div className="max-w-container-max-width mx-auto">
+    <section className="py-20 md:py-24 bg-surface-container-lowest" id="service-gebiet">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Text & CTA */}

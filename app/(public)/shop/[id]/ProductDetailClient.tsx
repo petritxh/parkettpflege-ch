@@ -22,8 +22,8 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   };
 
   return (
-    <div className="bg-surface-container-lowest min-h-screen pb-24 pt-24 md:pt-32 px-4 md:px-0">
-      <div className="container-custom max-w-5xl mx-auto">
+    <div className="bg-surface-container-lowest min-h-screen pb-24 pt-24 md:pt-32">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
         
         <div className="flex justify-between items-center mb-8">
           <Link href="/shop" className="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-xs uppercase tracking-widest">

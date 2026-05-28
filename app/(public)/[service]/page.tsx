@@ -84,8 +84,8 @@ export default async function ServicePage({ params }: Props) {
         primaryButtonHref="#estimator"
       />
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col lg:flex-row gap-12 w-full">
           
           {/* Table of Contents - Sticky Sidebar */}
           {service.contentMarkdown && (
@@ -172,8 +172,8 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-12">
             <h2 className="font-headline-md text-3xl md:text-5xl mb-4">Unsicher, ob dieser Service der richtige ist?</h2>
             <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">

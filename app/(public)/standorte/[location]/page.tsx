@@ -58,8 +58,8 @@ export default async function LocationPage({ params }: Props) {
         primaryButtonHref="#estimator"
       />
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/30">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12 justify-center">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest border-y border-outline-variant/30">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center gap-12 justify-center">
           <div className="flex items-center gap-4 text-primary">
              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                 <MapPin className="w-8 h-8" />
@@ -81,8 +81,8 @@ export default async function LocationPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col lg:flex-row gap-12 w-full">
           
           {/* Table of Contents - Sticky Sidebar */}
           {location.contentMarkdown && (
@@ -112,8 +112,8 @@ export default async function LocationPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/30">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest border-t border-outline-variant/30">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-12">
             <h2 className="font-headline-md text-3xl md:text-5xl mb-4">Starten Sie Ihren Parkettcheck in {location.name}</h2>
             <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">

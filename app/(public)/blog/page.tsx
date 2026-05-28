@@ -69,8 +69,8 @@ export default function BlogPage() {
       </nav>
 
       {/* Main Grid Section */}
-      <section className="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface text-on-surface">
-        <div className="max-w-container-max-width mx-auto space-y-16">
+      <section className="py-16 md:py-24 bg-surface text-on-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
           
           <div className="max-w-3xl space-y-6">
             <h2 className="font-headline-md text-3xl font-bold">Wissen für den perfekten Werterhalt</h2>

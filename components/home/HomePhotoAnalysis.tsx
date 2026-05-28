@@ -8,12 +8,12 @@ export default function HomePhotoAnalysis() {
   const data = homepageContent.photoAnalysis;
 
   return (
-    <section className="py-20 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-bright border-y border-outline-variant/10 relative overflow-hidden" id="fotoanalyse">
+    <section className="py-20 md:py-24 bg-surface-bright border-y border-outline-variant/10 relative overflow-hidden" id="fotoanalyse">
       
       {/* Background radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-container-max-width mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
         {/* Left column: Step descriptions & Information */}
         <div className="lg:col-span-6 space-y-6">

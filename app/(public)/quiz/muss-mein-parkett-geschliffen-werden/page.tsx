@@ -80,8 +80,8 @@ export default function SchleifQuizPage() {
       </nav>
 
       {/* Interactive Tool Embed Area */}
-      <section className="py-16 px-margin-mobile md:px-margin-desktop bg-surface text-on-surface">
-        <div className="max-w-container-max-width mx-auto space-y-16">
+      <section className="py-16 bg-surface text-on-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             

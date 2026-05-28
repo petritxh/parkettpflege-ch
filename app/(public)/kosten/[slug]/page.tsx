@@ -66,8 +66,8 @@ export default async function CostPage({ params }: Props) {
         primaryButtonHref="#estimator"
       />
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface">
-        <div className="max-w-container-max-width mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {/* Price Range Card */}

@@ -35,8 +35,8 @@ export default function ImpressumPage() {
       </nav>
 
       {/* Main Content Section */}
-      <section className="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface text-on-surface">
-        <div className="max-w-4xl mx-auto space-y-12">
+      <section className="py-16 md:py-24 bg-surface text-on-surface">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop space-y-12">
           
           <div className="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/30 space-y-6">
             <h2 className="font-headline-sm text-2xl font-bold text-on-surface flex items-center gap-2 border-b border-outline-variant/30 pb-4">

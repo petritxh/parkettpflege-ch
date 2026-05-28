@@ -68,8 +68,8 @@
   --text-body-lg: 1.125rem;
   --text-headline-sm: 1.5rem;
   --text-headline-md: 2rem;
-  --text-display-lg: 4.5rem;
-  --text-display-lg-mobile: 3rem;
+  --text-display-lg: 2.25rem;
+  --text-display-lg-mobile: 1.5rem;
   --text-caption: 0.875rem;
   --text-label-md: 0.875rem;
   
@@ -78,6 +78,16 @@
   --spacing-section-gap-mobile: 4rem;
   --spacing-section-gap-desktop: 8rem;
   --spacing-container-max-width: 1200px;
+}
+
+h1 {
+  font-size: 1.5rem !important;
+  line-height: 1.25 !important;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.25rem !important;
+  }
 }
 
 .wood-gradient {

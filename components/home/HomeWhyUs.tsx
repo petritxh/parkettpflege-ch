@@ -17,8 +17,8 @@ export default function HomeWhyUs() {
   ];
 
   return (
-    <section className="py-20 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface" id="warum-uns">
-      <div className="max-w-container-max-width mx-auto space-y-16">
+    <section className="py-20 md:py-24 bg-surface" id="warum-uns">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">

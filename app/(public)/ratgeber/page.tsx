@@ -70,8 +70,8 @@ export default function RatgeberHubPage() {
       </nav>
 
       {/* Articles Grid Section */}
-      <section className="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface text-on-surface">
-        <div className="max-w-container-max-width mx-auto space-y-16">
+      <section className="py-16 md:py-24 bg-surface text-on-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
@@ -131,8 +131,8 @@ export default function RatgeberHubPage() {
       </section>
 
       {/* Interactive Diagnostic Guide */}
-      <section id="ai-diagnostic" className="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
-        <div className="max-w-4xl mx-auto space-y-12">
+      <section id="ai-diagnostic" className="py-16 md:py-24 bg-surface-container-lowest">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop space-y-12">
           <div className="text-center space-y-3">
             <h2 className="font-headline-md text-3xl md:text-5xl font-bold">Welche Parkettpflege brauchen Sie?</h2>
             <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">

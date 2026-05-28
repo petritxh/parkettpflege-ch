@@ -17,8 +17,8 @@ export default function HomeFaq() {
   };
 
   return (
-    <section className="py-20 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="faq-section">
-      <div className="max-w-container-max-width mx-auto">
+    <section className="py-20 md:py-24 bg-surface-container-lowest" id="faq-section">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">

@@ -138,8 +138,8 @@ export default async function RegionalPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col lg:flex-row gap-12 w-full">
           
           {/* Table of Contents - Sticky Sidebar */}
           {linkedMarkdown && (
@@ -182,8 +182,8 @@ export default async function RegionalPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="estimator">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest" id="estimator">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-12">
             <h2 className="font-headline-md text-3xl md:text-5xl mb-4">Unverbindliches Angebot für {name} anfordern</h2>
             <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">

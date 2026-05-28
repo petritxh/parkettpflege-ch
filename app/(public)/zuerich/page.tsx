@@ -105,8 +105,8 @@ export default function ZuerichPage() {
       </nav>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface text-on-surface">
-        <div className="max-w-container-max-width mx-auto space-y-16">
+      <section className="py-16 md:py-24 bg-surface text-on-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop space-y-16">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             

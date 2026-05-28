@@ -24,8 +24,8 @@ export default function ServicesHubPage() {
         primaryButtonHref="#estimator"
       />
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <Link href={`/${service.slug}`} key={service.slug} className="group flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/30 hover:border-secondary/50 hover:shadow-xl transition-all duration-300">

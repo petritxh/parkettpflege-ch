@@ -78,8 +78,8 @@ export default async function CasePage({ params }: Props) {
         primaryButtonHref="#estimator"
       />
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface text-left">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface text-left">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
           
           {/* Metadata attributes grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-surface-container-low p-6 rounded-3xl border border-outline-variant/30 mb-12">
@@ -162,8 +162,8 @@ export default async function CasePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="estimator">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest" id="estimator">
+        <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="text-center mb-12">
             <h2 className="font-headline-md text-3xl md:text-5xl mb-4">Haben Sie ein ähnliches Problem?</h2>
             <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">

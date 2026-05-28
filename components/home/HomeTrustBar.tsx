@@ -7,8 +7,8 @@ export default function HomeTrustBar() {
   const trustBar = homepageContent.trustBar;
 
   return (
-    <section className="py-8 bg-surface-container border-b border-outline-variant/30 px-margin-mobile md:px-margin-desktop">
-      <div className="max-w-container-max-width mx-auto flex flex-col xl:flex-row xl:items-center justify-between gap-6">
+    <section className="py-8 bg-surface-container border-b border-outline-variant/30">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col xl:flex-row xl:items-center justify-between gap-6">
         
         {/* Short Text */}
         <p className="font-body-md text-sm text-on-surface-variant font-medium max-w-xl xl:mb-0 leading-relaxed text-center xl:text-left">

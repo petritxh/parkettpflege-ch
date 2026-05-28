@@ -19,7 +19,7 @@ export default function CTABanner({
   const { openBooking } = useBooking();
 
   return (
-    <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop relative overflow-hidden bg-primary text-on-primary">
+    <section className="py-section-gap-mobile md:py-section-gap-desktop relative overflow-hidden bg-primary text-on-primary">
       <div className="absolute inset-0 opacity-15 pointer-events-none">
           <Image 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUcIl3jKLrwUMT_37Z_PjS19D07p_bHz2qjC9MFZ34i-sLAni5QH6p8us6qVWvkUSFdenv9-rfL-ss5aF40ENNi_3Rl0IesbZ1LclP1HztLqjGC5iyjdWfZtNNf8_MM5DVzVeo3bIC-91Lw0bRrTajfs4zoz2HThJDytm0nJcL0m0njlqBorKNuQ6AyoIlzsSb4gcCqwetsD55yKq7VEd8dQKtPb6rD2lpdVMqR49eqjMudxp-UGijIl5CEBL2upOhygtuDQDfqSc" 
@@ -28,7 +28,7 @@ export default function CTABanner({
               className="object-cover scale-110"
           />
       </div>
-      <div className="relative z-10 max-w-container-max-width mx-auto text-center">
+      <div className="relative z-10 max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
           <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-8">
             {title}
           </h2>

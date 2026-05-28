@@ -23,8 +23,8 @@ export default function StandorteHubPage() {
         primaryButtonHref="/kontakt"
       />
 
-      <section className="py-section-gap-mobile md:py-section-gap-desktop px-margin-mobile md:px-margin-desktop bg-surface">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-section-gap-mobile md:py-section-gap-desktop bg-surface">
+        <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {locations.map((location) => (
               <Link href={`/standorte/${location.slug}`} key={location.slug} className="group bg-surface-container-low p-8 rounded-3xl border border-outline-variant/30 hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col items-start">

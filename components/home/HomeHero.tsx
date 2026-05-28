@@ -9,7 +9,7 @@ export default function HomeHero() {
   const hero = homepageContent.hero;
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28 px-margin-mobile md:px-margin-desktop border-b border-outline-variant/10 min-h-[600px] flex items-center">
+    <section className="relative overflow-hidden py-20 md:py-28 border-b border-outline-variant/10 min-h-[600px] flex items-center">
       
       {/* Premium Alpine Wood Floor Background Image */}
       <Image 
@@ -24,7 +24,7 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-surface-bright via-surface-bright/95 md:via-surface-bright/85 to-surface-bright/10 z-[1] pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-surface-bright via-transparent to-transparent z-[1] pointer-events-none" />
 
-      <div className="max-w-container-max-width mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+      <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         
         {/* Left column: Text Content */}
         <div className="lg:col-span-7 space-y-6 text-left">

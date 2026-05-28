@@ -8,12 +8,12 @@ export default function HomeFinalCta() {
   const data = homepageContent.finalCta;
 
   return (
-    <section className="py-20 md:py-28 px-margin-mobile md:px-margin-desktop bg-gradient-to-t from-surface-bright via-surface to-surface-container-lowest border-t border-outline-variant/10 relative overflow-hidden" id="abschluss-cta">
+    <section className="py-20 md:py-28 bg-gradient-to-t from-surface-bright via-surface to-surface-container-lowest border-t border-outline-variant/10 relative overflow-hidden" id="abschluss-cta">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop text-center space-y-8 relative z-10">
         
         <span className="inline-flex items-center gap-2 bg-secondary/10 text-secondary border border-secondary/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
           Jetzt den ersten Schritt machen
