@@ -805,6 +805,23 @@ kreis-5
   - LocalBusiness
   - BreadcrumbList
 
+### 7.9 `blog_article` — Blogartikel
+
+- Mindestumfang: 1200 Wörter
+- Empfohlen: 1500 bis 2800 Wörter
+- Pflicht-H2:
+  - Kurz erklärt
+  - Wann ist das relevant?
+  - Schritt-für-Schritt-Anleitung
+  - Typische Fehler
+  - Vergleich oder Entscheidungshilfe
+  - Profi-Tipp
+  - Häufige Fragen
+- Schema:
+  - Article
+  - FAQPage
+  - BreadcrumbList
+
 ---
 
 ## 8. H1/H2/H3/H4-Regeln

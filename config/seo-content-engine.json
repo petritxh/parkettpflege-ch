@@ -3184,6 +3184,26 @@
                 "LocalBusiness",
                 "BreadcrumbList"
               ]
+            },
+            "blog_article": {
+              "description": "Ein informativer Blogartikel.",
+              "primaryIntent": "informational",
+              "minWords": 1200,
+              "recommendedWords": "1500-2800",
+              "requiredH2": [
+                "Kurz erklärt",
+                "Wann ist das relevant?",
+                "Schritt-für-Schritt-Anleitung",
+                "Typische Fehler",
+                "Vergleich oder Entscheidungshilfe",
+                "Profi-Tipp",
+                "Häufige Fragen"
+              ],
+              "schemas": [
+                "Article",
+                "FAQPage",
+                "BreadcrumbList"
+              ]
             }
           },
           "interactiveModules": {
