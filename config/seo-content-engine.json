@@ -1,0 +1,3427 @@
+{
+  "seoContentEngine": {
+    "project": {
+      "name": "parkett-pflege.ch",
+      "domain": "https://parkett-pflege.ch",
+      "version": "5.0",
+      "createdAt": "2026-05-28",
+      "slogan": "Parkett erhalten. Werte bewahren.",
+      "strategicConcept": "Parkett retten statt ersetzen.",
+      "primaryMarket": "Raum Zürich",
+      "domainSpellingRule": {
+        "correct": "parkett-pflege.ch",
+        "incorrect": [
+          "parkettpflege.ch",
+          "Parkettpflege.ch",
+          "Parkett Pflege.ch"
+        ],
+        "mustUseEverywhere": true
+      }
+    },
+    "importedPriorVersions": {
+      "altSeoContentEngineJsonWasUsedAsBase": true,
+      "shortSeoContentEngineJsonWasCompared": true,
+      "rule": "V5 darf frühere Strukturen nicht verkürzen, sondern erweitert sie."
+    },
+    "brand": {
+      "visibleName": "Parkett-Pflege",
+      "claim": "Parkett erhalten. Werte bewahren.",
+      "tone": [
+        "fachlich",
+        "ruhig",
+        "präzise",
+        "hochwertig",
+        "lokal",
+        "ehrlich",
+        "lösungsorientiert"
+      ],
+      "avoid": [
+        "Keyword-Stuffing",
+        "billige Rabatt-Sprache",
+        "übertriebene Superlative",
+        "generische Handwerkertexte",
+        "zu viel KI-Hype"
+      ]
+    },
+    "agentPrinciple": "Der SEOContentAgent ist kein reiner Textgenerator, sondern ein Seitenarchitekt, Redaktionsplaner, SEO-Stratege und Qualitätsprüfer.",
+    "mustGenerate": [
+      "contentType",
+      "category",
+      "subCategory",
+      "tags",
+      "primaryKeyword",
+      "secondaryKeywords",
+      "semanticKeywords",
+      "searchIntent",
+      "funnelStage",
+      "targetAudience",
+      "slug",
+      "canonicalUrl",
+      "title",
+      "metaDescription",
+      "h1",
+      "h2H3H4Outline",
+      "contentModules",
+      "interactiveElement",
+      "faq",
+      "internalLinks",
+      "externalSourceNeeds",
+      "imageRequirements",
+      "infographicRequirements",
+      "jsonLdSchemas",
+      "ctaBlocks",
+      "localSeoSignals",
+      "trustSignals",
+      "qualityScore",
+      "reviewChecklist",
+      "publishingPriority",
+      "updateFrequency",
+      "ownerNotes"
+    ],
+    "forbiddenShortcuts": [
+      "onlySlugTitleMetaH1",
+      "h1AndPlainTextOnly",
+      "genericLocalDoorwayPages",
+      "tagsOutsideControlledTaxonomy",
+      "faqNotVisibleOnPage",
+      "jsonLdNotMatchingVisibleContent",
+      "noInternalLinks",
+      "noCTA",
+      "noImageRequirements",
+      "noQualityScore"
+    ],
+    "informationArchitecture": {
+      "root": "/",
+      "mainDirectories": [
+        "leistungen",
+        "problemfaelle",
+        "kosten",
+        "ratgeber",
+        "holzarten",
+        "zuerich",
+        "tools",
+        "quiz",
+        "faelle",
+        "blog",
+        "fotoanalyse",
+        "kontakt",
+        "ueber-uns"
+      ],
+      "navigationLogic": [
+        {
+          "area": "Leistungen",
+          "task": "Geldseiten",
+          "userQuestion": "Welche Leistung brauche ich?",
+          "conversion": "Offerte / Fotoanalyse"
+        },
+        {
+          "area": "Problemfälle",
+          "task": "Schadensdiagnose",
+          "userQuestion": "Was ist mit meinem Parkett los?",
+          "conversion": "Fotoanalyse / Reparatur"
+        },
+        {
+          "area": "Kosten",
+          "task": "Preisentscheidung",
+          "userQuestion": "Was kostet das ungefähr?",
+          "conversion": "Kostenrechner / Anfrage"
+        },
+        {
+          "area": "Ratgeber",
+          "task": "Wissen & Vertrauen",
+          "userQuestion": "Wie pflege ich Parkett richtig?",
+          "conversion": "Beratung / passende Leistung"
+        },
+        {
+          "area": "Holzarten",
+          "task": "Fachautorität",
+          "userQuestion": "Was gilt für mein Holz?",
+          "conversion": "Pflegeempfehlung"
+        },
+        {
+          "area": "Zürich",
+          "task": "lokale Sichtbarkeit",
+          "userQuestion": "Wer hilft in meiner Nähe?",
+          "conversion": "lokale Anfrage"
+        },
+        {
+          "area": "Tools",
+          "task": "Interaktion",
+          "userQuestion": "Was brauche ich konkret?",
+          "conversion": "Lead-Qualifizierung"
+        },
+        {
+          "area": "Fälle",
+          "task": "Beweis",
+          "userQuestion": "Hat das schon funktioniert?",
+          "conversion": "ähnlichen Fall anfragen"
+        },
+        {
+          "area": "Blog",
+          "task": "laufende Themen",
+          "userQuestion": "Was tun in meiner Situation?",
+          "conversion": "interne Weiterleitung"
+        }
+      ]
+    },
+    "categories": {
+      "leistungen": {
+        "name": "Leistungen",
+        "basePath": "/leistungen",
+        "purpose": "Kommerzielle Seiten für konkrete Dienstleistungen. Diese Seiten müssen direkt Anfragen erzeugen.",
+        "requiredModules": [
+          "Hero",
+          "Kurzantwort",
+          "Problemübersicht",
+          "geeignet / nicht geeignet",
+          "Ablauf",
+          "Dauer",
+          "Kosten",
+          "Materialien",
+          "Vorher-Nachher",
+          "lokaler Abschnitt",
+          "FAQ",
+          "CTA",
+          "JSON-LD"
+        ],
+        "examplePages": [
+          {
+            "slug": "/leistungen/parkett-schleifen-zuerich",
+            "primaryKeyword": "Parkett schleifen Zürich",
+            "intent": "transactional_local",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/leistungen/parkett-oelen-zuerich",
+            "primaryKeyword": "Parkett ölen Zürich",
+            "intent": "transactional_local",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/leistungen/parkett-reinigen-zuerich",
+            "primaryKeyword": "Parkett reinigen Zürich",
+            "intent": "transactional_local",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/leistungen/parkett-reparieren-zuerich",
+            "primaryKeyword": "Parkett reparieren Zürich",
+            "intent": "transactional_local",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/leistungen/parkett-versiegeln-zuerich",
+            "primaryKeyword": "Parkett versiegeln Zürich",
+            "intent": "transactional_local",
+            "priority": "high"
+          },
+          {
+            "slug": "/leistungen/parkett-auffrischen-zuerich",
+            "primaryKeyword": "Parkett auffrischen Zürich",
+            "intent": "commercial_local",
+            "priority": "high"
+          },
+          {
+            "slug": "/leistungen/parkett-polieren-zuerich",
+            "primaryKeyword": "Parkett polieren Zürich",
+            "intent": "commercial_local",
+            "priority": "medium"
+          },
+          {
+            "slug": "/leistungen/parkett-tiefenreinigung-zuerich",
+            "primaryKeyword": "Parkett Tiefenreinigung Zürich",
+            "intent": "commercial_local",
+            "priority": "high"
+          },
+          {
+            "slug": "/leistungen/parkett-spot-repair-zuerich",
+            "primaryKeyword": "Parkett Spot Repair Zürich",
+            "intent": "commercial_local",
+            "priority": "high"
+          },
+          {
+            "slug": "/leistungen/parkett-teilflaechenbehandlung-zuerich",
+            "primaryKeyword": "Parkett Teilflächenbehandlung Zürich",
+            "intent": "commercial_local",
+            "priority": "high"
+          },
+          {
+            "slug": "/leistungen/parkett-nachoelen-zuerich",
+            "primaryKeyword": "Parkett nachölen Zürich",
+            "intent": "commercial_local",
+            "priority": "high"
+          },
+          {
+            "slug": "/leistungen/parkett-pflege-immobilienverwaltung-zuerich",
+            "primaryKeyword": "Parkettpflege Immobilienverwaltung Zürich",
+            "intent": "commercial_local",
+            "priority": "very_high"
+          }
+        ]
+      },
+      "problemfaelle": {
+        "name": "Problemfälle",
+        "basePath": "/problemfaelle",
+        "purpose": "Schadensseiten für Nutzer, die ein Problem haben, aber die passende Leistung noch nicht kennen.",
+        "requiredModules": [
+          "Kurzantwort",
+          "Symptome",
+          "Ursachen",
+          "Schweregrad-Matrix",
+          "Erste Hilfe",
+          "Do & Don’t",
+          "Lösungsmatrix",
+          "Kostenrahmen",
+          "Profi-Hinweis",
+          "Fotoanalyse",
+          "FAQ",
+          "interne Links"
+        ],
+        "examplePages": [
+          {
+            "slug": "/problemfaelle/wasserflecken-parkett",
+            "primaryKeyword": "Wasserflecken Parkett entfernen",
+            "intent": "problem_solution",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "damageSeverityQuiz"
+          },
+          {
+            "slug": "/problemfaelle/hundekratzer-parkett",
+            "primaryKeyword": "Hundekratzer Parkett reparieren",
+            "intent": "problem_solution",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "beforeAfterSlider"
+          },
+          {
+            "slug": "/problemfaelle/schwarze-flecken-parkett",
+            "primaryKeyword": "Schwarze Flecken Parkett",
+            "intent": "problem_solution",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "photoAnalysisCTA"
+          },
+          {
+            "slug": "/problemfaelle/parkett-grau-und-stumpf",
+            "primaryKeyword": "Parkett grau und stumpf",
+            "intent": "problem_solution",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "surfaceConditionQuiz"
+          },
+          {
+            "slug": "/problemfaelle/parkett-quillt-auf",
+            "primaryKeyword": "Parkett quillt auf",
+            "intent": "urgent_problem",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "emergencyDecisionTree"
+          },
+          {
+            "slug": "/problemfaelle/parkett-nach-falscher-reinigung",
+            "primaryKeyword": "Parkett falsch gereinigt",
+            "intent": "problem_solution",
+            "priority": "high",
+            "recommendedInteractiveElement": "careMistakeGame"
+          },
+          {
+            "slug": "/problemfaelle/tiefe-kratzer-parkett",
+            "primaryKeyword": "Tiefe Kratzer Parkett",
+            "intent": "problem_solution",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "damageDepthQuiz"
+          },
+          {
+            "slug": "/problemfaelle/laufstrassen-parkett",
+            "primaryKeyword": "Laufstrassen Parkett entfernen",
+            "intent": "problem_solution",
+            "priority": "high",
+            "recommendedInteractiveElement": "beforeAfterSlider"
+          },
+          {
+            "slug": "/problemfaelle/rotweinfleck-parkett",
+            "primaryKeyword": "Rotweinfleck Parkett entfernen",
+            "intent": "problem_solution",
+            "priority": "medium",
+            "recommendedInteractiveElement": "stainTypeSelector"
+          },
+          {
+            "slug": "/problemfaelle/brandfleck-parkett",
+            "primaryKeyword": "Brandfleck Parkett reparieren",
+            "intent": "problem_solution",
+            "priority": "medium",
+            "recommendedInteractiveElement": "repairOrReplaceQuiz"
+          },
+          {
+            "slug": "/problemfaelle/moebelspuren-parkett",
+            "primaryKeyword": "Möbelspuren Parkett entfernen",
+            "intent": "problem_solution",
+            "priority": "medium",
+            "recommendedInteractiveElement": "damageDepthQuiz"
+          },
+          {
+            "slug": "/problemfaelle/parkett-klebrig",
+            "primaryKeyword": "Parkett klebrig nach Reinigung",
+            "intent": "problem_solution",
+            "priority": "high",
+            "recommendedInteractiveElement": "careMistakeGame"
+          },
+          {
+            "slug": "/problemfaelle/fugen-im-parkett-offen",
+            "primaryKeyword": "Fugen im Parkett offen",
+            "intent": "problem_solution",
+            "priority": "medium",
+            "recommendedInteractiveElement": "seasonalMoistureExplainer"
+          },
+          {
+            "slug": "/problemfaelle/parkett-vergilbt",
+            "primaryKeyword": "Parkett vergilbt",
+            "intent": "informational_commercial",
+            "priority": "medium",
+            "recommendedInteractiveElement": "visualExplainer"
+          },
+          {
+            "slug": "/problemfaelle/parkett-unter-teppich-verfaerbt",
+            "primaryKeyword": "Parkett unter Teppich verfärbt",
+            "intent": "problem_solution",
+            "priority": "medium",
+            "recommendedInteractiveElement": "photoAnalysisCTA"
+          },
+          {
+            "slug": "/problemfaelle/blumentopf-wasserfleck-parkett",
+            "primaryKeyword": "Blumentopf Wasserfleck Parkett",
+            "intent": "problem_solution",
+            "priority": "high",
+            "recommendedInteractiveElement": "damageSeverityQuiz"
+          },
+          {
+            "slug": "/problemfaelle/urin-fleck-parkett",
+            "primaryKeyword": "Urin Fleck Parkett entfernen",
+            "intent": "problem_solution",
+            "priority": "medium",
+            "recommendedInteractiveElement": "stainTypeSelector"
+          },
+          {
+            "slug": "/problemfaelle/parkett-lack-abgenutzt",
+            "primaryKeyword": "Parkett Lack abgenutzt",
+            "intent": "commercial",
+            "priority": "high",
+            "recommendedInteractiveElement": "solutionMatrix"
+          },
+          {
+            "slug": "/problemfaelle/parkett-oel-ausgelaugt",
+            "primaryKeyword": "Geöltes Parkett ausgelaugt",
+            "intent": "commercial",
+            "priority": "high",
+            "recommendedInteractiveElement": "surfaceConditionQuiz"
+          },
+          {
+            "slug": "/problemfaelle/parkett-nach-mieterwechsel",
+            "primaryKeyword": "Parkett nach Mieterwechsel",
+            "intent": "commercial_local",
+            "priority": "very_high",
+            "recommendedInteractiveElement": "handoverChecklist"
+          }
+        ]
+      },
+      "kosten": {
+        "name": "Kosten & Preise",
+        "basePath": "/kosten",
+        "purpose": "Kaufnahe Seiten für Nutzer mit Preisfokus.",
+        "requiredModules": [
+          "Preisspanne",
+          "Kostenfaktoren",
+          "Beispielrechnungen",
+          "Preisrechner",
+          "Sparpotenzial",
+          "Risiken",
+          "Disclaimer",
+          "CTA"
+        ],
+        "examplePages": [
+          {
+            "slug": "/kosten/parkett-schleifen-kosten",
+            "primaryKeyword": "Parkett schleifen Kosten",
+            "intent": "commercial",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/kosten/parkett-oelen-kosten",
+            "primaryKeyword": "Parkett ölen Kosten",
+            "intent": "commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/kosten/parkett-reparatur-kosten",
+            "primaryKeyword": "Parkett Reparatur Kosten",
+            "intent": "commercial",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/kosten/parkett-reinigung-kosten",
+            "primaryKeyword": "Parkett Reinigung Kosten",
+            "intent": "commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/kosten/parkett-versiegeln-kosten",
+            "primaryKeyword": "Parkett versiegeln Kosten",
+            "intent": "commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/kosten/parkett-auffrischen-kosten",
+            "primaryKeyword": "Parkett auffrischen Kosten",
+            "intent": "commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/kosten/wasserfleck-parkett-reparatur-kosten",
+            "primaryKeyword": "Wasserfleck Parkett Reparatur Kosten",
+            "intent": "commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/kosten/hundekratzer-parkett-reparatur-kosten",
+            "primaryKeyword": "Hundekratzer Parkett Reparatur Kosten",
+            "intent": "commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/kosten/parkettpflege-wohnung-kosten",
+            "primaryKeyword": "Parkettpflege Wohnung Kosten",
+            "intent": "commercial",
+            "priority": "medium"
+          },
+          {
+            "slug": "/kosten/parkettpflege-haus-kosten",
+            "primaryKeyword": "Parkettpflege Haus Kosten",
+            "intent": "commercial",
+            "priority": "medium"
+          }
+        ]
+      },
+      "ratgeber": {
+        "name": "Ratgeber",
+        "basePath": "/ratgeber",
+        "purpose": "Evergreen-Wissen, das Autorität und Vertrauen aufbaut.",
+        "requiredModules": [
+          "Kurz erklärt",
+          "Anleitung",
+          "Vergleich",
+          "Fehler",
+          "Checkliste",
+          "Profi-Tipp",
+          "interne Links",
+          "FAQ"
+        ],
+        "examplePages": [
+          {
+            "slug": "/ratgeber/geoeltes-parkett-richtig-pflegen",
+            "primaryKeyword": "Geöltes Parkett richtig pflegen",
+            "intent": "informational",
+            "priority": "high"
+          },
+          {
+            "slug": "/ratgeber/lackiertes-parkett-pflegen",
+            "primaryKeyword": "Lackiertes Parkett pflegen",
+            "intent": "informational",
+            "priority": "high"
+          },
+          {
+            "slug": "/ratgeber/parkett-oelen-oder-versiegeln",
+            "primaryKeyword": "Parkett ölen oder versiegeln",
+            "intent": "comparison",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/ratgeber/parkett-schleifen-oder-reinigen",
+            "primaryKeyword": "Parkett schleifen oder reinigen",
+            "intent": "comparison",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/ratgeber/dampfreiniger-auf-parkett",
+            "primaryKeyword": "Dampfreiniger auf Parkett",
+            "intent": "informational",
+            "priority": "high"
+          },
+          {
+            "slug": "/ratgeber/parkett-nass-wischen",
+            "primaryKeyword": "Parkett nass wischen",
+            "intent": "informational",
+            "priority": "high"
+          },
+          {
+            "slug": "/ratgeber/parkettpflege-im-winter",
+            "primaryKeyword": "Parkettpflege im Winter",
+            "intent": "informational",
+            "priority": "medium"
+          },
+          {
+            "slug": "/ratgeber/parkettpflege-nach-heizperiode",
+            "primaryKeyword": "Parkettpflege nach Heizperiode",
+            "intent": "informational",
+            "priority": "medium"
+          },
+          {
+            "slug": "/ratgeber/parkettpflege-bei-haustieren",
+            "primaryKeyword": "Parkettpflege bei Haustieren",
+            "intent": "informational_commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/ratgeber/parkettpflege-bei-kindern",
+            "primaryKeyword": "Parkettpflege bei Kindern",
+            "intent": "informational",
+            "priority": "medium"
+          },
+          {
+            "slug": "/ratgeber/parkett-vor-wohnungsuebergabe",
+            "primaryKeyword": "Parkett vor Wohnungsübergabe",
+            "intent": "commercial",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/ratgeber/parkett-gepflegt-verkauf-immobilie",
+            "primaryKeyword": "Parkettpflege vor Immobilienverkauf",
+            "intent": "commercial",
+            "priority": "high"
+          }
+        ]
+      },
+      "zuerich": {
+        "name": "Region Zürich",
+        "basePath": "/zuerich",
+        "purpose": "Lokale Sichtbarkeit und lokale Anfragen.",
+        "requiredModules": [
+          "lokaler Hero",
+          "Ortsbezug",
+          "typische lokale Probleme",
+          "Leistungen vor Ort",
+          "Ablauf",
+          "Kosten",
+          "lokale Beispiele",
+          "FAQ",
+          "CTA"
+        ],
+        "examplePages": [
+          {
+            "slug": "/zuerich/parkettpflege-zuerich",
+            "primaryKeyword": "Parkettpflege Zürich",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-winterthur",
+            "primaryKeyword": "Parkettpflege Winterthur",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-uster",
+            "primaryKeyword": "Parkettpflege Uster",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-duebendorf",
+            "primaryKeyword": "Parkettpflege Dübendorf",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-schlieren",
+            "primaryKeyword": "Parkettpflege Schlieren",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-dietikon",
+            "primaryKeyword": "Parkettpflege Dietikon",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-horgen",
+            "primaryKeyword": "Parkettpflege Horgen",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-meilen",
+            "primaryKeyword": "Parkettpflege Meilen",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-kuesnacht",
+            "primaryKeyword": "Parkettpflege Küsnacht",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-zollikon",
+            "primaryKeyword": "Parkettpflege Zollikon",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-adliswil",
+            "primaryKeyword": "Parkettpflege Adliswil",
+            "intent": "local_transactional",
+            "priority": "high"
+          },
+          {
+            "slug": "/zuerich/parkettpflege-thalwil",
+            "primaryKeyword": "Parkettpflege Thalwil",
+            "intent": "local_transactional",
+            "priority": "high"
+          }
+        ]
+      },
+      "tools": {
+        "name": "Tools & Quiz",
+        "basePath": "/tools und /quiz",
+        "purpose": "Interaktive Elemente zur Lead-Qualifizierung.",
+        "requiredModules": [
+          "Tool-Erklärung",
+          "Inputs",
+          "Logik",
+          "Ergebnisse",
+          "Empfehlung",
+          "CTA",
+          "Schema"
+        ],
+        "examplePages": [
+          {
+            "slug": "/tools/fotoanalyse-parkett",
+            "primaryKeyword": "Parkett Fotoanalyse",
+            "intent": "lead_generation",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/tools/parkett-kostenrechner",
+            "primaryKeyword": "Parkett Kostenrechner",
+            "intent": "commercial_tool",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/quiz/muss-mein-parkett-geschliffen-werden",
+            "primaryKeyword": "Muss mein Parkett geschliffen werden",
+            "intent": "diagnostic",
+            "priority": "very_high"
+          },
+          {
+            "slug": "/quiz/welche-parkettpflege-brauche-ich",
+            "primaryKeyword": "Welche Parkettpflege brauche ich",
+            "intent": "diagnostic",
+            "priority": "high"
+          },
+          {
+            "slug": "/quiz/ist-mein-parkett-geoelt-oder-lackiert",
+            "primaryKeyword": "Ist mein Parkett geölt oder lackiert",
+            "intent": "diagnostic",
+            "priority": "high"
+          },
+          {
+            "slug": "/tools/parkett-schaden-check",
+            "primaryKeyword": "Parkett Schaden Check",
+            "intent": "diagnostic",
+            "priority": "high"
+          },
+          {
+            "slug": "/tools/parkett-pflegeplan-generator",
+            "primaryKeyword": "Parkett Pflegeplan Generator",
+            "intent": "engagement",
+            "priority": "medium"
+          }
+        ]
+      },
+      "faelle": {
+        "name": "Vorher-Nachher-Fälle",
+        "basePath": "/faelle",
+        "purpose": "Beweise durch echte Projektberichte.",
+        "requiredModules": [
+          "Ausgangslage",
+          "Problem",
+          "Analyse",
+          "Methode",
+          "Dauer",
+          "Kostenrahmen",
+          "Vorher/Nachher",
+          "Ergebnis",
+          "ähnliche Fälle",
+          "CTA"
+        ],
+        "examplePages": [
+          {
+            "slug": "/faelle/wasserfleck-parkett-zuerich-seefeld",
+            "primaryKeyword": "Wasserfleck Parkett Zürich-Seefeld",
+            "intent": "proof_commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/faelle/hundekratzer-parkett-zuerich-wiedikon",
+            "primaryKeyword": "Hundekratzer Parkett Zürich-Wiedikon",
+            "intent": "proof_commercial",
+            "priority": "high"
+          },
+          {
+            "slug": "/faelle/laufstrasse-parkett-zuerich-enge",
+            "primaryKeyword": "Laufstrasse Parkett Zürich-Enge",
+            "intent": "proof_commercial",
+            "priority": "medium"
+          },
+          {
+            "slug": "/faelle/graues-parkett-zuerich-altstetten",
+            "primaryKeyword": "Graues Parkett Zürich-Altstetten",
+            "intent": "proof_commercial",
+            "priority": "medium"
+          },
+          {
+            "slug": "/faelle/parkett-mieterwechsel-zuerich-oerlikon",
+            "primaryKeyword": "Parkett Mieterwechsel Zürich-Oerlikon",
+            "intent": "proof_commercial",
+            "priority": "high"
+          }
+        ]
+      },
+      "blog": {
+        "name": "Blog",
+        "basePath": "/blog",
+        "purpose": "laufende problemorientierte Inhalte, saisonale Artikel, Pflegefehler und Verwaltungs-Themen.",
+        "requiredModules": [
+          "Suchintention",
+          "Kategorie",
+          "visuelles Element",
+          "interne Links",
+          "CTA",
+          "FAQ falls sinnvoll"
+        ],
+        "examplePages": []
+      }
+    },
+    "controlledTags": {
+      "damage": [
+        "kratzer",
+        "tiefe-kratzer",
+        "hundekratzer",
+        "katzenkratzer",
+        "wasserfleck",
+        "wasserschaden",
+        "schwarze-flecken",
+        "weisse-flecken",
+        "grauschleier",
+        "laufstrassen",
+        "sonnenverfaerbung",
+        "brandfleck",
+        "rotweinfleck",
+        "kaffeefleck",
+        "fettfleck",
+        "moebelspuren",
+        "druckstellen",
+        "aufgequollen",
+        "fugen-offen",
+        "risse",
+        "abplatzungen",
+        "stumpf",
+        "klebrig",
+        "pflegefehler",
+        "dampfreiniger-schaden",
+        "reinigungsmittel-schaden",
+        "blumentopf-fleck",
+        "urin-fleck",
+        "schimmelverdacht",
+        "lack-abgenutzt",
+        "oel-ausgelaugt",
+        "vergilbt",
+        "unregelmaessige-farbe"
+      ],
+      "treatment": [
+        "reinigen",
+        "tiefenreinigung",
+        "grundreinigung",
+        "oelen",
+        "nachoelen",
+        "schleifen",
+        "versiegeln",
+        "lackieren",
+        "polieren",
+        "reparieren",
+        "ausbessern",
+        "auffrischen",
+        "spot-repair",
+        "teilflaechenbehandlung",
+        "abschliff",
+        "pflegeoel",
+        "hartwachs-oel",
+        "mattlack",
+        "wasserlack",
+        "farbanpassung",
+        "element-tausch",
+        "fugen-fuellen",
+        "finish-erneuern"
+      ],
+      "surface": [
+        "geoelt",
+        "naturgeoelt",
+        "lackiert",
+        "versiegelt",
+        "matt",
+        "seidenglanz",
+        "glanz",
+        "gebuerstet",
+        "geraechert",
+        "gebeizt",
+        "rohholz-optik",
+        "hartwachsoel",
+        "uv-geoelt",
+        "uv-lackiert",
+        "renovierungsbeduerftig"
+      ],
+      "woodType": [
+        "eiche",
+        "buche",
+        "nussbaum",
+        "ahorn",
+        "esche",
+        "kirschbaum",
+        "fischgrat",
+        "stabparkett",
+        "massivparkett",
+        "fertigparkett",
+        "landhausdielen",
+        "mosaikparkett",
+        "industrieparkett",
+        "riemenparkett",
+        "mehrschichtparkett",
+        "parkettdielen",
+        "altbauparkett"
+      ],
+      "audience": [
+        "privatkunden",
+        "eigentumswohnung",
+        "einfamilienhaus",
+        "mieter",
+        "vermieter",
+        "immobilienverwaltung",
+        "architekten",
+        "innenausbau",
+        "gewerbe",
+        "restaurant",
+        "buero",
+        "praxis",
+        "hotel",
+        "verkaufsvorbereitung",
+        "umzug",
+        "mieterwechsel",
+        "bauleitung",
+        "facility-management"
+      ],
+      "location": [
+        "zuerich",
+        "winterthur",
+        "uster",
+        "duebendorf",
+        "schlieren",
+        "dietikon",
+        "horgen",
+        "meilen",
+        "kuesnacht",
+        "zollikon",
+        "adliswil",
+        "thalwil",
+        "wallisellen",
+        "opfikon",
+        "kloten",
+        "regensdorf",
+        "buelach",
+        "waedenswil",
+        "richterswil",
+        "staefa",
+        "maennedorf",
+        "rueschlikon",
+        "kilchberg",
+        "erlenbach",
+        "herrliberg",
+        "volketswil",
+        "illnau-effretikon",
+        "pfaeffikon-zh",
+        "wetzikon",
+        "hinwil",
+        "rapperswil-jona",
+        "baden",
+        "aarau",
+        "zug",
+        "seefeld",
+        "enge",
+        "wiedikon",
+        "oerlikon",
+        "altstetten",
+        "hottingen",
+        "riesbach",
+        "wollishofen",
+        "wipkingen",
+        "höngg",
+        "affoltern",
+        "albisrieden",
+        "schwamendingen",
+        "unterstrass",
+        "oberstrass",
+        "sihlfeld",
+        "hirslanden",
+        "fluntern",
+        "altstadt",
+        "kreis-4",
+        "kreis-5"
+      ],
+      "format": [
+        "ratgeber",
+        "checkliste",
+        "quiz",
+        "infografik",
+        "kostenrechner",
+        "vorher-nachher",
+        "fallstudie",
+        "faq",
+        "vergleich",
+        "how-to",
+        "diagnose",
+        "tool",
+        "spiel",
+        "entscheidungshilfe",
+        "download",
+        "template",
+        "lokale-seite"
+      ],
+      "tagRules": [
+        "Jede Seite erhält 3 bis 8 Tags.",
+        "Tags stammen aus controlledTags.",
+        "Neue Tags nur mit Freigabe.",
+        "Leere Tagseiten noindex.",
+        "Tags dienen Clustering, Filterung und interner Verlinkung."
+      ]
+    },
+    "contentTypes": {
+      "service_page": {
+        "label": "Leistungsseite",
+        "minimumWordCount": 1200,
+        "recommendedWordCount": "1600 bis 2600",
+        "requiredH2Sections": [
+          "Für welche Probleme ist diese Leistung geeignet?",
+          "Wann ist sie nicht geeignet?",
+          "So läuft die Ausführung ab",
+          "Was kostet diese Leistung?",
+          "Wie lange dauert es?",
+          "Vorher-Nachher-Beispiele",
+          "Häufige Fragen",
+          "Fotoanalyse oder Offerte anfragen"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "Service",
+          "LocalBusiness",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "problem_case_page": {
+        "label": "Problemfall-Seite",
+        "minimumWordCount": 1400,
+        "recommendedWordCount": "1800 bis 3400",
+        "requiredH2Sections": [
+          "Kurzantwort",
+          "Woran erkennt man das Problem?",
+          "Mögliche Ursachen",
+          "Schweregrad einschätzen",
+          "Was sofort tun?",
+          "Was vermeiden?",
+          "Welche Behandlung hilft?",
+          "Kosten und Aufwand",
+          "Wann ein Profi nötig ist",
+          "Fotoanalyse",
+          "FAQ"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "Article",
+          "FAQPage",
+          "BreadcrumbList",
+          "HowTo optional"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "cost_page": {
+        "label": "Kostenseite",
+        "minimumWordCount": 1200,
+        "recommendedWordCount": "1500 bis 2800",
+        "requiredH2Sections": [
+          "Kurzüberblick",
+          "Preistabelle",
+          "Kostenfaktoren",
+          "Beispielrechnungen",
+          "Wann wird es teurer?",
+          "Wann sparen?",
+          "Kostenrechner",
+          "FAQ"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "Service",
+          "FAQPage",
+          "WebApplication optional",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "guide_page": {
+        "label": "Ratgeberseite",
+        "minimumWordCount": 1200,
+        "recommendedWordCount": "1500 bis 3000",
+        "requiredH2Sections": [
+          "Kurz erklärt",
+          "Für wen relevant?",
+          "Anleitung",
+          "Typische Fehler",
+          "Vergleich",
+          "Profi-Tipp",
+          "Passende Leistungen",
+          "FAQ"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "Article",
+          "FAQPage",
+          "HowTo optional",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "location_page": {
+        "label": "Lokale Seite",
+        "minimumWordCount": 1000,
+        "recommendedWordCount": "1300 bis 2400",
+        "requiredH2Sections": [
+          "Parkettpflege in [Ort]",
+          "Leistungen in [Ort]",
+          "typische Probleme",
+          "Ablauf",
+          "Kosten",
+          "lokale Beispiele",
+          "FAQ"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "LocalBusiness",
+          "Service",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "quiz_page": {
+        "label": "Quiz-Seite",
+        "minimumWordCount": 700,
+        "recommendedWordCount": "900 bis 1800 plus Quiz",
+        "requiredH2Sections": [
+          "Worum geht es?",
+          "Für wen geeignet?",
+          "Quiz starten",
+          "Auswertung verstehen",
+          "Nächste Schritte",
+          "FAQ"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "WebApplication",
+          "Article",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "infographic_page": {
+        "label": "Infografik-Seite",
+        "minimumWordCount": 800,
+        "recommendedWordCount": "1000 bis 2000",
+        "requiredH2Sections": [
+          "Kernaussagen",
+          "Infografik",
+          "Details erklärt",
+          "Entscheidungshilfe",
+          "FAQ"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "Article",
+          "ImageObject",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      },
+      "case_study": {
+        "label": "Fallstudie",
+        "minimumWordCount": 800,
+        "recommendedWordCount": "1000 bis 2000",
+        "requiredH2Sections": [
+          "Ausgangslage",
+          "Problem",
+          "Analyse",
+          "Vorgehen",
+          "Ergebnis",
+          "Dauer und Kostenrahmen",
+          "Ähnliche Fälle",
+          "Anfrage"
+        ],
+        "requiredModules": [
+          "metadata",
+          "hero",
+          "outline",
+          "bodyModules",
+          "faq",
+          "internalLinks",
+          "ctaBlocks",
+          "imageRequirements",
+          "jsonLd",
+          "qualityScore"
+        ],
+        "schemaTypes": [
+          "Article",
+          "ImageObject",
+          "LocalBusiness",
+          "BreadcrumbList"
+        ],
+        "mustNotPublishIfMissing": [
+          "searchIntent",
+          "h1",
+          "h2H3Outline",
+          "internalLinks",
+          "ctaBlocks",
+          "qualityScore"
+        ]
+      }
+    },
+    "pageTemplates": {
+      "service_page": {
+        "outlineTemplate": [
+          {
+            "h2": "Für welche Probleme ist diese Leistung geeignet?",
+            "required": true
+          },
+          {
+            "h2": "Wann ist sie nicht geeignet?",
+            "required": true
+          },
+          {
+            "h2": "So läuft die Ausführung ab",
+            "required": true
+          },
+          {
+            "h2": "Was kostet diese Leistung?",
+            "required": true
+          },
+          {
+            "h2": "Wie lange dauert es?",
+            "required": true
+          },
+          {
+            "h2": "Vorher-Nachher-Beispiele",
+            "required": true
+          },
+          {
+            "h2": "Häufige Fragen",
+            "required": true
+          },
+          {
+            "h2": "Fotoanalyse oder Offerte anfragen",
+            "required": true
+          }
+        ],
+        "ctaPlacement": [
+          "hero",
+          "after_cost_section",
+          "page_end"
+        ],
+        "internalLinkTargets": [
+          "matching_problem_cases",
+          "matching_cost_page",
+          "fotoanalyse",
+          "kostenrechner",
+          "local_hub"
+        ]
+      },
+      "problem_case_page": {
+        "outlineTemplate": [
+          {
+            "h2": "Kurzantwort",
+            "required": true
+          },
+          {
+            "h2": "Woran erkennt man das Problem?",
+            "required": true
+          },
+          {
+            "h2": "Mögliche Ursachen",
+            "required": true
+          },
+          {
+            "h2": "Schweregrad einschätzen",
+            "required": true
+          },
+          {
+            "h2": "Was sofort tun?",
+            "required": true
+          },
+          {
+            "h2": "Was vermeiden?",
+            "required": true
+          },
+          {
+            "h2": "Welche Behandlung hilft?",
+            "required": true
+          },
+          {
+            "h2": "Kosten und Aufwand",
+            "required": true
+          },
+          {
+            "h2": "Wann ein Profi nötig ist",
+            "required": true
+          },
+          {
+            "h2": "Fotoanalyse",
+            "required": true
+          },
+          {
+            "h2": "FAQ",
+            "required": true
+          }
+        ],
+        "diagnosisMatrixRequired": true,
+        "solutionMatrixRequired": true,
+        "firstAidModuleRequired": true,
+        "ctaPlacement": [
+          "after_quick_answer",
+          "after_solution_matrix",
+          "page_end"
+        ],
+        "internalLinkTargets": [
+          "matching_service",
+          "matching_cost_page",
+          "fotoanalyse",
+          "case_studies"
+        ]
+      },
+      "cost_page": {
+        "outlineTemplate": [
+          {
+            "h2": "Kurzüberblick",
+            "required": true
+          },
+          {
+            "h2": "Preistabelle",
+            "required": true
+          },
+          {
+            "h2": "Kostenfaktoren",
+            "required": true
+          },
+          {
+            "h2": "Beispielrechnungen",
+            "required": true
+          },
+          {
+            "h2": "Wann wird es teurer?",
+            "required": true
+          },
+          {
+            "h2": "Wann sparen?",
+            "required": true
+          },
+          {
+            "h2": "Kostenrechner",
+            "required": true
+          },
+          {
+            "h2": "FAQ",
+            "required": true
+          }
+        ],
+        "priceDisclaimerRequired": true,
+        "exampleCalculationsRequired": true,
+        "calculatorEmbedPreferred": true
+      }
+    },
+    "problemCaseEngine": {
+      "purpose": "Nutzer mit konkretem Schaden abholen und zur passenden Lösung führen.",
+      "mandatoryQuestions": [
+        "Was ist das Problem?",
+        "Wie erkennt man es?",
+        "Wie schlimm ist es?",
+        "Welche Ursachen sind wahrscheinlich?",
+        "Was sofort tun?",
+        "Was vermeiden?",
+        "Welche Lösungen gibt es?",
+        "Was kostet es?",
+        "Wann ist ein Profi nötig?",
+        "Welche Fotos für Analyse senden?"
+      ],
+      "severityMatrix": [
+        {
+          "level": "leicht",
+          "signals": [
+            "oberflächlich",
+            "nicht fühlbar",
+            "kleine Fläche",
+            "keine Verformung"
+          ],
+          "recommendation": [
+            "Reinigung",
+            "Pflege",
+            "Nachölen prüfen"
+          ],
+          "cta": "Foto hochladen"
+        },
+        {
+          "level": "mittel",
+          "signals": [
+            "leicht fühlbar",
+            "sichtbare Verfärbung",
+            "einzelne Dielen"
+          ],
+          "recommendation": [
+            "lokale Reparatur",
+            "Teilflächenbehandlung"
+          ],
+          "cta": "Reparatur prüfen"
+        },
+        {
+          "level": "stark",
+          "signals": [
+            "tief",
+            "schwarz",
+            "aufgequollen",
+            "mehrere Dielen"
+          ],
+          "recommendation": [
+            "Fachprüfung",
+            "Schleifen",
+            "Austausch einzelner Elemente"
+          ],
+          "cta": "Sofort prüfen lassen"
+        }
+      ],
+      "solutionMatrixMethods": [
+        "Reinigung",
+        "Nachölen",
+        "Spot Repair",
+        "Schleifen",
+        "Austausch einzelner Elemente"
+      ]
+    },
+    "interactiveModules": {
+      "damageSeverityQuiz": {
+        "purpose": "Schadensgrad einschätzen und passende Leistung empfehlen.",
+        "questions": [
+          "Oberfläche?",
+          "sichtbar oder fühlbar?",
+          "Alter des Schadens?",
+          "Flächengrösse?",
+          "Feuchtigkeit oder Aufquellung?"
+        ],
+        "results": [
+          "Reinigung könnte reichen",
+          "Lokale Reparatur wahrscheinlich sinnvoll",
+          "Schleifen prüfen",
+          "Fachprüfung dringend empfohlen"
+        ]
+      },
+      "priceEstimator": {
+        "purpose": "Kosten grob einschätzen und Leads qualifizieren.",
+        "inputs": [
+          "Fläche",
+          "Oberfläche",
+          "Zustand",
+          "Behandlung",
+          "Ort/PLZ",
+          "Möbel",
+          "Dringlichkeit"
+        ],
+        "outputs": [
+          "Preisspanne",
+          "Empfehlung",
+          "Unsicherheitshinweis",
+          "Fotoanalyse-CTA",
+          "Offerte-CTA"
+        ]
+      },
+      "careMistakeGame": {
+        "purpose": "Pflegefehler spielerisch erklären.",
+        "situations": [
+          "Dampfreiniger",
+          "zu nasser Wischmopp",
+          "aggressiver Reiniger",
+          "fehlende Filzgleiter",
+          "falsches Pflegeöl"
+        ]
+      },
+      "beforeAfterSlider": {
+        "purpose": "Resultate visuell beweisen.",
+        "requirements": [
+          "gleiche Perspektive",
+          "echte Bilder",
+          "Alt-Texte",
+          "komprimiert",
+          "Beschriftung"
+        ]
+      },
+      "infographic": {
+        "purpose": "komplexe Entscheidungen visuell erklären.",
+        "topics": [
+          "Reinigen vs Schleifen",
+          "geölt vs lackiert",
+          "Wasserflecken",
+          "Pflegefehler",
+          "Kostenfaktoren"
+        ]
+      },
+      "decisionTree": {
+        "purpose": "Methode auswählen lassen.",
+        "outputs": [
+          "Reinigung",
+          "Nachölen",
+          "Reparatur",
+          "Schleifen",
+          "Fachprüfung"
+        ]
+      },
+      "surfaceIdentifierQuiz": {
+        "purpose": "geölt/lackiert erkennen und passende Pflege empfehlen."
+      }
+    },
+    "blogEngine": {
+      "subcategories": [
+        "problemfaelle-im-alltag",
+        "pflegefehler",
+        "saisonale-parkettpflege",
+        "immobilienverwaltung",
+        "vorher-nachher",
+        "kosten-und-planung",
+        "material-und-oberflaeche",
+        "haustiere-und-kinder",
+        "diy-grenzen",
+        "zuerich-projekte"
+      ],
+      "rules": [
+        "Jeder Artikel hat eine Suchintention.",
+        "Jeder Artikel verlinkt auf mindestens eine Leistung.",
+        "Jeder Artikel enthält CTA.",
+        "Jeder Artikel enthält visuelles Element.",
+        "Starke Artikel werden zu Evergreen-Seiten ausgebaut."
+      ]
+    },
+    "internalLinking": {
+      "rules": [
+        "Jede Seite mindestens 3 interne Links.",
+        "Problemfallseiten linken auf Leistungen.",
+        "Leistungsseiten linken auf Problemfälle.",
+        "Kostenseiten linken auf Rechner und Leistungen.",
+        "Standortseiten linken auf lokale Leistungen und Fälle.",
+        "Fallstudien linken auf Problem, Leistung, Ort und Fotoanalyse."
+      ],
+      "clusters": {
+        "Wasserflecken": [
+          "/problemfaelle/wasserflecken-parkett",
+          "/problemfaelle/parkett-quillt-auf",
+          "/kosten/wasserfleck-parkett-reparatur-kosten",
+          "/leistungen/parkett-reparieren-zuerich",
+          "/leistungen/parkett-schleifen-zuerich",
+          "/tools/fotoanalyse-parkett",
+          "/faelle/wasserfleck-parkett-zuerich-seefeld"
+        ],
+        "Hundekratzer": [
+          "/problemfaelle/hundekratzer-parkett",
+          "/kosten/parkett-reparatur-kosten",
+          "/leistungen/parkett-reparieren-zuerich",
+          "/leistungen/parkett-schleifen-zuerich",
+          "/ratgeber/parkettpflege-bei-haustieren",
+          "/tools/fotoanalyse-parkett",
+          "/faelle/hundekratzer-parkett-zuerich-wiedikon"
+        ],
+        "Grauer Boden": [
+          "/problemfaelle/parkett-grau-und-stumpf",
+          "/leistungen/parkett-reinigen-zuerich",
+          "/leistungen/parkett-oelen-zuerich",
+          "/ratgeber/geoeltes-parkett-richtig-pflegen",
+          "/kosten/parkett-reinigung-kosten",
+          "/tools/parkett-kostenrechner"
+        ],
+        "Parkett schleifen": [
+          "/leistungen/parkett-schleifen-zuerich",
+          "/kosten/parkett-schleifen-kosten",
+          "/ratgeber/parkett-schleifen-oder-reinigen",
+          "/ratgeber/parkett-oelen-oder-versiegeln",
+          "/problemfaelle/tiefe-kratzer-parkett",
+          "/problemfaelle/wasserflecken-parkett"
+        ]
+      }
+    },
+    "jsonLdStrategy": {
+      "globalRules": [
+        "FAQPage nur bei sichtbarer FAQ.",
+        "HowTo nur bei echten Schritten.",
+        "LocalBusiness nur bei korrekten Unternehmensdaten.",
+        "ImageObject für wichtige Bilder.",
+        "BreadcrumbList für alle indexierbaren Seiten."
+      ],
+      "schemaByContentType": {
+        "service_page": [
+          "Service",
+          "LocalBusiness",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "problem_case_page": [
+          "Article",
+          "FAQPage",
+          "BreadcrumbList",
+          "HowTo optional"
+        ],
+        "cost_page": [
+          "Service",
+          "FAQPage",
+          "WebApplication optional",
+          "BreadcrumbList"
+        ],
+        "guide_page": [
+          "Article",
+          "FAQPage",
+          "HowTo optional",
+          "BreadcrumbList"
+        ],
+        "location_page": [
+          "LocalBusiness",
+          "Service",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "quiz_page": [
+          "WebApplication",
+          "Article",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "infographic_page": [
+          "Article",
+          "ImageObject",
+          "FAQPage",
+          "BreadcrumbList"
+        ],
+        "case_study": [
+          "Article",
+          "ImageObject",
+          "LocalBusiness",
+          "BreadcrumbList"
+        ]
+      }
+    },
+    "imageSeo": {
+      "imageTypes": [
+        "hero",
+        "problem",
+        "before_after",
+        "detail",
+        "tool",
+        "process",
+        "infographic",
+        "local_project",
+        "quiz_visual"
+      ],
+      "filenameExamplesGood": [
+        "wasserfleck-parkett-zuerich-seefeld-vorher.jpg",
+        "hundekratzer-eiche-parkett-reparatur-zuerich.jpg"
+      ],
+      "altTextRules": [
+        "sichtbaren Inhalt beschreiben",
+        "Material nennen",
+        "Problem nennen",
+        "Ort nur wenn wahr",
+        "kein Keyword-Stuffing"
+      ]
+    },
+    "ctaSystem": {
+      "primaryCtas": [
+        "Foto hochladen",
+        "Kosten berechnen",
+        "Offerte anfragen",
+        "Rückruf vereinbaren",
+        "Vorher-Nachher ansehen"
+      ],
+      "ctaByContentType": {
+        "problem_case_page": "Schaden per Foto einschätzen lassen",
+        "service_page": "Offerte anfragen",
+        "cost_page": "Kosten in 60 Sekunden berechnen",
+        "guide_page": "Foto senden, wenn unsicher",
+        "location_page": "Parkettpflege in [Ort] anfragen",
+        "case_study": "Ähnlichen Schaden einschätzen lassen",
+        "quiz_page": "Auswertung erhalten"
+      },
+      "placementRules": [
+        "oben",
+        "nach wichtigstem Erklärteil",
+        "am Ende"
+      ]
+    },
+    "qualityScore": {
+      "minimumToPublish": 85,
+      "criteria": {
+        "searchIntentMatch": 15,
+        "topicalDepth": 15,
+        "structureQuality": 10,
+        "localRelevance": 10,
+        "conversionStrength": 10,
+        "uniqueness": 10,
+        "visualValue": 10,
+        "internalLinking": 10,
+        "trustAndExpertise": 10
+      },
+      "ratingBands": {
+        "95-100": "sehr stark",
+        "85-94": "veröffentlichbar",
+        "70-84": "überarbeiten",
+        "0-69": "nicht veröffentlichen"
+      }
+    },
+    "editorialWorkflow": [
+      "Keyword und Suchintention wählen",
+      "Seitentyp bestimmen",
+      "Kategorie und Tags setzen",
+      "H1/H2/H3-Outline erzeugen",
+      "Module auswählen",
+      "Text schreiben",
+      "Interaktion definieren",
+      "interne Links setzen",
+      "JSON-LD erzeugen",
+      "Bilder briefen",
+      "Quality Score prüfen",
+      "menschliche Prüfung",
+      "veröffentlichen",
+      "Performance messen",
+      "verbessern"
+    ],
+    "contentRoadmap90Days": {
+      "Phase 1: Fundament": [
+        "SEO_CONTENT_ENGINE.md V5 finalisieren",
+        "seo-content-engine.json V5 finalisieren",
+        "Kategorien im Projekt anlegen",
+        "Tag-System als kontrollierte Taxonomie anlegen",
+        "Seitentypen und Templates definieren",
+        "Breadcrumbs vorbereiten",
+        "Sitemap-Struktur vorbereiten"
+      ],
+      "Phase 2: Geldseiten": [
+        "Parkett schleifen Zürich",
+        "Parkett ölen Zürich",
+        "Parkett reinigen Zürich",
+        "Parkett reparieren Zürich",
+        "Parkett versiegeln Zürich",
+        "Parkettpflege Zürich"
+      ],
+      "Phase 3: Problemfälle": [
+        "Wasserflecken",
+        "Hundekratzer",
+        "schwarze Flecken",
+        "grauer Boden",
+        "aufgequollenes Parkett",
+        "falsche Reinigung",
+        "tiefe Kratzer",
+        "Laufstrassen"
+      ],
+      "Phase 4: Tools": [
+        "Fotoanalyse",
+        "Kostenrechner",
+        "Schadens-Quiz",
+        "Oberflächen-Test",
+        "Pflegefehler-Spiel",
+        "Vorher-Nachher-System"
+      ],
+      "Phase 5: Lokale Dominanz": [
+        "Zürich-Hauptseite",
+        "Winterthur",
+        "Uster",
+        "Dübendorf",
+        "Horgen",
+        "Meilen",
+        "Küsnacht",
+        "Zollikon",
+        "Thalwil",
+        "Adliswil"
+      ],
+      "Phase 6: Skalierung": [
+        "monatlich 4 Problemartikel",
+        "monatlich 2 Ratgeber",
+        "monatlich 2 Fallstudien",
+        "quartalsweise 1 Infografik",
+        "monatliche Search-Console-Auswertung"
+      ]
+    },
+    "first100Pages": [
+      {
+        "priorityNumber": 1,
+        "slug": "/leistungen/parkett-schleifen-zuerich",
+        "primaryKeyword": "Parkett schleifen Zürich",
+        "intent": "transactional_local",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 2,
+        "slug": "/leistungen/parkett-oelen-zuerich",
+        "primaryKeyword": "Parkett ölen Zürich",
+        "intent": "transactional_local",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 3,
+        "slug": "/leistungen/parkett-reinigen-zuerich",
+        "primaryKeyword": "Parkett reinigen Zürich",
+        "intent": "transactional_local",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 4,
+        "slug": "/leistungen/parkett-reparieren-zuerich",
+        "primaryKeyword": "Parkett reparieren Zürich",
+        "intent": "transactional_local",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 5,
+        "slug": "/leistungen/parkett-versiegeln-zuerich",
+        "primaryKeyword": "Parkett versiegeln Zürich",
+        "intent": "transactional_local",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 6,
+        "slug": "/leistungen/parkett-auffrischen-zuerich",
+        "primaryKeyword": "Parkett auffrischen Zürich",
+        "intent": "commercial_local",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 7,
+        "slug": "/leistungen/parkett-polieren-zuerich",
+        "primaryKeyword": "Parkett polieren Zürich",
+        "intent": "commercial_local",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 8,
+        "slug": "/leistungen/parkett-tiefenreinigung-zuerich",
+        "primaryKeyword": "Parkett Tiefenreinigung Zürich",
+        "intent": "commercial_local",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 9,
+        "slug": "/leistungen/parkett-spot-repair-zuerich",
+        "primaryKeyword": "Parkett Spot Repair Zürich",
+        "intent": "commercial_local",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 10,
+        "slug": "/leistungen/parkett-teilflaechenbehandlung-zuerich",
+        "primaryKeyword": "Parkett Teilflächenbehandlung Zürich",
+        "intent": "commercial_local",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 11,
+        "slug": "/leistungen/parkett-nachoelen-zuerich",
+        "primaryKeyword": "Parkett nachölen Zürich",
+        "intent": "commercial_local",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 12,
+        "slug": "/leistungen/parkett-pflege-immobilienverwaltung-zuerich",
+        "primaryKeyword": "Parkettpflege Immobilienverwaltung Zürich",
+        "intent": "commercial_local",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 13,
+        "slug": "/problemfaelle/wasserflecken-parkett",
+        "primaryKeyword": "Wasserflecken Parkett entfernen",
+        "intent": "problem_solution",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 14,
+        "slug": "/problemfaelle/hundekratzer-parkett",
+        "primaryKeyword": "Hundekratzer Parkett reparieren",
+        "intent": "problem_solution",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 15,
+        "slug": "/problemfaelle/schwarze-flecken-parkett",
+        "primaryKeyword": "Schwarze Flecken Parkett",
+        "intent": "problem_solution",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 16,
+        "slug": "/problemfaelle/parkett-grau-und-stumpf",
+        "primaryKeyword": "Parkett grau und stumpf",
+        "intent": "problem_solution",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 17,
+        "slug": "/problemfaelle/parkett-quillt-auf",
+        "primaryKeyword": "Parkett quillt auf",
+        "intent": "urgent_problem",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 18,
+        "slug": "/problemfaelle/parkett-nach-falscher-reinigung",
+        "primaryKeyword": "Parkett falsch gereinigt",
+        "intent": "problem_solution",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 19,
+        "slug": "/problemfaelle/tiefe-kratzer-parkett",
+        "primaryKeyword": "Tiefe Kratzer Parkett",
+        "intent": "problem_solution",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 20,
+        "slug": "/problemfaelle/laufstrassen-parkett",
+        "primaryKeyword": "Laufstrassen Parkett entfernen",
+        "intent": "problem_solution",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 21,
+        "slug": "/problemfaelle/rotweinfleck-parkett",
+        "primaryKeyword": "Rotweinfleck Parkett entfernen",
+        "intent": "problem_solution",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 22,
+        "slug": "/problemfaelle/brandfleck-parkett",
+        "primaryKeyword": "Brandfleck Parkett reparieren",
+        "intent": "problem_solution",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 23,
+        "slug": "/problemfaelle/moebelspuren-parkett",
+        "primaryKeyword": "Möbelspuren Parkett entfernen",
+        "intent": "problem_solution",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 24,
+        "slug": "/problemfaelle/parkett-klebrig",
+        "primaryKeyword": "Parkett klebrig nach Reinigung",
+        "intent": "problem_solution",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 25,
+        "slug": "/problemfaelle/fugen-im-parkett-offen",
+        "primaryKeyword": "Fugen im Parkett offen",
+        "intent": "problem_solution",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 26,
+        "slug": "/problemfaelle/parkett-vergilbt",
+        "primaryKeyword": "Parkett vergilbt",
+        "intent": "informational_commercial",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 27,
+        "slug": "/problemfaelle/parkett-unter-teppich-verfaerbt",
+        "primaryKeyword": "Parkett unter Teppich verfärbt",
+        "intent": "problem_solution",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 28,
+        "slug": "/problemfaelle/blumentopf-wasserfleck-parkett",
+        "primaryKeyword": "Blumentopf Wasserfleck Parkett",
+        "intent": "problem_solution",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 29,
+        "slug": "/problemfaelle/urin-fleck-parkett",
+        "primaryKeyword": "Urin Fleck Parkett entfernen",
+        "intent": "problem_solution",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 30,
+        "slug": "/problemfaelle/parkett-lack-abgenutzt",
+        "primaryKeyword": "Parkett Lack abgenutzt",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 31,
+        "slug": "/problemfaelle/parkett-oel-ausgelaugt",
+        "primaryKeyword": "Geöltes Parkett ausgelaugt",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 32,
+        "slug": "/problemfaelle/parkett-nach-mieterwechsel",
+        "primaryKeyword": "Parkett nach Mieterwechsel",
+        "intent": "commercial_local",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 33,
+        "slug": "/kosten/parkett-schleifen-kosten",
+        "primaryKeyword": "Parkett schleifen Kosten",
+        "intent": "commercial",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 34,
+        "slug": "/kosten/parkett-oelen-kosten",
+        "primaryKeyword": "Parkett ölen Kosten",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 35,
+        "slug": "/kosten/parkett-reparatur-kosten",
+        "primaryKeyword": "Parkett Reparatur Kosten",
+        "intent": "commercial",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 36,
+        "slug": "/kosten/parkett-reinigung-kosten",
+        "primaryKeyword": "Parkett Reinigung Kosten",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 37,
+        "slug": "/kosten/parkett-versiegeln-kosten",
+        "primaryKeyword": "Parkett versiegeln Kosten",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 38,
+        "slug": "/kosten/parkett-auffrischen-kosten",
+        "primaryKeyword": "Parkett auffrischen Kosten",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 39,
+        "slug": "/kosten/wasserfleck-parkett-reparatur-kosten",
+        "primaryKeyword": "Wasserfleck Parkett Reparatur Kosten",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 40,
+        "slug": "/kosten/hundekratzer-parkett-reparatur-kosten",
+        "primaryKeyword": "Hundekratzer Parkett Reparatur Kosten",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 41,
+        "slug": "/kosten/parkettpflege-wohnung-kosten",
+        "primaryKeyword": "Parkettpflege Wohnung Kosten",
+        "intent": "commercial",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 42,
+        "slug": "/kosten/parkettpflege-haus-kosten",
+        "primaryKeyword": "Parkettpflege Haus Kosten",
+        "intent": "commercial",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 43,
+        "slug": "/ratgeber/geoeltes-parkett-richtig-pflegen",
+        "primaryKeyword": "Geöltes Parkett richtig pflegen",
+        "intent": "informational",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 44,
+        "slug": "/ratgeber/lackiertes-parkett-pflegen",
+        "primaryKeyword": "Lackiertes Parkett pflegen",
+        "intent": "informational",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 45,
+        "slug": "/ratgeber/parkett-oelen-oder-versiegeln",
+        "primaryKeyword": "Parkett ölen oder versiegeln",
+        "intent": "comparison",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 46,
+        "slug": "/ratgeber/parkett-schleifen-oder-reinigen",
+        "primaryKeyword": "Parkett schleifen oder reinigen",
+        "intent": "comparison",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 47,
+        "slug": "/ratgeber/dampfreiniger-auf-parkett",
+        "primaryKeyword": "Dampfreiniger auf Parkett",
+        "intent": "informational",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 48,
+        "slug": "/ratgeber/parkett-nass-wischen",
+        "primaryKeyword": "Parkett nass wischen",
+        "intent": "informational",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 49,
+        "slug": "/ratgeber/parkettpflege-im-winter",
+        "primaryKeyword": "Parkettpflege im Winter",
+        "intent": "informational",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 50,
+        "slug": "/ratgeber/parkettpflege-nach-heizperiode",
+        "primaryKeyword": "Parkettpflege nach Heizperiode",
+        "intent": "informational",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 51,
+        "slug": "/ratgeber/parkettpflege-bei-haustieren",
+        "primaryKeyword": "Parkettpflege bei Haustieren",
+        "intent": "informational_commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 52,
+        "slug": "/ratgeber/parkettpflege-bei-kindern",
+        "primaryKeyword": "Parkettpflege bei Kindern",
+        "intent": "informational",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 53,
+        "slug": "/ratgeber/parkett-vor-wohnungsuebergabe",
+        "primaryKeyword": "Parkett vor Wohnungsübergabe",
+        "intent": "commercial",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 54,
+        "slug": "/ratgeber/parkett-gepflegt-verkauf-immobilie",
+        "primaryKeyword": "Parkettpflege vor Immobilienverkauf",
+        "intent": "commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 55,
+        "slug": "/tools/fotoanalyse-parkett",
+        "primaryKeyword": "Parkett Fotoanalyse",
+        "intent": "lead_generation",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 56,
+        "slug": "/tools/parkett-kostenrechner",
+        "primaryKeyword": "Parkett Kostenrechner",
+        "intent": "commercial_tool",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 57,
+        "slug": "/quiz/muss-mein-parkett-geschliffen-werden",
+        "primaryKeyword": "Muss mein Parkett geschliffen werden",
+        "intent": "diagnostic",
+        "priority": "very_high"
+      },
+      {
+        "priorityNumber": 58,
+        "slug": "/quiz/welche-parkettpflege-brauche-ich",
+        "primaryKeyword": "Welche Parkettpflege brauche ich",
+        "intent": "diagnostic",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 59,
+        "slug": "/quiz/ist-mein-parkett-geoelt-oder-lackiert",
+        "primaryKeyword": "Ist mein Parkett geölt oder lackiert",
+        "intent": "diagnostic",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 60,
+        "slug": "/tools/parkett-schaden-check",
+        "primaryKeyword": "Parkett Schaden Check",
+        "intent": "diagnostic",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 61,
+        "slug": "/tools/parkett-pflegeplan-generator",
+        "primaryKeyword": "Parkett Pflegeplan Generator",
+        "intent": "engagement",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 62,
+        "slug": "/zuerich/parkettpflege-zuerich",
+        "primaryKeyword": "Parkettpflege Zürich",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 63,
+        "slug": "/zuerich/parkettpflege-winterthur",
+        "primaryKeyword": "Parkettpflege Winterthur",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 64,
+        "slug": "/zuerich/parkettpflege-uster",
+        "primaryKeyword": "Parkettpflege Uster",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 65,
+        "slug": "/zuerich/parkettpflege-duebendorf",
+        "primaryKeyword": "Parkettpflege Dübendorf",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 66,
+        "slug": "/zuerich/parkettpflege-schlieren",
+        "primaryKeyword": "Parkettpflege Schlieren",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 67,
+        "slug": "/zuerich/parkettpflege-dietikon",
+        "primaryKeyword": "Parkettpflege Dietikon",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 68,
+        "slug": "/zuerich/parkettpflege-horgen",
+        "primaryKeyword": "Parkettpflege Horgen",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 69,
+        "slug": "/zuerich/parkettpflege-meilen",
+        "primaryKeyword": "Parkettpflege Meilen",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 70,
+        "slug": "/zuerich/parkettpflege-kuesnacht",
+        "primaryKeyword": "Parkettpflege Küsnacht",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 71,
+        "slug": "/zuerich/parkettpflege-zollikon",
+        "primaryKeyword": "Parkettpflege Zollikon",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 72,
+        "slug": "/zuerich/parkettpflege-adliswil",
+        "primaryKeyword": "Parkettpflege Adliswil",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 73,
+        "slug": "/zuerich/parkettpflege-thalwil",
+        "primaryKeyword": "Parkettpflege Thalwil",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 74,
+        "slug": "/zuerich/parkettpflege-wallisellen",
+        "primaryKeyword": "Parkettpflege Wallisellen",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 75,
+        "slug": "/zuerich/parkettpflege-opfikon",
+        "primaryKeyword": "Parkettpflege Opfikon",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 76,
+        "slug": "/zuerich/parkettpflege-kloten",
+        "primaryKeyword": "Parkettpflege Kloten",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 77,
+        "slug": "/zuerich/parkettpflege-regensdorf",
+        "primaryKeyword": "Parkettpflege Regensdorf",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 78,
+        "slug": "/zuerich/parkettpflege-buelach",
+        "primaryKeyword": "Parkettpflege Bülach",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 79,
+        "slug": "/zuerich/parkettpflege-waedenswil",
+        "primaryKeyword": "Parkettpflege Wädenswil",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 80,
+        "slug": "/zuerich/parkettpflege-richterswil",
+        "primaryKeyword": "Parkettpflege Richterswil",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 81,
+        "slug": "/zuerich/parkettpflege-staefa",
+        "primaryKeyword": "Parkettpflege Stäfa",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 82,
+        "slug": "/zuerich/parkettpflege-maennedorf",
+        "primaryKeyword": "Parkettpflege Männedorf",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 83,
+        "slug": "/zuerich/parkettpflege-rueschlikon",
+        "primaryKeyword": "Parkettpflege Rüschlikon",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 84,
+        "slug": "/zuerich/parkettpflege-kilchberg",
+        "primaryKeyword": "Parkettpflege Kilchberg",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 85,
+        "slug": "/zuerich/parkettpflege-erlenbach",
+        "primaryKeyword": "Parkettpflege Erlenbach",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 86,
+        "slug": "/zuerich/parkettpflege-herrliberg",
+        "primaryKeyword": "Parkettpflege Herrliberg",
+        "intent": "local_transactional",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 87,
+        "slug": "/faelle/wasserfleck-parkett-zuerich-seefeld",
+        "primaryKeyword": "Wasserfleck Parkett Zürich-Seefeld",
+        "intent": "proof_commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 88,
+        "slug": "/faelle/hundekratzer-parkett-zuerich-wiedikon",
+        "primaryKeyword": "Hundekratzer Parkett Zürich-Wiedikon",
+        "intent": "proof_commercial",
+        "priority": "high"
+      },
+      {
+        "priorityNumber": 89,
+        "slug": "/faelle/laufstrasse-parkett-zuerich-enge",
+        "primaryKeyword": "Laufstrasse Parkett Zürich-Enge",
+        "intent": "proof_commercial",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 90,
+        "slug": "/faelle/graues-parkett-zuerich-altstetten",
+        "primaryKeyword": "Graues Parkett Zürich-Altstetten",
+        "intent": "proof_commercial",
+        "priority": "medium"
+      },
+      {
+        "priorityNumber": 91,
+        "slug": "/faelle/parkett-mieterwechsel-zuerich-oerlikon",
+        "primaryKeyword": "Parkett Mieterwechsel Zürich-Oerlikon",
+        "intent": "proof_commercial",
+        "priority": "high"
+      }
+    ],
+    "exampleOutputProblemCase": {
+      "contentType": "problem_case_page",
+      "category": "problemfaelle",
+      "subCategory": "wasser",
+      "tags": [
+        "wasserfleck",
+        "wasserschaden",
+        "reparieren",
+        "schleifen",
+        "zuerich",
+        "fotoanalyse"
+      ],
+      "priority": "very_high",
+      "searchIntent": "problem_solution",
+      "funnelStage": "consideration",
+      "targetAudience": [
+        "privatkunden",
+        "eigentümer",
+        "mieter",
+        "vermieter"
+      ],
+      "primaryKeyword": "Wasserflecken Parkett entfernen",
+      "secondaryKeywords": [
+        "dunkle Wasserflecken Parkett",
+        "Parkett Wasserschaden reparieren",
+        "Parkett aufgequollen Wasser"
+      ],
+      "slug": "/problemfaelle/wasserflecken-parkett",
+      "canonicalUrl": "https://parkett-pflege.ch/problemfaelle/wasserflecken-parkett",
+      "title": "Wasserflecken im Parkett entfernen | Hilfe & Reparatur",
+      "metaDescription": "Wasserflecken im Parkett? Erfahren Sie, wann Reinigen reicht, wann Schleifen nötig ist und wie Sie den Schaden per Foto einschätzen lassen.",
+      "h1": "Wasserflecken im Parkett entfernen: Was wirklich hilft",
+      "schemaTypes": [
+        "Article",
+        "FAQPage",
+        "HowTo",
+        "BreadcrumbList"
+      ],
+      "qualityScoreTarget": 92
+    },
+    "priorJsonArchive": {
+      "altSeoContentEngine": {
+        "seoContentEngine": {
+          "projectName": "Parkettpflege.ch",
+          "domain": "https://parkett-pflege.ch",
+          "version": "1.0.0",
+          "purpose": "Maschinenlesbarer Blueprint für die SEO-Content-Engine, den SEOContentAgent und die redaktionelle Content-Architektur.",
+          "primaryMarket": {
+            "country": "Schweiz",
+            "region": "Raum Zürich",
+            "mainSlogan": "Parkett erhalten. Werte bewahren.",
+            "strategicConcept": "Parkett retten statt ersetzen.",
+            "positioning": "Spezialist für Parkettpflege, Parkettreparatur und Parkettrenovation im Raum Zürich.",
+            "coreCities": [
+              "Zürich",
+              "Winterthur",
+              "Uster",
+              "Dübendorf",
+              "Schlieren",
+              "Dietikon",
+              "Horgen",
+              "Meilen",
+              "Küsnacht",
+              "Zollikon",
+              "Adliswil",
+              "Thalwil",
+              "Wallisellen",
+              "Opfikon",
+              "Kloten",
+              "Regensdorf",
+              "Bülach"
+            ]
+          },
+          "globalRules": {
+            "agentMustGenerate": [
+              "contentType",
+              "category",
+              "subCategory",
+              "tags",
+              "searchIntent",
+              "funnelStage",
+              "targetAudience",
+              "slug",
+              "canonicalUrl",
+              "title",
+              "metaDescription",
+              "h1",
+              "h2H3Outline",
+              "contentModules",
+              "interactiveElement",
+              "faq",
+              "internalLinks",
+              "imageRequirements",
+              "jsonLd",
+              "ctaBlocks",
+              "qualityScore",
+              "reviewChecklist"
+            ],
+            "neverGenerateOnly": [
+              "slug",
+              "title",
+              "metaDescription",
+              "h1",
+              "plainContent"
+            ],
+            "headingRules": {
+              "h1": "Genau eine H1 pro Seite. Sie beschreibt das Hauptthema und enthält das primäre Keyword oder eine nahe Variante.",
+              "h2": "Jede lange SEO-Seite braucht mehrere H2. H2 strukturieren Suchintention, Problem, Lösung, Kosten, Prozess, FAQ und CTA.",
+              "h3": "H3 unterteilen komplexe H2-Abschnitte, z.B. nach Schadensarten, Methoden, Kostenfaktoren, Holzarten oder Schweregrad.",
+              "forbidden": [
+                "Seite nur mit H1 und Fliesstext",
+                "generische H2 wie Einleitung oder Fazit ohne Mehrwert",
+                "Keyword-Stuffing in Überschriften"
+              ]
+            },
+            "qualityThreshold": 85
+          },
+          "categories": [
+            {
+              "id": "leistungen",
+              "name": "Leistungen",
+              "basePath": "/leistungen",
+              "goal": "Kommerzielle Hauptseiten für konkrete Parkett-Dienstleistungen.",
+              "contentTypes": [
+                "service_page",
+                "local_service_page",
+                "comparison_page"
+              ],
+              "requiredModules": [
+                "hero",
+                "problemOverview",
+                "serviceExplanation",
+                "processSteps",
+                "costSection",
+                "beforeAfterTeaser",
+                "faq",
+                "ctaBlocks",
+                "internalLinks",
+                "jsonLd"
+              ],
+              "examplePages": [
+                "/leistungen/parkett-schleifen-zuerich",
+                "/leistungen/parkett-oelen-zuerich",
+                "/leistungen/parkett-reinigen-zuerich",
+                "/leistungen/parkett-reparieren-zuerich",
+                "/leistungen/parkett-versiegeln-zuerich",
+                "/leistungen/parkett-auffrischen-zuerich"
+              ]
+            },
+            {
+              "id": "problemfaelle",
+              "name": "Problemfälle",
+              "basePath": "/problemfaelle",
+              "goal": "Konkrete Schäden, Pflegefehler und Zustände behandeln. Nutzer abholen, die noch nicht wissen, welche Leistung sie brauchen.",
+              "contentTypes": [
+                "problem_case_page",
+                "diagnosis_page",
+                "how_to_page",
+                "case_study",
+                "quiz_page"
+              ],
+              "requiredModules": [
+                "quickAnswer",
+                "symptomChecker",
+                "causes",
+                "severityLevels",
+                "doAndDont",
+                "solutionOptions",
+                "costEstimate",
+                "photoAnalysisCTA",
+                "faq",
+                "internalLinks"
+              ],
+              "examplePages": [
+                "/problemfaelle/wasserflecken-parkett",
+                "/problemfaelle/hundekratzer-parkett",
+                "/problemfaelle/schwarze-flecken-parkett",
+                "/problemfaelle/parkett-grau-und-stumpf",
+                "/problemfaelle/parkett-quillt-auf",
+                "/problemfaelle/parkett-nach-falscher-reinigung",
+                "/problemfaelle/rotweinfleck-parkett",
+                "/problemfaelle/brandfleck-parkett",
+                "/problemfaelle/sonnenverfaerbung-parkett",
+                "/problemfaelle/moebelspuren-parkett"
+              ]
+            },
+            {
+              "id": "kosten",
+              "name": "Kosten & Preise",
+              "basePath": "/kosten",
+              "goal": "Preisorientierte Seiten für kaufnahe Suchanfragen.",
+              "contentTypes": [
+                "cost_page",
+                "calculator_page",
+                "comparison_page"
+              ],
+              "requiredModules": [
+                "priceTable",
+                "costFactors",
+                "exampleCalculations",
+                "calculatorEmbed",
+                "disclaimer",
+                "ctaBlocks"
+              ],
+              "examplePages": [
+                "/kosten/parkett-schleifen-kosten",
+                "/kosten/parkett-oelen-kosten",
+                "/kosten/parkett-reparatur-kosten",
+                "/kosten/parkett-reinigung-kosten",
+                "/kosten/parkett-versiegeln-kosten"
+              ]
+            },
+            {
+              "id": "ratgeber",
+              "name": "Ratgeber",
+              "basePath": "/ratgeber",
+              "goal": "Evergreen-Fachwissen, Pflegeanleitungen, Vergleiche und Checklisten.",
+              "contentTypes": [
+                "guide_page",
+                "how_to_page",
+                "comparison_page",
+                "infographic_page",
+                "checklist_page"
+              ],
+              "requiredModules": [
+                "quickAnswer",
+                "explanation",
+                "stepByStep",
+                "comparison",
+                "mistakes",
+                "visualModule",
+                "faq",
+                "internalLinks"
+              ],
+              "examplePages": [
+                "/ratgeber/geoeltes-parkett-richtig-pflegen",
+                "/ratgeber/lackiertes-parkett-pflegen",
+                "/ratgeber/parkett-oelen-oder-versiegeln",
+                "/ratgeber/parkett-schleifen-oder-reinigen",
+                "/ratgeber/dampfreiniger-auf-parkett"
+              ]
+            },
+            {
+              "id": "holzarten",
+              "name": "Holzarten & Oberflächen",
+              "basePath": "/holzarten",
+              "goal": "Fachautorität und Longtail-Traffic über Holzarten, Parkettarten und Oberflächen.",
+              "contentTypes": [
+                "wood_type_page",
+                "surface_page",
+                "guide_page"
+              ],
+              "examplePages": [
+                "/holzarten/eiche-parkett-pflegen",
+                "/holzarten/nussbaum-parkett-pflegen",
+                "/holzarten/fischgrat-parkett-renovieren",
+                "/holzarten/massivparkett-renovieren",
+                "/holzarten/fertigparkett-reparieren"
+              ]
+            },
+            {
+              "id": "zuerich",
+              "name": "Region Zürich",
+              "basePath": "/zuerich",
+              "goal": "Lokale SEO-Seiten für Zürich und Umgebung.",
+              "contentTypes": [
+                "location_page",
+                "local_service_page",
+                "local_case_study"
+              ],
+              "requiredModules": [
+                "localHero",
+                "localServiceOverview",
+                "localProblems",
+                "localCaseExamples",
+                "serviceArea",
+                "localFAQ",
+                "localCTA"
+              ],
+              "examplePages": [
+                "/zuerich/parkettpflege-zuerich",
+                "/zuerich/parkett-schleifen-zuerich",
+                "/zuerich/parkett-reparieren-zuerich",
+                "/zuerich/parkettpflege-winterthur",
+                "/zuerich/parkettpflege-uster",
+                "/zuerich/parkettpflege-kuesnacht",
+                "/zuerich/parkettpflege-horgen"
+              ]
+            },
+            {
+              "id": "tools",
+              "name": "Tools, Quiz & Interaktive Inhalte",
+              "basePath": "/tools",
+              "goal": "Engagement, Lead-Qualifizierung und Differenzierung.",
+              "contentTypes": [
+                "tool_page",
+                "quiz_page",
+                "calculator_page",
+                "interactive_guide",
+                "game_page"
+              ],
+              "examplePages": [
+                "/tools/parkett-kostenrechner",
+                "/tools/fotoanalyse-parkett",
+                "/quiz/muss-mein-parkett-geschliffen-werden",
+                "/quiz/welche-parkettpflege-brauche-ich",
+                "/quiz/ist-mein-parkett-geoelt-oder-lackiert"
+              ]
+            },
+            {
+              "id": "faelle",
+              "name": "Vorher-Nachher-Fälle",
+              "basePath": "/faelle",
+              "goal": "Projektberichte mit echten Schäden, Lösungen, Dauer, Kostenrahmen und Bildern.",
+              "contentTypes": [
+                "case_study",
+                "before_after_page",
+                "local_case_study"
+              ],
+              "requiredModules": [
+                "caseHero",
+                "problemDescription",
+                "initialCondition",
+                "method",
+                "beforeAfterImages",
+                "duration",
+                "costRange",
+                "result",
+                "customerQuote",
+                "relatedServices",
+                "cta"
+              ],
+              "examplePages": [
+                "/faelle/wasserfleck-parkett-zuerich-seefeld",
+                "/faelle/hundekratzer-parkett-zuerich-wiedikon",
+                "/faelle/laufstrassen-parkett-zuerich-enge"
+              ]
+            },
+            {
+              "id": "blog",
+              "name": "Blog",
+              "basePath": "/blog",
+              "goal": "Problemorientierte, saisonale und beratende Inhalte.",
+              "contentTypes": [
+                "blog_article",
+                "problem_blog",
+                "seasonal_article",
+                "expert_commentary",
+                "checklist_article"
+              ],
+              "subcategories": [
+                "problemfaelle-blog",
+                "pflegefehler",
+                "saisonale-parkettpflege",
+                "immobilienverwaltung",
+                "material-oberflaeche",
+                "kosten-planung"
+              ]
+            }
+          ],
+          "controlledTags": {
+            "damage": [
+              "kratzer",
+              "tiefe-kratzer",
+              "hundekratzer",
+              "wasserfleck",
+              "schwarze-flecken",
+              "weisse-flecken",
+              "grauschleier",
+              "laufstrassen",
+              "sonnenverfaerbung",
+              "brandfleck",
+              "rotweinfleck",
+              "fettfleck",
+              "moebelspuren",
+              "druckstellen",
+              "aufgequollen",
+              "risse",
+              "abplatzungen",
+              "stumpf",
+              "klebrig",
+              "pflegefehler",
+              "dampfreiniger-schaden"
+            ],
+            "treatment": [
+              "reinigen",
+              "tiefenreinigung",
+              "oelen",
+              "nachoelen",
+              "schleifen",
+              "versiegeln",
+              "lackieren",
+              "polieren",
+              "reparieren",
+              "ausbessern",
+              "auffrischen",
+              "spot-repair",
+              "teilflaechenbehandlung",
+              "abschliff",
+              "grundreinigung"
+            ],
+            "surface": [
+              "geoelt",
+              "naturgeoelt",
+              "lackiert",
+              "versiegelt",
+              "matt",
+              "seidenglanz",
+              "glanz",
+              "gebuerstet",
+              "geraechert",
+              "gebeizt"
+            ],
+            "woodType": [
+              "eiche",
+              "buche",
+              "nussbaum",
+              "ahorn",
+              "esche",
+              "kirschbaum",
+              "fischgrat",
+              "stabparkett",
+              "massivparkett",
+              "fertigparkett",
+              "landhausdielen",
+              "mosaikparkett",
+              "industrieparkett"
+            ],
+            "audience": [
+              "privatkunden",
+              "eigentumswohnung",
+              "einfamilienhaus",
+              "mieter",
+              "vermieter",
+              "immobilienverwaltung",
+              "architekten",
+              "gewerbe",
+              "restaurant",
+              "buero",
+              "praxis",
+              "hotel"
+            ],
+            "location": [
+              "zuerich",
+              "winterthur",
+              "uster",
+              "duebendorf",
+              "schlieren",
+              "dietikon",
+              "horgen",
+              "meilen",
+              "kuesnacht",
+              "zollikon",
+              "thalwil",
+              "adliswil",
+              "wallisellen",
+              "opfikon",
+              "kloten",
+              "regensdorf",
+              "buelach",
+              "seefeld",
+              "enge",
+              "wiedikon",
+              "oerlikon",
+              "altstetten",
+              "hottingen"
+            ],
+            "format": [
+              "ratgeber",
+              "checkliste",
+              "quiz",
+              "infografik",
+              "kostenrechner",
+              "vorher-nachher",
+              "fallstudie",
+              "faq",
+              "vergleich",
+              "how-to",
+              "diagnose",
+              "tool",
+              "spiel"
+            ]
+          },
+          "contentTypes": {
+            "service_page": {
+              "minWords": 1200,
+              "recommendedWords": "1600-2400",
+              "requiredH2": [
+                "Für welche Parkettprobleme ist diese Leistung geeignet?",
+                "So läuft die Behandlung ab",
+                "Was kostet diese Leistung?",
+                "Wie lange dauert die Ausführung?",
+                "Wann reicht diese Methode nicht aus?",
+                "Vorher-Nachher-Beispiele",
+                "Häufige Fragen",
+                "Fotoanalyse oder Offerte anfragen"
+              ],
+              "schemas": [
+                "Service",
+                "LocalBusiness",
+                "FAQPage",
+                "BreadcrumbList"
+              ]
+            },
+            "problem_case_page": {
+              "minWords": 1400,
+              "recommendedWords": "1800-3200",
+              "requiredH2": [
+                "Kurzantwort",
+                "Woran Sie das Problem erkennen",
+                "Mögliche Ursachen",
+                "Was Sie sofort tun sollten",
+                "Was Sie vermeiden sollten",
+                "Welche Behandlung hilft wirklich?",
+                "Kosten und Aufwand",
+                "Wann ein Profi nötig ist",
+                "Fotoanalyse",
+                "Häufige Fragen"
+              ],
+              "recommendedInteractive": [
+                "damageSeverityQuiz",
+                "beforeAfterSlider",
+                "photoUploadCTA",
+                "decisionTree"
+              ],
+              "schemas": [
+                "Article",
+                "FAQPage",
+                "BreadcrumbList",
+                "HowTo"
+              ]
+            },
+            "cost_page": {
+              "minWords": 1200,
+              "recommendedWords": "1500-2500",
+              "requiredH2": [
+                "Kurzüberblick: Mit welchen Kosten müssen Sie rechnen?",
+                "Preistabelle nach Fläche und Zustand",
+                "Welche Faktoren beeinflussen den Preis?",
+                "Wann lohnt sich Reinigen statt Schleifen?",
+                "Beispielrechnungen",
+                "Kostenrechner nutzen",
+                "Häufige Fragen zu Preisen"
+              ],
+              "recommendedInteractive": [
+                "priceEstimator",
+                "areaSlider",
+                "conditionSlider",
+                "packageComparison"
+              ],
+              "schemas": [
+                "Service",
+                "FAQPage",
+                "BreadcrumbList",
+                "WebApplication"
+              ]
+            },
+            "guide_page": {
+              "minWords": 1200,
+              "recommendedWords": "1500-2800",
+              "requiredH2": [
+                "Kurz erklärt",
+                "Wann ist das relevant?",
+                "Schritt-für-Schritt-Anleitung",
+                "Typische Fehler",
+                "Vergleich oder Entscheidungshilfe",
+                "Profi-Tipp",
+                "Häufige Fragen"
+              ],
+              "recommendedInteractive": [
+                "checklist",
+                "infographic",
+                "quiz",
+                "downloadableGuide"
+              ],
+              "schemas": [
+                "Article",
+                "FAQPage",
+                "BreadcrumbList",
+                "HowTo"
+              ]
+            },
+            "location_page": {
+              "minWords": 1000,
+              "recommendedWords": "1300-2200",
+              "requiredH2": [
+                "Parkettpflege in [Ort]",
+                "Unsere Leistungen in [Ort]",
+                "Typische Parkettprobleme in Wohnungen und Häusern in [Ort]",
+                "Ablauf: Von Fotoanalyse bis Ausführung",
+                "Kosten und Einschätzung",
+                "Vorher-Nachher-Fälle aus der Region",
+                "Häufige Fragen zu Parkettpflege in [Ort]"
+              ],
+              "schemas": [
+                "LocalBusiness",
+                "Service",
+                "FAQPage",
+                "BreadcrumbList"
+              ]
+            },
+            "quiz_page": {
+              "minWords": 700,
+              "recommendedWords": "900-1600 plus Quiz",
+              "requiredH2": [
+                "Worum geht es bei diesem Test?",
+                "Für wen ist das Quiz geeignet?",
+                "Quiz starten",
+                "Auswertung verstehen",
+                "Nächste Schritte",
+                "Häufige Fragen"
+              ],
+              "schemas": [
+                "WebApplication",
+                "Article",
+                "FAQPage",
+                "BreadcrumbList"
+              ]
+            },
+            "infographic_page": {
+              "minWords": 800,
+              "recommendedWords": "1000-1800",
+              "requiredH2": [
+                "Die wichtigsten Unterschiede auf einen Blick",
+                "Infografik",
+                "Details verständlich erklärt",
+                "Wann welche Lösung passt",
+                "Häufige Fragen"
+              ],
+              "schemas": [
+                "Article",
+                "ImageObject",
+                "FAQPage",
+                "BreadcrumbList"
+              ]
+            },
+            "case_study": {
+              "minWords": 800,
+              "recommendedWords": "1000-1800",
+              "requiredH2": [
+                "Ausgangslage",
+                "Problem",
+                "Analyse",
+                "Vorgehen",
+                "Ergebnis",
+                "Dauer und Kostenrahmen",
+                "Ähnliche Fälle",
+                "Anfrage stellen"
+              ],
+              "schemas": [
+                "Article",
+                "ImageObject",
+                "LocalBusiness",
+                "BreadcrumbList"
+              ]
+            }
+          },
+          "interactiveModules": {
+            "damageSeverityQuiz": {
+              "purpose": "Schadensgrad einschätzen und passende Leistung empfehlen.",
+              "questions": [
+                "Ist Ihr Parkett geölt oder lackiert?",
+                "Ist der Schaden sichtbar oder fühlbar?",
+                "Wie alt ist der Schaden?",
+                "Wie gross ist die betroffene Fläche?",
+                "Gibt es Feuchtigkeit oder Aufquellung?"
+              ],
+              "results": [
+                "Reinigung könnte reichen",
+                "Lokale Reparatur wahrscheinlich sinnvoll",
+                "Schleifen oder Teilflächenbehandlung prüfen",
+                "Fachprüfung dringend empfohlen"
+              ]
+            },
+            "careMistakeGame": {
+              "purpose": "Pflegefehler spielerisch erklären.",
+              "situations": [
+                "Dampfreiniger auf Parkett",
+                "zu nasser Wischmopp",
+                "aggressiver Allzweckreiniger",
+                "fehlende Filzgleiter",
+                "falsches Pflegeöl"
+              ]
+            },
+            "beforeAfterSlider": {
+              "purpose": "Resultate visuell beweisen.",
+              "requirements": [
+                "gleiche Perspektive",
+                "echte Bilder bevorzugt",
+                "Alt-Texte",
+                "komprimierte Bilder",
+                "klare Beschriftung"
+              ]
+            },
+            "priceEstimator": {
+              "purpose": "Kosten grob einschätzen und Leads qualifizieren.",
+              "inputs": [
+                "Fläche",
+                "Oberfläche",
+                "Zustand",
+                "Behandlung",
+                "Ort/PLZ",
+                "Möbel vorhanden",
+                "Dringlichkeit"
+              ],
+              "outputs": [
+                "Preisspanne",
+                "empfohlene Behandlung",
+                "Unsicherheitshinweis",
+                "Fotoanalyse-CTA",
+                "Offerte-CTA"
+              ]
+            },
+            "infographic": {
+              "purpose": "Komplexe Entscheidungen visuell erklären.",
+              "exampleTopics": [
+                "Reinigen vs. Schleifen",
+                "Geölt vs. lackiert",
+                "Wasserflecken",
+                "Pflegefehler",
+                "Kostenfaktoren"
+              ]
+            }
+          },
+          "internalLinking": {
+            "rules": [
+              "Jede Seite mindestens 3 interne Links.",
+              "Problemfall-Seiten linken auf passende Leistungen.",
+              "Leistungsseiten linken auf passende Problemfälle.",
+              "Kosten-Seiten linken auf Kostenrechner und Leistungen.",
+              "Standortseiten linken auf lokale Leistungen und Fälle.",
+              "Case Studies linken auf Problemfall, Leistung, Ort und Fotoanalyse."
+            ],
+            "examples": [
+              {
+                "source": "/problemfaelle/hundekratzer-parkett",
+                "linksTo": [
+                  "/leistungen/parkett-reparieren-zuerich",
+                  "/leistungen/parkett-schleifen-zuerich",
+                  "/kosten/parkett-reparatur-kosten",
+                  "/tools/fotoanalyse-parkett"
+                ]
+              },
+              {
+                "source": "/leistungen/parkett-schleifen-zuerich",
+                "linksTo": [
+                  "/kosten/parkett-schleifen-kosten",
+                  "/ratgeber/parkett-oelen-oder-versiegeln",
+                  "/problemfaelle/wasserflecken-parkett",
+                  "/zuerich/parkettpflege-zuerich"
+                ]
+              }
+            ]
+          },
+          "qualityScore": {
+            "minimumToPublish": 85,
+            "criteria": {
+              "searchIntentMatch": 15,
+              "topicalDepth": 15,
+              "localRelevance": 10,
+              "conversionStrength": 10,
+              "structureQuality": 10,
+              "uniqueness": 10,
+              "visualValue": 10,
+              "internalLinking": 10,
+              "trustAndExpertise": 10
+            }
+          },
+          "editorialWorkflow": [
+            "Keyword und Suchintention wählen",
+            "Seitentyp bestimmen",
+            "Kategorie und Tags setzen",
+            "H1/H2/H3-Outline erzeugen",
+            "Content-Module auswählen",
+            "Text schreiben",
+            "interne Links einfügen",
+            "JSON-LD erzeugen",
+            "Bilder und Visuals briefen",
+            "Quality Score prüfen",
+            "menschliche Prüfung",
+            "veröffentlichen",
+            "Performance messen",
+            "Seite verbessern"
+          ]
+        }
+      },
+      "previousShortSeoContentEngine": {
+        "project": {
+          "name": "parkett-pflege.ch",
+          "domain": "https://parkett-pflege.ch",
+          "version": "2.0",
+          "slogan": "Parkett erhalten. Werte bewahren.",
+          "strategicConcept": "Parkett retten statt ersetzen.",
+          "primaryMarket": "Raum Zürich"
+        },
+        "agentPrinciple": "Der SEOContentAgent ist kein reiner Textgenerator, sondern ein Seitenarchitekt.",
+        "mustGenerate": [
+          "contentType",
+          "category",
+          "subCategory",
+          "tags",
+          "primaryKeyword",
+          "secondaryKeywords",
+          "searchIntent",
+          "targetAudience",
+          "funnelStage",
+          "slug",
+          "canonicalUrl",
+          "title",
+          "metaDescription",
+          "h1",
+          "h2H3Outline",
+          "contentModules",
+          "interactiveElement",
+          "faq",
+          "internalLinks",
+          "imageRequirements",
+          "infographicRequirements",
+          "jsonLdSchemas",
+          "ctaBlocks",
+          "localSeoSignals",
+          "trustSignals",
+          "qualityScore",
+          "reviewChecklist",
+          "publishingPriority",
+          "updateFrequency"
+        ],
+        "categories": {
+          "leistungen": {
+            "basePath": "/leistungen",
+            "purpose": "Kommerzielle Hauptseiten für konkrete Parkett-Dienstleistungen.",
+            "examples": [
+              "/leistungen/parkett-schleifen-zuerich",
+              "/leistungen/parkett-oelen-zuerich",
+              "/leistungen/parkett-reinigen-zuerich",
+              "/leistungen/parkett-reparieren-zuerich"
+            ]
+          },
+          "problemfaelle": {
+            "basePath": "/problemfaelle",
+            "purpose": "Konkrete Schäden, Pflegefehler und Zustände behandeln.",
+            "examples": [
+              "/problemfaelle/wasserflecken-parkett",
+              "/problemfaelle/hundekratzer-parkett",
+              "/problemfaelle/schwarze-flecken-parkett",
+              "/problemfaelle/parkett-grau-und-stumpf"
+            ]
+          },
+          "kosten": {
+            "basePath": "/kosten",
+            "purpose": "Preisorientierte Seiten für kaufnahe Suchanfragen.",
+            "examples": [
+              "/kosten/parkett-schleifen-kosten",
+              "/kosten/parkett-oelen-kosten",
+              "/kosten/parkett-reparatur-kosten"
+            ]
+          },
+          "ratgeber": {
+            "basePath": "/ratgeber",
+            "purpose": "Evergreen-Fachwissen, Pflegeanleitungen, Vergleiche und Checklisten."
+          },
+          "zuerich": {
+            "basePath": "/zuerich",
+            "purpose": "Lokale SEO-Seiten für Zürich und Umgebung."
+          },
+          "tools": {
+            "basePath": "/tools",
+            "purpose": "Interaktive Inhalte wie Fotoanalyse, Kostenrechner und Quiz."
+          },
+          "faelle": {
+            "basePath": "/faelle",
+            "purpose": "Vorher-Nachher-Projektberichte als Vertrauensbeweis."
+          },
+          "blog": {
+            "basePath": "/blog",
+            "purpose": "Problemorientierte, saisonale und beratende Inhalte."
+          }
+        },
+        "qualityScore": {
+          "minimumToPublish": 85,
+          "criteria": {
+            "searchIntentMatch": 15,
+            "topicalDepth": 15,
+            "structureQuality": 10,
+            "localRelevance": 10,
+            "conversionStrength": 10,
+            "uniqueness": 10,
+            "visualValue": 10,
+            "internalLinking": 10,
+            "trustAndExpertise": 10
+          }
+        }
+      }
+    }
+  }
+}

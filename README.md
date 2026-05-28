@@ -212,4 +212,38 @@ Was wir haben ist ein marktreifes, gigantisches System. Was noch hinzugefügt we
 - Ziel: Herausfinden, bei welchen SEO-Problem-Seiten (`/probleme/wasserflecken-parkett`) die Kunden das Formular am häufigsten absenden.
 
 ---
+
+## 7. 📖 SEO Content Engine & Guidelines
+
+Um das rasante Wachstum der Plattform inhaltlich zu steuern und zukünftige KI-Agenten zu briefen, existiert ein strikter **SEO Content Blueprint**. Diese Engine definiert die exakte Hierarchie, Tonalität, den Aufbau von H1-H3 Überschriften und welche interaktiven Module pro Seite (z.B. Kostenrechner oder Diagnose-Quiz) Pflicht sind.
+
+Sie finden die Vorgaben hier:
+- 📄 **Übersicht & Dokumentation:** [docs/SEO_CONTENT_ENGINE.md](docs/SEO_CONTENT_ENGINE.md)
+- ⚙️ **Rohe Blueprint (JSON):** [config/seo-content-engine.json](config/seo-content-engine.json)
+
+---
 *Dokumentation in maximaler Tiefe generiert & laufend gepflegt von Ihrem KI-Entwickler.*
+
+
+
+# README-Ergänzung für parkett-pflege.ch
+
+Diesen Abschnitt in die bestehende `README.md` einfügen:
+
+```md
+## SEO-Content-Engine & Content-Architektur
+
+Für parkett-pflege.ch gibt es eine eigene SEO-Content-Engine. Sie definiert verbindlich, wie Seiten, Kategorien, Tags, Problemfälle, Blogartikel, Quiz, Infografiken, Vorher-Nachher-Fälle, interne Links, JSON-LD, Bildanforderungen, CTA-Blöcke und Quality Scores aufgebaut werden.
+
+Die vollständige operative Dokumentation befindet sich hier:
+
+- `docs/SEO_CONTENT_ENGINE.md`
+
+Die vollständige maschinenlesbare Konfiguration befindet sich hier:
+
+- `config/seo-content-engine.json`
+
+Wichtig: Der SEOContentAgent erzeugt nicht nur `Slug`, `Title`, `Meta Description` und `H1`, sondern vollständige Seitenkonzepte mit Seitentyp, Kategorie, Tags, Suchintention, Funnel-Stufe, H1/H2/H3-Struktur, Inhaltsmodulen, interaktiven Elementen, FAQs, internen Links, Bildanforderungen, Schema-Markup, CTA-Blöcken und Quality Score.
+
+Ziel ist, parkett-pflege.ch als führende Plattform für Parkettpflege, Parkettreparatur und Parkettrenovation im Raum Zürich aufzubauen.
+```
