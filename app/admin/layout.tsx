@@ -50,6 +50,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/admin/seo-engine" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
             <Search className="w-5 h-5" /> SEO Engine
           </Link>
+          <Link href="/admin/seo" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
+            <FileText className="w-5 h-5" /> SEO Content Manager
+          </Link>
           <Link href="/admin/case-studies" className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors font-label-md">
             <Camera className="w-5 h-5" /> Fallstudien
           </Link>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Search, Loader2, Plus, CheckCircle2, AlertTriangle, XCircle, Edit } from 'lucide-react';
 import Link from 'next/link';
+import SeoEngineShell from '@/components/admin/seo-engine/SeoEngineShell';
 
 export default function SEOPage() {
   const [city, setCity] = useState('');
@@ -73,13 +74,11 @@ export default function SEOPage() {
   };
 
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <div>
-          <h1 className="font-display-sm text-display-sm mb-2">SEO Content Manager & CMS</h1>
-          <p className="text-on-surface-variant font-body-md">Überwache die SEO-Stärke aller Seiten und bearbeite Inhalte direkt.</p>
-        </div>
-      </div>
+    <SeoEngineShell
+      title="SEO Content Manager & CMS"
+      description="Überwache die SEO-Stärke aller Live-Seiten und bearbeite Inhalte direkt."
+    >
+      <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
       <div className="grid grid-cols-1 gap-6">
         {/* City Generator */}
@@ -198,6 +197,6 @@ export default function SEOPage() {
           </div>
         </div>
       </div>
-    </div>
+    </SeoEngineShell>
   );
 }

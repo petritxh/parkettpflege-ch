@@ -25,6 +25,7 @@ import {
 
 const navItems = [
   { name: 'Übersicht', path: '/admin/seo-engine', icon: BarChart },
+  { name: 'SEO Content Manager (CMS)', path: '/admin/seo', icon: FileText },
   { name: 'Kategorien', path: '/admin/seo-engine/categories', icon: Layers },
   { name: 'Seitentypen', path: '/admin/seo-engine/content-types', icon: Type },
   { name: 'Tags', path: '/admin/seo-engine/tags', icon: Tags },
@@ -58,7 +59,9 @@ export default function SeoEngineNav() {
       <h3 className="px-3 text-xs font-bold uppercase tracking-wider text-on-surface-variant/70 mb-2">{title}</h3>
       <nav className="flex flex-col space-y-1">
         {items.map((item) => {
-          const isActive = pathname === item.path || (pathname === '/admin/seo-engine/overview' && item.path === '/admin/seo-engine');
+          const isActive = pathname === item.path || 
+                           (item.path === '/admin/seo' && pathname.startsWith('/admin/seo/')) ||
+                           (pathname === '/admin/seo-engine/overview' && item.path === '/admin/seo-engine');
           return (
             <Link 
               key={item.path} 
