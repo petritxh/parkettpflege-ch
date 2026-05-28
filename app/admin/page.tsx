@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { Lead, Offer } from '@/lib/types/crm';
-import { Users, FileText, AlertCircle, CheckCircle2, TrendingUp, Loader2 } from 'lucide-react';
+import { Users, FileText, AlertCircle, CheckCircle2, TrendingUp, Loader2, Database, RefreshCw } from 'lucide-react';
 
 export default function AdminDashboard() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [offers, setOffers] = useState<Offer[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // Sync state
+  const [syncing, setSyncing] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadData() {
@@ -28,6 +32,26 @@ export default function AdminDashboard() {
     loadData();
   }, []);
 
+  const handleSyncToFirestore = async () => {
+    setSyncing(true);
+    setSyncStatus(null);
+    try {
+      const res = await fetch('/api/admin/seo/sync', {
+        method: 'POST',
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setSyncStatus('Erfolgreich! Alle neuen Services, Problemfälle und Standorte wurden in Ihre Firestore-Datenbank geladen.');
+      } else {
+        setSyncStatus(`Fehler: ${data.error || 'Fehler beim Abgleich'}`);
+      }
+    } catch (e) {
+      setSyncStatus('Verbindungsfehler zur API.');
+    } finally {
+      setSyncing(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="h-full flex items-center justify-center">
@@ -45,10 +69,46 @@ export default function AdminDashboard() {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div>
-        <h1 className="font-display-sm text-display-sm mb-2">Dashboard</h1>
-        <p className="text-on-surface-variant font-body-md">Willkommen im Parkett-Pflege.ch CRM. Hier ist Ihre aktuelle Übersicht.</p>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 className="font-display-sm text-display-sm mb-2">Dashboard</h1>
+          <p className="text-on-surface-variant font-body-md">Willkommen im Parkett-Pflege.ch CRM. Hier ist Ihre aktuelle Übersicht.</p>
+        </div>
+
+        {/* Database Sync Panel */}
+        <div className="bg-surface-bright border border-secondary/35 p-5 rounded-2xl max-w-md w-full shadow-sm flex flex-col gap-3">
+          <div className="flex items-center gap-2 text-secondary font-headline-sm text-sm">
+            <Database className="w-5 h-5" />
+            <span>Produktions-Datenbank</span>
+          </div>
+          <p className="text-xs text-on-surface-variant leading-relaxed">
+            Wenn Sie neue Seiten/Routen hochgeladen haben, synchronisieren Sie hier die lokalen Daten in Ihre Live-Firestore-Datenbank.
+          </p>
+          <button
+            onClick={handleSyncToFirestore}
+            disabled={syncing}
+            className="w-full inline-flex justify-center items-center gap-2 bg-secondary text-white py-2 px-3 rounded-xl font-label-md text-[11px] uppercase tracking-widest font-bold hover:bg-secondary/95 active:scale-95 transition-all disabled:opacity-50"
+          >
+            {syncing ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>Synchronisiere...</span>
+              </>
+            ) : (
+              <>
+                <RefreshCw className="w-4 h-4" />
+                <span>In Live-Datenbank laden</span>
+              </>
+            )}
+          </button>
+          {syncStatus && (
+            <p className={`text-xs font-semibold mt-1 p-2 rounded-lg ${syncStatus.startsWith('Fehler') ? 'bg-red-50 text-red-700 border border-red-150' : 'bg-green-50 text-green-700 border border-green-150'}`}>
+              {syncStatus}
+            </p>
+          )}
+        </div>
       </div>
+
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
