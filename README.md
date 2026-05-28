@@ -1,94 +1,215 @@
-# Parkett-Pflege.ch – Web-Plattform & CRM System
+# Parkett-Pflege.ch – Vollständige Projekt- & System-Dokumentation
 
-Willkommen zur technischen und funktionalen Dokumentation der Parkett-Pflege.ch Plattform. Dieses Projekt kombiniert eine moderne, SEO-optimierte öffentliche Website zur Kundengewinnung mit einem massgeschneiderten, intelligenten Backend-CRM zur Verwaltung von Anfragen (Leads), Erstellung von Offerten (mit KI-Unterstützung) und Planung von Aufträgen.
+Willkommen zur ultimativen, allumfassenden technischen und strategischen Gesamtdokumentation der Parkett-Pflege.ch Plattform. Dieses Dokument listet **jede einzelne Seite, jeden Beitrag und jede Funktion** im Detail auf und dient als komplettes Nachschlagewerk für das gesamte Projekt.
 
-## 🌟 Projektübersicht
+---
 
-Die Plattform besteht aus zwei Hauptbereichen:
-1. **Public Website (Frontend):** Hochperformante, auf Conversion ausgerichtete Seiten für Kunden (SEO-Seiten, Fallstudien, Ratgeber).
-2. **Admin CRM (Backend):** Ein geschlossenes System für den Betreiber, um das Geschäft zu verwalten – von der ersten Anfrage bis zur Terminplanung im Kalender.
+## 1. 🌟 Projektübersicht & Mission
+
+**Parkett-Pflege.ch** ist eine hochmoderne, ganzheitliche **PropTech/Handwerker-Plattform**. Sie vereint eine auf Konversion und SEO getrimmte öffentliche Webseite mit einem massgeschneiderten CRM-Backend für Handwerker.
+
+**Die Kern-Innovation:** Durch den Einsatz von Künstlicher Intelligenz (Google Gemini Vision) automatisiert das System die Schadensdiagnose, schlägt Reparaturmassnahmen vor und erstellt innerhalb von Sekunden fertige Offerten. Kunden können diese in einem hochmodernen, interaktiven HTML-Portal ansehen, kommentieren und verbindlich annehmen, woraufhin das System automatisch E-Mails versendet und Kalendereinträge erstellt.
+
+---
+
+## 2. 🏗 Exakte Seitenhierarchie & Alle Unterseiten
+
+Hier ist die **vollständige, unverkürzte Liste** aller Seiten, die in diesem Projekt existieren.
+
+### 🟢 A. Allgemeine Frontend-Seiten (Public)
+* **`/` (Startseite)**
+  - Hero-Sektion mit KI-Scan-Eingang
+  - Vertrauenssignale (Swiss Parkett Verband, FSC® Zertifiziert, Meisterbetrieb, Bau-Garantie)
+  - Leistungs-Teaser (3 ausgewählte Services)
+  - Galerie-Vorschau (Vorher/Nachher Slider)
+  - Interaktiver Parkett-Ratgeber (direkt eingebunden)
+  - Kundenstimmen-Karussell (Bewertungen)
+  - FAQ-Akkordeon und Kostenrechner-Sektion.
+* **`/vorher-nachher` (Galerie)**
+  - Visuelle Beweisführung mit filterbaren Case-Studies (Nach Holzart, Service-Typ etc.).
+* **`/kosten` (Kostenrechner)**
+  - Ein Schieberegler-Tool für schnelle m²-Schätzungen (z.B. 20m² Parkett schleifen = 700 CHF).
+* **`/kontakt`**
+  - Klassisches Kontaktformular mit Adressdaten und Maps-Integration.
+* **`/shop` & `/shop/[id]`**
+  - Komplettes E-Commerce-Gerüst mit Such- und Filterfunktion.
+  - Warenkorb-Logik (`CartDrawer`), `CartProvider`.
+  - **Eingetragene Produkte:**
+    - WOCA Holzbodenseife Natur
+    - WOCA Holzbodenseife Weiss
+    - WOCA Intensivreiniger
+    - WOCA Pflegeöl Natur
+    - WOCA Pflegeöl Weiss
+    - WOCA Gerbsäure-Fleckenspray
+* **`/ratgeber`**
+  - Der interaktive Parkett-Ratgeber (Fragebaum) und Übersicht über alle Wissens-Artikel.
+* **`/ki-parkettcheck`**
+  - Dedizierte Landingpage für den KI-Foto-Scan.
+* **`/offerte/[id]` (Interaktives Kunden-Portal für Offerten)**
+  - **PIN-Sperrbildschirm:** Schützt die personalisierten Daten.
+  - **Offerten-Ansicht:** Zeigt Intro, Positionen, Total, Inklusive/Exklusive.
+  - **Interaktions-Bar:** "Frage stellen", "Ablehnen", "Kostenpflichtig buchen".
+  - **Erfolgs-Screen:** Konfetti-Animation und automatische Weiterleitung zum Ratgeber (nach 5 Sek.).
+
+### 🔵 B. Dienstleistungs-Seiten (`/dienstleistungen/[slug]`)
+Jede dieser Seiten ist eine vollwertige, SEO-optimierte Landingpage, die den spezifischen Service im Detail erklärt.
+1. `/dienstleistungen/parkettpflege` (Allgemeine Parkettpflege)
+2. `/dienstleistungen/parkettreinigung` (Intensive Parkettreinigung)
+3. `/dienstleistungen/parkett-schleifen` (Parkett schleifen & renovieren)
+4. `/dienstleistungen/parkett-oelen` (Parkett ölen)
+5. `/dienstleistungen/parkett-versiegeln` (Parkett versiegeln / lackieren)
+6. `/dienstleistungen/parkett-reparatur` (Lokale Parkettreparatur)
+
+### 🟠 C. Problem- & "Pain-Point" SEO-Seiten (`/probleme/[slug]`)
+Diese Seiten fangen exakt die Google-Suchanfragen der Nutzer ab. Jede Seite bietet Soforthilfe-Tipps und leitet den Nutzer zum KI-Scan oder Kontaktformular weiter.
+1. `/probleme/kratzer-im-parkett`
+2. `/probleme/wasserflecken-parkett`
+3. `/probleme/parkettpflege-kosten`
+4. `/probleme/parkett-knarrt-beheben`
+5. `/probleme/parkettboden-knarrt-beheben`
+6. `/probleme/dunkle-wasserflecken-auf-eichenparkett`
+7. `/probleme/hundekratzer-aus-parkett-entfernen`
+8. `/probleme/parkett-richtig-reinigen-ohne-streifen`
+9. `/probleme/brandfleck-auf-parkett-reparieren`
+10. `/probleme/parkettfugen-füllen-und-ausbessern`
+11. `/probleme/katzenurin-aus-parkett-entfernen`
+12. `/probleme/geöltes-parkett-nachölen-anleitung`
+13. `/probleme/versiegeltes-parkett-reparieren`
+14. `/probleme/dellen-im-parkett-ausbessern`
+15. `/probleme/parkettboden-verliert-glanz`
+16. `/probleme/sonneneinstrahlung-parkett-ausgeblichen`
+17. `/probleme/parkett-quietscht-beim-darüberlaufen`
+18. `/probleme/parkettboden-richtig-wischen`
+19. `/probleme/parkettboden-im-bad-pflegen`
+
+### 🟣 D. Regionale Standort-SEO-Seiten (`/standorte/[slug]`)
+Dynamische Landingpages für spezifische Kantone, um den lokalen Google-Traffic abzugreifen.
+1. `/standorte/zuerich`
+2. `/standorte/zug`
+3. `/standorte/luzern`
+4. `/standorte/aargau`
+5. `/standorte/winterthur`
+6. `/standorte/basel`
+7. `/standorte/bern`
+8. `/standorte/st-gallen`
+
+### 🔴 E. Admin Bereich (Das CRM-Backend - `/admin/...`)
+Ein geschlossenes System zur Verwaltung des Tagesgeschäfts.
+
+* **`/admin` (Dashboard)**
+  - Zeigt KPIs wie Neuste Leads, ausstehende Offerten und Konversionsraten.
+* **`/admin/leads` (Kundenanfragen)**
+  - Tabellarische Liste aller eingegangenen Anfragen. Beinhaltet Status-Pills (Neu, In Bearbeitung).
+* **`/admin/diagnostics` (KI-Auswertungen)**
+  - Die "Röntgen-Ansicht" der hochgeladenen Bilder. Zeigt die rohe JSON-Analyse der Gemini KI an.
+* **`/admin/offers` (Offerten-Management)**
+  - Listet alle Entwürfe, versendeten und angenommenen Offerten.
+  - **Generator:** Klick auf "Offerte per KI entwerfen" baut in Sekunden einen Entwurf.
+  - **Editor:** Bearbeiten von Texten, Hinzufügen von Positionen, Rabatten und Exklusiv-Leistungen.
+* **`/admin/calendar` (Auftrags-Kalender)**
+  - Übersicht aller geplanten Aufträge. 
+  - **Funktion:** Generiert sich *automatisch*, sobald ein Kunde eine Offerte online annimmt.
+* **`/admin/settings` (Einstellungen & Automatisierung)**
+  - Verwaltung der dynamischen Textvorlagen:
+    - Offerten Intro-Template
+    - Offerten Footer-Template
+    - E-Mail-Vorlage: Link-Versand (mit Platzhaltern `{LINK}`, `{PIN}`)
+    - E-Mail-Vorlage: Frage-Bestätigung
+    - E-Mail-Vorlage: Auftragsbestätigung (Nach Annahme)
+
+---
+
+## 3. 🔄 Die detaillierten Workflows (Core Flows)
+
+### 1. Der Lead & KI Diagnose Flow
+1. Ein Nutzer klickt auf der Webseite auf "Gratis Offerte" (oder lädt im Ratgeber ein Bild hoch).
+2. Er füllt ein mehrstufiges Formular aus (Holzart, Fläche, Beschreibung, Wunschdatum, Kontaktdaten).
+3. **KI-Analyse (Backend):** Falls ein Foto angehängt ist, analysiert `Google Gemini Vision` den Schaden und schätzt die Schwere ein.
+4. Der Lead wird live in Firebase Firestore gespeichert und erscheint unter `/admin/leads` als "Neu".
+
+### 2. Der Offerten-Kalkulator Flow
+1. Im CRM klickt der Admin beim Lead auf "Offerte erstellen".
+2. **KI-Entwurf:** Das System liest die Lead-Daten und die Bild-Analyse aus. Es generiert einen passenden Intro-Text, fügt sinnvolle Positionen inkl. Preisschätzungen ein und definiert Annahmen (z.B. "Zimmer muss geräumt sein").
+3. Der Admin validiert die Daten, klickt auf "Speichern" und generiert damit den Link und einen 4-stelligen PIN-Code für den Kunden.
+
+### 3. Der interaktive Kunden-Flow & Kalender-Sync
+1. Der Admin sendet dem Kunden den Link zur Offerte und den PIN.
+2. Der Kunde öffnet `/offerte/[id]`, gibt den PIN ein und sieht das moderne Layout.
+3. **Fall A (Rückfrage):** Der Kunde klickt "Frage stellen", schreibt Text. Der Status der Offerte wechselt in Firebase auf "Rethinking" (Überdenken). Der Admin sieht das sofort.
+4. **Fall B (Ablehnen):** Der Status wechselt auf "Rejected".
+5. **Fall C (Annehmen):** 
+   - Der Status springt auf "Accepted".
+   - Ein festlicher **Konfetti-Regen** erscheint für den Kunden, gefolgt von der Dankesseite und einer automatischen Weiterleitung (nach 5 Sekunden) zum Ratgeber.
+   - **Backend-Magie:** Ein neuer Eintrag im `/admin/calendar` wird automatisch am Wunschdatum generiert.
+
+---
+
+## 4. 🧠 Architektur & Hybrid Storage System (Datenbank)
 
 **Technologie-Stack:**
-- **Framework:** Next.js (React) mit App Router
-- **Styling:** Tailwind CSS + Lucide Icons + Framer Motion (Animationen)
-- **KI-Integration:** Vercel AI SDK mit Google Gemini (für Schadensdiagnose und Offertengenerierung)
-- **Datenbank:** Aktuell Dateisystem-basiert (`/data` Ordner mit JSON). *Hinweis: Für den produktiven Betrieb auf Serverless-Plattformen wie Vercel muss dies auf eine echte Datenbank (z.B. Firebase/Supabase) migriert werden, da Vercel Read-Only ist.*
+- **Framework:** Next.js 15 (React) mit App Router
+- **Styling:** Tailwind CSS + Lucide Icons + Framer Motion
+- **KI-Integration:** Vercel AI SDK mit Google Gemini (`gemini-2.5-flash`)
+
+**Das Hybrid Storage System (`lib/data-service.ts`)**
+Da Serverless-Plattformen wie Vercel ein "Read-Only" Dateisystem haben, wurde ein intelligenter Hybrid-Ansatz gebaut:
+1. **Lokal:** Fehlt die Firebase-Umgebungsvariable, speichert das System alles superschnell in `/data/*.json` Dateien ab.
+2. **Produktion (Live):** Sobald `FIREBASE_SERVICE_ACCOUNT_KEY` auf Vercel hinterlegt ist, switcht die App automatisch auf **Google Firebase Firestore**. Die JSON-Logik wird zu 100% in Firestore-Collections (`crm/leads`, `crm/offers`) übersetzt.
 
 ---
 
-## 🏗 Seiten-Struktur & Architektur
+## 5. 🔍 Erweiterbarkeit der KI-Analyse (JSON)
 
-### Öffentliche Seiten (`app/(public)`)
-- `/` – **Startseite:** Modernes Design, vertrauensbildende Elemente, Call-to-Actions zur Offertenanfrage.
-- `/services/[slug]` – **Dienstleistungsseiten:** Detaillierte Beschreibung einzelner Services (z.B. "Parkett schleifen", "Parkett ölen").
-- `/problems/[slug]` – **Problemseiten:** SEO-Seiten, die gezielt nach Problemen der Kunden suchen (z.B. "Wasserschaden Parkett", "Kratzer entfernen").
-- `/locations/[slug]` – **Regionale Seiten:** SEO-Seiten für spezifische Einsatzgebiete (z.B. "Parkett schleifen Zürich").
-- `/case-studies` & `/case-studies/[slug]` – **Fallstudien:** Vorher/Nachher-Beispiele zur Vertrauensbildung.
-- `/faqs` – **Häufig gestellte Fragen:** Dynamische FAQs, die sich auf Services, Probleme oder Regionen beziehen.
-- `/offerte/[id]` – **Geschützte Offerten-Ansicht:** Die personalisierte HTML-Ansicht für den Kunden, gesichert durch einen 4-stelligen PIN-Code.
+Die KI (Gemini) ist so konfiguriert, dass sie ein striktes JSON-Objekt (`Structured Output` via Zod) zurückgibt. 
 
-### Admin CRM (`app/admin`)
-Das CRM ist über den Pfad `/admin` erreichbar und dient als zentrale Steuerungszentrale.
+**Aktuelles Schema:**
+```json
+{
+  "damageType": "Kratzer / Wasserschaden / Verfärbung",
+  "severity": "Gering / Mittel / Hoch",
+  "recommendedTreatment": "Schleifen und Ölen",
+  "estimatedTimeHours": 4,
+  "confidenceScore": 85
+}
+```
 
-- `/admin` – **Dashboard:** KPI-Übersicht (Neuste Leads, Konversionsrate, Umsatz-Pipeline).
-- `/admin/leads` – **Leads (Kundenanfragen):** Liste aller eingegangenen Formular-Anfragen.
-- `/admin/diagnostics` – **AI-Diagnosen:** Spezifische Ansicht für Leads, bei denen der Kunde Bilder zur KI-Auswertung hochgeladen hat.
-- `/admin/offers` – **Offerten-Verwaltung:** Erstellen, Bearbeiten und Versenden von Angeboten.
-- `/admin/calendar` – **Auftrags-Kalender:** Grafische/Listen-Ansicht aller geplanten, abgeschlossenen oder stornierten Aufträge.
-- `/admin/settings` – **Einstellungen:** Verwaltung von Text-Vorlagen für E-Mails und Offerten.
-- **Content & SEO Sektion:** Verwaltung von CMS-Inhalten (Fallstudien, SEO-Seiten, FAQs).
-- **System:** Agenten-Logs und Produkt-Verwaltung.
-
----
-
-## 🔄 Die Kern-Workflows (Flows)
-
-### 1. Lead Generierung & AI Diagnose Flow
-1. **Nutzeraktion:** Ein Website-Besucher füllt das Offerten-Formular aus. Optional lädt er ein Foto seines Parkett-Problems hoch.
-2. **KI-Analyse (Backend):** Wenn ein Foto vorhanden ist, analysiert das System via Google Gemini Vision den Schaden, schätzt die Schwere ein und empfiehlt intern das nötige Pflege-Paket.
-3. **Datenspeicherung:** Der Lead wird im System gespeichert (`data/leads.json`) und taucht sofort unter `/admin/leads` mit dem Label "Neu" auf.
-
-### 2. Offerten-Erstellung Flow (Mit KI-Kalkulator)
-1. **Admin Aktion:** Im CRM klickt der Admin beim Lead auf "Offerte erstellen".
-2. **KI-Entwurf:** Das System liest die Lead-Daten und die eventuelle KI-Schadensdiagnose aus. Es generiert automatisch einen hochprofessionellen ersten Entwurf für die Offerte (inklusive Intro-Text, passenden Positionen/Preisen, Annahmen und Ausschlüssen).
-3. **Bearbeitung:** Der Admin sieht den Entwurf, kann Preise oder Texte im Formular anpassen und die Offerte speichern.
-4. **Link-Generierung:** Das System erstellt eine geschützte URL und generiert einen zufälligen 4-stelligen PIN-Code.
-
-### 3. Kunden-Ansicht & Entscheidungs-Flow (Die HTML-Offerte)
-1. **Zustellung:** Der Admin versendet den Link und PIN per E-Mail an den Kunden (aktuell simulierte E-Mail / später via Resend API).
-2. **Freischaltung:** Der Kunde öffnet den Link `/offerte/[id]`, sieht einen Sperrbildschirm und gibt den PIN ein. Ein sicheres Cookie wird gesetzt.
-3. **Ansicht:** Die moderne, responsive Offerte wird angezeigt. Der Kunde sieht alle Details, Preise, Inklusiv-/Exklusivleistungen.
-4. **Interaktion:** Unten auf der Seite gibt es eine fixierte Leiste mit drei Optionen:
-   - **"Frage stellen":** Öffnet ein Textfeld. Der Status wechselt auf "Rethinking" (Überdenken) und der Admin erhält eine Info-Mail mit der Frage.
-   - **"Ablehnen":** Status wechselt auf "Rejected".
-   - **"Angebot annehmen":** Der Kunde bucht kostenpflichtig.
-
-### 4. Buchung & Kalender Flow (Erfolg)
-1. **Kundenaktion:** Der Kunde klickt auf "Angebot annehmen".
-2. **Animation:** Die Seite lädt neu, es regnet Konfetti (`canvas-confetti`) und eine festliche Dankesseite erscheint ("Vielen Dank für Ihre Buchung!").
-3. **Backend-Logik:** 
-   - Der Offerten-Status wird auf "Angenommen" gesetzt.
-   - Eine automatische **Auftragsbestätigungs-Mail** geht an den Kunden raus (Vorlage wird aus den Admin-Settings geladen).
-   - Ein **neuer Kalendereintrag** wird automatisch generiert und im `/admin/calendar` am Wunschdatum des Kunden (oder heute) platziert.
-4. **Admin-Planung:** Der Betreiber sieht den Termin im CRM-Kalender, kann ihn verschieben, telefonisch mit dem Kunden finalisieren und den Status später auf "Abgeschlossen" ändern.
+### Ist das erweiterbar?
+**JA, unbegrenzt!** Wir können den Prompt und das Zod-Schema in der API-Route erweitern. 
+**Was extrem sinnvoll wäre hinzuzufügen:**
+- `woodTypeDetected`: KI erkennt automatisch, ob es sich um Eiche, Ahorn oder Nussbaum handelt.
+- `surfaceFinish`: "Versiegelt" oder "Geölt"?
+- `roomContext`: Erkennt Möbelstücke und schätzt ab, ob ein Erschwerniszuschlag für das Möbelräumen berechnet werden muss.
+- `materialList`: Ein Array wie `["WOCA Intensivreiniger", "WOCA Pflegeöl"]`. Die KI schlägt exakt die Produkte vor, die der Admin dann in der Offerte oder im Shop verknüpfen kann.
 
 ---
 
-## 🛠 Konfiguration & Anpassbarkeit (Einstellungen)
-Unter `/admin/settings` kann der Betreiber flexibel eingreifen:
-- **Offerten Intro/Footer:** Standardtexte, die bei der automatischen Generierung neuer Offerten genutzt werden.
-- **E-Mail Vorlagen:** 
-  - Offerten-Link-Mail (inkl. Platzhalter `{LINK}` und `{PIN}`)
-  - Bestätigung nach Rückfragen
-  - **Auftragsbestätigung (Nach Annahme):** Die automatisierte Mail, wenn der Kunde final bucht.
+## 6. 🚀 Was fehlt / Die Zukunfts-Roadmap
+
+Was wir haben ist ein marktreifes, gigantisches System. Was noch hinzugefügt werden sollte, um es zum ultimativen Branchen-Standard zu machen:
+
+### A. Echte E-Mail-API Anbindung (Resend)
+- **Status:** Die E-Mail-Texte (Auftragsbestätigung, Link-Versand) werden perfekt im System verwaltet, aber der tatsächliche SMTP/API-Versand fehlt.
+- **To-Do:** Integration von `Resend` (oder SendGrid), damit das CRM nach "Angebot annehmen" physisch eine E-Mail an den Kunden sendet.
+
+### B. Authentifizierung für den Admin (`/admin`)
+- **Status:** Der Admin-Bereich ist aktuell "offen" und verlässt sich auf die Unkenntnis der URL.
+- **To-Do:** Implementierung von **NextAuth.js** (oder Firebase Auth), sodass `/admin` mit Passwort und E-Mail geschützt ist.
+
+### C. Zahlungsanbindung im Shop (Stripe)
+- **Status:** Der Shop funktioniert als Frontend-Katalog (Produkte können "in den Warenkorb" gelegt werden oder sind Affiliate-Links).
+- **To-Do:** Integration von Stripe Checkout.
+- **Geniale Idee:** Ein Upsell-Mechanismus! Nimmt der Kunde eine Offerte an, wird ihm auf der Dankesseite direkt das zur Holzart passende "Pflege-Starter-Set" aus dem Shop mit 10% Rabatt angeboten.
+
+### D. PDF-Generierung für Offerten
+- **Status:** Kunden erhalten einen Link zur fantastischen HTML-Offerte.
+- **To-Do:** Manche Schweizer Verwaltungen verlangen zwingend PDFs. Wir sollten eine serverseitige PDF-Generierung (z.B. via `react-pdf` oder Puppeteer) einbauen, die auf Klick das HTML-Dokument in ein druckfertiges A4-PDF umwandelt.
+
+### E. WhatsApp Business API
+- **Idee:** Die Öffnungsraten von E-Mails sinken. Durch die Twilio/WhatsApp API könnte das CRM den Offerten-Link samt PIN direkt als WhatsApp-Nachricht an das Handy des Kunden senden.
+
+### F. Analytik & A/B Testing
+- Einbau von Vercel Analytics oder Google Analytics. 
+- Ziel: Herausfinden, bei welchen SEO-Problem-Seiten (`/probleme/wasserflecken-parkett`) die Kunden das Formular am häufigsten absenden.
 
 ---
-
-## ⚠️ Architektur-Hinweis (Hybrid Storage System)
-Die Plattform nutzt ein intelligentes, hybrides Daten-Speichersystem, das in `lib/data-service.ts` implementiert ist:
-
-1. **Lokale Entwicklung (Fallback):** 
-   Wenn keine Firebase-Daten hinterlegt sind (z.B. beim ersten Auschecken des Codes), nutzt das System automatisch Node.js `fs.writeFile`, um alle Daten in lokalen JSON-Dateien im Ordner `/data/*.json` zu speichern. Dies ermöglicht eine blitzschnelle, unkomplizierte lokale Entwicklung ohne Setup.
-   
-2. **Produktion (Vercel + Google Firebase):** 
-   Auf Serverless-Plattformen wie Vercel ist das Dateisystem schreibgeschützt (Read-Only). Sobald die Umgebungsvariable `FIREBASE_SERVICE_ACCOUNT_KEY` hinterlegt ist, switcht das System komplett auf **Google Firebase (Firestore)**. Die gesamte Datenbank (Leads, Offerten, Events) wird dann live in der Cloud gespeichert und synchronisiert. Dadurch funktioniert das CRM problemlos im produktiven Einsatz.
+*Dokumentation in maximaler Tiefe generiert & laufend gepflegt von Ihrem KI-Entwickler.*
