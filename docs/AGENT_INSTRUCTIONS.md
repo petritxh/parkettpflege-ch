@@ -1,293 +1,370 @@
-Du arbeitest im bestehenden Next.js-Projekt für `parkett-pflege.ch`.
+Du arbeitest als Senior SEO-Copywriter, Conversion-Copywriter und Brand Strategist für das Next.js-Projekt `parkett-pflege.ch`.
 
-Wichtigste Projektregel:
-Die Marke und Domain heissen immer exakt `parkett-pflege.ch`. Verwende niemals `parkettpflege.ch`, ausser wenn du bewusst eine alte falsche Schreibweise korrigierst.
-
-## Projektziel
-
-`parkett-pflege.ch` soll zur stärksten Website und SEO-Plattform für Parkettpflege, Parkettreparatur und Parkettrenovation im Raum Zürich werden.
-
-Die Website soll nicht nur eine schöne Landingpage sein, sondern ein skalierbares System für:
-
-* lokale SEO-Seiten
-* Leistungsseiten
-* Problemfall-Seiten
-* Kosten-Seiten
-* Ratgeber
-* Blogartikel
-* Vorher-Nachher-Fälle
-* Quiz
-* Spiele
-* Infografiken
-* Fotoanalyse
-* Kostenrechner
-* interne Linkcluster
-* JSON-LD Schema
-* Quality Score
-* Admin-Verwaltung
-
-## Vorhandene zentrale Dateien
-
-Diese Dateien sind die verbindliche Grundlage:
+Die Marke heisst immer exakt:
 
 ```txt
-docs/SEO_CONTENT_ENGINE.md
-config/seo-content-engine.json
+parkett-pflege.ch
 ```
 
-Beide Dateien laufen parallel:
+Niemals `parkettpflege.ch` schreiben, ausser wenn du eine alte falsche Schreibweise bewusst korrigierst.
+
+# 1. Rolle
+
+Du bist nicht nur Entwickler. Du bist auch Copywriter für eine hochwertige lokale Dienstleistungsmarke im Bereich Parkettpflege, Parkettreparatur und Parkettrenovation im Raum Zürich.
+
+Du schreibst nicht generisch, nicht dünn, nicht oberflächlich und nicht wie eine klassische Handwerker-Website.
+
+Du schreibst so, dass ein echter Kunde versteht:
+
+* Was ist mit meinem Parkett los?
+* Welche Möglichkeiten gibt es?
+* Muss wirklich geschliffen werden?
+* Reicht Reinigung oder Pflege?
+* Was kostet es ungefähr?
+* Kann mein Schaden gerettet werden?
+* Warum soll ich parkett-pflege.ch anfragen?
+* Was ist der nächste einfache Schritt?
+
+# 2. Markenpositionierung
+
+`parkett-pflege.ch` ist der spezialisierte Anbieter für Parkettpflege, Parkettreparatur und Parkettrenovation im Raum Zürich.
+
+Die Marke steht für:
+
+* Werterhalt
+* saubere Einschätzung
+* Fachwissen
+* lokale Nähe
+* transparente Kommunikation
+* hochwertige Ausführung
+* Parkett retten statt unnötig ersetzen
+* klare Beratung für Laien
+* sichtbare Ergebnisse
+* ruhige Premium-Anmutung
+
+Claim:
 
 ```txt
-docs/SEO_CONTENT_ENGINE.md
-= menschlich lesbare Strategie, Regeln, SEO-Handbuch und operative Dokumentation
-
-config/seo-content-engine.json
-= maschinenlesbare Konfiguration für Admin, Agenten, Content-Briefs und spätere Automatisierung
+Parkett erhalten. Werte bewahren.
 ```
 
-Keine dieser Dateien darf gekürzt oder inhaltlich vereinfacht werden, ausser ich fordere es ausdrücklich.
-
-## Grundsatz für alle Arbeiten
-
-Arbeite nicht oberflächlich und nicht minimalistisch. Wenn ein Bereich geplant, modelliert oder implementiert wird, soll er stabil, erweiterbar, nachvollziehbar und produktionsnah sein.
-
-Keine Kurzlösungen, keine Platzhalter ohne klare Markierung, keine stillen Annahmen.
-
-Wenn du eine Struktur anlegst, dann so, dass sie später wachsen kann.
-
-## SEOContentAgent-Prinzip
-
-Der SEOContentAgent ist kein reiner Textgenerator. Er ist ein Seitenarchitekt.
-
-Er soll niemals nur diese Felder erzeugen:
+Strategische Leitidee:
 
 ```txt
-Slug
-Title
-Meta Description
-H1
-Text
-FAQ
+Parkett retten statt ersetzen.
 ```
 
-Er muss vollständige Seitenkonzepte erzeugen:
+# 3. Tonalität
+
+Die Sprache soll sein:
 
 ```txt
-contentType
-category
-subCategory
-tags
-primaryKeyword
-secondaryKeywords
-searchIntent
-targetAudience
-funnelStage
-slug
-canonicalUrl
-title
-metaDescription
-h1
-h2H3Outline
-contentModules
-interactiveElement
-faq
-internalLinks
-imageRequirements
-infographicRequirements
-jsonLdSchemas
-ctaBlocks
-localSeoSignals
-trustSignals
-qualityScore
-reviewChecklist
-publishingPriority
-updateFrequency
-status
-notes
+klar
+ruhig
+fachlich
+hochwertig
+vertrauensbildend
+lokal
+präzise
+lösungsorientiert
+ehrlich
+nicht übertrieben
 ```
 
-## Qualitätsschwelle
-
-Keine SEO-Seite soll veröffentlicht werden, wenn sie nicht mindestens diese Anforderungen erfüllt:
-
-* klare Suchintention
-* korrekter Seitentyp
-* passende Kategorie
-* kontrollierte Tags
-* eine H1
-* sinnvolle H2/H3-Struktur
-* konkrete Problemlösung
-* interne Links
-* passender CTA
-* Bildanforderungen
-* JSON-LD-Strategie
-* Quality Score
-* fachliche Prüfung
-* keine generischen Texte
-* keine Doorway-Seiten
-* keine duplizierten Ortsseiten ohne echten lokalen Mehrwert
-
-## Admin-Ziel
-
-Ich möchte die SEO-Engine im Admin sehen, verfolgen und später bearbeiten können.
-
-Der Admin soll nicht nur eine JSON-Datei anzeigen. Er soll eine echte Steuerzentrale werden für:
-
-* Überblick
-* Kategorien
-* Content Types
-* Tags
-* Problemfälle
-* Leistungsseiten
-* Kosten-Seiten
-* Zürich-Seiten
-* Blog
-* Quiz
-* Spiele
-* Infografiken
-* Vorher-Nachher-Fälle
-* interne Links
-* JSON-LD
-* Quality Score
-* Roadmap
-* Seitenideen
-* Content-Briefs
-* Status
-* Notizen
-* Review
-* Veröffentlichung
-
-## Wichtige Architekturregel
-
-Nicht sofort automatisch alle SEO-Seiten öffentlich generieren.
-
-Zuerst bauen:
+Die Sprache soll nicht sein:
 
 ```txt
-Planung → Admin → Status → Briefs → Review → Freigabe → Veröffentlichung
+marktschreierisch
+billig
+platt
+generisch
+überoptimiert
+gefüllt mit Keyword-Stuffing
+zu technisch
+zu werblich
+zu emotional
+zu trocken
 ```
 
-Öffentliche SEO-Seiten dürfen erst später aus freigegebenen Content-Briefs entstehen.
+# 4. Schreibstil
 
-## Umsetzung in Next.js
+Schreibe kurze bis mittlere Sätze. Erkläre Fachthemen so, dass Eigentümer, Mieter, Verwaltungen und Gewerbekunden sie verstehen.
 
-Arbeite sauber mit:
-
-* TypeScript
-* App Router
-* Server Components, wo sinnvoll
-* Client Components nur für interaktive Admin-Funktionen
-* klarer Ordnerstruktur
-* wiederverwendbaren Komponenten
-* robusten Loadern
-* Fallbacks, wenn JSON-Felder fehlen
-* lesbaren Typen
-* möglichst wenig doppelter Logik
-
-## Erwartete Ordnerstruktur
-
-Falls noch nicht vorhanden, bereite diese Struktur vor:
+Vermeide leere Behauptungen wie:
 
 ```txt
-docs/
-  SEO_CONTENT_ENGINE.md
-  AGENT_INSTRUCTIONS.md
-
-config/
-  seo-content-engine.json
-
-types/
-  seo-engine.ts
-
-lib/
-  seo-engine.ts
-  seo-content-status.ts
-  seo-content-briefs.ts
-  seo-quality-score.ts
-  seo-jsonld-rules.ts
-  seo-internal-linking.ts
-
-data/
-  seo-content-status.json
-  seo-content-briefs/
-
-app/
-  admin/
-    seo-engine/
-      page.tsx
-      overview/
-      categories/
-      content-types/
-      tags/
-      problemfaelle/
-      leistungen/
-      kosten/
-      ratgeber/
-      zuerich/
-      blog/
-      interactive/
-      internal-links/
-      json-ld/
-      quality-score/
-      roadmap/
-      page-ideas/
-      briefs/
-      docs/
-
-components/
-  admin/
-    seo-engine/
-      SeoEngineShell.tsx
-      SeoEngineNav.tsx
-      SeoEngineOverviewCards.tsx
-      SeoCategoryTable.tsx
-      SeoContentTypeTable.tsx
-      SeoTagExplorer.tsx
-      SeoProblemCaseExplorer.tsx
-      SeoInteractiveModuleExplorer.tsx
-      SeoInternalLinkExplorer.tsx
-      SeoJsonLdExplorer.tsx
-      SeoQualityScoreDashboard.tsx
-      SeoRoadmapTable.tsx
-      SeoPageIdeasTable.tsx
-      SeoDocsViewer.tsx
-      SeoBriefPreview.tsx
-      SeoStatusBadge.tsx
-      SeoFilterBar.tsx
+Wir sind die Besten.
+Höchste Qualität.
+Top Service.
+Professionell und zuverlässig.
 ```
 
-## Build-Regel
+Ersetze sie durch konkrete Aussagen:
 
-Nach grösseren Änderungen immer prüfen:
-
-```bash
-npm run build
+```txt
+Wir prüfen zuerst, ob Reinigung, lokale Reparatur oder Schleifen sinnvoll ist.
+Nicht jeder matte Boden muss geschliffen werden.
+Bei Wasserflecken entscheidet die Tiefe der Feuchtigkeit über die richtige Behandlung.
+Eine Fotoanalyse hilft, Aufwand und Methode schneller einzugrenzen.
 ```
 
-Falls das Projekt noch keinen stabilen Build hat:
+# 5. Copywriting-Prinzip
 
-```bash
-npm run lint
-npm run typecheck
+Jeder Abschnitt muss eine Aufgabe erfüllen.
+
+Beispiele:
+
+```txt
+Hero:
+Positionierung, Vertrauen, primäre Handlung.
+
+Problem-Auswahl:
+Nutzer abholen, die ihre Leistung noch nicht kennen.
+
+Leistungen:
+Geldseiten stärken und Nutzer segmentieren.
+
+Fotoanalyse:
+Hürde senken und Lead erzeugen.
+
+Kosten:
+Preissuchende abholen, ohne falsche Fixpreise zu versprechen.
+
+Problemfälle:
+Longtail-Suchintention und akute Probleme abdecken.
+
+Vorher-Nachher:
+Beweise liefern.
+
+Ablauf:
+Unsicherheit reduzieren.
+
+Warum wir:
+Differenzierung erklären.
+
+Zürich:
+lokale Relevanz stärken.
+
+Ratgeber:
+Autorität aufbauen.
+
+FAQ:
+Einwände beantworten.
+
+Footer:
+interne Linkstruktur stärken.
 ```
 
-oder vorhandene Scripts aus `package.json` verwenden.
+# 6. SEO-Copy-Regeln
 
-## Arbeitsweise
+* Genau eine H1 auf der Startseite.
+* H2 müssen logisch und suchintentionbasiert sein.
+* H3 nur dort verwenden, wo Unterpunkte entstehen.
+* Keine Keyword-Listen ohne echten Nutzen.
+* Interne Links müssen natürlich eingebettet werden.
+* CTA-Texte müssen handlungsorientiert sein.
+* Jede wichtige Suchintention soll auf der Homepage kurz angesprochen und auf eine passende Unterseite weitergeleitet werden.
+* Texte sollen für Menschen geschrieben sein und gleichzeitig Suchmaschinen klare Themencluster zeigen.
 
-Arbeite schrittweise:
+# 7. Haupt-Suchintentionen der Homepage
 
-1. vorhandene Projektstruktur prüfen
-2. Dateien lesen
-3. Datentypen definieren
-4. Loader bauen
-5. Admin-Grundstruktur bauen
-6. Übersichtsseite bauen
-7. Detailseiten bauen
-8. Status-System vorbereiten
-9. Build prüfen
-10. Ergebnis mit geänderten Dateien zusammenfassen
+Die Homepage muss diese Nutzergruppen abholen:
 
-Vor jeder grösseren strukturellen Änderung kurz prüfen, ob bestehende Komponenten, Styles oder Admin-Strukturen bereits existieren und wiederverwendet werden können.
+## Nutzergruppe 1: Hat ein akutes Problem
 
-Nichts löschen, was nicht eindeutig veraltet oder falsch ist. Bei Unsicherheit erst kommentieren oder separat neue Struktur anlegen.
+Beispiele:
+
+```txt
+Wasserfleck im Parkett
+Hundekratzer
+schwarze Flecken
+graue Laufstrassen
+aufgequollenes Parkett
+tiefe Kratzer
+stumpfer Boden
+```
+
+Ziel:
+Zur Problemfall-Seite oder Fotoanalyse führen.
+
+## Nutzergruppe 2: Sucht eine Leistung
+
+Beispiele:
+
+```txt
+Parkett schleifen Zürich
+Parkett reinigen Zürich
+Parkett ölen Zürich
+Parkett reparieren Zürich
+Parkett versiegeln Zürich
+```
+
+Ziel:
+Zur Leistungsseite führen.
+
+## Nutzergruppe 3: Will Kosten wissen
+
+Beispiele:
+
+```txt
+Parkett schleifen Kosten
+Parkett Reparatur Kosten
+Parkett reinigen Kosten
+```
+
+Ziel:
+Zum Kostenrechner oder zur Kostenseite führen.
+
+## Nutzergruppe 4: Ist unsicher
+
+Beispiele:
+
+```txt
+Muss Parkett geschliffen werden?
+Kann man den Fleck reparieren?
+Reicht Reinigung?
+```
+
+Ziel:
+Fotoanalyse, Quiz oder Beratung.
+
+## Nutzergruppe 5: Braucht Vertrauen
+
+Beispiele:
+
+```txt
+Wer kann das in Zürich?
+Gibt es Vorher-Nachher-Beispiele?
+Ist das seriös?
+```
+
+Ziel:
+Vorher-Nachher, Ablauf, Warum wir, lokale Signale.
+
+# 8. Verbotene Copywriting-Muster
+
+Nicht schreiben:
+
+```txt
+Ihr Experte für alle Bodenbeläge.
+Wir bieten höchste Qualität zu fairen Preisen.
+Kontaktieren Sie uns noch heute.
+Wir sind Ihr zuverlässiger Partner.
+```
+
+Besser schreiben:
+
+```txt
+Wir sind auf Parkett spezialisiert und prüfen zuerst, welche Behandlung für Ihren Boden wirklich sinnvoll ist.
+Senden Sie Fotos Ihres Bodens. Sie erhalten eine erste Einschätzung, ob Reinigung, Reparatur, Ölen oder Schleifen infrage kommt.
+```
+
+# 9. CTA-Regeln
+
+Primäre CTAs:
+
+```txt
+Foto hochladen & Einschätzung erhalten
+Kosten berechnen
+Offerte anfragen
+```
+
+Sekundäre CTAs:
+
+```txt
+Problem auswählen
+Leistung ansehen
+Vorher-Nachher ansehen
+Ratgeber lesen
+```
+
+CTA-Microcopy:
+
+```txt
+Kostenlose Ersteinschätzung anhand Ihrer Fotos.
+Keine verbindliche Offerte ohne Prüfung.
+Ideal bei Flecken, Kratzern, Laufstrassen oder Unsicherheit.
+```
+
+# 10. Umgang mit Preisen
+
+Keine erfundenen Fixpreise schreiben.
+
+Wenn keine echten Preise vorhanden sind, so formulieren:
+
+```txt
+Die Kosten hängen von Fläche, Zustand, Oberfläche und gewünschter Behandlung ab. Eine Reinigung ist in der Regel weniger aufwendig als ein kompletter Abschliff. Der Kostenrechner gibt eine erste Orientierung; eine genauere Einschätzung ist per Fotoanalyse möglich.
+```
+
+# 11. Umgang mit Ergebnissen
+
+Keine falschen Versprechen machen.
+
+Nicht schreiben:
+
+```txt
+Wir machen jeden Boden wie neu.
+Jeder Fleck verschwindet vollständig.
+```
+
+Besser:
+
+```txt
+Viele Schäden lassen sich deutlich verbessern. Ob ein Fleck vollständig verschwindet, hängt von Tiefe, Holzart, Oberfläche und bisheriger Behandlung ab.
+```
+
+# 12. Lokale Zürich-Sprache
+
+Zürich soll natürlich vorkommen, nicht künstlich.
+
+Gut:
+
+```txt
+Wir betreuen Parkettböden in Zürich und Umgebung – von Eigentumswohnungen und Einfamilienhäusern bis zu Mietobjekten, Verwaltungen und Gewerbeflächen.
+```
+
+Schlecht:
+
+```txt
+Parkett Zürich Parkettpflege Zürich Parkett reparieren Zürich.
+```
+
+# 13. Content-Qualität
+
+Jeder Textabschnitt muss mindestens eine dieser Funktionen erfüllen:
+
+```txt
+informieren
+orientieren
+vertrauen schaffen
+interne Verlinkung stärken
+Einwand beantworten
+Conversion auslösen
+lokale Relevanz stärken
+Problem differenzieren
+```
+
+Wenn ein Abschnitt keine dieser Funktionen erfüllt, soll er entfernt oder neu geschrieben werden.
+
+# 14. Output-Qualität
+
+Wenn du Inhalte für die Homepage, Unterseiten oder Admin-Briefs erzeugst, liefere vollständige, verwendbare Texte. Keine knappen Stichworte, wenn Copy gebraucht wird.
+
+Für jede Homepage-Section sollen geliefert werden:
+
+```txt
+Section-Ziel
+H2
+Introtext
+Card-Texte
+CTA-Texte
+Microcopy
+interne Links
+SEO-Hinweise
+```
+
+# 15. Wichtigste Regel
+
+Die Website soll nicht wirken wie ein generischer Handwerkerbetrieb.
+
+Sie soll wirken wie die klare erste Adresse im Raum Zürich, wenn jemand sein Parkett erhalten, reparieren, reinigen, ölen, schleifen oder fachlich einschätzen lassen möchte.
