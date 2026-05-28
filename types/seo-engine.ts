@@ -75,4 +75,9 @@ export type SeoInteractiveModule = {
   bestFor?: string[];
   questions?: any[];
   resultTypes?: any[];
+  results?: any[];
+  inputs?: any[];
+  outputs?: any[];
+  situations?: any[];
+  requirements?: any[];
 };

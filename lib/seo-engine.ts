@@ -112,7 +112,7 @@ export function getSeoControlledTags(): SeoTagGroup[] {
 
 export function getSeoInteractiveModules(): SeoInteractiveModule[] {
   const config = getSeoEngineConfig();
-  const modules = config.interactiveContentStrategy?.modules;
+  const modules = config.interactiveModules || config.interactiveContentStrategy?.modules;
   if (!modules) return [];
 
   return Object.keys(modules).map(key => ({
@@ -128,17 +128,21 @@ export function getSeoQualityScoreRules(): any {
 
 export function getSeoInternalLinkingRules(): any {
   const config = getSeoEngineConfig();
-  return config.internalLinks || [];
+  return config.internalLinking || config.internalLinks || [];
 }
 
 export function getSeoJsonLdRules(): any {
   const config = getSeoEngineConfig();
-  return config.jsonLd || config.globalSeoRules?.jsonLd || {};
+  return config.jsonLdStrategy || config.jsonLd || config.globalSeoRules?.jsonLd || {};
 }
 
-export function getSeoRoadmap(): any[] {
+export function getSeoRoadmap(): any {
   const config = getSeoEngineConfig();
-  return config.roadmap || config.contentRoadmap || [];
+  return config.contentRoadmap90Days || config.roadmap || config.contentRoadmap || {};
+}
+
+export function getSeoGuidePages() {
+  return getSeoPageIdeas().filter(p => p.category === 'ratgeber');
 }
 
 export function inferCategoryFromSlug(slug: string): string {
