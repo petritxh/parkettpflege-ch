@@ -194,68 +194,68 @@ export default function AIAdvisor({ onOpenBooking }: { onOpenBooking?: (diagnosi
       return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col h-full relative z-10 text-white">
           <div className="flex justify-between items-center mb-4">
-             <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary-fixed text-[9px] px-2 py-1 rounded-full font-bold uppercase tracking-wider">
-              <Sparkles className="w-3 h-3" /> KI Voranalyse
+             <div className="inline-flex items-center gap-2 bg-secondary/25 text-white text-[9px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider border border-secondary/20">
+              <Sparkles className="w-3 h-3 text-secondary-fixed-dim" /> KI Voranalyse
             </div>
-            <button onClick={() => {setStep('intro'); setFormData({concerns: ''}); setImage(null);}} className="text-xs font-bold uppercase hover:underline text-white/60 hover:text-white">
+            <button onClick={() => {setStep('intro'); setFormData({concerns: ''}); setImage(null);}} className="text-xs font-bold uppercase hover:underline text-white/70 hover:text-white">
               Neu starten
             </button>
           </div>
           
           <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar pb-2">
             {isStringError ? (
-               <div className="text-sm text-white/80 p-4 bg-red-500/20 rounded-xl border border-red-500/30">
+               <div className="text-sm text-white p-4 bg-red-500/30 rounded-xl border border-red-500/40">
                  {result as string}
                </div>
             ) : (
                <div className="space-y-4">
                  
                  <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-2.5">
-                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-0.5">Schaden</span>
-                      <span className="font-medium text-white/90">{analysis?.suspectedDamage || '-'}</span>
+                    <div className="bg-white/10 border border-white/15 rounded-lg p-2.5 shadow-sm">
+                      <span className="block text-white/70 text-[10px] uppercase tracking-wider mb-0.5 font-medium">Schaden</span>
+                      <span className="font-semibold text-white">{analysis?.suspectedDamage || '-'}</span>
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-2.5">
-                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-0.5">Holzart</span>
-                      <span className="font-medium text-white/90">{analysis?.suspectedWoodType || 'Unbekannt'}</span>
+                    <div className="bg-white/10 border border-white/15 rounded-lg p-2.5 shadow-sm">
+                      <span className="block text-white/70 text-[10px] uppercase tracking-wider mb-0.5 font-medium">Holzart</span>
+                      <span className="font-semibold text-white">{analysis?.suspectedWoodType || 'Unbekannt'}</span>
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-2.5">
-                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-0.5">Oberfläche</span>
-                      <span className="font-medium text-white/90">{analysis?.suspectedSurface || 'Unbekannt'}</span>
+                    <div className="bg-white/10 border border-white/15 rounded-lg p-2.5 shadow-sm">
+                      <span className="block text-white/70 text-[10px] uppercase tracking-wider mb-0.5 font-medium">Oberfläche</span>
+                      <span className="font-semibold text-white">{analysis?.suspectedSurface || 'Unbekannt'}</span>
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-2.5">
-                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-0.5">Schweregrad</span>
-                      <span className={`font-medium ${needsHelp ? 'text-red-300' : 'text-secondary-fixed'}`}>{analysis?.severity || '-'}</span>
+                    <div className="bg-white/10 border border-white/15 rounded-lg p-2.5 shadow-sm">
+                      <span className="block text-white/70 text-[10px] uppercase tracking-wider mb-0.5 font-medium">Schweregrad</span>
+                      <span className={`font-bold ${needsHelp ? 'text-red-300' : 'text-secondary-fixed'}`}>{analysis?.severity || '-'}</span>
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-2.5">
-                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-0.5">Dringlichkeit</span>
-                      <span className={`font-medium ${needsHelp ? 'text-red-300' : 'text-secondary-fixed'}`}>{analysis?.urgency || '-'}</span>
+                    <div className="bg-white/10 border border-white/15 rounded-lg p-2.5 shadow-sm">
+                      <span className="block text-white/70 text-[10px] uppercase tracking-wider mb-0.5 font-medium">Dringlichkeit</span>
+                      <span className={`font-bold ${needsHelp ? 'text-red-300' : 'text-secondary-fixed'}`}>{analysis?.urgency || '-'}</span>
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-2.5">
-                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-0.5">DIY Möglich?</span>
-                      <span className="font-medium text-white/90">{analysis?.diyPossible ? 'Ja' : 'Besser Profi'}</span>
+                    <div className="bg-white/10 border border-white/15 rounded-lg p-2.5 shadow-sm">
+                      <span className="block text-white/70 text-[10px] uppercase tracking-wider mb-0.5 font-medium">DIY Möglich?</span>
+                      <span className="font-semibold text-white">{analysis?.diyPossible ? 'Ja' : 'Besser Profi'}</span>
                     </div>
                  </div>
 
-                 <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-                   <h4 className="flex items-center gap-2 text-sm font-semibold mb-2"><Search className="w-4 h-4 text-secondary" /> Ersteinschätzung</h4>
-                   <p className="text-xs text-white/80 leading-relaxed mb-3 whitespace-pre-wrap">{analysis?.customerExplanation}</p>
+                 <div className="bg-white/10 border border-white/15 rounded-xl p-3 shadow-sm">
+                   <h4 className="flex items-center gap-2 text-sm font-bold text-white mb-2"><Search className="w-4 h-4 text-secondary-fixed-dim" /> Ersteinschätzung</h4>
+                   <p className="text-xs text-white leading-relaxed mb-3 font-medium whitespace-pre-wrap">{analysis?.customerExplanation}</p>
                    
-                   <p className="text-[10px] text-white/40 italic flex items-start gap-1.5 leading-tight">
-                     <AlertTriangle className="w-3 h-3 shrink-0" />
+                   <p className="text-[10px] text-white/60 italic flex items-start gap-1.5 leading-tight">
+                     <AlertTriangle className="w-3 h-3 text-secondary-fixed-dim shrink-0" />
                      Hinweis: Diese KI-Voranalyse ersetzt keine professionelle Begutachtung vor Ort.
                    </p>
                  </div>
 
-                 <div className="bg-surface-variant/20 border border-secondary/30 rounded-xl p-3">
-                   <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-1">Empfehlung</span>
-                   <p className="text-sm font-medium text-white mb-1">{analysis?.recommendedService}</p>
-                   <p className="text-xs text-white/60">Kostenschätzung: {analysis?.priceRange}</p>
+                 <div className="bg-secondary/20 border border-secondary/40 rounded-xl p-3.5 shadow-sm">
+                   <span className="block text-secondary-fixed-dim text-[10px] uppercase tracking-wider font-bold mb-1">Empfehlung</span>
+                   <p className="text-sm font-bold text-white mb-1">{analysis?.recommendedService}</p>
+                   <p className="text-xs font-semibold text-white/90">Kostenschätzung: {analysis?.priceRange}</p>
                  </div>
 
                   <button 
                     onClick={() => openBooking(analysis)}
-                    className="w-full bg-primary text-white py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold shadow-lg shadow-black/20 hover:bg-primary/90 flex justify-center items-center gap-2 transition-all mt-4"
+                    className="w-full bg-secondary hover:bg-secondary/95 text-white py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold shadow-lg shadow-secondary/15 flex justify-center items-center gap-2 transition-all mt-4 hover:translate-y-[-1px]"
                   >
                     Kostenlose Richtofferte / Angebot einholen <ArrowRight className="w-4 h-4" />
                   </button>
@@ -278,7 +278,7 @@ export default function AIAdvisor({ onOpenBooking }: { onOpenBooking?: (diagnosi
       </div>
       
       {/* Content Box */}
-      <div className="p-6 md:p-8 rounded-[calc(2rem-2px)] relative z-10 flex flex-col justify-between h-full border border-white/10 bg-black/50 backdrop-blur-3xl m-[2px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+      <div className="p-6 md:p-8 rounded-[calc(2rem-2px)] relative z-10 flex flex-col justify-between h-full border border-white/10 bg-primary/95 backdrop-blur-3xl m-[2px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
         <AnimatePresence mode="wait">
           {currentStepContent()}
         </AnimatePresence>
